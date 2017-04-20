@@ -14,7 +14,8 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from random import random as rand
+import numpy as np
+from numpy.random import rand
 
 class Optimize(object):
     """Neural Network Hyper Parameter Optimizer Class.
@@ -29,7 +30,7 @@ class Optimize(object):
 
     def optimize_params(self, FLAGS, params_list, model_func,
                         X_train, X_test, Y_train, Y_test,
-                        nodes_per_layer, max_iter, batch_size):
+                        nodes_per_layer, optimizer_epochs, train_epochs, batch_size):
         """Function to optimize hyperparams
         
         Args:
@@ -52,14 +53,15 @@ class Optimize(object):
         best_itr = 0
         tolerance = 1e-4
 
-        for itr in range(1 , max_iter +1):
-            print("[%d]" % itr, "%s/%d" % (FLAGS.job_name,FLAGS.task_index),
-                  "Optimizer loop iteration ====================>>",itr)
-            new_params = [params_list[param][0] + rand( ) *(params_list[param][1] - params_list[param][0]) for param in range(num_params)]
-            print("[%d]" % itr, "%s/%d" % (FLAGS.job_name,FLAGS.task_index),
+        for optimizer_epoch in range(1 , optimizer_epochs +1):
+            print("[%d]" % optimizer_epoch, "%s/%d" % (FLAGS.job_name,FLAGS.task_index),
+                  "Optimizer loop epoch ====================>>",optimizer_epoch)
+            #np.random.seed(seed=54)
+            new_params = [params_list[param][0] + rand() *(params_list[param][1] - params_list[param][0]) for param in range(num_params)]
+            print("[%d]" % optimizer_epoch, "%s/%d" % (FLAGS.job_name,FLAGS.task_index),
                   "Optimization RUN for Hyperparams:",new_params)
             new_loss, y_hat = model_func(new_params, X_train, X_test, Y_train, Y_test,
-                                         nodes_per_layer, batch_size, itr)
+                                         nodes_per_layer, batch_size, optimizer_epoch, train_epochs)
 
             # error handling
             if new_loss == -1:
@@ -70,14 +72,14 @@ class Optimize(object):
                 if abs(best_loss - float(new_loss[-1])) > tolerance:
                     best_loss = new_loss[-1]
                     best_params = new_params
-                    best_itr = itr
+                    best_itr = optimizer_epoch
                 else:
                     print("%s/%d" % (FLAGS.job_name,FLAGS.task_index), "Loss Converged...")
                     return {'#best_params': new_params, 'best_loss': new_loss[-1], 'best_itr': best_itr}
                     #break
 
-            if(not itr % 10):
-                print("[%d]" % itr, "%s/%d" % (FLAGS.job_name,FLAGS.task_index),
+            if(not optimizer_epoch % 10):
+                print("[%d]" % optimizer_epoch, "%s/%d" % (FLAGS.job_name,FLAGS.task_index),
                       {'*best_params': best_params, 'best_loss': best_loss, 'best_itr':best_itr})
 
         return {'#best_params': best_params, 'best_loss': best_loss, 'best_itr': best_itr}

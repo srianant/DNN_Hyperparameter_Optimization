@@ -46,7 +46,8 @@ class PrepareData(object):
             matrix with columns for next set of powers
         """
         x = x.reshape(x.shape[0], 1)
-        matrix = np.ones((x.shape[0], 1))  # degree-0
+        #matrix = np.ones((x.shape[0], 1))  # degree-0
+        matrix = x
         #for power in range(1, p + 1):
         for power in range(1, p):
             # stack new column for next set of powers
@@ -65,8 +66,8 @@ class PrepareData(object):
         Returns:    
             X: input features of shape (N,)
             Y: output of shape (N,)
-            X_train: X matrix training data with degree-0 (1st col all ones)
-            X_test: X matrix test data with degree-0
+            X_train: X matrix training data 
+            X_test: X matrix test data
             Y_train: Y matrix training data
             Y_test: Y matrix test data
         """
@@ -117,7 +118,7 @@ class PrepareData(object):
 
 
     def split_and_normalize(self, data=None, label=None):
-        """Train/Test split input data and normalize
+        """Train/Test split given input data and normalize
         Args:
             data: standard numpy array of shape [n_samples, n_features]
             label: standard numpy array of shape [n_samples]

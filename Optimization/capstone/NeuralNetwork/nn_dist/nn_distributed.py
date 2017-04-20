@@ -39,7 +39,7 @@ flags.DEFINE_integer("train_steps", 10000,
                      "Number of (global) training steps to perform")
 flags.DEFINE_integer("batch_size", 100, "Training batch size")
 flags.DEFINE_float("learning_rate", 0.01, "Learning rate")
-flags.DEFINE_boolean("sync_replicas", False,
+flags.DEFINE_boolean("sync_replicas", True,
                      "Use the sync_replicas (synchronized replicas) mode, "
                      "wherein the parameter updates from workers are aggregated "
                      "before applied to avoid stale gradients")
@@ -61,7 +61,7 @@ GNODE = "%s/%d" % (FLAGS.job_name,FLAGS.task_index)
 
 
 def build_and_execute_graph(hyperparam, X_train, X_test, Y_train, Y_test,
-                            nodes_per_layer, batch_size, opt_itr):
+                            nodes_per_layer, batch_size, optimizer_epoch, train_epochs):
     """Build and execute tensorflow graph
     
     Args:
@@ -70,7 +70,8 @@ def build_and_execute_graph(hyperparam, X_train, X_test, Y_train, Y_test,
         y: target output of shape (N,)
         nodes_per_layer: List contains number of nodes in each layers and its length determines number of layers
         batch_size: batch size for training
-        opt_itr: Optimizer (outer-loop) iteration number
+        optimizer_epochs: Optimizer (outer-loop) iteration number
+        train_epochs: Trainner (inner-loop) iteration number
     
     Returns: 
         costs: recored history of costs or loss per hyperparam optimizer iteration
@@ -78,13 +79,14 @@ def build_and_execute_graph(hyperparam, X_train, X_test, Y_train, Y_test,
 
     # reset tensorflow graph
     tf.reset_default_graph()
+    tf.set_random_seed(12345)
 
     if FLAGS.job_name is None or FLAGS.job_name == "":
         raise ValueError("Must specify an explicit `job_name`")
     if FLAGS.task_index is None or FLAGS.task_index == "":
         raise ValueError("Must specify an explicit `task_index`")
 
-    print("[%d]" % opt_itr, "job name = %s" % FLAGS.job_name, "task index = %d" % FLAGS.task_index)
+    print("[%d]" % optimizer_epoch, "job name = %s" % FLAGS.job_name, "task index = %d" % FLAGS.task_index)
 
     # Construct the cluster and start the server
     ps_spec = FLAGS.ps_hosts.split(",")
@@ -105,7 +107,7 @@ def build_and_execute_graph(hyperparam, X_train, X_test, Y_train, Y_test,
         server = tf.train.Server(
             cluster, job_name=FLAGS.job_name, task_index=FLAGS.task_index)
         if FLAGS.job_name == "ps":
-            print("[%d]" % opt_itr, GNODE,"ps: server join")
+            print("[%d]" % optimizer_epoch, GNODE,"ps: server join")
             server.join()
 
     is_chief = (FLAGS.task_index == 0)
@@ -131,7 +133,8 @@ def build_and_execute_graph(hyperparam, X_train, X_test, Y_train, Y_test,
         global_step = tf.Variable(0, name="global_step", trainable=False)
 
         NN = NeuralNetwork()
-        opt = NN.build_model(opt_itr, FLAGS, global_step, nodes_per_layer, learning_rate, optimizer="SGD")
+        opt = NN.build_model(optimizer_epoch, train_epochs, FLAGS, global_step,
+                             nodes_per_layer, learning_rate, optimizer="SGD")
 
         if FLAGS.sync_replicas:
             local_init_op = opt.local_step_init_op
@@ -177,21 +180,21 @@ def build_and_execute_graph(hyperparam, X_train, X_test, Y_train, Y_test,
         # The chief worker (task_index==0) session will prepare the session,
         # while the remaining workers will wait for the preparation to complete.
         if is_chief:
-          print("[%d]" % opt_itr, GNODE,"Worker %d: Initializing session..." % FLAGS.task_index)
+          print("[%d]" % optimizer_epoch, GNODE,"Worker %d: Initializing session..." % FLAGS.task_index)
         else:
-          print("[%d]" % opt_itr, GNODE,"Worker %d: Waiting for session to be initialized..." %
+          print("[%d]" % optimizer_epoch, GNODE,"Worker %d: Waiting for session to be initialized..." %
                 FLAGS.task_index)
 
         if FLAGS.existing_servers:
           server_grpc_url = "grpc://" + worker_spec[FLAGS.task_index]
-          print("[%d]" % opt_itr, GNODE,"Using existing server at: %s" % server_grpc_url)
+          print("[%d]" % optimizer_epoch, GNODE,"Using existing server at: %s" % server_grpc_url)
 
           sess = sv.prepare_or_wait_for_session(server_grpc_url,
                                                 config=sess_config)
         else:
           sess = sv.prepare_or_wait_for_session(server.target, config=sess_config)
 
-        print("[%d]" % opt_itr, GNODE,"Worker %d: Session initialization complete." % FLAGS.task_index)
+        print("[%d]" % optimizer_epoch, GNODE,"Worker %d: Session initialization complete." % FLAGS.task_index)
 
         if FLAGS.sync_replicas and is_chief:
           # Chief worker will start the chief queue runner and call the init op.
@@ -200,21 +203,21 @@ def build_and_execute_graph(hyperparam, X_train, X_test, Y_train, Y_test,
 
         # Perform training
         time_begin = time.time()
-        print("[%d]" % opt_itr, GNODE,"Training begins @ %f" % time_begin)
+        print("[%d]" % optimizer_epoch, GNODE,"Training begins @ %f" % time_begin)
 
-        costs = NN.train(opt_itr, FLAGS, sess, X_train, Y_train, batch_size, global_step)
+        costs = NN.train(optimizer_epoch, train_epochs, FLAGS, sess, X_train, Y_train, batch_size, global_step)
         if costs == -1:
             #sv.stop()
             return -1, -1
 
         time_end = time.time()
-        print("[%d]" % opt_itr, GNODE,"Training ends @ %f" % time_end)
+        print("[%d]" % optimizer_epoch, GNODE,"Training ends @ %f" % time_end)
         training_time = time_end - time_begin
-        print("[%d]" % opt_itr, GNODE,"Training elapsed time: %f s" % training_time)
+        print("[%d]" % optimizer_epoch, GNODE,"Training elapsed time: %f s" % training_time)
 
         # predict
         y_hat = NN.predict(X_test)
-        print("[%d]" % opt_itr, "Predicted y_hat[:5]==>",y_hat[:5])
+        print("[%d]" % optimizer_epoch, "Predicted y_hat[:5]==>",y_hat[:5])
 
     # Ask for all the services to stop.
     #sv.stop()
@@ -242,18 +245,19 @@ def main(unused_argv):
 
     # FIX: this will be input as dictionary
     # define neural network nodes and execution variables
-    nodes_per_layer = [M, 5, 1]
-    max_iter = 1
+    nodes_per_layer = [M, 5, 4, 1]
+    optimizer_epochs = 5
+    train_epochs = 10000
     batch_size = 1000
     # execute tensorflow graph
     #params_list = [[0.1,0.00001], [0.01,0.00001]] #placeholder for 2 or more hyperparam search
-    params_list = [[0.00001,0.00001]]
+    params_list = [[0.001,0.0001]]
 
     # instantiate hyper param optimize class
     OPT = Optimize()
     results = OPT.optimize_params(FLAGS, params_list, build_and_execute_graph,
                                   X_train, X_test, Y_train, Y_test,
-                                  nodes_per_layer, max_iter, batch_size)
+                                  nodes_per_layer, optimizer_epochs, train_epochs, batch_size)
 
     if (results["best_loss"] != 99999.0):
         print(results)
