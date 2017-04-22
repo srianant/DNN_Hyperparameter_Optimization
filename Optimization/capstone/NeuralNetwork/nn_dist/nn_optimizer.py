@@ -14,8 +14,8 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-import numpy as np
 from numpy.random import rand
+import matplotlib.pyplot as plt
 
 class Optimize(object):
     """Neural Network Hyper Parameter Optimizer Class.
@@ -56,7 +56,7 @@ class Optimize(object):
         for optimizer_epoch in range(1 , optimizer_epochs +1):
             print("[%d]" % optimizer_epoch, "%s/%d" % (FLAGS.job_name,FLAGS.task_index),
                   "Optimizer loop epoch ====================>>",optimizer_epoch)
-            #np.random.seed(seed=54)
+
             new_params = [params_list[param][0] + rand() *(params_list[param][1] - params_list[param][0]) for param in range(num_params)]
             print("[%d]" % optimizer_epoch, "%s/%d" % (FLAGS.job_name,FLAGS.task_index),
                   "Optimization RUN for Hyperparams:",new_params)
@@ -82,4 +82,9 @@ class Optimize(object):
                 print("[%d]" % optimizer_epoch, "%s/%d" % (FLAGS.job_name,FLAGS.task_index),
                       {'*best_params': best_params, 'best_loss': best_loss, 'best_itr':best_itr})
 
+
+        print("y_hat[:5]===>",y_hat[:5])
+        print("y_test[:5]==>",Y_test[:5])
+        plt.plot(Y_test, y_hat, 'r.')
+        plt.show()
         return {'#best_params': best_params, 'best_loss': best_loss, 'best_itr': best_itr}

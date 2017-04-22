@@ -17,6 +17,7 @@ from __future__ import print_function
 import time
 import numpy as np
 import tensorflow as tf
+import matplotlib.pyplot as plt
 
 
 class NeuralNetwork(object):
@@ -72,10 +73,10 @@ class NeuralNetwork(object):
         # The size of each matrix is [size of output layer] x [size of input layer]
         layer_matrices = [None, ] * len(self.nodes_per_layer)
         layer_biases = [None, ] * len(self.nodes_per_layer)
+
         for layer in range(len(self.nodes_per_layer) - 1):
             input_size = self.nodes_per_layer[layer]
             output_size = self.nodes_per_layer[layer + 1]
-            print("input_size:", input_size, "output_size:", output_size)
             layer_matrices[layer] = tf.Variable(tf.random_normal([output_size, input_size], dtype=tf.float64))
             layer_biases[layer] = tf.Variable(tf.random_normal([output_size, 1], dtype=tf.float64))
             print("[%d]" % optimizer_epoch, "%s/%d" % (FLAGS.job_name,FLAGS.task_index),
@@ -86,9 +87,9 @@ class NeuralNetwork(object):
         intermediate_outputs = [None, ] * (len(self.nodes_per_layer) - 1)
         for layer in range(len(self.nodes_per_layer) - 1):
             if layer == 0:
-                matmul = tf.matmul(layer_matrices[layer], self.input_features) + layer_biases[layer]
+                matmul = tf.add(tf.matmul(layer_matrices[layer], self.input_features), layer_biases[layer])
             else:
-                matmul = tf.matmul(layer_matrices[layer], intermediate_outputs[layer - 1]) + layer_biases[layer]
+                matmul = tf.add(tf.matmul(layer_matrices[layer], intermediate_outputs[layer - 1]), layer_biases[layer])
 
             if layer < len(self.nodes_per_layer) - 2:
                 if activation == "tanh":
@@ -165,6 +166,8 @@ class NeuralNetwork(object):
 
         # placeholder to record costs or loss per iteration
         self.costs = []
+        tolerance = 1e-8
+        prev_loss = 0.0
 
         # Training Loop
         for epoch in range(train_epochs):
@@ -179,29 +182,36 @@ class NeuralNetwork(object):
                 # run tensorflow distributed session to compute loss function
                 _, current_loss = self.sess.run([self.train_step, self.cost, ],
                                                  feed_dict={self.input_features: _f.transpose(),
-                                                            self.target_output: _y[0]})
+                                                            self.target_output: _y})
 
                 avg_loss += current_loss[0][0] / self.batch_size
+
             # save loss from current iteration
             self.costs.append(avg_loss)
+
+            # error tolerance threshold
+            if abs(prev_loss - float(avg_loss)) > tolerance:
+                prev_loss = avg_loss
+            else:
+                print("avg_loss:",avg_loss, "prev_loss:",prev_loss)
+                print("LOSS CONVERGED...at epoch",epoch)
+                break;
 
             # time the iteration
             now = time.time()
             step = self.sess.run(global_step)
 
-            if(not epoch % (train_epochs/20)):
+            if(not epoch % 200):
                 print("[%d]" % optimizer_epoch, "%s/%d" % (FLAGS.job_name,FLAGS.task_index),
-                      "%f: training step %d done (global step: %d) with Loss %f" % (now, epoch, step, avg_loss))
+                      "%f: training step %d done (global step: %d) with Loss %f, %f" % (now, epoch, step, avg_loss, prev_loss))
 
-
-        print("[%d]" % optimizer_epoch, "%s/%d" % (FLAGS.job_name,FLAGS.task_index),"Training complete!")
-        print("[%d]" % optimizer_epoch, "%s/%d" % (FLAGS.job_name,FLAGS.task_index), "Final Loss:", current_loss[0][0])
+        print("[%d]" % optimizer_epoch, "%s/%d" % (FLAGS.job_name,FLAGS.task_index),
+              "Training complete..!!", "FINAL LOSS:", avg_loss)
         return self.costs
 
 
     def predict(self, X_test):
         """Predicts output for input features (test or validation sample)
-        
         Returns:
              Estimated output y_hat
         """

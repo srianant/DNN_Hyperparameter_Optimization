@@ -134,7 +134,7 @@ def build_and_execute_graph(hyperparam, X_train, X_test, Y_train, Y_test,
 
         NN = NeuralNetwork()
         opt = NN.build_model(optimizer_epoch, train_epochs, FLAGS, global_step,
-                             nodes_per_layer, learning_rate, optimizer="SGD")
+                             nodes_per_layer, learning_rate, optimizer="Adam")
 
         if FLAGS.sync_replicas:
             local_init_op = opt.local_step_init_op
@@ -217,7 +217,6 @@ def build_and_execute_graph(hyperparam, X_train, X_test, Y_train, Y_test,
 
         # predict
         y_hat = NN.predict(X_test)
-        print("[%d]" % optimizer_epoch, "Predicted y_hat[:5]==>",y_hat[:5])
 
     # Ask for all the services to stop.
     #sv.stop()
@@ -239,19 +238,32 @@ def main(unused_argv):
     # initialize variables to prepare synthetic data
     N = 10000
     M = 4
-    # Data generation parameters
+    # Synthetic Data generation parameters
     PD = PrepareData()
     X_train, X_test, Y_train, Y_test = PD.generateData(FLAGS, N, M)
 
+    # Comment out above lines before using Boston Data
+    # # Load real boston housing data from sklearn
+    # X_train, X_test, Y_train, Y_test = loadBostonData()
+    # # Hyperparameters
+    # N = X.shape[0] # length of input data (rows)
+    # M = X.shape[1] # number of features (cols)
+    # Suggested Hyperparams for Boston Data
+    # epochs = 40000 # training iterations
+    # batch_size = 22 # batch size per training iteration
+    # learning_rate = 0.01 # learning rate for optimizer
+    # DNN architecture. Input, Hidden-Layer1, Hidden-Layer2, Output
+    # nodes_per_layer = [M, M*2, M*2, 1]
+
     # FIX: this will be input as dictionary
     # define neural network nodes and execution variables
-    nodes_per_layer = [M, 5, 4, 1]
-    optimizer_epochs = 5
-    train_epochs = 10000
+    nodes_per_layer = [M, M*2, M*2, 1]
+    optimizer_epochs = 1
+    train_epochs = 40000
     batch_size = 1000
     # execute tensorflow graph
     #params_list = [[0.1,0.00001], [0.01,0.00001]] #placeholder for 2 or more hyperparam search
-    params_list = [[0.001,0.0001]]
+    params_list = [[0.001,0.001]]
 
     # instantiate hyper param optimize class
     OPT = Optimize()
@@ -261,6 +273,7 @@ def main(unused_argv):
 
     if (results["best_loss"] != 99999.0):
         print(results)
+
 
 if __name__ == "__main__":
     tf.app.run()
