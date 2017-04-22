@@ -1,0 +1,57 @@
+File: Sample_Run_Output
+Updated: 04/22/2017
+Author: Srini Ananthakrishnan
+
+Distributed RUN loss converged with approx 4200 epochs, compare to 17200 epocs on non-distribued.
+Also, distributed took 60 sec less than non-distribued. This was done with loss tolerance less than 1e-8. 
+
+=========================
+With SINGLE Worker-0/PS-0
+=========================
+[1] worker/0 1492895302.338650: training step 17231 done (global step: 137855) with Loss 0.000862, 0.000862
+[1] worker/0 1492895302.377362: training step 17232 done (global step: 137863) with Loss 0.000758, 0.000758
+[1] worker/0 1492895302.410056: training step 17233 done (global step: 137871) with Loss 0.000771, 0.000771
+[1] worker/0 1492895302.451053: training step 17234 done (global step: 137879) with Loss 0.000786, 0.000786
+0.000786289514585 0.0007862936175
+LOSS CONVERGED...at epoch 17235
+[1] worker/0 Training complete..!! FINAL LOSS: 0.000786289514585
+[1] worker/0 Training ends @ 1492895302.489425
+[1] worker/0 Training elapsed time: 562.705231 s
+[1] Predicted y_hat[:5]==> [ 0.96463321  0.69937066  0.96949387  0.96573468  0.87774031]
+y_hat[:5]===> [ 0.96463321  0.69937066  0.96949387  0.96573468  0.87774031]
+y_test[:5]==> [ 0.97753567  0.70309013  0.97447079  0.96657014  0.88810825]
+INFO:tensorflow:global_step/sec: 163.099
+{'best_itr': 1, 'best_loss': 0.00078628951458508149, '#best_params': [0.001]}
+(tensorflow) Srinivasas-Air:nn_dist srianant$
+
+
+===================================
+DISTRIBUTED Worker0/1/2/3 and PS0/1
+===================================
+
+[1] worker/1 1492895925.247058: training step 4235 done (global step: 33885) with Loss 0.001892, 0.001892
+[1] worker/3 1492895925.278795: training step 4235 done (global step: 33887) with Loss 0.001870, 0.001870
+[1] worker/2 1492895925.273438: training step 4235 done (global step: 33887) with Loss 0.001870, 0.001870
+[1] worker/0 1492895925.303801: training step 4235 done (global step: 33889) with Loss 0.001837, 0.001837
+[1] worker/1 1492895925.351957: training step 4236 done (global step: 33893) with Loss 0.001885, 0.001885
+0.00187020422774 0.00187020984877
+LOSS CONVERGED...at epoch 4236
+[1] worker/2 Training complete..!! FINAL LOSS: 0.00187020422774
+[1] worker/2 Training ends @ 1492895925.377287
+[1] worker/2 Training elapsed time: 504.472591 s
+0.00187020422774 0.00187020984877
+LOSS CONVERGED...at epoch 4236
+[1] worker/3 Training complete..!! FINAL LOSS: 0.00187020422774
+[1] worker/3 Training ends @ 1492895925.379011
+[1] worker/3 Training elapsed time: 504.427010 s
+[1] Predicted y_hat[:5]==> [ 0.97766795  0.71267078  0.97554962  0.96247383  0.8456245 ]
+[1] Predicted y_hat[:5]==> [ 0.97766795  0.71267078  0.97554962  0.96247383  0.8456245 ]
+y_hat[:5]===> [ 0.97766795  0.71267078  0.97554962  0.96247383  0.8456245 ]
+y_test[:5]==> [ 0.97753567  0.70309013  0.97447079  0.96657014  0.88810825]
+y_hat[:5]===> [ 0.97766795  0.71267078  0.97554962  0.96247383  0.8456245 ]
+y_test[:5]==> [ 0.97753567  0.70309013  0.97447079  0.96657014  0.88810825]
+INFO:tensorflow:global_step/sec: 14.309
+INFO:tensorflow:global_step/sec: 0
+{'best_itr': 1, '#best_params': [0.001], 'best_loss': 0.001870204227744286}
+(tensorflow) Srinivasas-Air:nn_dist srianant$ {'best_itr': 1, '#best_params': [0.001], 'best_loss': 0.001870204227744286}
+
