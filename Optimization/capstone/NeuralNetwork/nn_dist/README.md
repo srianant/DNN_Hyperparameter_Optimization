@@ -1,4 +1,5 @@
-DNN HYPER_PARAM OPTIMIZER FRAMEWORK USING DISTRIBUTED TENSORFLOW  
+DNN HYPER_PARAM OPTIMIZER FRAMEWORK   
+( Using Distributed TensorFlow 1.0.1 )  
 ================================================================  
 Author: Srini Ananthakrishnan  
 Version: 1.0  
