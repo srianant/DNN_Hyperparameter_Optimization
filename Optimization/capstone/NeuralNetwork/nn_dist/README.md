@@ -1,11 +1,13 @@
-DNN HYPER_PARAM OPTIMIZER FRAMEWORK   
+
+HYPERPARAM OPTIMIZER FRAMEWORK FOR DEEP NEURAL NETWORK 
 ( Using Distributed TensorFlow 1.0.1 )  
+
 ================================================================  
 Author: Srini Ananthakrishnan  
 Version: 1.0  
 Updated: 04/28/2017  
   
-Optimization framework for Distributed Tensorflow architecture. 
+Hyperparameter Optimization framework for Deep Neural Network (DNN) using Distributed Tensorflow Architecture. 
 
   <img src="images/opt_arch.png" height="200"/> 
   
