@@ -126,3 +126,199 @@ INFO:train_opt:[3] Training ends @ 1493435924.930665
 INFO:train_opt:[3] Training elapsed time: 58.006841 s
 INFO:train_opt:Mean Square Error(MSE):5.822707
 INFO:train_opt:FINAL Training Loss:308.475413
+INFO:train_opt:
+
+INFO:train_opt:NEW RUN of OPTIMIZER EPOCHs.....
+INFO:train_opt:Epoch config for opt_iter:[ 1 ]
+INFO:train_opt:{'train_epoch': 500, 'train_tolerance': 1e-08, 'train_log_dir': '/tmp/nn_dist/train_logs', 'activation': 'tanh', 'train_optimizer': 'sgd', 'learning_rate': 0.00026975743255484104, 'input_dim': 4, 'data_features': 4, 'hidden_layer_bounds': [4, 10], 'ps_hosts': 'localhost:2223', 'add_cosine': False, 'opt_tolerance': 1e-05, 'load_data': False, 'nodes_per_layer': [4, 6, 8, 7, 4, 5, 9, 7, 5, 9, 1], 'add_noise': False, 'batch_size': 528, 'power_method': False, 'data_instances': 10000, 'opt_epoch_iter': 1, 'opt_epoch': 3, 'worker_hosts': 'localhost:2225', 'logging_level': 'info', 'output_dim': 1}
+INFO:train_opt:opt_epoch_iter =========> [ 1 ] job name=worker task index=0
+INFO:train_opt:Node per layer:[4, 6, 8, 7, 4, 5, 9, 7, 5, 9, 1]
+INFO:train_opt:Learning rate:0.000270
+INFO:train_opt:[1] worker/0 layer_matrices for layer 0 of size 6 x 4
+INFO:train_opt:[1] worker/0 layer_matrices for layer 1 of size 8 x 6
+INFO:train_opt:[1] worker/0 layer_matrices for layer 2 of size 7 x 8
+INFO:train_opt:[1] worker/0 layer_matrices for layer 3 of size 4 x 7
+INFO:train_opt:[1] worker/0 layer_matrices for layer 4 of size 5 x 4
+INFO:train_opt:[1] worker/0 layer_matrices for layer 5 of size 9 x 5
+INFO:train_opt:[1] worker/0 layer_matrices for layer 6 of size 7 x 9
+INFO:train_opt:[1] worker/0 layer_matrices for layer 7 of size 5 x 7
+INFO:train_opt:[1] worker/0 layer_matrices for layer 8 of size 9 x 5
+INFO:train_opt:[1] worker/0 layer_matrices for layer 9 of size 1 x 9
+INFO:train_opt:Using Activation: tanh
+INFO:train_opt:Using Activation: tanh
+INFO:train_opt:Using Activation: tanh
+INFO:train_opt:Using Activation: tanh
+INFO:train_opt:Using Activation: tanh
+INFO:train_opt:Using Activation: tanh
+INFO:train_opt:Using Activation: tanh
+INFO:train_opt:Using Activation: tanh
+INFO:train_opt:Using Activation: tanh
+INFO:train_opt:Using Train Optimizer: sgd
+INFO:tensorflow:SyncReplicasV2: replicas_to_aggregate=1; total_num_replicas=1
+INFO:train_opt:Sync Replica Optimizer Enabled...
+INFO:train_opt:Worker 0 Initializing session...
+INFO:train_opt:[1] Worker 0: Session initialization complete.
+INFO:tensorflow:global_step/sec: 0
+INFO:train_opt:[1] Training begins @ 1493477672.710047
+INFO:train_opt:Batch Size:528
+INFO:train_opt:Train tolerance:0.000000
+INFO:train_opt:[1] worker/0 1493477672.855063: training step 0 done (global step: 14) with Loss 10.186390, 10.186390
+INFO:train_opt:[1] worker/0 1493477693.492613: training step 200 done (global step: 3014) with Loss 0.296099, 0.296099
+INFO:train_opt:[1] worker/0 1493477713.924571: training step 400 done (global step: 6014) with Loss 0.305131, 0.305131
+INFO:train_opt:Training complete..!! FINAL LOSS: 0.272889
+INFO:train_opt:[1] Training ends @ 1493477724.098001
+INFO:train_opt:[1] Training elapsed time: 51.387954 s
+INFO:train_opt:Mean Square Error(MSE):0.135644
+INFO:train_opt:FINAL Training Loss:0.272889
+INFO:train_opt:
+
+INFO:train_opt:Epoch config for opt_iter:[ 2 ]
+INFO:train_opt:{'opt_epoch_iter': 2, 'nodes_per_layer': [4, 7, 9, 7, 8, 8, 1], 'ps_hosts': 'localhost:2223', 'train_tolerance': 1e-08, 'opt_epoch': 3, 'activation': 'Relu', 'input_dim': 4, 'worker_hosts': 'localhost:2225', 'batch_size': 690, 'add_cosine': False, 'train_log_dir': '/tmp/nn_dist/train_logs', 'load_data': False, 'power_method': False, 'train_optimizer': 'Adam', 'data_features': 4, 'logging_level': 'info', 'data_instances': 10000, 'opt_tolerance': 1e-05, 'learning_rate': 0.0005994216121138793, 'train_epoch': 500, 'add_noise': False, 'output_dim': 1, 'hidden_layer_bounds': [4, 10]}
+INFO:train_opt:opt_epoch_iter =========> [ 2 ] job name=worker task index=0
+INFO:train_opt:Node per layer:[4, 7, 9, 7, 8, 8, 1]
+INFO:train_opt:Learning rate:0.000599
+INFO:train_opt:[2] worker/0 layer_matrices for layer 0 of size 7 x 4
+INFO:train_opt:[2] worker/0 layer_matrices for layer 1 of size 9 x 7
+INFO:train_opt:[2] worker/0 layer_matrices for layer 2 of size 7 x 9
+INFO:train_opt:[2] worker/0 layer_matrices for layer 3 of size 8 x 7
+INFO:train_opt:[2] worker/0 layer_matrices for layer 4 of size 8 x 8
+INFO:train_opt:[2] worker/0 layer_matrices for layer 5 of size 1 x 8
+INFO:train_opt:Using Activation: Relu
+INFO:train_opt:Using Activation: Relu
+INFO:train_opt:Using Activation: Relu
+INFO:train_opt:Using Activation: Relu
+INFO:train_opt:Using Activation: Relu
+INFO:train_opt:Using Train Optimizer: Adam
+INFO:tensorflow:SyncReplicasV2: replicas_to_aggregate=1; total_num_replicas=1
+INFO:train_opt:Sync Replica Optimizer Enabled...
+INFO:train_opt:Worker 0 Initializing session...
+INFO:train_opt:[2] Worker 0: Session initialization complete.
+INFO:tensorflow:global_step/sec: 0
+INFO:train_opt:[2] Training begins @ 1493477737.061239
+INFO:train_opt:Batch Size:690
+INFO:train_opt:Train tolerance:0.000000
+INFO:train_opt:[2] worker/0 1493477737.145698: training step 0 done (global step: 10) with Loss 5977.366619, 5977.366619
+INFO:train_opt:[2] worker/0 1493477748.079327: training step 200 done (global step: 2210) with Loss 1.226754, 1.226754
+INFO:train_opt:[2] worker/0 1493477759.130696: training step 400 done (global step: 4410) with Loss 0.429114, 0.429114
+INFO:train_opt:Training complete..!! FINAL LOSS: 0.291745
+INFO:train_opt:[2] Training ends @ 1493477764.575606
+INFO:train_opt:[2] Training elapsed time: 27.514367 s
+INFO:train_opt:Mean Square Error(MSE):0.180190
+INFO:train_opt:FINAL Training Loss:0.291745
+INFO:train_opt:
+
+INFO:train_opt:Epoch config for opt_iter:[ 3 ]
+INFO:train_opt:{'data_instances': 10000, 'worker_hosts': 'localhost:2225', 'add_noise': False, 'input_dim': 4, 'opt_epoch': 3, 'nodes_per_layer': [4, 9, 4, 9, 9, 5, 1], 'batch_size': 212, 'train_epoch': 500, 'train_log_dir': '/tmp/nn_dist/train_logs', 'hidden_layer_bounds': [4, 10], 'activation': 'tanh', 'ps_hosts': 'localhost:2223', 'learning_rate': 0.0006940274886024296, 'power_method': False, 'add_cosine': False, 'data_features': 4, 'output_dim': 1, 'train_optimizer': 'sgd', 'train_tolerance': 1e-08, 'logging_level': 'info', 'opt_epoch_iter': 3, 'opt_tolerance': 1e-05, 'load_data': False}
+INFO:train_opt:opt_epoch_iter =========> [ 3 ] job name=worker task index=0
+INFO:train_opt:Node per layer:[4, 9, 4, 9, 9, 5, 1]
+INFO:train_opt:Learning rate:0.000694
+INFO:train_opt:[3] worker/0 layer_matrices for layer 0 of size 9 x 4
+INFO:train_opt:[3] worker/0 layer_matrices for layer 1 of size 4 x 9
+INFO:train_opt:[3] worker/0 layer_matrices for layer 2 of size 9 x 4
+INFO:train_opt:[3] worker/0 layer_matrices for layer 3 of size 9 x 9
+INFO:train_opt:[3] worker/0 layer_matrices for layer 4 of size 5 x 9
+INFO:train_opt:[3] worker/0 layer_matrices for layer 5 of size 1 x 5
+INFO:train_opt:Using Activation: tanh
+INFO:train_opt:Using Activation: tanh
+INFO:train_opt:Using Activation: tanh
+INFO:train_opt:Using Activation: tanh
+INFO:train_opt:Using Activation: tanh
+INFO:train_opt:Using Train Optimizer: sgd
+INFO:tensorflow:SyncReplicasV2: replicas_to_aggregate=1; total_num_replicas=1
+INFO:train_opt:Sync Replica Optimizer Enabled...
+INFO:train_opt:Worker 0 Initializing session...
+INFO:train_opt:[3] Worker 0: Session initialization complete.
+INFO:tensorflow:global_step/sec: 0
+INFO:train_opt:[3] Training begins @ 1493477775.759626
+INFO:train_opt:Batch Size:212
+INFO:train_opt:Train tolerance:0.000000
+INFO:train_opt:[3] worker/0 1493477775.948014: training step 0 done (global step: 36) with Loss 40.216441, 40.216441
+INFO:train_opt:[3] worker/0 1493477807.338173: training step 200 done (global step: 7436) with Loss 0.573634, 0.573634
+INFO:train_opt:[3] worker/0 1493477838.753308: training step 400 done (global step: 14836) with Loss 0.081861, 0.081861
+INFO:train_opt:Training complete..!! FINAL LOSS: 0.018350
+INFO:train_opt:[3] Training ends @ 1493477854.369601
+INFO:train_opt:[3] Training elapsed time: 78.609975 s
+INFO:train_opt:Mean Square Error(MSE):0.021066
+INFO:train_opt:FINAL Training Loss:0.018350
+INFO:train_opt:
+
+INFO:train_opt:NEW RUN of OPTIMIZER EPOCHs.....
+INFO:train_opt:Epoch config for opt_iter:[ 1 ]
+INFO:train_opt:{'train_epoch': 100, 'power_method': False, 'ps_hosts': 'localhost:2223', 'worker_hosts': 'localhost:2225', 'activation': 'Relu', 'logging_level': 'info', 'opt_epoch': 3, 'train_tolerance': 1e-08, 'add_cosine': False, 'opt_epoch_iter': 1, 'load_data': False, 'train_log_dir': '/tmp/nn_dist/train_logs', 'input_dim': 4, 'add_noise': False, 'hidden_layer_bounds': [2, 3], 'output_dim': 1, 'data_features': 4, 'batch_size': 212, 'nodes_per_layer': [4, 2, 2, 1], 'opt_tolerance': 1e-05, 'learning_rate': 0.0008465721115629877, 'train_optimizer': 'Adam', 'data_instances': 10000}
+INFO:train_opt:opt_epoch_iter =========> [ 1 ] job name=worker task index=0
+INFO:train_opt:Node per layer:[4, 2, 2, 1]
+INFO:train_opt:Learning rate:0.000847
+INFO:train_opt:[1] worker/0 layer_matrices for layer 0 of size 2 x 4
+INFO:train_opt:[1] worker/0 layer_matrices for layer 1 of size 2 x 2
+INFO:train_opt:[1] worker/0 layer_matrices for layer 2 of size 1 x 2
+INFO:train_opt:Using Activation: Relu
+INFO:train_opt:Using Activation: Relu
+INFO:train_opt:Using Train Optimizer: Adam
+INFO:tensorflow:SyncReplicasV2: replicas_to_aggregate=1; total_num_replicas=1
+INFO:train_opt:Sync Replica Optimizer Enabled...
+INFO:train_opt:Worker 0 Initializing session...
+INFO:train_opt:[1] Worker 0: Session initialization complete.
+INFO:tensorflow:global_step/sec: 0
+INFO:train_opt:[1] Training begins @ 1493478614.601825
+INFO:train_opt:Batch Size:212
+INFO:train_opt:Train tolerance:0.000000
+INFO:train_opt:[1] worker/0 1493478614.731709: training step 0 done (global step: 36) with Loss 15.163071, 15.163071
+INFO:train_opt:Training complete..!! FINAL LOSS: 0.522543
+INFO:train_opt:[1] Training ends @ 1493478626.062134
+INFO:train_opt:[1] Training elapsed time: 11.460309 s
+INFO:train_opt:Mean Square Error(MSE):0.116097
+INFO:train_opt:FINAL Training Loss:0.522543
+INFO:train_opt:
+
+INFO:train_opt:Epoch config for opt_iter:[ 2 ]
+INFO:train_opt:{'input_dim': 4, 'worker_hosts': 'localhost:2225', 'output_dim': 1, 'batch_size': 487, 'activation': 'tanh', 'train_log_dir': '/tmp/nn_dist/train_logs', 'opt_epoch_iter': 2, 'ps_hosts': 'localhost:2223', 'data_instances': 10000, 'train_epoch': 100, 'opt_tolerance': 1e-05, 'data_features': 4, 'add_cosine': False, 'load_data': False, 'learning_rate': 0.0003720502321084574, 'logging_level': 'info', 'power_method': False, 'train_optimizer': 'Adam', 'hidden_layer_bounds': [2, 3], 'opt_epoch': 3, 'add_noise': False, 'train_tolerance': 1e-08, 'nodes_per_layer': [4, 2, 2, 1]}
+INFO:train_opt:opt_epoch_iter =========> [ 2 ] job name=worker task index=0
+INFO:train_opt:Node per layer:[4, 2, 2, 1]
+INFO:train_opt:Learning rate:0.000372
+INFO:train_opt:[2] worker/0 layer_matrices for layer 0 of size 2 x 4
+INFO:train_opt:[2] worker/0 layer_matrices for layer 1 of size 2 x 2
+INFO:train_opt:[2] worker/0 layer_matrices for layer 2 of size 1 x 2
+INFO:train_opt:Using Activation: tanh
+INFO:train_opt:Using Activation: tanh
+INFO:train_opt:Using Train Optimizer: Adam
+INFO:tensorflow:SyncReplicasV2: replicas_to_aggregate=1; total_num_replicas=1
+INFO:train_opt:Sync Replica Optimizer Enabled...
+INFO:train_opt:Worker 0 Initializing session...
+INFO:train_opt:[2] Worker 0: Session initialization complete.
+INFO:tensorflow:global_step/sec: 0
+INFO:train_opt:[2] Training begins @ 1493478635.398805
+INFO:train_opt:Batch Size:487
+INFO:train_opt:Train tolerance:0.000000
+INFO:train_opt:[2] worker/0 1493478635.470061: training step 0 done (global step: 15) with Loss 14.496955, 14.496955
+INFO:train_opt:Training complete..!! FINAL LOSS: 0.346482
+INFO:train_opt:[2] Training ends @ 1493478640.565672
+INFO:train_opt:[2] Training elapsed time: 5.166867 s
+INFO:train_opt:Mean Square Error(MSE):0.141803
+INFO:train_opt:FINAL Training Loss:0.346482
+INFO:train_opt:
+
+INFO:train_opt:Epoch config for opt_iter:[ 3 ]
+INFO:train_opt:{'opt_epoch': 3, 'train_epoch': 100, 'data_instances': 10000, 'train_tolerance': 1e-08, 'output_dim': 1, 'load_data': False, 'learning_rate': 0.00013956708431063709, 'add_noise': False, 'nodes_per_layer': [4, 2, 2, 1], 'worker_hosts': 'localhost:2225', 'add_cosine': False, 'data_features': 4, 'train_optimizer': 'Adagrad', 'batch_size': 260, 'input_dim': 4, 'ps_hosts': 'localhost:2223', 'logging_level': 'info', 'activation': 'tanh', 'hidden_layer_bounds': [2, 3], 'opt_epoch_iter': 3, 'power_method': False, 'train_log_dir': '/tmp/nn_dist/train_logs', 'opt_tolerance': 1e-05}
+INFO:train_opt:opt_epoch_iter =========> [ 3 ] job name=worker task index=0
+INFO:train_opt:Node per layer:[4, 2, 2, 1]
+INFO:train_opt:Learning rate:0.000140
+INFO:train_opt:[3] worker/0 layer_matrices for layer 0 of size 2 x 4
+INFO:train_opt:[3] worker/0 layer_matrices for layer 1 of size 2 x 2
+INFO:train_opt:[3] worker/0 layer_matrices for layer 2 of size 1 x 2
+INFO:train_opt:Using Activation: tanh
+INFO:train_opt:Using Activation: tanh
+INFO:train_opt:Using Train Optimizer: Adagrad
+INFO:tensorflow:SyncReplicasV2: replicas_to_aggregate=1; total_num_replicas=1
+INFO:train_opt:Sync Replica Optimizer Enabled...
+INFO:train_opt:Worker 0 Initializing session...
+INFO:train_opt:[3] Worker 0: Session initialization complete.
+INFO:tensorflow:global_step/sec: 0
+INFO:train_opt:[3] Training begins @ 1493478648.627974
+INFO:train_opt:Batch Size:260
+INFO:train_opt:Train tolerance:0.000000
+INFO:train_opt:[3] worker/0 1493478648.737207: training step 0 done (global step: 29) with Loss 27.491307, 27.491307
+INFO:train_opt:Training complete..!! FINAL LOSS: 24.956935
+INFO:train_opt:[3] Training ends @ 1493478657.786858
+INFO:train_opt:[3] Training elapsed time: 9.158884 s
+INFO:train_opt:Mean Square Error(MSE):0.916044
+INFO:train_opt:FINAL Training Loss:24.956935
