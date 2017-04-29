@@ -27,7 +27,9 @@ Parameter Configuration:
   
 DEFAULT CONFIG:  
 --------------  
-   
+
+  <img src="opt_print_config.png">
+
 $ python optimizer.py print_config  
   
 Configuration (modified, added, typechanged, doc):  
@@ -64,6 +66,9 @@ Configuration (modified, added, typechanged, doc):
   
   CUSTOM CONFIG: (Edit optimizer_config.yaml file as required)  
   -------------  
+  
+   <img src="opt_print_custom.png">
+  
   $ python optimizer.py print_config with optimizer_config.yaml   
      
 Configuration (modified, added, typechanged, doc):  
@@ -110,6 +115,8 @@ Configuration (modified, added, typechanged, doc):
   -----------------------------  
   Make sure to keep sacredboard and mongoDB server running when executing above python commandline.  
   To view optimizer run history use http://127.0.0.1:5000/runs  
+  
+  <img src="SacredBoardViewer.png">
   
 
   
