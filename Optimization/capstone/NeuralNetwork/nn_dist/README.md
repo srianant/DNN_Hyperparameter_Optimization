@@ -10,7 +10,7 @@ Hyperparameter Optimization framework for Deep Neural Network (DNN) using Distri
 
   <img src="images/opt_arch.png" height="200"/> 
   
-OPTIMIZER forks multiple PS(Parameter Server) and WORKER(Training Server) python process. These processes will further run   Distributed TensorFlow architecture. Framework supports following Deep Neural Network (DNN) TensorFlow Models:  
+OPTIMIZER forks multiple PS(Parameter Server) and WORKER(Training Server) python process. These processes will further run   Distributed TensorFlow Architecture. Framework supports following Deep Neural Network (DNN) TensorFlow Models:  
 1) Feed Forward DNN Regressor  
 2) Feed Forward DNN Classifier (Work-In-Progress)  
 3) RNN-LSTM Classifier (Work-In-Progress)  
@@ -18,7 +18,7 @@ OPTIMIZER forks multiple PS(Parameter Server) and WORKER(Training Server) python
 Pre Requisites:  
 --------------
 This framework uses sacred tool and mongodb server for ease of use. 
-Please follow the instructions below for SacredBoard & MongoDB Installation Instructions:  
+Please follow the instructions below for SacredBoard & MongoDB Installation:  
   
 $ brew install mongodb # install mongodb  
 $ mkdir mongo # create local directory for mongodb to write to  
@@ -35,7 +35,7 @@ DEFAULT CONFIG:
 --------------  
   $ python optimizer.py print_config  
   
-  <img src="images/opt_print_config.png">
+  <img src="images/opt_print_config.png" height="100"/>
 
   
 CUSTOM CONFIG: (Edit optimizer_config.yaml file as required)  
