@@ -1,8 +1,7 @@
 
-HYPERPARAM OPTIMIZER FRAMEWORK FOR DEEP NEURAL NETWORK 
-( Using Distributed TensorFlow 1.0.1 )  
-
+HYPERPARAMETER OPTIMIZATION FRAMEWORK FOR DEEP NEURAL NETWORK   
 ================================================================  
+
 Author: Srini Ananthakrishnan  
 Version: 1.0  
 Updated: 04/28/2017  
