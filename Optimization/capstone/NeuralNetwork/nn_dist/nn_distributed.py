@@ -4,7 +4,7 @@
     File Version      : 1.0
     Author            : Srini Ananthakrishnan
     Date created      : 04/19/2017
-    Date last modified: 04/19/2017
+    Date last modified: 04/28/2017
     Python Version    : 3.5
     Tensorflow Version: 1.0.1
 """
@@ -15,10 +15,13 @@ from __future__ import division
 from __future__ import print_function
 
 import time
+import pickle
 import tensorflow as tf
+import logging as logger
+import pprint
 from nn_model import NeuralNetwork
-from nn_optimizer import Optimize
 from prepare_data import PrepareData
+
 
 # Disable warnings
 tf.logging.set_verbosity(tf.logging.INFO)
@@ -60,8 +63,9 @@ FLAGS = flags.FLAGS
 GNODE = "%s/%d" % (FLAGS.job_name,FLAGS.task_index)
 
 
-def build_and_execute_graph(hyperparam, X_train, X_test, Y_train, Y_test,
-                            nodes_per_layer, batch_size, optimizer_epoch, train_epochs):
+def build_and_execute_graph(X_train, X_test, Y_train, Y_test, tolerance,
+                            learning_rate, activation, optimizer, nodes_per_layer,
+                            batch_size, optimizer_epoch, train_epochs, logging):
     """Build and execute tensorflow graph
     
     Args:
@@ -86,7 +90,8 @@ def build_and_execute_graph(hyperparam, X_train, X_test, Y_train, Y_test,
     if FLAGS.task_index is None or FLAGS.task_index == "":
         raise ValueError("Must specify an explicit `task_index`")
 
-    print("[%d]" % optimizer_epoch, "job name = %s" % FLAGS.job_name, "task index = %d" % FLAGS.task_index)
+    logging.info("opt_epoch_iter =========> [ %d ] job name=%s task index=%d",
+                 optimizer_epoch, FLAGS.job_name, FLAGS.task_index)
 
     # Construct the cluster and start the server
     ps_spec = FLAGS.ps_hosts.split(",")
@@ -99,15 +104,12 @@ def build_and_execute_graph(hyperparam, X_train, X_test, Y_train, Y_test,
         "ps": ps_spec,
         "worker": worker_spec})
 
-    # hyperparameters
-    learning_rate = hyperparam[0]
 
     if not FLAGS.existing_servers:
         # Not using existing servers. Create an in-process server.
-        server = tf.train.Server(
-            cluster, job_name=FLAGS.job_name, task_index=FLAGS.task_index)
+        server = tf.train.Server(cluster, job_name=FLAGS.job_name, task_index=FLAGS.task_index)
         if FLAGS.job_name == "ps":
-            print("[%d]" % optimizer_epoch, GNODE,"ps: server join")
+            logging.info("[%d] %s ps: server join", optimizer_epoch, GNODE)
             server.join()
 
     is_chief = (FLAGS.task_index == 0)
@@ -122,19 +124,18 @@ def build_and_execute_graph(hyperparam, X_train, X_test, Y_train, Y_test,
         # Just allocate the CPU to worker server
         cpu = 0
         worker_device = "/job:worker/task:%d/cpu:%d" % (FLAGS.task_index, cpu)
+
     # The device setter will automatically place Variables ops on separate
     # parameter servers (ps). The non-Variable ops will be placed on the workers.
     # The ps use CPU and workers use corresponding GPU
-    with tf.device(
-            tf.train.replica_device_setter(
-                worker_device=worker_device,
-                ps_device="/job:ps/cpu:0",
-                cluster=cluster)):
+    with tf.device(tf.train.replica_device_setter( worker_device=worker_device,
+                                                   ps_device="/job:ps/cpu:0",
+                                                   cluster=cluster)):
         global_step = tf.Variable(0, name="global_step", trainable=False)
 
         NN = NeuralNetwork()
-        opt = NN.build_model(optimizer_epoch, train_epochs, FLAGS, global_step,
-                             nodes_per_layer, learning_rate, optimizer="Adam")
+        opt = NN.build_model(FLAGS, optimizer_epoch, global_step, nodes_per_layer,
+                             learning_rate, activation, optimizer, logging)
 
         if FLAGS.sync_replicas:
             local_init_op = opt.local_step_init_op
@@ -147,9 +148,9 @@ def build_and_execute_graph(hyperparam, X_train, X_test, Y_train, Y_test,
             chief_queue_runner = opt.get_chief_queue_runner()
             sync_init_op = opt.get_init_tokens_op()
 
-        saver = tf.train.Saver()
+        #saver = tf.train.Saver()
+        saver = None
         init_op = tf.global_variables_initializer()
-        # train_dir = tempfile.mkdtemp()
         summary_op = tf.summary.merge_all()
 
         if FLAGS.sync_replicas:
@@ -180,43 +181,42 @@ def build_and_execute_graph(hyperparam, X_train, X_test, Y_train, Y_test,
         # The chief worker (task_index==0) session will prepare the session,
         # while the remaining workers will wait for the preparation to complete.
         if is_chief:
-          print("[%d]" % optimizer_epoch, GNODE,"Worker %d: Initializing session..." % FLAGS.task_index)
+            logging.info("Worker %d Initializing session...",FLAGS.task_index)
         else:
-          print("[%d]" % optimizer_epoch, GNODE,"Worker %d: Waiting for session to be initialized..." %
-                FLAGS.task_index)
-
+            logging.info("Worker %d Waiting for session to be initialized...", FLAGS.task_index)
+        # Reference:
+        # http://stackoverflow.com/questions/43084960/tensorflow-variables-are-not-initialized-using-between-graph-replication
         if FLAGS.existing_servers:
-          server_grpc_url = "grpc://" + worker_spec[FLAGS.task_index]
-          print("[%d]" % optimizer_epoch, GNODE,"Using existing server at: %s" % server_grpc_url)
-
-          sess = sv.prepare_or_wait_for_session(server_grpc_url,
-                                                config=sess_config)
+            server_grpc_url = "grpc://" + worker_spec[FLAGS.task_index]
+            logging.info("[%d] Using existing server at: %s", optimizer_epoch, server_grpc_url)
+            sess = sv.prepare_or_wait_for_session(server_grpc_url, config=sess_config)
         else:
-          sess = sv.prepare_or_wait_for_session(server.target, config=sess_config)
+            sess = sv.prepare_or_wait_for_session(server.target, config=sess_config)
 
-        print("[%d]" % optimizer_epoch, GNODE,"Worker %d: Session initialization complete." % FLAGS.task_index)
+        logging.info("[%d] Worker %d: Session initialization complete.",optimizer_epoch, FLAGS.task_index)
 
         if FLAGS.sync_replicas and is_chief:
-          # Chief worker will start the chief queue runner and call the init op.
-          sess.run(sync_init_op)
-          sv.start_queue_runners(sess, [chief_queue_runner])
+            # Chief worker will start the chief queue runner and call the init op.
+            sess.run(sync_init_op)
+            sv.start_queue_runners(sess, [chief_queue_runner])
 
         # Perform training
         time_begin = time.time()
-        print("[%d]" % optimizer_epoch, GNODE,"Training begins @ %f" % time_begin)
+        logging.info("[%d] Training begins @ %f",optimizer_epoch, time_begin)
 
-        costs = NN.train(optimizer_epoch, train_epochs, FLAGS, sess, X_train, Y_train, batch_size, global_step)
+        costs = NN.train(FLAGS, optimizer_epoch, train_epochs, sess, tolerance,
+                         X_train, Y_train, batch_size, global_step, logging)
         if costs == -1:
             #sv.stop()
             return -1, -1
 
         time_end = time.time()
-        print("[%d]" % optimizer_epoch, GNODE,"Training ends @ %f" % time_end)
+        logging.info("[%d] Training ends @ %f", optimizer_epoch, time_end)
         training_time = time_end - time_begin
-        print("[%d]" % optimizer_epoch, GNODE,"Training elapsed time: %f s" % training_time)
+        logging.info("[%d] Training elapsed time: %f s", optimizer_epoch, training_time)
 
         # predict
-        y_hat = NN.predict(X_test)
+        y_hat = NN.predict(FLAGS, X_test, Y_test, optimizer_epoch, logging)
 
     # Ask for all the services to stop.
     #sv.stop()
@@ -235,44 +235,49 @@ def main(unused_argv):
         None. Prints results (best params) of hyperparam optimization
     """
 
-    # initialize variables to prepare synthetic data
-    N = 10000
-    M = 4
+    # Load Epoch Config and Results
+    epoch_config = pickle.load(open("epoch_config.p", "rb"))
+    epoch_result = pickle.load(open("epoch_result.p", "rb"))
+
+    # Initialize variables to prepare synthetic data
+    N = epoch_config['data_instances']
+    M = epoch_config['data_features']
+
     # Synthetic Data generation parameters
     PD = PrepareData()
     X_train, X_test, Y_train, Y_test = PD.generateData(FLAGS, N, M)
 
-    # Comment out above lines before using Boston Data
-    # # Load real boston housing data from sklearn
-    # X_train, X_test, Y_train, Y_test = loadBostonData()
-    # # Hyperparameters
-    # N = X.shape[0] # length of input data (rows)
-    # M = X.shape[1] # number of features (cols)
-    # Suggested Hyperparams for Boston Data
-    # epochs = 40000 # training iterations
-    # batch_size = 22 # batch size per training iteration
-    # learning_rate = 0.01 # learning rate for optimizer
-    # DNN architecture. Input, Hidden-Layer1, Hidden-Layer2, Output
-    # nodes_per_layer = [M, M*2, M*2, 1]
+    # Define neural network nodes and training parameters
+    nodes_per_layer = epoch_config['nodes_per_layer']
+    train_epochs = epoch_config['train_epoch']
+    batch_size = epoch_config['batch_size']
+    opt_epoch_iter = epoch_config['opt_epoch_iter']
+    learning_rate = epoch_config['learning_rate']
+    activation = epoch_config['activation']
+    train_optimizer = epoch_config['train_optimizer']
+    train_tolerance = epoch_config['train_tolerance']
 
-    # FIX: this will be input as dictionary
-    # define neural network nodes and execution variables
-    nodes_per_layer = [M, M*2, M*2, 1]
-    optimizer_epochs = 1
-    train_epochs = 40000
-    batch_size = 1000
-    # execute tensorflow graph
-    #params_list = [[0.1,0.00001], [0.01,0.00001]] #placeholder for 2 or more hyperparam search
-    params_list = [[0.001,0.001]]
+    # Configure custom logger
+    log_file = "%s_%d.log"%(FLAGS.job_name,FLAGS.task_index)
+    logging = logger.getLogger('train_opt')
+    logger.basicConfig(filename=log_file, level=logger.INFO)
 
-    # instantiate hyper param optimize class
-    OPT = Optimize()
-    results = OPT.optimize_params(FLAGS, params_list, build_and_execute_graph,
-                                  X_train, X_test, Y_train, Y_test,
-                                  nodes_per_layer, optimizer_epochs, train_epochs, batch_size)
+    logging.info("\n")
+    if opt_epoch_iter == 1:
+        logging.info("NEW RUN of OPTIMIZER EPOCHs.....")
+    logging.info('Epoch config for opt_iter:[ %d ]',opt_epoch_iter)
+    logging.info(epoch_config)
 
-    if (results["best_loss"] != 99999.0):
-        print(results)
+    # Build and Execute TensorFlow Graph
+    costs, y_hat = build_and_execute_graph(X_train, X_test, Y_train, Y_test, train_tolerance,
+                                           learning_rate, activation, train_optimizer, nodes_per_layer,
+                                           batch_size, opt_epoch_iter, train_epochs, logging)
+
+    worker_loss = "opt_epoch_loss_%d" % (FLAGS.task_index)
+    epoch_result[worker_loss] = costs[-1]
+    pickle.dump(epoch_result, open("epoch_result.p", "wb"))
+
+    logging.info("FINAL Training Loss:%f",costs[-1])
 
 
 if __name__ == "__main__":

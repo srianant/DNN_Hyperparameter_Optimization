@@ -36,8 +36,8 @@ class PrepareData(object):
         Returns: 
         """
 
-        if (data == None) or (label == None):
-            raise ValueError("Must valid data and label")
+        # if (data == None) or (label == None):
+        #     raise ValueError("Must valid data and label")
 
         # cross validation: test/train split
         X_train, X_test, Y_train, Y_test = cross_validation.train_test_split(data, label, test_size=0.2, random_state=42)

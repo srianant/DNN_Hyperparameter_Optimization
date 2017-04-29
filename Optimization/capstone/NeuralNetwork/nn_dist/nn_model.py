@@ -4,7 +4,7 @@
     File Version      : 1.0
     Author            : Srini Ananthakrishnan and Michael Rinehart
     Date created      : 04/19/2017
-    Date last modified: 04/19/2017
+    Date last modified: 04/28/2017
     Python Version    : 3.5
     Tensorflow Version: 1.0.1
 """
@@ -34,8 +34,8 @@ class NeuralNetwork(object):
         """
         pass
 
-    def build_model(self, optimizer_epoch, train_epochs, FLAGS, global_step, nodes_per_layer,
-                    learning_rate=0.05, optimizer="Adam", activation="Relu"):
+    def build_model(self, FLAGS, optimizer_epoch, global_step, nodes_per_layer,
+                    learning_rate, activation, optimizer, logging):
         """Builds tensorflow neural network layers. 
         
         Initializes layers weights, biases from random normal distribution. Connects layers by matrix multiplication 
@@ -47,7 +47,7 @@ class NeuralNetwork(object):
             FLAGS: Macro dictionary contains user params and some defaults
             global_step: Global iteration steps
             nodes_per_layer: List contains number of nodes in each layers and its length determines number of layers
-              Example:
+                Example:
                   nodes_per_layer = [1, 5, 4, 1]
                   First (input) layer has 1 node takes input vector of (N,)
                   Second hidden layer has 5 nodes (with tanh activation)
@@ -63,7 +63,8 @@ class NeuralNetwork(object):
         Raises:
             None
         """
-
+        logging.info("Node per layer:%s",nodes_per_layer)
+        logging.info("Learning rate:%f",learning_rate)
         self.nodes_per_layer = nodes_per_layer
         self.learning_rate = learning_rate
         self.input_features = tf.placeholder(tf.float64)
@@ -79,8 +80,8 @@ class NeuralNetwork(object):
             output_size = self.nodes_per_layer[layer + 1]
             layer_matrices[layer] = tf.Variable(tf.random_normal([output_size, input_size], dtype=tf.float64))
             layer_biases[layer] = tf.Variable(tf.random_normal([output_size, 1], dtype=tf.float64))
-            print("[%d]" % optimizer_epoch, "%s/%d" % (FLAGS.job_name,FLAGS.task_index),
-                  'layer_matrices for layer %d of size %d x %d' % (layer, output_size, input_size))
+            logging.info("[%d] %s/%d layer_matrices for layer %d of size %d x %d",
+                         optimizer_epoch, FLAGS.job_name, FLAGS.task_index, layer, output_size, input_size)
 
         # Now we need to compute the output. We'll do that by connecting the matrix multiplications
         # through non-linearities except at the last layer, where we will just use matrix multiplication.
@@ -92,6 +93,7 @@ class NeuralNetwork(object):
                 matmul = tf.add(tf.matmul(layer_matrices[layer], intermediate_outputs[layer - 1]), layer_biases[layer])
 
             if layer < len(self.nodes_per_layer) - 2:
+                logging.info("Using Activation: %s", activation)
                 if activation == "tanh":
                     intermediate_outputs[layer] = tf.nn.tanh(matmul)
                 else:
@@ -107,11 +109,12 @@ class NeuralNetwork(object):
         self.cost = tf.matmul(error, tf.transpose(error))
 
         # optimize for loss or cost
-        if optimizer == "SGD":
+        logging.info("Using Train Optimizer: %s", optimizer)
+        if optimizer == "sgd":
             self.opt = tf.train.GradientDescentOptimizer(self.learning_rate)
         elif optimizer == "Adagrad":
             self.opt = tf.train.AdagradOptimizer(self.learning_rate)
-        else:
+        else: # Default is Adam
             self.opt = tf.train.AdamOptimizer(self.learning_rate)
 
         if FLAGS.sync_replicas:
@@ -129,14 +132,15 @@ class NeuralNetwork(object):
                       replicas_to_aggregate=replicas_to_aggregate,
                       total_num_replicas=num_workers,
                       name="nn_sync_replicas")
-            print("[%d]" % optimizer_epoch, "%s/%d" % (FLAGS.job_name,FLAGS.task_index),
-                  "Sync Replica Optimizer Enabled...")
+            logging.info("Sync Replica Optimizer Enabled...")
 
         self.train_step = self.opt.minimize(self.cost, global_step=global_step)
 
         return self.opt
 
-    def train(self, optimizer_epoch, train_epochs, FLAGS, sess, X_train, Y_train, batch_size=100, global_step=0):
+
+    def train(self, FLAGS, optimizer_epoch, train_epochs, sess, tolerance,
+              X_train, Y_train, batch_size, global_step, logging):
         """Trains neural network regressor for given input featues f and output y
         
         Trains network to optimize costs (or loss function) until error tolerance is reached. 
@@ -166,8 +170,9 @@ class NeuralNetwork(object):
 
         # placeholder to record costs or loss per iteration
         self.costs = []
-        tolerance = 1e-8
         prev_loss = 0.0
+        logging.info("Batch Size:%d", batch_size)
+        logging.info("Train tolerance:%f",tolerance)
 
         # Training Loop
         for epoch in range(train_epochs):
@@ -193,24 +198,34 @@ class NeuralNetwork(object):
             if abs(prev_loss - float(avg_loss)) > tolerance:
                 prev_loss = avg_loss
             else:
-                print("avg_loss:",avg_loss, "prev_loss:",prev_loss)
-                print("LOSS CONVERGED...at epoch",epoch)
-                break;
+                logging.info("avg_loss: %f prev_loss: %f",avg_loss, prev_loss)
+                logging.info("LOSS CONVERGED...at epoch %d",epoch)
+                break
 
             # time the iteration
             now = time.time()
             step = self.sess.run(global_step)
 
             if(not epoch % 200):
-                print("[%d]" % optimizer_epoch, "%s/%d" % (FLAGS.job_name,FLAGS.task_index),
-                      "%f: training step %d done (global step: %d) with Loss %f, %f" % (now, epoch, step, avg_loss, prev_loss))
+                logging.info("[%d] %s/%d %f: training step %d done (global step: %d) with Loss %f, %f",
+                             optimizer_epoch, FLAGS.job_name,FLAGS.task_index, now, epoch, step, avg_loss, prev_loss)
 
-        print("[%d]" % optimizer_epoch, "%s/%d" % (FLAGS.job_name,FLAGS.task_index),
-              "Training complete..!!", "FINAL LOSS:", avg_loss)
+        logging.info("Training complete..!! FINAL LOSS: %f", avg_loss)
         return self.costs
 
 
-    def predict(self, X_test):
+    def MSE(self, predictions, labels):
+        """Standard Mean Square Error
+        Args:
+            predictions: predicted output
+            labels: given output
+        Returns:
+             Mean square error
+        """
+        return np.sqrt(np.sum((labels - predictions) ** 2) / (len(labels) - 1))
+
+
+    def predict(self, FLAGS, X_test, Y_test, optimizer_epoch, logging):
         """Predicts output for input features (test or validation sample)
         Returns:
              Estimated output y_hat
@@ -218,4 +233,5 @@ class NeuralNetwork(object):
         self.y_hat = np.zeros(X_test.shape[0])
         for idx, _f in enumerate(X_test):
             self.y_hat[idx] = self.sess.run([self.output], feed_dict={self.input_features: _f.reshape(-1, 1)})[0]
+        logging.info("Mean Square Error(MSE):%f", self.MSE(self.y_hat, Y_test))
         return self.y_hat

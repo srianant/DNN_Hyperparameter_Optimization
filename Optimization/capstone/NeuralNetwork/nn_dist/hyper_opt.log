@@ -1,0 +1,7 @@
+INFO:hyper_opt.optimizer:Running command 'main'
+INFO:hyper_opt.optimizer:Started run with ID "1"
+INFO:hyper_opt.optimizer:Result: 0.23877014306238808
+INFO:hyper_opt.optimizer:Completed after 0:03:50
+INFO:hyper_opt.optimizer:Running command 'print_config'
+INFO:hyper_opt.optimizer:Started
+INFO:hyper_opt.optimizer:Completed after 0:00:00

@@ -1,6 +1,160 @@
 File: Sample_Run_Output
-Updated: 04/22/2017
+Updated: 04/28/2017
 Author: Srini Ananthakrishnan
+
+Note: Look at ps_0.log and worker_0.log for training epoch logs (inner-loop)
+
+Below is optimizer output (outer-loop)
+=================
+OPTIMIZER Output
+=================
+
+(tensorflow) Srinivasas-Air:nn_dist srianant$ python optimizer.py with optimizer_config.yaml
+'Epoch [1] config:'
+{'activation': 'Relu',
+ 'add_cosine': False,
+ 'add_noise': False,
+ 'batch_size': 651,
+ 'data_features': 4,
+ 'data_instances': 10000,
+ 'hidden_layer_bounds': [4, 10],
+ 'input_dim': 4,
+ 'learning_rate': 0.00040498285677880504,
+ 'load_data': False,
+ 'logging_level': 'info',
+ 'nodes_per_layer': [4, 7, 7, 4, 4, 4, 5, 9, 9, 1],
+ 'opt_epoch': 3,
+ 'opt_epoch_iter': 1,
+ 'opt_tolerance': 1e-05,
+ 'output_dim': 1,
+ 'power_method': False,
+ 'ps_hosts': 'localhost:2223',
+ 'train_epoch': 1000,
+ 'train_log_dir': '/tmp/nn_dist/train_logs',
+ 'train_optimizer': 'sgd',
+ 'train_tolerance': 1e-08,
+ 'worker_hosts': 'localhost:2225'}
+ START OF Optimizer EPOCH ====================>> [ 1 ]
+Deleteing /tmp/nn_dist
+Forking Worker/PS Cluster Jobs @  1493435700.688643
+cmd: %s python nn_distributed.py --ps_hosts=localhost:2223 --worker_hosts=localhost:2225 --job_name=ps --task_index=0
+cmd: %s python nn_distributed.py --ps_hosts=localhost:2223 --worker_hosts=localhost:2225 --job_name=worker --task_index=0
+Waiting for Worker process to complete....
+INFO:tensorflow:SyncReplicasV2: replicas_to_aggregate=1; total_num_replicas=1
+INFO:tensorflow:global_step/sec: 0
+poller flags: 16 14
+All Worker Process DONE...!!!
+Worker processing ends @  1493435790.118755
+Worker processing elapsed time:  89.43011212348938  secs
+Cleanup Worker/PS Cluster Jobs..
+new_loss: 0.238770143062 best_loss: 0.238770143062
+END OF Optimizer EPOCH =====================>>[ 1 ]
+
+'Epoch [2] config:'
+{'activation': 'tanh',
+ 'add_cosine': False,
+ 'add_noise': False,
+ 'batch_size': 897,
+ 'data_features': 4,
+ 'data_instances': 10000,
+ 'hidden_layer_bounds': [4, 10],
+ 'input_dim': 4,
+ 'learning_rate': 0.00025201250784043976,
+ 'load_data': False,
+ 'logging_level': 'info',
+ 'nodes_per_layer': [4, 9, 6, 8, 8, 6, 8, 5, 1],
+ 'opt_epoch': 3,
+ 'opt_epoch_iter': 2,
+ 'opt_tolerance': 1e-05,
+ 'output_dim': 1,
+ 'power_method': False,
+ 'ps_hosts': 'localhost:2223',
+ 'train_epoch': 1000,
+ 'train_log_dir': '/tmp/nn_dist/train_logs',
+ 'train_optimizer': 'Adagrad',
+ 'train_tolerance': 1e-08,
+ 'worker_hosts': 'localhost:2225'}
+ START OF Optimizer EPOCH ====================>> [ 2 ]
+Deleteing /tmp/nn_dist
+Forking Worker/PS Cluster Jobs @  1493435790.179285
+cmd: %s python nn_distributed.py --ps_hosts=localhost:2223 --worker_hosts=localhost:2225 --job_name=ps --task_index=0
+cmd: %s python nn_distributed.py --ps_hosts=localhost:2223 --worker_hosts=localhost:2225 --job_name=worker --task_index=0
+Waiting for Worker process to complete....
+INFO:tensorflow:SyncReplicasV2: replicas_to_aggregate=1; total_num_replicas=1
+INFO:tensorflow:global_step/sec: 0
+poller flags: 16 14
+All Worker Process DONE...!!!
+Worker processing ends @  1493435860.357282
+Worker processing elapsed time:  70.17799687385559  secs
+Cleanup Worker/PS Cluster Jobs..
+new_loss: 2.08489019087 best_loss: 0.238770143062
+END OF Optimizer EPOCH =====================>>[ 2 ]
+
+
+'Epoch [3] config:'
+{'activation': 'Relu',
+ 'add_cosine': False,
+ 'add_noise': False,
+ 'batch_size': 825,
+ 'data_features': 4,
+ 'data_instances': 10000,
+ 'hidden_layer_bounds': [4, 10],
+ 'input_dim': 4,
+ 'learning_rate': 0.0001980480347370466,
+ 'load_data': False,
+ 'logging_level': 'info',
+ 'nodes_per_layer': [4, 8, 7, 9, 8, 5, 8, 6, 6, 1],
+ 'opt_epoch': 3,
+ 'opt_epoch_iter': 3,
+ 'opt_tolerance': 1e-05,
+ 'output_dim': 1,
+ 'power_method': False,
+ 'ps_hosts': 'localhost:2223',
+ 'train_epoch': 1000,
+ 'train_log_dir': '/tmp/nn_dist/train_logs',
+ 'train_optimizer': 'Adagrad',
+ 'train_tolerance': 1e-08,
+ 'worker_hosts': 'localhost:2225'}
+ START OF Optimizer EPOCH ====================>> [ 3 ]
+Deleteing /tmp/nn_dist
+Forking Worker/PS Cluster Jobs @  1493435860.415272
+cmd: %s python nn_distributed.py --ps_hosts=localhost:2223 --worker_hosts=localhost:2225 --job_name=ps --task_index=0
+cmd: %s python nn_distributed.py --ps_hosts=localhost:2223 --worker_hosts=localhost:2225 --job_name=worker --task_index=0
+Waiting for Worker process to complete....
+INFO:tensorflow:SyncReplicasV2: replicas_to_aggregate=1; total_num_replicas=1
+INFO:tensorflow:global_step/sec: 0
+poller flags: 16 14
+All Worker Process DONE...!!!
+Worker processing ends @  1493435930.778613
+Worker processing elapsed time:  70.36334109306335  secs
+Cleanup Worker/PS Cluster Jobs..
+new_loss: 308.475412811 best_loss: 0.238770143062
+END OF Optimizer EPOCH =====================>>[ 3 ]
+
+
+=========================
+Summary:
+=========================
+Total EPOCH runs: 3
+FINAL LOSS......: 0.238770143062
+=========================
+
+
+
+
+
+
+
+
+
+
+
+
+
+===================
+OLD Updates:
+===================
+Updated: 04/22/2017
 
 Distributed RUN loss converged with approx 4200 epochs, compare to 17200 epocs on non-distribued.
 Also, distributed took 60 sec less than non-distribued. This was done with loss tolerance less than 1e-8. 
