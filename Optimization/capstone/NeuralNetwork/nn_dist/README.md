@@ -11,7 +11,7 @@ Optimization framework for Distributed Tensorflow architecture.
                             |<====> WORKER/0  
                             |<====> WORKER/1  
                             |<====> WORKER/2  
-                              (Child Python Processes)  
+                            (Child Python Processes)  
   
   
 OPTIMIZER forks multiple PS(Parameter Server) and WORKER(Training Server) python process. These processes will further run   Distributed TensorFlow architecture. Framework supports following Deep Neural Network (DNN) TensorFlow Models:  
