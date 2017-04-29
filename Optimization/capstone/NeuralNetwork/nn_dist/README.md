@@ -1,5 +1,5 @@
-NEURAL NETWORK HYPER_PARAM OPTIMIZER FRAMEWORK USING DISTRBUTED TENSORFLOW
-==========================================================================
+DNN HYPER_PARAM OPTIMIZER FRAMEWORK USING DISTRBUTED TENSORFLOW
+===============================================================
 Author: Srini Ananthakrishnan
 Version: 1.0
 Updated: 04/28/2017
