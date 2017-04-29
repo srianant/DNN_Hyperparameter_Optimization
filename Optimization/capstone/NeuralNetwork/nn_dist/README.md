@@ -1,4 +1,3 @@
-==========================================================================
 NEURAL NETWORK HYPER_PARAM OPTIMIZER FRAMEWORK USING DISTRBUTED TENSORFLOW
 ==========================================================================
 Author: Srini Ananthakrishnan
