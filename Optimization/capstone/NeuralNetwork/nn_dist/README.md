@@ -35,7 +35,7 @@ DEFAULT CONFIG:
 --------------  
   $ python optimizer.py print_config  
   
-  <img src="images/opt_print_config.png" height="100"/>
+  <img src="images/opt_print_config.png">
 
   
 CUSTOM CONFIG: (Edit optimizer_config.yaml file as required)  
