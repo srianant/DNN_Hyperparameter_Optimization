@@ -5,16 +5,16 @@ Version: 1.0
 Updated: 04/28/2017  
   
 Optimization framework for Distributed Tensorflow architecture. 
-
-               (fork/kill)
-   OPTIMIZER <=============>|<====> PS/0 
-(Parent Python Process)     |<====> PS/1
-                            |<====> WORKER/0
-                            |<====> WORKER/1
-                            |<====> WORKER/2
-                              (Child Python Processes)
-
-OPTIMIZER forks multiple PS(Parameter Server) and WORKER(Training Server) python process. These processes will further run Distributed TensorFlow architecture. Framework supports following Deep Neural Network (DNN) TensorFlow Models:  
+               (fork/kill)  
+   OPTIMIZER <=============>|<====> PS/0  
+(Parent Python Process)     |<====> PS/1  
+                            |<====> WORKER/0  
+                            |<====> WORKER/1  
+                            |<====> WORKER/2  
+                              (Child Python Processes)  
+  
+  
+OPTIMIZER forks multiple PS(Parameter Server) and WORKER(Training Server) python process. These processes will further run   Distributed TensorFlow architecture. Framework supports following Deep Neural Network (DNN) TensorFlow Models:  
 1) Feed Forward DNN Regressor  
 2) Feed Forward DNN Classifier (Work-In-Progress)  
 3) RNN-LSTM Classifier (Work-In-Progress)  
