@@ -6,7 +6,7 @@ Updated: 04/28/2017
   
 Optimization framework for Distributed Tensorflow architecture. 
 
-<center><img src="images/opt_arch.png" height="500"/></center>  
+  <img src="images/opt_arch.png" height="500"/> 
   
 OPTIMIZER forks multiple PS(Parameter Server) and WORKER(Training Server) python process. These processes will further run   Distributed TensorFlow architecture. Framework supports following Deep Neural Network (DNN) TensorFlow Models:  
 1) Feed Forward DNN Regressor  
