@@ -5,14 +5,8 @@ Version: 1.0
 Updated: 04/28/2017  
   
 Optimization framework for Distributed Tensorflow architecture. 
-               (fork/kill)  
-   OPTIMIZER <=============>|<====> PS/0  
-(Parent Python Process)     |<====> PS/1  
-                            |<====> WORKER/0  
-                            |<====> WORKER/1  
-                            |<====> WORKER/2  
-                            (Child Python Processes)  
-  
+
+<center><img src="images/opt_arch.png" height="500"/></center>  
   
 OPTIMIZER forks multiple PS(Parameter Server) and WORKER(Training Server) python process. These processes will further run   Distributed TensorFlow architecture. Framework supports following Deep Neural Network (DNN) TensorFlow Models:  
 1) Feed Forward DNN Regressor  
@@ -39,14 +33,14 @@ DEFAULT CONFIG:
 --------------  
   $ python optimizer.py print_config  
   
-  <img src="opt_print_config.png">
+  <img src="images/opt_print_config.png">
 
   
 CUSTOM CONFIG: (Edit optimizer_config.yaml file as required)  
 -------------  
   $ python optimizer.py print_config with optimizer_config.yaml  
     
-   <img src="opt_print_custom.png">
+   <img src="images/opt_print_custom.png">
   
   
 RUN OPTIMIZER:  
@@ -64,7 +58,7 @@ TO VIEW OPTIMIZER RUN HISTORY:
   Make sure to keep sacredboard and mongoDB server running when executing above python commandline.  
   To view optimizer run history use http://127.0.0.1:5000/runs  
   
-  <img src="SacredBoardViewer.png">
+  <img src="images/SacredBoardViewer.png">
   
 
   
