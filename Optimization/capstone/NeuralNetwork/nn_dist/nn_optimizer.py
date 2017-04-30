@@ -222,7 +222,7 @@ class Optimize(object):
                 worker_loss_field = "opt_epoch_loss_%d" % (worker_index)
                 workers_loss.append(epoch_result[worker_loss_field])
 
-            new_loss = max(workers_loss)
+            new_loss = min(workers_loss)
 
             # error handling
             if new_loss == -1:

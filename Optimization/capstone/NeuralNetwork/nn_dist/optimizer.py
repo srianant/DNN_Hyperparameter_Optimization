@@ -15,6 +15,7 @@ import logging as logger
 import yaml
 import os
 import signal
+import shutil
 import time
 import select
 from nn_optimizer import *
@@ -45,7 +46,7 @@ def loadClusterSpec(filename):
 
 
 def runcmd(cmd):
-    print("cmd: %s",cmd)
+    #print("cmd: %s",cmd)
     return subprocess.Popen(cmd, bufsize=4096, shell=True, stdout=subprocess.PIPE)
 
 
@@ -84,9 +85,11 @@ def forkClusterJobs(filename, _config):
     poller = select.poll()
     subprocs = {}  # map stdout pipe's file descriptor to the Popen object
 
-    if(os.path.exists("/tmp/nn_dist")):
-        print("Deleteing /tmp/nn_dist")
-        os.system("rm -rf /tmp/nn_dist")
+    train_log_dir = _config['train_log_dir']
+    if(os.path.exists(train_log_dir)):
+        print("Deleteing train dir...",train_log_dir)
+        shutil.rmtree(train_log_dir)
+    os.makedirs(train_log_dir)
 
     # Fork process
     time_begin = time.time()
@@ -115,12 +118,12 @@ def forkClusterJobs(filename, _config):
     #loop that polls until completion
     while True:
         for fd, flags in poller.poll(1): #never more than a second without a UI update
-            print("poller flags:", flags, fd)
+            #print("poller flags:", flags, fd)
             done_proc = subprocs[fd]
             poller.unregister(fd)
             #print("Worker process", done_proc, "is done!!!!")
             wp_count = wp_count + 1
-            if wp_count == num_workers:
+            if wp_count == 1: #num_workers:
                 done = True
                 break
             print(wp_count,"/",num_workers," of Worker Process Done..!!")
@@ -132,7 +135,7 @@ def forkClusterJobs(filename, _config):
     time_end = time.time()
     print("Worker processing ends @ ", time_end)
     processing_time = time_end - time_begin
-    print("Worker processing elapsed time: ",processing_time," secs")
+    print("Worker processing elapsed time: ",processing_time,"secs")
 
     # Let's kill both PS/Worker process
     processClusterJobs(filename, 'kill', None, pids)
@@ -193,10 +196,10 @@ def my_config():
     # -----------------------
     # Cluster server configs
     # -----------------------
-    # ps_hosts = 'localhost:2223,localhost:2224'  # parameter server config
-    # worker_hosts = 'localhost:2225,localhost:2226,localhost:2227,localhost:2228'    # worker server config
-    ps_hosts = 'localhost:2223'  # parameter server config
-    worker_hosts = 'localhost:2225'    # worker server config
+    ps_hosts = 'localhost:2223,localhost:2224'  # parameter server config
+    worker_hosts = 'localhost:2225,localhost:2226,localhost:2227,localhost:2228'    # worker server config
+    # ps_hosts = 'localhost:2223'  # parameter server config
+    # worker_hosts = 'localhost:2225'    # worker server config
 
     # ---------------------------------
     # Logging Level and Directory

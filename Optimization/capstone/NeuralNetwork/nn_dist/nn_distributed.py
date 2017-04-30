@@ -256,9 +256,10 @@ def main(unused_argv):
     activation = epoch_config['activation']
     train_optimizer = epoch_config['train_optimizer']
     train_tolerance = epoch_config['train_tolerance']
+    train_log_dir = epoch_config['train_log_dir']
 
     # Configure custom logger
-    log_file = "%s_%d.log"%(FLAGS.job_name,FLAGS.task_index)
+    log_file = "%s/%s_%d.log"%(train_log_dir,FLAGS.job_name,FLAGS.task_index)
     logging = logger.getLogger('train_opt')
     logger.basicConfig(filename=log_file, level=logger.INFO)
 
