@@ -78,7 +78,11 @@ class Optimize(object):
         # Add new/additional parameter checking above this line
 
     def save_best_config(self):
-
+        """Save best epoch config to pickle
+        
+        Returns:
+             None
+        """
         # Dump best config to pickle file
         pickle.dump(self.epoch_config, open("epoch_best_config.p", "wb"))
 

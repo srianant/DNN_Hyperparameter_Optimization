@@ -246,6 +246,7 @@ def main(_config, _run):
     # Load results of ALL worker
     best_epoch_config = pickle.load(open("epoch_best_config.p", "rb"))
 
+    # print BEST epoch run config
     pprint('BEST Epoch config:')
     pprint(best_epoch_config)
 
