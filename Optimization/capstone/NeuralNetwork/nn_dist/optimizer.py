@@ -18,9 +18,12 @@ import signal
 import shutil
 import time
 import select
+import pickle
+
 from nn_optimizer import *
 from sacred import Experiment
 from sacred.observers import MongoObserver
+from pprint import pprint
 
 ex = Experiment()
 mongo_observer = MongoObserver.create()
@@ -239,5 +242,11 @@ def main(_config, _run):
     #result = OPT.test_sacred()
     filename = "nn_distributed.py"
     result = OPT.optimize_params(processClusterJobs, filename)
+
+    # Load results of ALL worker
+    best_epoch_config = pickle.load(open("epoch_best_config.p", "rb"))
+
+    pprint('BEST Epoch config:')
+    pprint(best_epoch_config)
 
     return result

@@ -77,6 +77,10 @@ class Optimize(object):
             self.C['logging_level'] = 'info'
         # Add new/additional parameter checking above this line
 
+    def save_best_config(self):
+
+        # Dump best config to pickle file
+        pickle.dump(self.epoch_config, open("epoch_best_config.p", "wb"))
 
     def build_epoch_result(self, opt_epoch_iter, num_workers):
         """Build Optimizer epoch result and write the initialized value to pickle file
@@ -213,8 +217,10 @@ class Optimize(object):
 
             print("START OF Optimizer EPOCH ====================>> [",opt_epoch_iter,"]")
 
+            # Fork PS/Worker Jobs for inner training loop
             processClusterJobs(filename, 'fork', self.epoch_config)
 
+            # Load results of ALL worker
             epoch_result = pickle.load(open("epoch_result.p", "rb"))
 
             # Read ALL workers loss and report the maximum one
@@ -232,9 +238,11 @@ class Optimize(object):
             if new_loss < best_loss:
                 if abs(best_loss - float(new_loss)) > self.C['opt_tolerance']:
                     best_loss = new_loss
+                    self.save_best_config()
                 else:
                     print("prev_best_loss:",best_loss, "new_loss:",new_loss)
                     print("Optimizer LOSS CONVERGED...")
+                    self.save_best_config()
                     return new_loss
 
             print("new_loss:", new_loss, "best_loss:", best_loss)
