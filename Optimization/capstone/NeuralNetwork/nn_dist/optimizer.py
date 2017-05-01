@@ -33,7 +33,7 @@ ex.add_config('optimizer_config.yaml')
 # Configure your logger here
 logging = logger.getLogger('hyper_opt')
 ex.logger = logging
-logger.basicConfig(filename='hyper_opt.log', level=logger.INFO)
+#logger.basicConfig(filename='hyper_opt.log', level=logger.INFO)
 
 def loadClusterSpec(filename):
     # Load Cluster Spec
@@ -89,10 +89,13 @@ def forkClusterJobs(filename, _config):
     subprocs = {}  # map stdout pipe's file descriptor to the Popen object
 
     train_log_dir = _config['train_log_dir']
-    if(os.path.exists(train_log_dir)):
-        print("Deleteing train dir...",train_log_dir)
-        shutil.rmtree(train_log_dir)
-    os.makedirs(train_log_dir)
+    # if(os.path.exists(train_log_dir)):
+    #     print("Deleteing train dir...",train_log_dir)
+    #     shutil.rmtree(train_log_dir)
+    if(not os.path.exists(train_log_dir)):
+        os.makedirs(train_log_dir)
+    log_file = "%s/hyper_opt.log" % (train_log_dir)
+    logger.basicConfig(filename=log_file, level=logger.INFO)
 
     # Fork process
     time_begin = time.time()

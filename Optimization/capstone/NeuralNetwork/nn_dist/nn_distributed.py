@@ -63,7 +63,7 @@ FLAGS = flags.FLAGS
 GNODE = "%s/%d" % (FLAGS.job_name,FLAGS.task_index)
 
 
-def build_and_execute_graph(X_train, X_test, Y_train, Y_test, tolerance,
+def build_and_execute_graph(X_train, X_test, Y_train, Y_test, tolerance, train_log_dir,
                             learning_rate, activation, optimizer, nodes_per_layer,
                             batch_size, optimizer_epoch, train_epochs, logging):
     """Build and execute tensorflow graph
@@ -148,15 +148,16 @@ def build_and_execute_graph(X_train, X_test, Y_train, Y_test, tolerance,
             chief_queue_runner = opt.get_chief_queue_runner()
             sync_init_op = opt.get_init_tokens_op()
 
-        #saver = tf.train.Saver()
-        saver = None
+        saver = tf.train.Saver()
+        #saver = None
         init_op = tf.global_variables_initializer()
         summary_op = tf.summary.merge_all()
 
         if FLAGS.sync_replicas:
             sv = tf.train.Supervisor(
                     is_chief=is_chief,
-                    logdir="/tmp/nn_dist/train_logs",
+                    logdir=train_log_dir,
+                    # logdir="/tmp/nn_dist/train_logs",
                     init_op=init_op,
                     local_init_op=local_init_op,
                     ready_for_local_init_op=ready_for_local_init_op,
@@ -166,7 +167,8 @@ def build_and_execute_graph(X_train, X_test, Y_train, Y_test, tolerance,
         else:
             sv = tf.train.Supervisor(
                     is_chief=is_chief,
-                    logdir="/tmp/nn_dist/train_logs",
+                    logdir=train_log_dir,
+                    # logdir="/tmp/nn_dist/train_logs",
                     init_op=init_op,
                     summary_op=summary_op,
                     recovery_wait_secs=1,
@@ -265,12 +267,14 @@ def main(unused_argv):
 
     logging.info("\n")
     if opt_epoch_iter == 1:
+        logging.info("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
         logging.info("NEW RUN of OPTIMIZER EPOCHs.....")
+        logging.info("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
     logging.info('Epoch config for opt_iter:[ %d ]',opt_epoch_iter)
     logging.info(epoch_config)
 
     # Build and Execute TensorFlow Graph
-    costs, y_hat = build_and_execute_graph(X_train, X_test, Y_train, Y_test, train_tolerance,
+    costs, y_hat = build_and_execute_graph(X_train, X_test, Y_train, Y_test, train_tolerance, train_log_dir,
                                            learning_rate, activation, train_optimizer, nodes_per_layer,
                                            batch_size, opt_epoch_iter, train_epochs, logging)
 
