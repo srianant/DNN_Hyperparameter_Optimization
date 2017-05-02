@@ -77,65 +77,13 @@ class Optimize(object):
             self.C['logging_level'] = 'info'
         # Add new/additional parameter checking above this line
 
-    def save_best_config(self):
-        """Save best epoch config to pickle
+
+    def random_search_for_params(self, opt_epoch_iter):
+        """Use Random Search Algorithm To Find Parameters in Hyperspace
         
         Returns:
              None
         """
-        # Dump best config to pickle file
-        pickle.dump(self.epoch_config, open("epoch_best_config.p", "wb"))
-
-    def build_epoch_result(self, opt_epoch_iter, num_workers):
-        """Build Optimizer epoch result and write the initialized value to pickle file
-        
-        Args:
-            opt_epoch_iter: Optimizer epoch iteration
-        Returns:
-             None
-        """
-        self.epoch_result.update({'opt_epoch_iter': opt_epoch_iter})
-        for worker_index in range(num_workers):
-            worker_loss = "opt_epoch_loss_%d"%(worker_index)
-            self.epoch_result.update({worker_loss: 9999.00})
-        # Dump to pickle file. Worker nodes will update loss information
-        pickle.dump(self.epoch_result, open("epoch_result.p", "wb"))
-
-    def build_epoch_config(self, opt_epoch_iter):
-        """Build Optimizer epoch config and write the initialized value to pickle file
-
-        Args:
-            opt_epoch_iter: Optimizer epoch iteration
-        Returns:
-             None
-        """
-        self.validate_user_params()
-
-        self.epoch_config.update({'opt_epoch_iter': opt_epoch_iter})
-        self.epoch_config.update({'ps_hosts': self.C['ps_hosts']})
-        self.epoch_config.update({'worker_hosts': self.C['worker_hosts']})
-        self.epoch_config.update({'train_tolerance': self.C['train_tolerance']})
-        self.epoch_config.update({'opt_tolerance': self.C['opt_tolerance']})
-        self.epoch_config.update({'train_epoch': self.C['train_epoch']})
-        self.epoch_config.update({'opt_epoch': self.C['opt_epoch']})
-        self.epoch_config.update({'load_data': self.C['load_data']})
-
-        if self.C['load_data'] == False:
-            self.epoch_config.update({'input_dim': self.C['nn_dimensions'][0]})
-            self.epoch_config.update({'output_dim': self.C['nn_dimensions'][1]})
-            self.epoch_config.update({'add_cosine': self.C['add_cosine']})
-            self.epoch_config.update({'add_noise': self.C['add_noise']})
-            self.epoch_config.update({'power_method': self.C['power_method']})
-            self.epoch_config.update({'data_features': self.C['data_features']})
-            self.epoch_config.update({'data_instances': self.C['data_instances']})
-        else:
-            self.epoch_config.update({'load_data_dir': self.C['load_data_dir']})
-
-        self.epoch_config.update({'train_log_dir': self.C['train_log_dir']})
-        if len(self.C['logging_level']) > 1:
-            self.epoch_config.update({'logging_level': 'info'})
-        else:
-            self.epoch_config.update({'logging_level': self.C['logging_level']})
 
         # Use Random Search (RS) as hyperparameter algorithm
         if self.C['hyperparam_opt'] == 'RS':
@@ -177,6 +125,74 @@ class Optimize(object):
         else:
             raise ValueError("Unsupported hyper param optimizer type..!!")
 
+
+    def save_best_config(self):
+        """Save best epoch config to pickle
+        
+        Returns:
+             None
+        """
+        # Dump best config to pickle file
+        pickle.dump(self.epoch_config, open("epoch_best_config.p", "wb"))
+
+
+    def build_epoch_result(self, opt_epoch_iter, num_workers):
+        """Build Optimizer epoch result and write the initialized value to pickle file
+        
+        Args:
+            opt_epoch_iter: Optimizer epoch iteration
+        Returns:
+             None
+        """
+        self.epoch_result.update({'opt_epoch_iter': opt_epoch_iter})
+        for worker_index in range(num_workers):
+            worker_loss = "opt_epoch_loss_%d"%(worker_index)
+            self.epoch_result.update({worker_loss: 9999.00})
+        # Dump to pickle file. Worker nodes will update loss information
+        pickle.dump(self.epoch_result, open("epoch_result.p", "wb"))
+
+
+    def build_epoch_config(self, opt_epoch_iter):
+        """Build Optimizer epoch config and write the initialized value to pickle file
+
+        Args:
+            opt_epoch_iter: Optimizer epoch iteration
+        Returns:
+             None
+        """
+        self.validate_user_params()
+
+        self.epoch_config.update({'opt_epoch_iter': opt_epoch_iter})
+        self.epoch_config.update({'sync_replicas': self.C['sync_replicas']})
+        self.epoch_config.update({'file2distribute': self.C['file2distribute']})
+        self.epoch_config.update({'ps_hosts': self.C['ps_hosts']})
+        self.epoch_config.update({'worker_hosts': self.C['worker_hosts']})
+        self.epoch_config.update({'train_tolerance': self.C['train_tolerance']})
+        self.epoch_config.update({'opt_tolerance': self.C['opt_tolerance']})
+        self.epoch_config.update({'train_epoch': self.C['train_epoch']})
+        self.epoch_config.update({'opt_epoch': self.C['opt_epoch']})
+        self.epoch_config.update({'load_data': self.C['load_data']})
+
+        if self.C['load_data'] == False:
+            self.epoch_config.update({'input_dim': self.C['nn_dimensions'][0]})
+            self.epoch_config.update({'output_dim': self.C['nn_dimensions'][1]})
+            self.epoch_config.update({'add_cosine': self.C['add_cosine']})
+            self.epoch_config.update({'add_noise': self.C['add_noise']})
+            self.epoch_config.update({'power_method': self.C['power_method']})
+            self.epoch_config.update({'data_features': self.C['data_features']})
+            self.epoch_config.update({'data_instances': self.C['data_instances']})
+        else:
+            self.epoch_config.update({'load_data_dir': self.C['load_data_dir']})
+
+        self.epoch_config.update({'train_log_dir': self.C['train_log_dir']})
+        if len(self.C['logging_level']) > 1:
+            self.epoch_config.update({'logging_level': 'info'})
+        else:
+            self.epoch_config.update({'logging_level': self.C['logging_level']})
+
+        # Use Random Search Algorithm To Find Parameters in Hyperspace
+        self.random_search_for_params(opt_epoch_iter)
+
         # Dump built config to pickle file, so ps/worker can use
         pickle.dump(self.epoch_config, open("epoch_config.p", "wb"))
 
@@ -195,12 +211,11 @@ class Optimize(object):
         return loss
 
 
-    def optimize_params(self, processClusterJobs, filename):
+    def optimize_params(self, processClusterJobs):
         """Main function to optimize hyperparams. Loop in this routine is the outer-loop.
         
         Args:
             processClusterJobs: Function pointer to fork or kill ps/worker cluster jobs
-            filename: python name file that performance distributed processing
         
         Returns:
             best loss of ALL optimizer (outer-loop) iteration
@@ -209,6 +224,8 @@ class Optimize(object):
         best_loss = 99999.0 # initialize to very high value
         worker_spec = self.C['worker_hosts'].split(",")
         num_workers = len(worker_spec)
+        # python name file that performance distributed processing
+        filename = self.C['file2distribute']
 
         for opt_epoch_iter in range(1 , self.C['opt_epoch'] +1):
 
@@ -232,6 +249,7 @@ class Optimize(object):
                 worker_loss_field = "opt_epoch_loss_%d" % (worker_index)
                 workers_loss.append(epoch_result[worker_loss_field])
 
+            # pick minimum of loss reported among workers
             new_loss = min(workers_loss)
 
             # error handling
@@ -244,16 +262,18 @@ class Optimize(object):
                     best_loss = new_loss
                     self.save_best_config()
                 else:
-                    print("prev_best_loss:",best_loss, "new_loss:",new_loss)
-                    print("Optimizer LOSS CONVERGED...")
-                    self.save_best_config()
-                    return new_loss
+                    if new_loss == 99999.0:
+                        # Something went wrong during training. Loss was not updated.
+                        # Do nothing..
+                        print("WARNING: Something went wrong during training. Loss was not determined.")
+                        pass
+                    else:
+                        print("Optimizer LOSS CONVERGED...")
+                        self.save_best_config()
+                        return new_loss
 
-            print("new_loss:", new_loss, "best_loss:", best_loss)
 
-            if(not opt_epoch_iter % 100):
-                print("[%d]" % opt_epoch_iter,'best_loss:', best_loss)
-
+            print("[%d]" % opt_epoch_iter,'EPOCH LOSS:',new_loss, 'BEST LOSS:',best_loss)
             print("END OF Optimizer EPOCH =====================>>[",opt_epoch_iter,"]")
             print("\n")
 

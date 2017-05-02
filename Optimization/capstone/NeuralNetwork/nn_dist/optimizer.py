@@ -35,9 +35,9 @@ logging = logger.getLogger('hyper_opt')
 ex.logger = logging
 #logger.basicConfig(filename='hyper_opt.log', level=logger.INFO)
 
-def loadClusterSpec(filename):
+def loadClusterSpec(clusterConfigFile):
     # Load Cluster Spec
-    cluster_spec = yaml.load(open(os.path.expanduser(filename)))
+    cluster_spec = yaml.load(open(os.path.expanduser(clusterConfigFile)))
 
     # Populate Cluster Spec
     PS_HOSTS = cluster_spec['cluster']['ps_hosts']
@@ -65,11 +65,11 @@ def killClusterJobs(pids):
     print("Cleanup Worker/PS Cluster Jobs..")
 
 
-def forkClusterJobs(filename, _config):
+def forkClusterJobs(file2distribute, _config):
     """Fork Worker and PS Cluster process
     
     Args:
-        filename: Python file that implements TF distributed processing
+        file2distribute: Python file that implements TF distributed processing
         _config: Epoch config parameters and hyperparameters 
     Returns:
          None
@@ -89,9 +89,9 @@ def forkClusterJobs(filename, _config):
     subprocs = {}  # map stdout pipe's file descriptor to the Popen object
 
     train_log_dir = _config['train_log_dir']
-    # if(os.path.exists(train_log_dir)):
-    #     print("Deleteing train dir...",train_log_dir)
-    #     shutil.rmtree(train_log_dir)
+    if(os.path.exists(train_log_dir) and _config['sync_replicas']):
+        print("Deleteing old train dir, sync_replica is enabled...",train_log_dir)
+        shutil.rmtree(train_log_dir)
     if(not os.path.exists(train_log_dir)):
         os.makedirs(train_log_dir)
     log_file = "%s/hyper_opt.log" % (train_log_dir)
@@ -106,13 +106,11 @@ def forkClusterJobs(filename, _config):
     pids = []
 
     for task_index in range(num_ps):
-        subproc = runcmd('python nn_distributed.py --ps_hosts=%s --worker_hosts=%s --job_name=%s --task_index=%d'%(PS_HOSTS, WORKER_HOSTS, "ps", task_index))
-        #print("ps process spawned:",subproc)
+        subproc = runcmd('python %s --ps_hosts=%s --worker_hosts=%s --job_name=%s --task_index=%d'%(file2distribute, PS_HOSTS, WORKER_HOSTS, "ps", task_index))
         pids.append(subproc.pid)
 
     for task_index in range(num_workers):
-        subproc = runcmd('python nn_distributed.py --ps_hosts=%s --worker_hosts=%s --job_name=%s --task_index=%d'%(PS_HOSTS, WORKER_HOSTS, "worker", task_index))
-        #print("worker process spawned:", subproc)
+        subproc = runcmd('python %s --ps_hosts=%s --worker_hosts=%s --job_name=%s --task_index=%d'%(file2distribute, PS_HOSTS, WORKER_HOSTS, "worker", task_index))
         pids.append(subproc.pid)
         subprocs[subproc.stdout.fileno()] = subproc
         poller.register(subproc.stdout, select.POLLHUP)
@@ -124,12 +122,10 @@ def forkClusterJobs(filename, _config):
     #loop that polls until completion
     while True:
         for fd, flags in poller.poll(1): #never more than a second without a UI update
-            #print("poller flags:", flags, fd)
-            done_proc = subprocs[fd]
+            #done_proc = subprocs[fd]
             poller.unregister(fd)
             #print("Worker process", done_proc, "is done!!!!")
             wp_count = wp_count + 1
-            #if wp_count == 1: #num_workers:
             if wp_count == num_workers:
                 done = True
                 break
@@ -144,21 +140,21 @@ def forkClusterJobs(filename, _config):
     print("Worker processing elapsed time: ",processing_time,"secs")
 
     # Let's kill both PS/Worker process
-    processClusterJobs(filename, 'kill', None, pids)
+    processClusterJobs(file2distribute, 'kill', None, pids)
 
 
-def processClusterJobs(filename, mode='kill', _config=None, pids=None):
+def processClusterJobs(file2distribute, mode='kill', _config=None, pids=None):
     """Tensorflow distributed cluster jobs fork or kill
     
     Args:
-        filename: python file that perform distributed processing
+        file2distribute: python file that perform distributed processing
         mode: fork or kill ps and worker process
         _config: epoch configuration sent to ps and worker
     Return:
          None
     """
     if mode == 'fork':
-        forkClusterJobs(filename, _config)
+        forkClusterJobs(file2distribute, _config)
     else:
         killClusterJobs(pids)
 
@@ -215,6 +211,18 @@ def my_config():
     load_data       = False     # When 'True' Load real data(X) of shape (N, M) and labels(Y) of shape (N,). Otherwise generate synthetic data.
     load_data_dir   = '/tmp/some_dir'   # Real data directory (like Boston, Iris, etc.)
 
+    # ----------------------------------------------------
+    # TensorFlow Sync_Replicas (synchronized workers) mode
+    # In this mode the parameter updates from workers are
+    # aggregated before applied to avoid stale gradients
+    # ----------------------------------------------------
+    sync_replicas   = False  # Use the sync_replicas (synchronized replicas) mode
+
+    # -------------------------------------
+    # File to be forked for distributed jobs
+    # -------------------------------------
+    file2distribute = 'nn_distributed.py'   # File to be forked for distributed jobs
+
 
 @ex.automain
 def main(_config, _run):
@@ -243,8 +251,8 @@ def main(_config, _run):
     OPT = eval(_config['trainer'])(_config)
 
     #result = OPT.test_sacred()
-    filename = "nn_distributed.py"
-    result = OPT.optimize_params(processClusterJobs, filename)
+    # "nn_distributed.py"
+    result = OPT.optimize_params(processClusterJobs)
 
     # Load results of ALL worker
     best_epoch_config = pickle.load(open("epoch_best_config.p", "rb"))

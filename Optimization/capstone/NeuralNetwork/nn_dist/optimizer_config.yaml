@@ -76,6 +76,13 @@ logging_level:
 - debug
 - notset
 
+# ----------------------------------------------------
+# TensorFlow Sync_Replicas (synchronized workers) mode
+# In this mode the parameter updates from workers are
+# aggregated before applied to avoid stale gradients
+# ----------------------------------------------------
+sync_replicas: false    # Use the sync_replicas (synchronized replicas) mode
+
 # -------------------------------------
 # Tensorflow Distributed Cluster Config
 # Format:
@@ -83,8 +90,13 @@ logging_level:
 # 193.168.xxx.xxx:port_number
 # -------------------------------------
 # Distribued
-ps_hosts: localhost:2223,localhost:2224 # parameter server config
-worker_hosts: localhost:2225,localhost:2226,localhost:2227,localhost:2228 # worker server config
+#ps_hosts: localhost:2223,localhost:2224 # parameter server config
+#worker_hosts: localhost:2225,localhost:2226,localhost:2227,localhost:2228 # worker server config
 # Simple
-#ps_hosts: localhost:2223 # parameter server config
-#worker_hosts: localhost:2225 # worker server config
+ps_hosts: localhost:2223 # parameter server config
+worker_hosts: localhost:2225 # worker server config
+
+# -------------------------------------
+# File to be forked for distributed jobs
+# -------------------------------------
+file2distribute: nn_distributed.py

@@ -4,7 +4,7 @@
     File Version      : 1.0
     Author            : Srini Ananthakrishnan
     Date created      : 04/19/2017
-    Date last modified: 04/28/2017
+    Date last modified: 05/02/2017
     Python Version    : 3.5
     Tensorflow Version: 1.0.1
 """
@@ -24,8 +24,8 @@ from nn_model import NeuralNetwork
 from prepare_data import PrepareData
 
 
-# Disable warnings
-tf.logging.set_verbosity(tf.logging.INFO)
+# Disable info/warnings
+tf.logging.set_verbosity(tf.logging.ERROR)
 
 flags = tf.app.flags
 flags.DEFINE_integer("task_index", None,
@@ -39,19 +39,11 @@ flags.DEFINE_integer("replicas_to_aggregate", None,
                      "Number of replicas to aggregate before parameter update"
                      "is applied (For sync_replicas mode only; default: "
                      "num_workers)")
-flags.DEFINE_integer("train_steps", 10000,
-                     "Number of (global) training steps to perform")
-flags.DEFINE_integer("batch_size", 100, "Training batch size")
-flags.DEFINE_float("learning_rate", 0.01, "Learning rate")
-flags.DEFINE_boolean("sync_replicas", True,
-                     "Use the sync_replicas (synchronized replicas) mode, "
-                     "wherein the parameter updates from workers are aggregated "
-                     "before applied to avoid stale gradients")
-flags.DEFINE_boolean(
-    "existing_servers", False, "Whether servers already exists. If True, "
-    "will use the worker hosts via their GRPC URLs (one client process "
-    "per worker host). Otherwise, will create an in-process TensorFlow "
-    "server.")
+# flags.DEFINE_boolean(
+#     "existing_servers", False, "Whether servers already exists. If True, "
+#     "will use the worker hosts via their GRPC URLs (one client process "
+#     "per worker host). Otherwise, will create an in-process TensorFlow "
+#     "server.")
 flags.DEFINE_string("ps_hosts","localhost:2222",
                     "Comma-separated list of hostname:port pairs")
 flags.DEFINE_string("worker_hosts", "localhost:2223,localhost:2224",
@@ -64,20 +56,22 @@ FLAGS = flags.FLAGS
 GNODE = "%s/%d" % (FLAGS.job_name,FLAGS.task_index)
 
 
-def build_and_execute_graph(X_train, X_test, Y_train, Y_test, tolerance, train_log_dir,
-                            learning_rate, activation, optimizer, nodes_per_layer,
-                            batch_size, optimizer_epoch, train_epochs, logging, epoch_result):
-    """Build and execute tensorflow graph
+def build_dnn_regressor(X_train, Y_train, epoch_config, epoch_result, logging):
+    """Build and execute tensorflow DNN Regressot Graph
     
     Args:
         hyperparam: hyperparameters to build and execute the graph
-        f: input features of shape (N,)
-        y: target output of shape (N,)
-        nodes_per_layer: List contains number of nodes in each layers and its length determines number of layers
+        X_train: input training features of shape (N,M)
+        Y_train: target training output of shape (N,)
+        epoch_result: dict to store epoch training loss result
+        logging: handler for logging macro
+            
+    epoch_config:
+        opt_epoch_iter: Optimizer (outer-loop) iteration number
+        train_epoch: Number of training epochs (inner-loop)
         batch_size: batch size for training
-        optimizer_epochs: Optimizer (outer-loop) iteration number
-        train_epochs: Trainner (inner-loop) iteration number
-    
+        train_tolerance: training loss convergence tolerance
+        
     Returns: 
         costs: recored history of costs or loss per hyperparam optimizer iteration
     """
@@ -92,7 +86,7 @@ def build_and_execute_graph(X_train, X_test, Y_train, Y_test, tolerance, train_l
         raise ValueError("Must specify an explicit `task_index`")
 
     logging.info("opt_epoch_iter =========> [ %d ] job name=%s task index=%d",
-                 optimizer_epoch, FLAGS.job_name, FLAGS.task_index)
+                 epoch_config['opt_epoch_iter'], FLAGS.job_name, FLAGS.task_index)
 
     # Construct the cluster and start the server
     ps_spec = FLAGS.ps_hosts.split(",")
@@ -114,7 +108,7 @@ def build_and_execute_graph(X_train, X_test, Y_train, Y_test, tolerance, train_l
         device_filters=["/job:ps", "/job:worker/task:%d" % FLAGS.task_index])
 
     if FLAGS.job_name == "ps":
-        logging.info("[%d] %s ps: server join", optimizer_epoch, GNODE)
+        logging.info("[%d] %s ps: server join", epoch_config['opt_epoch_iter'], GNODE)
         server.join()
 
     elif FLAGS.job_name == "worker":
@@ -139,47 +133,51 @@ def build_and_execute_graph(X_train, X_test, Y_train, Y_test, tolerance, train_l
                     worker_device=worker_device,
                     ps_device="/job:ps/cpu:0",
                     cluster=cluster)):
-            global_step = tf.Variable(0, name="global_step", trainable=False)
 
             NN = NeuralNetwork()
-            opt = NN.build_model(FLAGS, optimizer_epoch, global_step, nodes_per_layer,
-                                 learning_rate, activation, optimizer, logging)
+            opt = NN.build_model(FLAGS, epoch_config, logging)
 
-            if FLAGS.sync_replicas:
+            if epoch_config['sync_replicas'] == True:
                 # You can create the hook which handles initialization and queues.
-                sync_replicas_hook = opt.make_session_run_hook(is_chief,
+                sync_replicas_hook = opt.make_session_run_hook(is_chief=is_chief,
                                                                num_tokens=num_workers)
 
-        train_epoch_itr = 0
-        prev_loss = 0.0
-        hooks = [sync_replicas_hook, tf.train.StopAtStepHook(last_step=train_epochs)]
+        if epoch_config['sync_replicas'] == True:
+            hooks = [sync_replicas_hook, tf.train.StopAtStepHook(last_step=epoch_config['train_epoch'])]
+        else:
+            hooks = [tf.train.StopAtStepHook(last_step=epoch_config['train_epoch'])]
 
         # Perform training
         time_begin = time.time()
-        logging.info("[%d] Training begins @ %f", optimizer_epoch, time_begin)
+        logging.info("[%d] Training begins @ %f", epoch_config['opt_epoch_iter'], time_begin)
+
+        # Initialize local variables
+        prev_loss = 0.0
+        train_epoch_itr = 0
+        tolerance = epoch_config['train_tolerance']
 
         # The MonitoredTrainingSession takes care of session initialization,
         # restoring from a checkpoint, saving to a checkpoint, and closing when done
         # or an error occurs.
         with tf.train.MonitoredTrainingSession(master=server.target,
                                                is_chief=is_chief,
-                                               #checkpoint_dir=train_log_dir,
+                                               #checkpoint_dir=epoch_config['train_log_dir'],
                                                hooks=hooks,
                                                config=sess_config) as sess:
             while not sess.should_stop():
                 # randomly pick input (row) and targeted output vectors from N
-                indices = np.random.randint(len(X_train), size=batch_size)
+                indices = np.random.randint(len(X_train), size=epoch_config['batch_size'])
                 _f = X_train[indices, :]
                 _y = Y_train[indices]
 
-                costs = NN.train(sess, _f, _y, batch_size)
+                costs = NN.train(sess, _f, _y, epoch_config)
                 if costs == -1:
                     return -1, -1
 
                 now = time.time()
                 if (not train_epoch_itr % 200):
                     logging.info("[%d] %s/%d %f: training step %d done with Loss %f",
-                                 optimizer_epoch, FLAGS.job_name, FLAGS.task_index, now,
+                                 epoch_config['opt_epoch_iter'], FLAGS.job_name, FLAGS.task_index, now,
                                  train_epoch_itr, costs[-1])
 
                 # error tolerance threshold
@@ -197,9 +195,9 @@ def build_and_execute_graph(X_train, X_test, Y_train, Y_test, tolerance, train_l
                 train_epoch_itr = train_epoch_itr + 1
 
         time_end = time.time()
-        logging.info("[%d] Training ends @ %f", optimizer_epoch, time_end)
+        logging.info("[%d] Training ends @ %f", epoch_config['opt_epoch_iter'], time_end)
         training_time = time_end - time_begin
-        logging.info("[%d] Training elapsed time: %f s", optimizer_epoch, training_time)
+        logging.info("[%d] Training elapsed time: %f s", epoch_config['opt_epoch_iter'], training_time)
 
         worker_loss = "opt_epoch_loss_%d" % (FLAGS.task_index)
         epoch_result[worker_loss] = costs[-1]
@@ -230,34 +228,21 @@ def main(unused_argv):
     PD = PrepareData()
     X_train, X_test, Y_train, Y_test = PD.generateData(FLAGS, N, M)
 
-    # Define neural network nodes and training parameters
-    nodes_per_layer = epoch_config['nodes_per_layer']
-    train_epochs = epoch_config['train_epoch']
-    batch_size = epoch_config['batch_size']
-    opt_epoch_iter = epoch_config['opt_epoch_iter']
-    learning_rate = epoch_config['learning_rate']
-    activation = epoch_config['activation']
-    train_optimizer = epoch_config['train_optimizer']
-    train_tolerance = epoch_config['train_tolerance']
-    train_log_dir = epoch_config['train_log_dir']
-
     # Configure custom logger
-    log_file = "%s/%s_%d.log"%(train_log_dir,FLAGS.job_name,FLAGS.task_index)
+    log_file = "%s/%s_%d.log"%(epoch_config['train_log_dir'],FLAGS.job_name,FLAGS.task_index)
     logging = logger.getLogger('train_opt')
     logger.basicConfig(filename=log_file, level=logger.INFO)
 
     logging.info("\n")
-    if opt_epoch_iter == 1:
+    if epoch_config['opt_epoch_iter'] == 1:
         logging.info("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
         logging.info("NEW RUN of OPTIMIZER EPOCHs.....")
         logging.info("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
-    logging.info('Epoch config for opt_iter:[ %d ]',opt_epoch_iter)
+    logging.info('Epoch config for opt_iter:[ %d ]',epoch_config['opt_epoch_iter'])
     logging.info(epoch_config)
 
     # Build and Execute TensorFlow Graph
-    build_and_execute_graph(X_train, X_test, Y_train, Y_test, train_tolerance, train_log_dir,
-                                           learning_rate, activation, train_optimizer, nodes_per_layer,
-                                           batch_size, opt_epoch_iter, train_epochs, logging, epoch_result)
+    build_dnn_regressor(X_train, Y_train, epoch_config, epoch_result, logging)
 
 
 if __name__ == "__main__":

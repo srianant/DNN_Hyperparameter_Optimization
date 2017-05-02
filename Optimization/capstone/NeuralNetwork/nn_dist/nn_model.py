@@ -35,18 +35,18 @@ class NeuralNetwork(object):
         pass
 
 
-    def build_model(self, FLAGS, optimizer_epoch, global_step, nodes_per_layer,
-                    learning_rate, activation, optimizer, logging):
+    def build_model(self, FLAGS, epoch_config, logging):
         """Builds tensorflow neural network layers. 
         
         Initializes layers weights, biases from random normal distribution. Connects layers by matrix multiplication 
         and apply activation function (for non-linearities) except last layer
         
         Args:
-            optimizer_epoch: Optimizer (outer-loop) iteration number
-            train_epochs: Trainner (inner-loop) iteration number
-            FLAGS: Macro dictionary contains user params and some defaults
-            global_step: Global iteration steps
+            FLAGS: Macro dictionary contains user params and some defaults            
+            epoch_config: epoch configuration
+            logging: handler for logging macro
+
+        epoch_config:
             nodes_per_layer: List contains number of nodes in each layers and its length determines number of layers
                 Example:
                   nodes_per_layer = [1, 5, 4, 1]
@@ -54,8 +54,8 @@ class NeuralNetwork(object):
                   Second hidden layer has 5 nodes (with tanh activation)
                   Third hidden layer has 4 nodes (with tanh activation)
                   Fourth output layer has 1 node outputs vector of (N,)
-            learning_rate: learning rate used by optimizer. Default is 0.05
             optimizer: optimizer to use for training. Default is Adam
+            learning_rate: learning rate used by optimizer. Default is 0.05
             activation: non-linear activation function. Default is Relu
             
         Returns:
@@ -64,40 +64,53 @@ class NeuralNetwork(object):
         Raises:
             None
         """
-        logging.info("Node per layer:%s",nodes_per_layer)
-        logging.info("Learning rate:%f",learning_rate)
-        self.nodes_per_layer = nodes_per_layer
-        self.learning_rate = learning_rate
+
+        logging.info("Node per layer:%s",epoch_config['nodes_per_layer'])
+        logging.info("Train Optimizer:%s",epoch_config['train_optimizer'])
+        logging.info("Learning rate:%f",epoch_config['learning_rate'])
+        logging.info("Activation:%s",epoch_config['activation'])
+
+        # Local variables
+        nodes_per_layer = epoch_config['nodes_per_layer']
+
+        # TensorFlow Variables and Placeholders
+
+        # Global iteration steps
+        global_step = tf.Variable(0, name="global_step", trainable=False)
+
+        # Placeholder for input features and target output
         self.input_features = tf.placeholder(tf.float64)
         self.target_output = tf.placeholder(tf.float64)
 
         # Each layer is a matrix multiplication followed by a set of nonlinear operators
         # The size of each matrix is [size of output layer] x [size of input layer]
-        layer_matrices = [None, ] * len(self.nodes_per_layer)
-        layer_biases = [None, ] * len(self.nodes_per_layer)
+        layer_matrices = [None, ] * len(nodes_per_layer)
+        layer_biases = [None, ] * len(nodes_per_layer)
 
-        for layer in range(len(self.nodes_per_layer) - 1):
-            input_size = self.nodes_per_layer[layer]
-            output_size = self.nodes_per_layer[layer + 1]
+        # Compute weight matries and biases for layered neural network
+        for layer in range(len(nodes_per_layer) - 1):
+            input_size = nodes_per_layer[layer]
+            output_size = nodes_per_layer[layer + 1]
             layer_matrices[layer] = tf.Variable(tf.random_normal([output_size, input_size], dtype=tf.float64))
             layer_biases[layer] = tf.Variable(tf.random_normal([output_size, 1], dtype=tf.float64))
             logging.info("[%d] %s/%d layer_matrices for layer %d of size %d x %d",
-                         optimizer_epoch, FLAGS.job_name, FLAGS.task_index, layer, output_size, input_size)
+                         epoch_config['opt_epoch_iter'], FLAGS.job_name, FLAGS.task_index,
+                         layer, output_size, input_size)
 
         # Now we need to compute the output. We'll do that by connecting the matrix multiplications
         # through non-linearities except at the last layer, where we will just use matrix multiplication.
-        intermediate_outputs = [None, ] * (len(self.nodes_per_layer) - 1)
-        for layer in range(len(self.nodes_per_layer) - 1):
+        intermediate_outputs = [None, ] * (len(nodes_per_layer) - 1)
+        for layer in range(len(nodes_per_layer) - 1):
             if layer == 0:
                 matmul = tf.add(tf.matmul(layer_matrices[layer], self.input_features), layer_biases[layer])
             else:
                 matmul = tf.add(tf.matmul(layer_matrices[layer], intermediate_outputs[layer - 1]), layer_biases[layer])
 
-            if layer < len(self.nodes_per_layer) - 2:
-                logging.info("Using Activation: %s", activation)
-                if activation == "tanh":
+            if layer < len(nodes_per_layer) - 2:
+                logging.info("Using Activation: %s", epoch_config['activation'])
+                if epoch_config['activation'] == "tanh":
                     intermediate_outputs[layer] = tf.nn.tanh(matmul)
-                else:
+                else: # Default "Relu"
                     intermediate_outputs[layer] = tf.nn.relu(matmul)
             else:
                 intermediate_outputs[layer] = matmul
@@ -110,15 +123,16 @@ class NeuralNetwork(object):
         self.cost = tf.matmul(error, tf.transpose(error))
 
         # optimize for loss or cost
-        logging.info("Using Train Optimizer: %s", optimizer)
-        if optimizer == "sgd":
-            self.opt = tf.train.GradientDescentOptimizer(self.learning_rate)
-        elif optimizer == "Adagrad":
-            self.opt = tf.train.AdagradOptimizer(self.learning_rate)
+        logging.info("Using Train Optimizer: %s", epoch_config['train_optimizer'])
+        if epoch_config['train_optimizer'] == "sgd":
+            self.opt = tf.train.GradientDescentOptimizer(epoch_config['learning_rate'])
+        elif epoch_config['train_optimizer'] == "Adagrad":
+            self.opt = tf.train.AdagradOptimizer(epoch_config['learning_rate'])
         else: # Default is Adam
-            self.opt = tf.train.AdamOptimizer(self.learning_rate)
+            self.opt = tf.train.AdamOptimizer(epoch_config['learning_rate'])
 
-        if FLAGS.sync_replicas:
+        # Between the graph replication. If enabled training happens *syncronously*
+        if epoch_config['sync_replicas'] == True:
             worker_spec = FLAGS.worker_hosts.split(",")
             # Get the number of workers.
             num_workers = len(worker_spec)
@@ -140,16 +154,19 @@ class NeuralNetwork(object):
         return self.opt
 
 
-    def train(self, sess, X_train, Y_train, batch_size):
+    def train(self, mon_sess, X_train, Y_train, epoch_config):
         """Trains neural network regressor for given input featues f and output y
         
         Trains network to optimize costs (or loss function) until error tolerance is reached. 
         Boundary condition is defined to avoid infinite tranning loop
         
         Args:
-            sess: tensorflow session for distributed computing
+            mon_sess: TensorFlow MonitoredTrainingSession for Distributed Computing
             X_train: input feature vector of shape (N,)
             Y_train: output feature vector of shape (N,)
+            epoch_config: epoch configuration
+        
+        epoch_config:
             batch_size: batch size for training
         
         Returns:
@@ -161,15 +178,13 @@ class NeuralNetwork(object):
 
         # initialize class variables
         self.N = len(X_train)
-        self.sess = sess
-        self.batch_size = batch_size
+        self.mon_sess = mon_sess
+        self.batch_size = epoch_config['batch_size']
 
-        _f = X_train
-        _y = Y_train
         # run tensorflow distributed session to compute loss function
-        _, current_loss, = self.sess.run([self.train_step, self.cost,],
-                                         feed_dict={self.input_features: _f.transpose(),
-                                                    self.target_output: _y})
+        _, current_loss, = self.mon_sess.run([self.train_step, self.cost,],
+                                         feed_dict={self.input_features: X_train.transpose(),
+                                                    self.target_output: Y_train})
 
         self.avg_loss = current_loss[0][0] / self.batch_size
 
@@ -190,13 +205,18 @@ class NeuralNetwork(object):
         return np.sqrt(np.sum((labels - predictions) ** 2) / (len(labels) - 1))
 
 
-    def predict(self, FLAGS, X_test, Y_test, optimizer_epoch, logging):
+    def predict(self, X_test, Y_test, logging):
         """Predicts output for input features (test or validation sample)
+        
+        Args:
+            X_test: Input features test data
+            Y_test: Target output test data
+            logging: handler for logging macro
         Returns:
              Estimated output y_hat
         """
         self.y_hat = np.zeros(X_test.shape[0])
         for idx, _f in enumerate(X_test):
-            self.y_hat[idx] = self.sess.run([self.output], feed_dict={self.input_features: _f.reshape(-1, 1)})[0]
+            self.y_hat[idx] = self.mon_sess.run([self.output], feed_dict={self.input_features: _f.reshape(-1, 1)})[0]
         logging.info("Mean Square Error(MSE):%f", self.MSE(self.y_hat, Y_test))
         return self.y_hat
