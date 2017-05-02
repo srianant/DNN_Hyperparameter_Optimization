@@ -14,8 +14,10 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
+import time
 import numpy as np
 import tensorflow as tf
+import matplotlib.pyplot as plt
 
 
 class NeuralNetwork(object):
@@ -30,10 +32,7 @@ class NeuralNetwork(object):
     def __init__(self):
         """Initializes a NeuralNetwork instance
         """
-        self.costs = []
-        self.avg_loss = 0.0
         pass
-
 
     def build_model(self, FLAGS, optimizer_epoch, global_step, nodes_per_layer,
                     learning_rate, activation, optimizer, logging):
@@ -140,17 +139,22 @@ class NeuralNetwork(object):
         return self.opt
 
 
-    def train(self, sess, X_train, Y_train, batch_size):
+    def train(self, FLAGS, optimizer_epoch, train_epochs, sess, tolerance,
+              X_train, Y_train, batch_size, global_step, logging):
         """Trains neural network regressor for given input featues f and output y
         
         Trains network to optimize costs (or loss function) until error tolerance is reached. 
         Boundary condition is defined to avoid infinite tranning loop
         
         Args:
+            optimizer_epoch: Optimizer (outer-loop) iteration number
+            train_epochs: Trainner (inner-loop) iteration number
+            FLAGS: Macro dictionary contains user params and some defaults
             sess: tensorflow session for distributed computing
-            X_train: input feature vector of shape (N,)
-            Y_train: output feature vector of shape (N,)
+            f: input feature vector of shape (N,)
+            y: output feature vector of shape (N,)
             batch_size: batch size for training
+            global_step: Global iteration steps
         
         Returns:
             computed costs (or loss) list over all local steps (iteration)
@@ -164,18 +168,49 @@ class NeuralNetwork(object):
         self.sess = sess
         self.batch_size = batch_size
 
-        _f = X_train
-        _y = Y_train
-        # run tensorflow distributed session to compute loss function
-        _, current_loss, = self.sess.run([self.train_step, self.cost,],
-                                         feed_dict={self.input_features: _f.transpose(),
-                                                    self.target_output: _y})
+        # placeholder to record costs or loss per iteration
+        self.costs = []
+        prev_loss = 0.0
+        logging.info("Batch Size:%d", batch_size)
+        logging.info("Train tolerance:%f",tolerance)
 
-        self.avg_loss = current_loss[0][0] / self.batch_size
+        # Training Loop
+        for epoch in range(train_epochs):
+            avg_loss = 0.0
+            total_batch = int(X_train.shape[0] / self.batch_size)
+            for i in range(total_batch):
+                # randomly pick input (row) and targeted output vectors from N
+                indices = np.random.randint(self.N, size=self.batch_size)
+                _f = X_train[indices, :]
+                _y = Y_train[indices]
 
-        # save loss from current iteration
-        self.costs.append(self.avg_loss)
+                # run tensorflow distributed session to compute loss function
+                _, current_loss = self.sess.run([self.train_step, self.cost, ],
+                                                 feed_dict={self.input_features: _f.transpose(),
+                                                            self.target_output: _y})
 
+                avg_loss += current_loss[0][0] / self.batch_size
+
+            # save loss from current iteration
+            self.costs.append(avg_loss)
+
+            # error tolerance threshold
+            if abs(prev_loss - float(avg_loss)) > tolerance:
+                prev_loss = avg_loss
+            else:
+                logging.info("avg_loss: %f prev_loss: %f",avg_loss, prev_loss)
+                logging.info("LOSS CONVERGED...at epoch %d",epoch)
+                break
+
+            # time the iteration
+            now = time.time()
+            step = self.sess.run(global_step)
+
+            if(not epoch % 200):
+                logging.info("[%d] %s/%d %f: training step %d done (global step: %d) with Loss %f, %f",
+                             optimizer_epoch, FLAGS.job_name,FLAGS.task_index, now, epoch, step, avg_loss, prev_loss)
+
+        logging.info("Training complete..!! FINAL LOSS: %f", avg_loss)
         return self.costs
 
 

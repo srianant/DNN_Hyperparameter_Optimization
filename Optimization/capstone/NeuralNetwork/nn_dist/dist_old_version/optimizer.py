@@ -129,15 +129,15 @@ def forkClusterJobs(filename, _config):
             poller.unregister(fd)
             #print("Worker process", done_proc, "is done!!!!")
             wp_count = wp_count + 1
-            #if wp_count == 1: #num_workers:
-            if wp_count == num_workers:
+            if wp_count == 1: #num_workers:
                 done = True
                 break
             print(wp_count,"/",num_workers," of Worker Process Done..!!")
         # break when all workers are done
         if done:
             break
-    print(wp_count,"/",num_workers," of Worker Process DONE..!!")
+
+    print("All Worker Process DONE...!!!")
     time_end = time.time()
     print("Worker processing ends @ ", time_end)
     processing_time = time_end - time_begin

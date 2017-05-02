@@ -18,7 +18,6 @@ import time
 import pickle
 import tensorflow as tf
 import logging as logger
-import numpy as np
 import pprint
 from nn_model import NeuralNetwork
 from prepare_data import PrepareData
@@ -66,7 +65,7 @@ GNODE = "%s/%d" % (FLAGS.job_name,FLAGS.task_index)
 
 def build_and_execute_graph(X_train, X_test, Y_train, Y_test, tolerance, train_log_dir,
                             learning_rate, activation, optimizer, nodes_per_layer,
-                            batch_size, optimizer_epoch, train_epochs, logging, epoch_result):
+                            batch_size, optimizer_epoch, train_epochs, logging):
     """Build and execute tensorflow graph
     
     Args:
@@ -105,107 +104,127 @@ def build_and_execute_graph(X_train, X_test, Y_train, Y_test, tolerance, train_l
         "ps": ps_spec,
         "worker": worker_spec})
 
-    server = tf.train.Server(cluster, job_name=FLAGS.job_name,
-                             task_index=FLAGS.task_index, protocol="grpc")
 
-    sess_config = tf.ConfigProto(
-        allow_soft_placement=True,
-        log_device_placement=False,
-        device_filters=["/job:ps", "/job:worker/task:%d" % FLAGS.task_index])
+    if not FLAGS.existing_servers:
+        # Not using existing servers. Create an in-process server.
+        server = tf.train.Server(cluster, job_name=FLAGS.job_name, task_index=FLAGS.task_index)
+        if FLAGS.job_name == "ps":
+            logging.info("[%d] %s ps: server join", optimizer_epoch, GNODE)
+            server.join()
 
-    if FLAGS.job_name == "ps":
-        logging.info("[%d] %s ps: server join", optimizer_epoch, GNODE)
-        server.join()
+    is_chief = (FLAGS.task_index == 0)
+    if FLAGS.num_gpus > 0:
+        if FLAGS.num_gpus < num_workers:
+            raise ValueError("number of gpus is less than number of workers")
+        # Avoid gpu allocation conflict: now allocate task_num -> #gpu
+        # for each worker in the corresponding machine
+        gpu = (FLAGS.task_index % FLAGS.num_gpus)
+        worker_device = "/job:worker/task:%d/gpu:%d" % (FLAGS.task_index, gpu)
+    elif FLAGS.num_gpus == 0:
+        # Just allocate the CPU to worker server
+        cpu = 0
+        worker_device = "/job:worker/task:%d/cpu:%d" % (FLAGS.task_index, cpu)
 
-    elif FLAGS.job_name == "worker":
-        is_chief = (FLAGS.task_index == 0)
-        if FLAGS.num_gpus > 0:
-            if FLAGS.num_gpus < num_workers:
-                raise ValueError("number of gpus is less than number of workers")
-            # Avoid gpu allocation conflict: now allocate task_num -> #gpu
-            # for each worker in the corresponding machine
-            gpu = (FLAGS.task_index % FLAGS.num_gpus)
-            worker_device = "/job:worker/task:%d/gpu:%d" % (FLAGS.task_index, gpu)
-        elif FLAGS.num_gpus == 0:
-            # Just allocate the CPU to worker server
-            cpu = 0
-            worker_device = "/job:worker/task:%d/cpu:%d" % (FLAGS.task_index, cpu)
+    # The device setter will automatically place Variables ops on separate
+    # parameter servers (ps). The non-Variable ops will be placed on the workers.
+    # The ps use CPU and workers use corresponding GPU
+    with tf.device(tf.train.replica_device_setter( worker_device=worker_device,
+                                                   ps_device="/job:ps/cpu:0",
+                                                   cluster=cluster)):
+        global_step = tf.Variable(0, name="global_step", trainable=False)
 
-        # The device setter will automatically place Variables ops on separate
-        # parameter servers (ps). The non-Variable ops will be placed on the workers.
-        # The ps use CPU and workers use corresponding GPU
-        with tf.device(
-                tf.train.replica_device_setter(
-                    worker_device=worker_device,
-                    ps_device="/job:ps/cpu:0",
-                    cluster=cluster)):
-            global_step = tf.Variable(0, name="global_step", trainable=False)
+        NN = NeuralNetwork()
+        opt = NN.build_model(FLAGS, optimizer_epoch, global_step, nodes_per_layer,
+                             learning_rate, activation, optimizer, logging)
 
-            NN = NeuralNetwork()
-            opt = NN.build_model(FLAGS, optimizer_epoch, global_step, nodes_per_layer,
-                                 learning_rate, activation, optimizer, logging)
+        if FLAGS.sync_replicas:
+            local_init_op = opt.local_step_init_op
+            if is_chief:
+                local_init_op = opt.chief_init_op
 
-            if FLAGS.sync_replicas:
-                # You can create the hook which handles initialization and queues.
-                sync_replicas_hook = opt.make_session_run_hook(is_chief,
-                                                               num_tokens=num_workers)
+            ready_for_local_init_op = opt.ready_for_local_init_op
 
-        train_epoch_itr = 0
-        prev_loss = 0.0
-        hooks = [sync_replicas_hook, tf.train.StopAtStepHook(last_step=train_epochs)]
+            # Initial token and chief queue runners required by the sync_replicas mode
+            chief_queue_runner = opt.get_chief_queue_runner()
+            sync_init_op = opt.get_init_tokens_op()
+
+        saver = tf.train.Saver()
+        #saver = None
+        init_op = tf.global_variables_initializer()
+        summary_op = tf.summary.merge_all()
+
+        if FLAGS.sync_replicas:
+            sv = tf.train.Supervisor(
+                    is_chief=is_chief,
+                    logdir=train_log_dir,
+                    # logdir="/tmp/nn_dist/train_logs",
+                    init_op=init_op,
+                    local_init_op=local_init_op,
+                    ready_for_local_init_op=ready_for_local_init_op,
+                    recovery_wait_secs=1,
+                    saver=saver,
+                    global_step=global_step)
+        else:
+            sv = tf.train.Supervisor(
+                    is_chief=is_chief,
+                    logdir=train_log_dir,
+                    # logdir="/tmp/nn_dist/train_logs",
+                    init_op=init_op,
+                    summary_op=summary_op,
+                    recovery_wait_secs=1,
+                    saver=saver,
+                    global_step=global_step)
+
+        sess_config = tf.ConfigProto(
+                    allow_soft_placement=True,
+                    log_device_placement=False,
+                    device_filters=["/job:ps", "/job:worker/task:%d" % FLAGS.task_index])
+
+        # The chief worker (task_index==0) session will prepare the session,
+        # while the remaining workers will wait for the preparation to complete.
+        if is_chief:
+            logging.info("Worker %d Initializing session...",FLAGS.task_index)
+        else:
+            logging.info("Worker %d Waiting for session to be initialized...", FLAGS.task_index)
+        # Reference:
+        # http://stackoverflow.com/questions/43084960/tensorflow-variables-are-not-initialized-using-between-graph-replication
+        if FLAGS.existing_servers:
+            server_grpc_url = "grpc://" + worker_spec[FLAGS.task_index]
+            logging.info("[%d] Using existing server at: %s", optimizer_epoch, server_grpc_url)
+            sess = sv.prepare_or_wait_for_session(server_grpc_url, config=sess_config)
+        else:
+            sess = sv.prepare_or_wait_for_session(server.target, config=sess_config)
+
+        logging.info("[%d] Worker %d: Session initialization complete.",optimizer_epoch, FLAGS.task_index)
+
+        if FLAGS.sync_replicas and is_chief:
+            # Chief worker will start the chief queue runner and call the init op.
+            sess.run(sync_init_op)
+            sv.start_queue_runners(sess, [chief_queue_runner])
 
         # Perform training
         time_begin = time.time()
-        logging.info("[%d] Training begins @ %f", optimizer_epoch, time_begin)
+        logging.info("[%d] Training begins @ %f",optimizer_epoch, time_begin)
 
-        # The MonitoredTrainingSession takes care of session initialization,
-        # restoring from a checkpoint, saving to a checkpoint, and closing when done
-        # or an error occurs.
-        with tf.train.MonitoredTrainingSession(master=server.target,
-                                               is_chief=is_chief,
-                                               #checkpoint_dir=train_log_dir,
-                                               hooks=hooks,
-                                               config=sess_config) as sess:
-            while not sess.should_stop():
-                # randomly pick input (row) and targeted output vectors from N
-                indices = np.random.randint(len(X_train), size=batch_size)
-                _f = X_train[indices, :]
-                _y = Y_train[indices]
-
-                costs = NN.train(sess, _f, _y, batch_size)
-                if costs == -1:
-                    return -1, -1
-
-                now = time.time()
-                if (not train_epoch_itr % 200):
-                    logging.info("[%d] %s/%d %f: training step %d done with Loss %f",
-                                 optimizer_epoch, FLAGS.job_name, FLAGS.task_index, now,
-                                 train_epoch_itr, costs[-1])
-
-                # error tolerance threshold
-                if abs(prev_loss - float(costs[-1])) > tolerance:
-                    prev_loss = costs[-1]
-                else:
-                    if costs[-1] > 99999.0:
-                        # Ignore the iteration.
-                        continue
-                    else:
-                        logging.info("avg_loss: %f prev_loss: %f",costs[-1], prev_loss)
-                        logging.info("LOSS CONVERGED...at epoch %d",train_epoch_itr)
-                        break
-
-                train_epoch_itr = train_epoch_itr + 1
+        costs = NN.train(FLAGS, optimizer_epoch, train_epochs, sess, tolerance,
+                         X_train, Y_train, batch_size, global_step, logging)
+        if costs == -1:
+            #sv.stop()
+            return -1, -1
 
         time_end = time.time()
         logging.info("[%d] Training ends @ %f", optimizer_epoch, time_end)
         training_time = time_end - time_begin
         logging.info("[%d] Training elapsed time: %f s", optimizer_epoch, training_time)
 
-        worker_loss = "opt_epoch_loss_%d" % (FLAGS.task_index)
-        epoch_result[worker_loss] = costs[-1]
-        pickle.dump(epoch_result, open("epoch_result.p", "wb"))
+        # predict
+        y_hat = NN.predict(FLAGS, X_test, Y_test, optimizer_epoch, logging)
 
-        logging.info("FINAL Training Loss:%f", costs[-1])
+    # Ask for all the services to stop.
+    #sv.stop()
+
+    # return results
+    return costs, y_hat
 
 
 def main(unused_argv):
@@ -255,9 +274,15 @@ def main(unused_argv):
     logging.info(epoch_config)
 
     # Build and Execute TensorFlow Graph
-    build_and_execute_graph(X_train, X_test, Y_train, Y_test, train_tolerance, train_log_dir,
+    costs, y_hat = build_and_execute_graph(X_train, X_test, Y_train, Y_test, train_tolerance, train_log_dir,
                                            learning_rate, activation, train_optimizer, nodes_per_layer,
-                                           batch_size, opt_epoch_iter, train_epochs, logging, epoch_result)
+                                           batch_size, opt_epoch_iter, train_epochs, logging)
+
+    worker_loss = "opt_epoch_loss_%d" % (FLAGS.task_index)
+    epoch_result[worker_loss] = costs[-1]
+    pickle.dump(epoch_result, open("epoch_result.p", "wb"))
+
+    logging.info("FINAL Training Loss:%f",costs[-1])
 
 
 if __name__ == "__main__":
