@@ -172,7 +172,7 @@ def my_config():
     # --------------------------------
     # Hyper Parameter For Optimization
     # --------------------------------
-    nn_dimensions      = [4, 1]    # number of neural network nodes for [input, output]
+    nn_dimensions   = [4, 1]    # number of neural network nodes for [input, output]
                                 # input: should match lenght of input matrix (X)
                                 # output: should be 1: for regressor (Y predict for a row in X)
     batch_size      = [100, 1000]       # batch size as [lower_bound, upper_bound]
@@ -198,10 +198,10 @@ def my_config():
     # -----------------------
     # Cluster server configs
     # -----------------------
-    ps_hosts = 'localhost:2223,localhost:2224'  # parameter server config
-    worker_hosts = 'localhost:2225,localhost:2226,localhost:2227,localhost:2228'    # worker server config
-    # ps_hosts = 'localhost:2223'  # parameter server config
-    # worker_hosts = 'localhost:2225'    # worker server config
+    ps_hosts        = 'localhost:2223,localhost:2224'  # parameter server config
+    worker_hosts    = 'localhost:2225,localhost:2226,localhost:2227,localhost:2228' # worker server config
+    # ps_hosts        = 'localhost:2223'  # parameter server config
+    # worker_hosts    = 'localhost:2225'  # worker server config
 
     # ---------------------------------
     # Logging Level and Directory
@@ -217,6 +217,11 @@ def my_config():
     # aggregated before applied to avoid stale gradients
     # ----------------------------------------------------
     sync_replicas   = False  # Use the sync_replicas (synchronized replicas) mode
+
+    # -------------------------------------
+    # GPU config
+    # -------------------------------------
+    num_gpus        = 0  # Number of GPUs. If > 0 GPUs will be used by Worker. Otherwise CPUs.
 
     # -------------------------------------
     # File to be forked for distributed jobs

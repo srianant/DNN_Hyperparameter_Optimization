@@ -84,6 +84,11 @@ logging_level:
 sync_replicas: false    # Use the sync_replicas (synchronized replicas) mode
 
 # -------------------------------------
+# GPU config
+# -------------------------------------
+num_gpus: 0             # Number of GPUs. If > 0 GPUs will be used by Worker. Otherwise CPUs.
+
+# -------------------------------------
 # Tensorflow Distributed Cluster Config
 # Format:
 # localhost:port_number (or)

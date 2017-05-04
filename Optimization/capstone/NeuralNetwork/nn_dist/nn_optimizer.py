@@ -73,6 +73,8 @@ class Optimize(object):
             raise ValueError("Must provide a positive integer number")
         if self.C['load_data'] != False:
             raise ValueError("Loading real data is not supported...coming soon !!")
+        if self.C['num_gpus'] < 0 and self.C['num_gpus'] > 9999:
+            raise ValueError(" Number of GPUs should between 0 - 9999 ")
         if len(self.C['logging_level']) > 1:
             self.C['logging_level'] = 'info'
         # Add new/additional parameter checking above this line
@@ -172,6 +174,7 @@ class Optimize(object):
         self.epoch_config.update({'train_epoch': self.C['train_epoch']})
         self.epoch_config.update({'opt_epoch': self.C['opt_epoch']})
         self.epoch_config.update({'load_data': self.C['load_data']})
+        self.epoch_config.update({'num_gpus': self.C['num_gpus']})
 
         if self.C['load_data'] == False:
             self.epoch_config.update({'input_dim': self.C['nn_dimensions'][0]})

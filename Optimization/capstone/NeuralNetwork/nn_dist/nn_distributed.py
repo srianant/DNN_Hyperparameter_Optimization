@@ -4,7 +4,7 @@
     File Version      : 1.0
     Author            : Srini Ananthakrishnan
     Date created      : 04/19/2017
-    Date last modified: 05/02/2017
+    Date last modified: 05/04/2017
     Python Version    : 3.5
     Tensorflow Version: 1.0.1
 """
@@ -19,7 +19,6 @@ import pickle
 import tensorflow as tf
 import logging as logger
 import numpy as np
-import pprint
 from nn_model import NeuralNetwork
 from prepare_data import PrepareData
 
@@ -32,9 +31,6 @@ flags.DEFINE_integer("task_index", None,
                      "Worker task index, should be >= 0. task_index=0 is "
                      "the master worker task the performs the variable "
                      "initialization ")
-flags.DEFINE_integer("num_gpus", 0,
-                     "Total number of gpus for each machine."
-                     "If you don't use GPU, please set it to '0'")
 flags.DEFINE_integer("replicas_to_aggregate", None,
                      "Number of replicas to aggregate before parameter update"
                      "is applied (For sync_replicas mode only; default: "
@@ -100,11 +96,21 @@ def build_dnn_regressor(X_train, Y_train, epoch_config, epoch_result, logging):
         "worker": worker_spec})
 
     server = tf.train.Server(cluster, job_name=FLAGS.job_name,
-                             task_index=FLAGS.task_index, protocol="grpc")
+                             task_index=FLAGS.task_index)
+
+    if epoch_config['num_gpus'] > 0:
+        # If true, the allocator does not pre-allocate the entire specified
+        # GPU memory region, instead starting small and growing as needed.
+        gpu_options = tf.GPUOptions(allow_growth=True)
+    else:
+        # Default
+        gpu_options = tf.GPUOptions(allow_growth=False)
+
 
     sess_config = tf.ConfigProto(
         allow_soft_placement=True,
         log_device_placement=False,
+        gpu_options=gpu_options,
         device_filters=["/job:ps", "/job:worker/task:%d" % FLAGS.task_index])
 
     if FLAGS.job_name == "ps":
@@ -113,14 +119,15 @@ def build_dnn_regressor(X_train, Y_train, epoch_config, epoch_result, logging):
 
     elif FLAGS.job_name == "worker":
         is_chief = (FLAGS.task_index == 0)
-        if FLAGS.num_gpus > 0:
-            if FLAGS.num_gpus < num_workers:
-                raise ValueError("number of gpus is less than number of workers")
+        if epoch_config['num_gpus'] > 0:
+            # https://github.com/tensorflow/tensorflow/issues/7312
+            # if epoch_config['num_gpus'] < num_workers:
+            #     raise ValueError("number of gpus is less than number of workers")
             # Avoid gpu allocation conflict: now allocate task_num -> #gpu
             # for each worker in the corresponding machine
-            gpu = (FLAGS.task_index % FLAGS.num_gpus)
+            gpu = (FLAGS.task_index % epoch_config['num_gpus'])
             worker_device = "/job:worker/task:%d/gpu:%d" % (FLAGS.task_index, gpu)
-        elif FLAGS.num_gpus == 0:
+        elif epoch_config['num_gpus'] == 0:
             # Just allocate the CPU to worker server
             cpu = 0
             worker_device = "/job:worker/task:%d/cpu:%d" % (FLAGS.task_index, cpu)
