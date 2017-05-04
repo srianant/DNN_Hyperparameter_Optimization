@@ -175,6 +175,7 @@ class Optimize(object):
         self.epoch_config.update({'opt_epoch': self.C['opt_epoch']})
         self.epoch_config.update({'load_data': self.C['load_data']})
         self.epoch_config.update({'num_gpus': self.C['num_gpus']})
+        self.epoch_config.update({'running_stage': self.C['running_stage']})
 
         if self.C['load_data'] == False:
             self.epoch_config.update({'input_dim': self.C['nn_dimensions'][0]})
@@ -278,12 +279,5 @@ class Optimize(object):
 
             print("[%d]" % opt_epoch_iter,'EPOCH LOSS:',new_loss, 'BEST LOSS:',best_loss)
             print("END OF Optimizer EPOCH =====================>>[",opt_epoch_iter,"]")
-            print("\n")
 
-        print("=========================")
-        print("Summary:")
-        print("=========================")
-        print("Total EPOCH runs:", opt_epoch_iter)
-        print("FINAL LOSS......:", best_loss)
-        print("=========================")
         return best_loss

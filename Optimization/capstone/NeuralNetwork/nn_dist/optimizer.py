@@ -159,6 +159,33 @@ def processClusterJobs(file2distribute, mode='kill', _config=None, pids=None):
         killClusterJobs(pids)
 
 
+def build_stage_config(_config, epoch_config):
+    """Build stage configuration
+    
+    Args:
+        _config: previous stage config
+        best_epoch_config: best config results from previous stage
+    Returns:
+        Next stage config
+    """
+    # Determine the lower and upper bounds based on previous stage results
+    # Formula: [p - p/2 ,p + p/2] will be [LB, UB]. Where p is prev_config.
+
+    _lb = epoch_config['batch_size'] - epoch_config['batch_size']/2
+    _ub = epoch_config['batch_size'] + epoch_config['batch_size']/2
+    _config['batch_size'] = [_lb, _ub]
+
+    _lb = epoch_config['learning_rate'] - epoch_config['learning_rate']/2.0
+    _ub = epoch_config['learning_rate'] + epoch_config['learning_rate']/2.0
+    _config['learning_rate'] = [_lb, _ub]
+
+    _lb = min(epoch_config['nodes_per_layer'])
+    _ub = max(epoch_config['nodes_per_layer'])
+    _config['hidden_layers'] = [_lb, _ub]
+
+    return _config
+
+
 @ex.config
 def my_config():
     """Default Configs for Hyper Parameter Optimization
@@ -228,6 +255,32 @@ def my_config():
     # -------------------------------------
     file2distribute = 'nn_distributed.py'   # File to be forked for distributed jobs
 
+    # ----------------------------------------------------------------
+    # Stages: Number of time Optimizer and Training Epochs are run
+    # Usage:
+    # Stage 1 - largest search:
+    #   Inner iterations = 1K
+    #   Outer iterations = 10K
+    #
+    # Stage 2 - search with smaller volume around best pt of Stage 1:
+    #   Inner iterations = 5K
+    #   Outer iterations = 2K
+    #
+    # Stage 3 - search with smaller volume around best pt from Stage 2:
+    #   Inner iterations = 10K
+    #   Outer iterations = 1K
+    # Note: Very Very CPU intensive
+    # Syntax: opt_stages = [[Inner,Outer]]
+    # -----------------------------------------------------------------
+    # Keeping default so it can be run on local CPU/GPU
+    # opt_stages      = [[1000,3]]
+    # Test config
+    opt_stages      = [[1000,4],[700,3],[500,2]]    # [Stage_1, Stage_2, Stage_3] with each stage has [Outer_loop, Inner_loop] epoch
+    # For Training On Cloud
+    # opt_stages      = [[1000,10000],[5000,2000],[10000,1000]]
+    running_stage   = 0     # placeholder to indicate running stage. Not a configuration.
+
+
 
 @ex.automain
 def main(_config, _run):
@@ -253,17 +306,48 @@ def main(_config, _run):
 
     """
     _config['name'] = _run.meta_info['options']['--name']
-    OPT = eval(_config['trainer'])(_config)
 
     #result = OPT.test_sacred()
-    # "nn_distributed.py"
-    result = OPT.optimize_params(processClusterJobs)
 
-    # Load results of ALL worker
-    best_epoch_config = pickle.load(open("epoch_best_config.p", "rb"))
+    opt_stages = _config['opt_stages']
+    num_stages = len(opt_stages)
+
+    if num_stages > 0:
+        for stage in range(num_stages):
+
+            print("START OF STAGED EPOCH #######################>> [",stage+1,"]")
+
+            _config['running_stage'] = stage+1 # indicates to user running stage
+            _config['train_epoch']   = opt_stages[stage][0] # Training Epoch (Inner_Loop)
+            _config['opt_epoch']     = opt_stages[stage][1] # Optimizer Epoch (Outer_Loop)
+
+            if stage > 0:
+                _config = build_stage_config(_config, best_epoch_config)
+
+            OPT = eval(_config['trainer'])(_config)
+            result = OPT.optimize_params(processClusterJobs)
+
+            # Load results of best worker
+            best_epoch_config = pickle.load(open("epoch_best_config.p", "rb"))
+
+            print("END OF STAGED EPOCH #######################>>[",stage+1,"]\n")
+    else:
+        OPT = eval(_config['trainer'])(_config)
+        result = OPT.optimize_params(processClusterJobs)
+
+        # Load results of best worker
+        best_epoch_config = pickle.load(open("epoch_best_config.p", "rb"))
+
+    print("=========================")
+    print("Summary:")
+    print("=========================")
+    print("Stages.......:", opt_stages)
+    print("FINAL LOSS...:", result)
+    print("=========================")
 
     # print BEST epoch run config
     pprint('BEST Epoch config:')
+    print("--------------------")
     pprint(best_epoch_config)
 
     return result

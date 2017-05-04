@@ -47,6 +47,43 @@ train_tolerance: 1.0e-08  # inner train loop loss convergence threshold
 opt_epoch: 3              # optimizer epoch is the outer loop for optimizing hyperparameters
 train_epoch: 1000         # training epoch is the inner loop for training input data
 
+# ----------------------------------------------------------------
+# Stages: Number of time Optimizer and Training Epochs are run
+# Usage:
+# Stage 1 - largest search:
+#   Inner iterations = 1K
+#   Outer iterations = 10K
+#
+# Stage 2 - search with smaller volume around best pt of Stage 1:
+#   Inner iterations = 5K
+#   Outer iterations = 2K
+#
+# Stage 3 - search with smaller volume around best pt from Stage 2:
+#   Inner iterations = 10K
+#   Outer iterations = 1K
+# -----------------------------------------------------------------
+# Default config to run on CPU
+#opt_stages:
+#- - 1000
+#  - 10
+# Test config
+opt_stages:
+- - 1000
+  - 4
+- - 700
+  - 3
+- - 500
+  - 2
+# For Training On Cloud
+#opt_stages:
+#- - 1000
+#  - 10000
+#- - 5000
+#  - 2000
+#- - 10000
+#  - 1000
+running_stage: 0          # placeholder to indicate running stage. Not a configuration.
+
 # ----------------------------------------
 # Parameters for synthetic data generation
 # Valid ONLY when load_data is false

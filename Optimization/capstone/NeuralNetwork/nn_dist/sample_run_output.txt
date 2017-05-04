@@ -1,5 +1,5 @@
 File: Sample_Run_Output
-Updated: 04/28/2017
+Updated: 05/04/2017
 Author: Srini Ananthakrishnan
 
 Note: Look at ps_0.log and worker_0.log for training epoch logs (inner-loop)
@@ -9,203 +9,285 @@ Below is optimizer output (outer-loop)
 OPTIMIZER Output
 =================
 
-(tensorflow) Srinivasas-Air:nn_dist srianant$ python optimizer.py with optimizer_config.yaml
+
+(tensorflow) Srinivasas-MacBook-Air:nn_dist srianant$ python optimizer.py print_config with opt_stages=[[1000,5]]
+Configuration (modified, added, typechanged, doc):
+  """Default Configs for Hyper Parameter Optimization
+
+  Returns:
+       None
+  """
+  activation = ['Relu', 'tanh']      # activation for non-linearity. Default is 'Relu'. Supports 'tanh'
+  add_cosine = False                 # transforms Y to element wise cosine (used if power_method is True)
+  add_noise = False                  # adds random noise to output Y (used if power_method is True)
+  batch_size = [100, 1000]           # batch size as [lower_bound, upper_bound]
+  data_features = 4                  # number of input data instances (N). Used ONLY load_data is false
+  data_instances = 10000             # number of input data instances (N). Used ONLY load_data is false
+  file2distribute = 'nn_distributed.py'    # File to be forked for distributed jobs
+  hidden_layers = [4, 10]            # hidden_layer [min, max]
+  hyperparam_opt = 'RS'              # hyper parameter optimizer. Default RS: Random Search.
+  learning_rate = [0.001, 0.0001]    # learning rate as [lower_bound, upper_bound]
+  load_data = False                  # When 'True' Load real data(X) of shape (N, M) and labels(Y) of shape (N,). Otherwise generate synthetic data.
+  load_data_dir = '/tmp/some_dir'    # Real data directory (like Boston, Iris, etc.)
+  logging_level = ['critical', 'error', 'warning', 'info', 'debug', 'notset']    # Default is info.
+  nn_dimensions = [4, 1]             # number of neural network nodes for [input, output]
+  num_gpus = 0                       # Number of GPUs. If > 0 GPUs will be used by Worker. Otherwise CPUs.
+  opt_epoch = 3                      # optimizer epoch is the outer loop for optimizing hyperparameters
+  opt_stages = [[1000, 5]]           # [Stage_1, Stage_2, Stage_3] with each stage has [Outer_loop, Inner_loop] epoch
+  opt_tolerance = 1e-05              # outer optimizer loop loss convergence threshold
+  power_method = False               # generate matrix polynomial of incremental "power" of (M). Used ONLY load_data is false
+  ps_hosts = 'localhost:2223,localhost:2224'    # parameter server config
+  running_stage = 0                  # placeholder to indicate running stage. Not a configuration.
+  seed = 488737637                   # the random seed for this experiment
+  sync_replicas = False              # Use the sync_replicas (synchronized replicas) mode
+  train_epoch = 100                  # training epoch is the inner loop for training input data
+  train_log_dir = '/tmp/nn_dist/train_logs'    # training logs directory
+  train_optimizer = ['Adam', 'sgd', 'Adagrad']    # optimizer to be used for train. Default is 'Adam'. Supports 'sgd', 'Adagrad'
+  train_tolerance = 1e-08            # inner train loop loss convergence threshold
+  trainer = 'Optimize'               # Optimizer Class Name
+  worker_hosts = 'localhost:2225,localhost:2226,localhost:2227,localhost:2228'    # worker server config
+(tensorflow) Srinivasas-MacBook-Air:nn_dist srianant$
+(tensorflow) Srinivasas-MacBook-Air:nn_dist srianant$ python optimizer.py  with opt_stages=[[1000,5]]
+START OF STAGED EPOCH #######################>> [ 1 ]
 'Epoch [1] config:'
 {'activation': 'Relu',
  'add_cosine': False,
  'add_noise': False,
- 'batch_size': 651,
+ 'batch_size': 557,
  'data_features': 4,
  'data_instances': 10000,
+ 'file2distribute': 'nn_distributed.py',
  'hidden_layer_bounds': [4, 10],
  'input_dim': 4,
- 'learning_rate': 0.00040498285677880504,
+ 'learning_rate': 0.0007698932646687807,
  'load_data': False,
  'logging_level': 'info',
- 'nodes_per_layer': [4, 7, 7, 4, 4, 4, 5, 9, 9, 1],
- 'opt_epoch': 3,
+ 'nodes_per_layer': [4, 6, 9, 8, 7, 8, 6, 7, 1],
+ 'num_gpus': 0,
+ 'opt_epoch': 5,
  'opt_epoch_iter': 1,
  'opt_tolerance': 1e-05,
  'output_dim': 1,
  'power_method': False,
- 'ps_hosts': 'localhost:2223',
+ 'ps_hosts': 'localhost:2223,localhost:2224',
+ 'running_stage': 1,
+ 'sync_replicas': False,
  'train_epoch': 1000,
  'train_log_dir': '/tmp/nn_dist/train_logs',
  'train_optimizer': 'sgd',
  'train_tolerance': 1e-08,
- 'worker_hosts': 'localhost:2225'}
- START OF Optimizer EPOCH ====================>> [ 1 ]
-Deleteing /tmp/nn_dist
-Forking Worker/PS Cluster Jobs @  1493435700.688643
-cmd: %s python nn_distributed.py --ps_hosts=localhost:2223 --worker_hosts=localhost:2225 --job_name=ps --task_index=0
-cmd: %s python nn_distributed.py --ps_hosts=localhost:2223 --worker_hosts=localhost:2225 --job_name=worker --task_index=0
+ 'worker_hosts': 'localhost:2225,localhost:2226,localhost:2227,localhost:2228'}
+START OF Optimizer EPOCH ====================>> [ 1 ]
+Forking Worker/PS Cluster Jobs @  1493929781.728755
 Waiting for Worker process to complete....
-INFO:tensorflow:SyncReplicasV2: replicas_to_aggregate=1; total_num_replicas=1
-INFO:tensorflow:global_step/sec: 0
-poller flags: 16 14
-All Worker Process DONE...!!!
-Worker processing ends @  1493435790.118755
-Worker processing elapsed time:  89.43011212348938  secs
+1 / 4  of Worker Process Done..!!
+2 / 4  of Worker Process Done..!!
+3 / 4  of Worker Process Done..!!
+4 / 4  of Worker Process DONE..!!
+Worker processing ends @  1493929820.453194
+Worker processing elapsed time:  38.72443890571594 secs
 Cleanup Worker/PS Cluster Jobs..
-new_loss: 0.238770143062 best_loss: 0.238770143062
+[1] EPOCH LOSS: 0.0269594839932 BEST LOSS: 0.0269594839932
 END OF Optimizer EPOCH =====================>>[ 1 ]
-
 'Epoch [2] config:'
 {'activation': 'tanh',
  'add_cosine': False,
  'add_noise': False,
- 'batch_size': 897,
+ 'batch_size': 505,
  'data_features': 4,
  'data_instances': 10000,
+ 'file2distribute': 'nn_distributed.py',
  'hidden_layer_bounds': [4, 10],
  'input_dim': 4,
- 'learning_rate': 0.00025201250784043976,
+ 'learning_rate': 0.0002537544242404167,
  'load_data': False,
  'logging_level': 'info',
- 'nodes_per_layer': [4, 9, 6, 8, 8, 6, 8, 5, 1],
- 'opt_epoch': 3,
+ 'nodes_per_layer': [4, 7, 8, 7, 6, 7, 8, 1],
+ 'num_gpus': 0,
+ 'opt_epoch': 5,
  'opt_epoch_iter': 2,
  'opt_tolerance': 1e-05,
  'output_dim': 1,
  'power_method': False,
- 'ps_hosts': 'localhost:2223',
+ 'ps_hosts': 'localhost:2223,localhost:2224',
+ 'running_stage': 1,
+ 'sync_replicas': False,
  'train_epoch': 1000,
  'train_log_dir': '/tmp/nn_dist/train_logs',
  'train_optimizer': 'Adagrad',
  'train_tolerance': 1e-08,
- 'worker_hosts': 'localhost:2225'}
- START OF Optimizer EPOCH ====================>> [ 2 ]
-Deleteing /tmp/nn_dist
-Forking Worker/PS Cluster Jobs @  1493435790.179285
-cmd: %s python nn_distributed.py --ps_hosts=localhost:2223 --worker_hosts=localhost:2225 --job_name=ps --task_index=0
-cmd: %s python nn_distributed.py --ps_hosts=localhost:2223 --worker_hosts=localhost:2225 --job_name=worker --task_index=0
+ 'worker_hosts': 'localhost:2225,localhost:2226,localhost:2227,localhost:2228'}
+START OF Optimizer EPOCH ====================>> [ 2 ]
+Forking Worker/PS Cluster Jobs @  1493929820.457014
 Waiting for Worker process to complete....
-INFO:tensorflow:SyncReplicasV2: replicas_to_aggregate=1; total_num_replicas=1
-INFO:tensorflow:global_step/sec: 0
-poller flags: 16 14
-All Worker Process DONE...!!!
-Worker processing ends @  1493435860.357282
-Worker processing elapsed time:  70.17799687385559  secs
+1 / 4  of Worker Process Done..!!
+2 / 4  of Worker Process Done..!!
+3 / 4  of Worker Process Done..!!
+4 / 4  of Worker Process DONE..!!
+Worker processing ends @  1493929836.460364
+Worker processing elapsed time:  16.003350019454956 secs
 Cleanup Worker/PS Cluster Jobs..
-new_loss: 2.08489019087 best_loss: 0.238770143062
+[2] EPOCH LOSS: 9.59135219583 BEST LOSS: 0.0269594839932
 END OF Optimizer EPOCH =====================>>[ 2 ]
-
-
 'Epoch [3] config:'
-{'activation': 'Relu',
+{'activation': 'tanh',
  'add_cosine': False,
  'add_noise': False,
- 'batch_size': 825,
+ 'batch_size': 641,
  'data_features': 4,
  'data_instances': 10000,
+ 'file2distribute': 'nn_distributed.py',
  'hidden_layer_bounds': [4, 10],
  'input_dim': 4,
- 'learning_rate': 0.0001980480347370466,
+ 'learning_rate': 0.00045781634430175334,
  'load_data': False,
  'logging_level': 'info',
- 'nodes_per_layer': [4, 8, 7, 9, 8, 5, 8, 6, 6, 1],
- 'opt_epoch': 3,
+ 'nodes_per_layer': [4, 4, 8, 9, 8, 7, 4, 1],
+ 'num_gpus': 0,
+ 'opt_epoch': 5,
  'opt_epoch_iter': 3,
  'opt_tolerance': 1e-05,
  'output_dim': 1,
  'power_method': False,
- 'ps_hosts': 'localhost:2223',
+ 'ps_hosts': 'localhost:2223,localhost:2224',
+ 'running_stage': 1,
+ 'sync_replicas': False,
  'train_epoch': 1000,
  'train_log_dir': '/tmp/nn_dist/train_logs',
  'train_optimizer': 'Adagrad',
  'train_tolerance': 1e-08,
- 'worker_hosts': 'localhost:2225'}
- START OF Optimizer EPOCH ====================>> [ 3 ]
-Deleteing /tmp/nn_dist
-Forking Worker/PS Cluster Jobs @  1493435860.415272
-cmd: %s python nn_distributed.py --ps_hosts=localhost:2223 --worker_hosts=localhost:2225 --job_name=ps --task_index=0
-cmd: %s python nn_distributed.py --ps_hosts=localhost:2223 --worker_hosts=localhost:2225 --job_name=worker --task_index=0
+ 'worker_hosts': 'localhost:2225,localhost:2226,localhost:2227,localhost:2228'}
+START OF Optimizer EPOCH ====================>> [ 3 ]
+Forking Worker/PS Cluster Jobs @  1493929836.484284
 Waiting for Worker process to complete....
-INFO:tensorflow:SyncReplicasV2: replicas_to_aggregate=1; total_num_replicas=1
-INFO:tensorflow:global_step/sec: 0
-poller flags: 16 14
-All Worker Process DONE...!!!
-Worker processing ends @  1493435930.778613
-Worker processing elapsed time:  70.36334109306335  secs
+1 / 4  of Worker Process Done..!!
+2 / 4  of Worker Process Done..!!
+3 / 4  of Worker Process Done..!!
+4 / 4  of Worker Process DONE..!!
+Worker processing ends @  1493929878.040178
+Worker processing elapsed time:  41.55589413642883 secs
 Cleanup Worker/PS Cluster Jobs..
-new_loss: 308.475412811 best_loss: 0.238770143062
+[3] EPOCH LOSS: 7.23141549005 BEST LOSS: 0.0269594839932
 END OF Optimizer EPOCH =====================>>[ 3 ]
-
+'Epoch [4] config:'
+{'activation': 'tanh',
+ 'add_cosine': False,
+ 'add_noise': False,
+ 'batch_size': 745,
+ 'data_features': 4,
+ 'data_instances': 10000,
+ 'file2distribute': 'nn_distributed.py',
+ 'hidden_layer_bounds': [4, 10],
+ 'input_dim': 4,
+ 'learning_rate': 0.000334777770247445,
+ 'load_data': False,
+ 'logging_level': 'info',
+ 'nodes_per_layer': [4, 9, 6, 6, 6, 8, 6, 1],
+ 'num_gpus': 0,
+ 'opt_epoch': 5,
+ 'opt_epoch_iter': 4,
+ 'opt_tolerance': 1e-05,
+ 'output_dim': 1,
+ 'power_method': False,
+ 'ps_hosts': 'localhost:2223,localhost:2224',
+ 'running_stage': 1,
+ 'sync_replicas': False,
+ 'train_epoch': 1000,
+ 'train_log_dir': '/tmp/nn_dist/train_logs',
+ 'train_optimizer': 'Adam',
+ 'train_tolerance': 1e-08,
+ 'worker_hosts': 'localhost:2225,localhost:2226,localhost:2227,localhost:2228'}
+START OF Optimizer EPOCH ====================>> [ 4 ]
+Forking Worker/PS Cluster Jobs @  1493929878.061039
+Waiting for Worker process to complete....
+1 / 4  of Worker Process Done..!!
+2 / 4  of Worker Process Done..!!
+3 / 4  of Worker Process Done..!!
+4 / 4  of Worker Process DONE..!!
+Worker processing ends @  1493929920.427402
+Worker processing elapsed time:  42.36636304855347 secs
+Cleanup Worker/PS Cluster Jobs..
+[4] EPOCH LOSS: 0.159916125511 BEST LOSS: 0.0269594839932
+END OF Optimizer EPOCH =====================>>[ 4 ]
+'Epoch [5] config:'
+{'activation': 'tanh',
+ 'add_cosine': False,
+ 'add_noise': False,
+ 'batch_size': 679,
+ 'data_features': 4,
+ 'data_instances': 10000,
+ 'file2distribute': 'nn_distributed.py',
+ 'hidden_layer_bounds': [4, 10],
+ 'input_dim': 4,
+ 'learning_rate': 0.0008714117081009972,
+ 'load_data': False,
+ 'logging_level': 'info',
+ 'nodes_per_layer': [4, 8, 6, 4, 8, 6, 1],
+ 'num_gpus': 0,
+ 'opt_epoch': 5,
+ 'opt_epoch_iter': 5,
+ 'opt_tolerance': 1e-05,
+ 'output_dim': 1,
+ 'power_method': False,
+ 'ps_hosts': 'localhost:2223,localhost:2224',
+ 'running_stage': 1,
+ 'sync_replicas': False,
+ 'train_epoch': 1000,
+ 'train_log_dir': '/tmp/nn_dist/train_logs',
+ 'train_optimizer': 'Adagrad',
+ 'train_tolerance': 1e-08,
+ 'worker_hosts': 'localhost:2225,localhost:2226,localhost:2227,localhost:2228'}
+START OF Optimizer EPOCH ====================>> [ 5 ]
+Forking Worker/PS Cluster Jobs @  1493929920.434803
+Waiting for Worker process to complete....
+1 / 4  of Worker Process Done..!!
+2 / 4  of Worker Process Done..!!
+3 / 4  of Worker Process Done..!!
+4 / 4  of Worker Process DONE..!!
+Worker processing ends @  1493929960.531852
+Worker processing elapsed time:  40.09704899787903 secs
+Cleanup Worker/PS Cluster Jobs..
+[5] EPOCH LOSS: 0.352962766703 BEST LOSS: 0.0269594839932
+END OF Optimizer EPOCH =====================>>[ 5 ]
+END OF STAGED EPOCH #######################>>[ 1 ]
 
 =========================
 Summary:
 =========================
-Total EPOCH runs: 3
-FINAL LOSS......: 0.238770143062
+Stages.......: [[1000, 5]]
+FINAL LOSS...: 0.0269594839932
 =========================
+'BEST Epoch config:'
+--------------------
+{'activation': 'Relu',
+ 'add_cosine': False,
+ 'add_noise': False,
+ 'batch_size': 557,
+ 'data_features': 4,
+ 'data_instances': 10000,
+ 'file2distribute': 'nn_distributed.py',
+ 'hidden_layer_bounds': [4, 10],
+ 'input_dim': 4,
+ 'learning_rate': 0.0007698932646687807,
+ 'load_data': False,
+ 'logging_level': 'info',
+ 'nodes_per_layer': [4, 6, 9, 8, 7, 8, 6, 7, 1],
+ 'num_gpus': 0,
+ 'opt_epoch': 5,
+ 'opt_epoch_iter': 1,
+ 'opt_tolerance': 1e-05,
+ 'output_dim': 1,
+ 'power_method': False,
+ 'ps_hosts': 'localhost:2223,localhost:2224',
+ 'running_stage': 1,
+ 'sync_replicas': False,
+ 'train_epoch': 1000,
+ 'train_log_dir': '/tmp/nn_dist/train_logs',
+ 'train_optimizer': 'sgd',
+ 'train_tolerance': 1e-08,
+ 'worker_hosts': 'localhost:2225,localhost:2226,localhost:2227,localhost:2228'}
+(tensorflow) Srinivasas-MacBook-Air:nn_dist srianant$
 
 
 
-
-
-
-
-
-
-
-
-
-
-===================
-OLD Updates:
-===================
-Updated: 04/22/2017
-
-Distributed RUN loss converged with approx 4200 epochs, compare to 17200 epocs on non-distribued.
-Also, distributed took 60 sec less than non-distribued. This was done with loss tolerance less than 1e-8. 
-
-=========================
-With SINGLE Worker-0/PS-0
-=========================
-[1] worker/0 1492895302.338650: training step 17231 done (global step: 137855) with Loss 0.000862, 0.000862
-[1] worker/0 1492895302.377362: training step 17232 done (global step: 137863) with Loss 0.000758, 0.000758
-[1] worker/0 1492895302.410056: training step 17233 done (global step: 137871) with Loss 0.000771, 0.000771
-[1] worker/0 1492895302.451053: training step 17234 done (global step: 137879) with Loss 0.000786, 0.000786
-0.000786289514585 0.0007862936175
-LOSS CONVERGED...at epoch 17235
-[1] worker/0 Training complete..!! FINAL LOSS: 0.000786289514585
-[1] worker/0 Training ends @ 1492895302.489425
-[1] worker/0 Training elapsed time: 562.705231 s
-[1] Predicted y_hat[:5]==> [ 0.96463321  0.69937066  0.96949387  0.96573468  0.87774031]
-y_hat[:5]===> [ 0.96463321  0.69937066  0.96949387  0.96573468  0.87774031]
-y_test[:5]==> [ 0.97753567  0.70309013  0.97447079  0.96657014  0.88810825]
-INFO:tensorflow:global_step/sec: 163.099
-{'best_itr': 1, 'best_loss': 0.00078628951458508149, '#best_params': [0.001]}
-(tensorflow) Srinivasas-Air:nn_dist srianant$
-
-
-===================================
-DISTRIBUTED Worker0/1/2/3 and PS0/1
-===================================
-
-[1] worker/1 1492895925.247058: training step 4235 done (global step: 33885) with Loss 0.001892, 0.001892
-[1] worker/3 1492895925.278795: training step 4235 done (global step: 33887) with Loss 0.001870, 0.001870
-[1] worker/2 1492895925.273438: training step 4235 done (global step: 33887) with Loss 0.001870, 0.001870
-[1] worker/0 1492895925.303801: training step 4235 done (global step: 33889) with Loss 0.001837, 0.001837
-[1] worker/1 1492895925.351957: training step 4236 done (global step: 33893) with Loss 0.001885, 0.001885
-0.00187020422774 0.00187020984877
-LOSS CONVERGED...at epoch 4236
-[1] worker/2 Training complete..!! FINAL LOSS: 0.00187020422774
-[1] worker/2 Training ends @ 1492895925.377287
-[1] worker/2 Training elapsed time: 504.472591 s
-0.00187020422774 0.00187020984877
-LOSS CONVERGED...at epoch 4236
-[1] worker/3 Training complete..!! FINAL LOSS: 0.00187020422774
-[1] worker/3 Training ends @ 1492895925.379011
-[1] worker/3 Training elapsed time: 504.427010 s
-[1] Predicted y_hat[:5]==> [ 0.97766795  0.71267078  0.97554962  0.96247383  0.8456245 ]
-[1] Predicted y_hat[:5]==> [ 0.97766795  0.71267078  0.97554962  0.96247383  0.8456245 ]
-y_hat[:5]===> [ 0.97766795  0.71267078  0.97554962  0.96247383  0.8456245 ]
-y_test[:5]==> [ 0.97753567  0.70309013  0.97447079  0.96657014  0.88810825]
-y_hat[:5]===> [ 0.97766795  0.71267078  0.97554962  0.96247383  0.8456245 ]
-y_test[:5]==> [ 0.97753567  0.70309013  0.97447079  0.96657014  0.88810825]
-INFO:tensorflow:global_step/sec: 14.309
-INFO:tensorflow:global_step/sec: 0
-{'best_itr': 1, '#best_params': [0.001], 'best_loss': 0.001870204227744286}
-(tensorflow) Srinivasas-Air:nn_dist srianant$ {'best_itr': 1, '#best_params': [0.001], 'best_loss': 0.001870204227744286}
 
