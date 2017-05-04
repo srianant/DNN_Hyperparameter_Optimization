@@ -105,15 +105,29 @@ def forkClusterJobs(file2distribute, _config):
     # http://stackoverflow.com/questions/3194018/wait-the-end-of-subprocesses-with-multiple-parallel-jobs
     pids = []
 
-    for task_index in range(num_ps):
-        subproc = runcmd('python %s --ps_hosts=%s --worker_hosts=%s --job_name=%s --task_index=%d'%(file2distribute, PS_HOSTS, WORKER_HOSTS, "ps", task_index))
-        pids.append(subproc.pid)
+    if _config['num_gpus'] > 0:
+        # Ref: https://stackoverflow.com/questions/39567835/tensorflow-out-of-memory-error-running-inception-v3-distributed-on-4-machines?rq=1
+        for task_index in range(num_ps):
+            subproc = runcmd('CUDA_VISIBLE_DEVICES='' python3 %s --ps_hosts=%s --worker_hosts=%s --job_name=%s --task_index=%d' % (
+            file2distribute, PS_HOSTS, WORKER_HOSTS, "ps", task_index))
+            pids.append(subproc.pid)
 
-    for task_index in range(num_workers):
-        subproc = runcmd('python %s --ps_hosts=%s --worker_hosts=%s --job_name=%s --task_index=%d'%(file2distribute, PS_HOSTS, WORKER_HOSTS, "worker", task_index))
-        pids.append(subproc.pid)
-        subprocs[subproc.stdout.fileno()] = subproc
-        poller.register(subproc.stdout, select.POLLHUP)
+        for task_index in range(num_workers):
+            subproc = runcmd('CUDA_VISIBLE_DEVICES=%d python3 %s --ps_hosts=%s --worker_hosts=%s --job_name=%s --task_index=%d' % (
+                task_index, file2distribute, PS_HOSTS, WORKER_HOSTS, "worker", task_index))
+            pids.append(subproc.pid)
+            subprocs[subproc.stdout.fileno()] = subproc
+            poller.register(subproc.stdout, select.POLLHUP)
+    else:
+        for task_index in range(num_ps):
+            subproc = runcmd('python3 %s --ps_hosts=%s --worker_hosts=%s --job_name=%s --task_index=%d'%(file2distribute, PS_HOSTS, WORKER_HOSTS, "ps", task_index))
+            pids.append(subproc.pid)
+
+        for task_index in range(num_workers):
+            subproc = runcmd('python3 %s --ps_hosts=%s --worker_hosts=%s --job_name=%s --task_index=%d'%(file2distribute, PS_HOSTS, WORKER_HOSTS, "worker", task_index))
+            pids.append(subproc.pid)
+            subprocs[subproc.stdout.fileno()] = subproc
+            poller.register(subproc.stdout, select.POLLHUP)
 
     print("Waiting for Worker process to complete....")
     done = False

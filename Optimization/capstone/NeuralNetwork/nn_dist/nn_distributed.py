@@ -101,7 +101,10 @@ def build_dnn_regressor(X_train, Y_train, epoch_config, epoch_result, logging):
     if epoch_config['num_gpus'] > 0:
         # If true, the allocator does not pre-allocate the entire specified
         # GPU memory region, instead starting small and growing as needed.
-        gpu_options = tf.GPUOptions(allow_growth=True)
+        gpu_options = tf.GPUOptions(allow_growth=True,
+                                    per_process_gpu_memory_fraction=0.333)
+        # Assume that you have 12GB of GPU memory and want to allocate ~4GB:
+        # http://stackoverflow.com/questions/34514324/error-using-tensorflow-with-gpu
     else:
         # Default
         gpu_options = tf.GPUOptions(allow_growth=False)
