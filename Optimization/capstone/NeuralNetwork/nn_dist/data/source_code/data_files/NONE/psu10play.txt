@@ -1,0 +1,196 @@
+Common Core of Data, Public Elementary/Secondary School Universe Survey, 2010-11
+
+FILE NAME = psu10play.txt, 2010-11
+
+NVAR = 28
+
+NOBS = 103,479
+
+(*) Fields have one explicit decimal place, unless otherwise noted.
+
+(+) Fields represent subfields of the fields immediately preceding them.
+
+The file contains data for the school year 2010–11 sorted by the NCES assigned school identification code (NCESSCH). Data
+presented in this release are available in two formats—SAS datasets (.sas7bdat) and tab-separated values text files (.txt).
+
+Note that starting with the 2002–03 CCD, all numeric fields contain a -1 to indicate missing and a -2 to indicate not applicable.
+Previously, numeric fields contained an “M” to indicate missing and an “N” to indicate not applicable.  Character fields continue
+to use “M” for missing and “N” for not applicable. “AN” and “N” are alphanumeric and numeric data, respectively.
+
+
+===================================================================================================================================
+
+Variable             Data   
+Name          Order  Type   Description        
+
+===================================================================================================================================     
+
+SURVYEAR      1	     AN	    Year corresponding to survey record.
+
+NCESSCH       2      AN     Unique NCES public school ID (7-digit NCES agency ID (LEAID) + 5-digit NCES school ID (SCHNO).    
+
++FIPST        3      AN     American National Standards Institute (ANSI) state code..
+
+                             01  =  Alabama        02  =  Alaska          04  =  Arizona
+                             05  =  Arkansas       06  =  California      08  =  Colorado
+                             09  =  Connecticut    10  =  Delaware        11  =  District of Columbia
+                             12  =  Florida        13  =  Georgia         15  =  Hawaii
+                             16  =  Idaho          17  =  Illinois        18  =  Indiana
+                             19  =  Iowa           20  =  Kansas          21  =  Kentucky
+                             22  =  Louisiana      23  =  Maine           24  =  Maryland
+                             25  =  Massachusetts  26  =  Michigan        27  =  Minnesota
+                             28  =  Mississippi    29  =  Missouri        30  =  Montana
+                             31  =  Nebraska       32  =  Nevada          33  =  New Hampshire
+                             34  =  New Jersey     35  =  New Mexico      36  =  New York
+                             37  =  North Carolina 38  =  North Dakota    39  =  Ohio
+                             40  =  Oklahoma       41  =  Oregon          42  =  Pennsylvania
+                             44  =  Rhode Island   45  =  South Carolina  46  =  South Dakota
+                             47  =  Tennessee      48  =  Texas           49  =  Utah
+                             50  =  Vermont        51  =  Virginia        53  =  Washington
+                             54  =  West Virginia  55  =  Wisconsin       56  =  Wyoming
+                             58  =  DOD Dependents Schools-Overseas    
+                             59  =  Bureau of Indian Education
+                             60  =  American Samoa 61  =  DOD Dependents School-Domestic
+                             66  =  Guam           69  =  Northern Marianas
+                             72  =  Puerto Rico    78  =  Virgin Islands;
+
++LEAID        4      AN     NCES local education agency (LEA) ID.  
+
+                            NOTE: The state to which the LEA belongs is identified by the first two digits (FIPS code) of the LEAID. 
+
++SCHNO        5      AN     NCES school ID. 
+                            
+                            NOTE: SCHNO is a unique number within an LEA.
+                            By combining LEAID with SCHNO, each school can be uniquely identified within the total file (see NCESSCH above).
+
+STID          6      AN     State’s own ID for the education agency.
+
+SEASCH        7      AN     State’s own ID for the school.
+
+LEANM         8      AN     Name of the education agency that operates this school.
+ 
+SCHNAM        9      AN     Name of the school.
+
+		            NOTE: Throughout the remainder of this file, the following codes may appear as representing missing values whenever 
+                                  they are present in the data or the documentation.
+                                  
+                                  M: when alphanumeric data are missing; that is, a value is expected but none was measured.
+                                 -1: when numeric data are missing; that is, a value is expected but none was measured.
+                                  N: when alphanumeric data are not applicable; that is, a value is neither expected nor measured.
+                                 -2: when numeric data are not applicable; that is, a value is neither expected nor measured.
+
+PHONE         10     AN     Telephone number of school.
+
+MSTREE        11     AN     The mailing address of the school— may be a street address, a P.O. Box number, or, if verified that there is no  
+                              address beyond CITY, STATE, and ZIP, the character “N.” 
+
+MCITY         12     AN     School mailing address city.
+
+MSTATE        13     AN     Two-letter U.S. Postal Service abbreviation of the state where the mailing address is located (see FIPS state  
+                              codes and abbreviations used in CCD dataset).
+
+MZIP          14     AN     Five-digit U.S. Postal Service ZIP code for the mailing address.
+
+MZIP4         15     AN     Four-digit (ZIP+4) code for the mailing address. If the mailing address has been assigned the additional  
+                              four-digit +4 ZIP, this field contains that number; otherwise, this field is blank.
+
+LSTREE        16     AN     School location street address.
+
+LCITY         17     AN     School location city.
+
+LSTATE        18     AN     Two-letter U.S. Postal Service abbreviation of the state where the school address is located (see FIPS  
+                              state codes and abbreviations used in CCD dataset).
+
+LZIP          19     AN     Five-digit U.S. Postal Service ZIP code for the location address.
+
+LZIP4         20     AN     Four-digit (ZIP+4) code for the location address. If the mailing address has been assigned the additional  
+                              four-digit +4 ZIP, this field contains that number; otherwise, this field is blank.
+  
+TYPE          21     AN     NCES code for type of school:
+
+                            1 = Regular school
+
+                            2 = Special education school
+
+                            3 = Vocational school
+
+                            4 = Other/alternative school
+
+                            5 = Reportable program 
+
+STATUS        22     AN     NCES code for the school status:
+
+                            1 = School was operational at the time of the last report and is currently operational.
+
+                            2 = School has closed since the time of the last report.
+
+                            3 = School has been opened since the time of the last report.
+
+                            4 = School was operational at the time of the last report but was not on the CCD list at that time.
+
+                            5 = School was listed in previous year’s CCD school universe as being affiliated with a different  
+                                education agency.
+
+                            6 = School is temporarily closed and may reopen within 3 years.
+
+                            7 = School is scheduled to be operational within 2 years.
+
+                            8 = School was closed on previous year’s file but has reopened.
+
+
+TITLEI        23     AN	    Title I Eligible School.  A Title I school designated under appropriate state and federal regulations as  
+                              being eligible for participation in programs authorized by Title I of Public Law 103-382.
+ 
+                            1 = Yes
+
+                            2 = No
+
+STITLI        24     AN	    School-wide Title I.  A program in which all the pupils in a school are designated under appropriate state  
+                              and federal regulations as being eligible for participation in programs authorized by Title I of  
+                              Public Law 103-382.
+
+                            1 = Yes
+
+                            2 = No
+
+MAGNET        25     AN	    Magnet school.  Regardless of the source of funding, a magnet school or program is a special school or  
+                              program designed to attract students of different racial/ethnic backgrounds for the purpose of reducing,  
+                              preventing, or eliminating racial isolation and/or to provide an academic or social focus on a particular  
+                              theme.
+
+                            1 = Yes
+ 
+                            2 = No
+
+CHARTR        26     AN     Charter school.  A school that provides free elementary and/or secondary education to eligible students  
+                              under a specific charter granted by the state legislature or other appropriate authority.
+
+                            1 = Yes
+
+                            2 = No
+
+SHARED       27     AN     Shared-time school.  A school offering vocational/technical education or other education services,  
+                              in which some or all students are enrolled at a separate “home” school and attend the shared-time school  
+                              on a part-day basis.
+
+                            1 = Yes
+
+                            2 = No
+
+MEMBER        28      N     Total students, all grades:  The reported total membership of the school.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+           

@@ -1,0 +1,191 @@
+Homework 2 Solutions
+Chapter 2: #1, 6, 11, 18, 20, 24, 40, 43
+
+Problem #1:
+
+The transitions that are not shown are :
+
+ready -> blocked : This cannot occur because a process moves into the
+ready state from the blocked state when the resource it was blocking for
+becomes available. The resource, if shared, might be preempted after the
+process runs for some time, but the transition in that case is from
+running to blocked.
+
+blocked -> running : When a resource which made a process block, becomes
+available, it moves from blocked -> ready, and then from ready -> running
+state when the scheduler schedules it.    Hence, a transition from blocked
+->running is not possible, without going through the ready state.
+A highly intelligent scheduler optimization might make a process in the
+blocked state runnable, if that was the ONLY process to be scheduled, but
+this is an extreme hypothetical case.
+
+
+Problem #6:
+
+Although threads share global variables, open files etc of the process,
+each thread could be  at a different point of execution in the process
+(implying a different value of PC for each thread), and each thread could
+also follow a different path of execution from other threads (implying
+different values inside the other registers). Hence, each thread has its
+own set of registers, which are saved when a thread is switched out of
+context, and re-stored when the thread is scheduled to run again.
+
+
+Problem #11:
+
+Single-threaded file server : If no disk access is required, the request
+takes 15 ms to complete, whereas it takes (15+75)=90 ms if a disk access
+is required. Hence, average time spent in servicing a request is (2/3*15 +
+1/3*90) =  40 ms.
+So, 1sec/40ms = 25 requests can be handled per second.
+
+Multi-threaded File Server : In this case, Disk I/O and CPU execution
+(dispatching, etc) can be carried out in parallel. Although the exact
+result will depend on the sequence of requests that comes in, it is clear
+that almost all the time will be spent in doing I/O, and the scheduling
+and dispatching part will happen in parallel, and will not add to the
+execution time.
+
+The first request will require 15 ms for dispatching, and all the future
+CPU-related work will take no extra time, since it happens in parallel
+with I/O. Hence, the average number of requests that can be handled per
+second is : (1000 - 15) / (2/3*0 + 1/3*75) ~ 39.
+
+
+Problem #18:
+
+A race condition is said to exist if 2 or more processes need to access
+and modify a common resource or data structure, and the final outcome of
+this depends on the precise time at which the 2 processes executed.
+
+The problem occurs if one of the processes accessing/modifying the shared
+data is preempted by the scheduler, and another process that also modifies
+it, is scheduled. In this case, one of the processes might get a stale
+value.
+
+
+Problem #20:
+
+Yes, the busy-waiting solution using the turn variable will work in a
+multiprocessor environment with a shared memory.
+
+In the given example, the 'turn' variable is used to control access to a
+critical region by two processes. In a multiprocessor,  the difference is
+that the two processes are running on different CPU's.
+The only condition is that 'turn' itself should be a variable in shared
+memory.
+
+
+Problem #24:
+
+(Partial solution) Initialize:  counter=X set mutex up
+
+down:
+    down(mutex)
+    counter = counter - 1;
+    if (counter > 0) up(mutex);
+
+up:
+    counter = counter + 1;
+    up(mutex)
+
+
+
+Unfortunately this solution has a race condition. Since multiple processes
+may be updating the counter (Process 1 may be doing a down and process 2
+may be doing an up, which may result in them racing to update and test
+counter.
+
+We can fix this by adding another semaphore to protect the counter
+accesses:
+
+(Full solution) Initialize:  counter=X, set mutex up, set countMutex up
+
+down:
+    down(mutex)
+    down(countMutex)
+    counter = counter - 1;
+    if (counter > 0) up(mutex);
+    up(countMutex)
+
+up:
+    down(countMutex)
+    counter = counter + 1;
+    up(countMutex)
+    up(mutex)
+
+
+Problem #40:
+
+Five batch jobs A through E, arrive at a computer center at almost the
+same time. They have estimated running times of 10, 6, 2, 4 and 8 minutes.
+Their (externally determined) priorities are 3, 5, 2, 1 and 4,
+respectively, with 5 being the highest priority. For each of the following
+scheduling algorithms, determine the mean process turnaround time. Ignore
+process switching overhead. All jobs are CPU bound.
+
+(a)Round Robin. Preemptive multiprogramming. Each job gets its fair share
+of CPU.
+
+Initially all five processes are running, so they each get 1/5 of the CPU,
+which means they take 5 times longer to run. This means that it will take
+10 mins for C (the shortest job) to complete.
+
+After 10 mins each job will have used 2 mins of CPU time each, so A will
+have 8 mins left, B 4, D 2 and E will have 6. Since there are now 4 jobs
+they will each get 1/4 the CPU time, which means they will take four times
+as long to run. So, it will take 8 mins for D to complete. (So, D took 10
++ 8 = 18 mins).
+
+Now, A will have 6 mins left, B 2, and E 4.
+Each process gets 1/3rd of the CPU. Hence B will complete execution in 6
+minutes. (B took 10 + 8+ 6= 24 mins)
+
+Now A will have 4 mins and E 2mins left. Each process gets 1/2 of the CPU,
+so E will finish executing in 4 mins. (E took 24 + 4= 28 mins)
+
+Since A has only 2 mins left to run and it is the only job on the CPU, it
+will finish in to minutes with a total time of (28 + 2 )=30 mins.
+
+Averaging we get (10+18+24+28+30)/5 = 22 mins average turnaround.
+
+(b)
+
+Priority. Each job runs to completion without being preempted.
+
+Since B has the highest priority it will run first, followed by E,
+followed by A, followed by C and finally D. There is no preemption, so B
+completes after 6 mins, E after 6 mins of waiting for B and 8 mins of
+processing (14 mins total), A after 14 mins of waiting for B and E, and 10
+mins processing (24 mins total), C after 24 mins of waiting for B,E and A,
+and 2 mins processing (26 mins total)and D after 26 mins of waiting for
+B,E,A & C and 4 mins of processing (30 mins total). The average is
+(6+14+24+26+30)/5 = 100/5 = 20.
+
+(c)
+
+First Come First Served. Processes run to completion in the order of
+arrival.
+
+A completes after 10 mins, B completes after (10 +6)=16 mins, C completes
+after (16 + 2)=18 mins, D completes after (18+4)=22 mins, and E completes
+after (22+8)=30 mins.
+
+The average is : (10+16+18+22+30)/5 = 96/5 = 19.2
+
+(d)
+
+Shortest job first. Processes will run to completion in the order : C, D,
+B, E, A
+
+C completes after 2 mins, D completes after (2+4)=6 mins, B completes
+after (6+6)=12 mins, E completes after (12+8)=20 mins, and A completes
+after (20+10)=30 mins.
+The average is : (2+6+12+20+30)/5 = 70/5 = 14 mins
+
+
+Problem #43
+
+Here, T0=40, T1=20, T2=40, and T3=15
+Next time = T0/8 + T1/8 + T2/4 + T3/2 = 5 + 2.5 + 10 + 15/2 = 25 msec
+

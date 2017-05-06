@@ -1,0 +1,3362 @@
+<pre>
+<B>Information is listed alphabetically by district.
+Use the "Edit," "Find" function of your browser to search for a district.
+
+
+SCHOOL DISTRICT/SCHOOL                 ENTITY NUMBER
+</b>
+ABSECON PUBLIC SCHOOL DISTRICT                123337
+  ATTALES MIDDLE SCHOOL                         8916
+  MARSH ELEMENTARY SCHOOL                       8917
+
+ALEXANDRIA TWP SCHOOL DISTRICT                123566
+  ALEXANDRIA MIDDLE SCHOOL                      9715
+  WILSON ELEM SCHOOL                            9716
+
+ALLAMUCHY TOWNSHIP SCHOOL DIST                123042
+  ALLAMUCHY TOWNSHIP ELEM SCHOOL                8122
+
+ALLENDALE SCHOOL DISTRICT                     122801
+  BROOKSIDE ELEMENTARY SCHOOL                   7398
+  HILLSIDE ELEMENTARY SCHOOL                    7396
+
+ALLOWAY TWP SCHOOL DISTRICT                   123155
+  ALLOWAY TOWNSHIP SCHOOL                       8378
+
+ALPHA SCHOOL DISTRICT                         123564
+  ALPHA ELEMENTARY SCHOOL                       9713
+
+ALPINE SCHOOL DISTRICT                        122897
+  ALPINE ELEMENTARY SCHOOL                      7698
+
+ANDOVER REGIONAL SCHOOL DIST                  123084
+  BURD SCHOOL                                   8186
+  LONG POND ELEMENTARY SCHOOL                   8190
+
+ASBURY PARK SCHOOL DISTRICT                   122971
+  ASBURY PARK HIGH SCHOOL                       7896
+  ASBURY PARK MIDDLE SCHOOL                     7899
+  BANGS AVENUE ELEMENTARY SCHOOL                7900
+  BRADLEY PRIMARY SCHOOL                        7897
+
+ATLANTIC CITY BVE-ADMIN                       123420
+  ATLANTIC CITY HIGH SCHOOL                     9127
+  BRIGHTON AVE ELEMENTARY SCHOOL                9130
+  CHELSEA HEIGHTS ELEM SCHOOL                   9126
+  INDIANA AVE ELEMENTARY SCHOOL                 9133
+  KING SCH COMPLEX                              9129
+  NEW JERSEY AVENUE ELEM SCHOOL                 9134
+  RICHMOND AVE ELEMENTARY SCHOOL                9136
+  TEXAS AVENUE JUNIOR HIGH SCHOOL               9132
+  UPTOWN COMPLEX ELEM SCHOOL                    9135
+  VENICE PARK ELEMENTARY SCHOOL                 9128
+
+ATLANTIC CO SPECIAL SERV DIST                 123405
+  ABSECON CAMPUS                                8913
+  CORBIN CITY REGIONAL DAY SCH                  9019
+  HOSTLER HALL SCHOOL                           9020
+  MAYS LANDING SCHOOL                           9067
+
+ATLANTIC CO VOC SCH DISTRICT                  123404
+  ATLANTIC COUNTY VO-TEC SCHOOL                 9066
+
+ATLANTIC HIGHLANDS SCHOOL DIST                122974
+  ATLANTIC HIGHLANDS ELEM SCHOOL                7904
+
+AUDUBON SCHOOL DISTRICT                       123325
+  AUDUBON HIGH SCHOOL                           8874
+  HAVILAND AVENUE ELEM SCHOOL                   8872
+  MANSION AVENUE ELEMENTARY SCH                 8873
+
+AVALON SCHOOL DISTRICT                        123340
+  AVALON ELEMENTARY SCHOOL                      8924
+
+AVON BOROUGH SCHOOL DISTRICT                  122976
+  AVON ELEMENTARY SCHOOL                        7907
+
+BARNEGAT TOWNSHIP SCHOOL DIST                 123158
+  BRACKMAN MIDDLE SCHOOL                        8408
+  COLLINS ELEMENTARY SCHOOL                     8409
+  DUNFEE ELEMENTARY SCHOOL                      8410
+  EDWARDS ELEMENTARY SCHOOL                     8411
+
+BARRINGTON BOROUGH                            123159
+  AVON ELEMENTARY SCHOOL                        8504
+  WOODLAND ELEMENTARY SCHOOL                    8412
+
+BASS RIVER TWP SCHOOL DISTRICT                123359
+  BASS RIVER TWP ELEM SCHOOL                    8966
+
+BAYHEAD SCHOOL DISTRICT                       123485
+  BAYHEAD ELEMENTARY SCHOOL                     9450
+
+BAYONNE SCHOOL DISTRICT                       122637
+  BAILEY ELEMENTARY SCHOOL 12                   6447
+  BAYONNE HIGH SCHOOL                           6452
+  DONOHOE ELEMENTARY SCHOOL 4                   6465
+  HARRIS ELEMENTARY SCHOOL 1                    6454
+  LINCOLN ELEMENTARY SCHOOL 05                  6467
+  MANN ELEMENTARY SCHOOL 6                      6458
+  MIDTOWN COMMUNITY SCHOOL                      6449
+  ROBINSON ELEMENTARY SCHOOL 3                  6457
+  VROOM ELEMENTARY SCHOOL 2                     6464
+  WASHINGTON ELEMENTARY SCHOOL 9                6459
+  WILSON ELEMENTARY SCHOOL 10                   6462
+
+BEACH HAVEN SCHOOL DISTRICT                   123160
+  BEACH HAVEN ELEMENTARY SCHOOL                 8414
+
+BEDMINSTER BOARD OF EDUCATION                 123117
+  BEDMINSTER TWP ELEM SCHOOL                    8272
+
+BELLEVILLE SCHOOL DISTRICT                    122783
+  BELLEVILLE ELEM SCHOOL 03                     7184
+  BELLEVILLE ELEM SCHOOL 04                     7177
+  BELLEVILLE ELEM SCHOOL 05                     7185
+  BELLEVILLE ELEM SCHOOL 07                     7182
+  BELLEVILLE ELEM SCHOOL 08                     7183
+  BELLEVILLE ELEM SCHOOL 09                     7188
+  BELLEVILLE ELEM SCHOOL 10                     7180
+  BELLEVILLE HIGH SCHOOL                        7181
+  BELLEVILLE MIDDLE SCHOOL                      7187
+
+BELLMAWR BOROUGH SCHOOL DIST                  123194
+  BELL OAKS UPPER ELEM SCHOOL                   8500
+  BELLMAWR PARK ELEM SCHOOL                     8501
+  BURKE ELEMENTARY SCHOOL                       8503
+
+BELMAR ELEMENTARY SCHOOL DIST                 122979
+  BELMAR ELEMENTARY SCHOOL                      7919
+
+BELVIDERE SCHOOL DISTRICT                     123047
+  BELVIDERE HIGH SCHOOL                         8125
+  OXFORD STREET ELEM SCHOOL                     8126
+  THIRD STREET ELEMENTARY SCHOOL                8123
+
+BERGEN COUNTY SPECIAL SERVICES                122939
+  BLESHMAN REGIONAL DAY SCH                     7806
+  EMERSON                                     161200
+  GARFIELD                                    152910
+  HACKENSACK                                  207645
+  LODI                                        167707
+  MIDLAND PARK                                161219
+  MILLBURN                                    168615
+  PALISADES LEARNING CENTER                     7811
+  PARAMUS                                     157975
+  PROGRAM 3-EMOT DIST SCHOOL                    7796
+  PROGRAM 5-LIFE SKILLS SCHOOL                  7797
+  ROCKLEIGH                                   168619
+  SECONDARY HEARING IMPAIRED SCH                7464
+  TETERBORO                                   163897
+  WOOD-RIDGE                                  164563
+
+BERGEN COUNTY TECHNICAL SCHOOLS               122885
+  BERGEN CO TECHNICAL HIGH SCH                  7675
+  EVENING VOC-TECH HIGH SCHOOL                  7676
+  PARAMUS TECH CENTER                           7803
+  TETERBORO SPEC NEEDS VOC CTR                  7696
+  TETERBORO TECHNICAL ED CENTER                 7697
+
+BERGENFIELD SCHOOL DISTRICT                   122898
+  BERGENFIELD HIGH SCHOOL                       7703
+  BROWN MIDDLE SCHOOL                           7705
+  FRANKLIN ELEMENTARY SCHOOL                    7701
+  HOOVER ELEMENTARY SCHOOL                      7707
+  JEFFERSON ELEMENTARY SCHOOL                   7702
+  LINCOLN ELEMENTARY SCHOOL                     7706
+  WASHINGTON ELEMENTARY SCHOOL                  7699
+
+BERKELEY HEIGHTS PUBLIC SCHS                  123118
+  COLUMBIA MIDDLE SCHOOL                        8274
+  HUGHES SCHOOL                                 8276
+  MOUNTAIN PARK ELEM SCHOOL                     8275
+  WOODRUFF ELEM SCHOOL                          8273
+
+BERKELEY TOWNSHIP SCHOOL DIST                 123472
+  BAYVILLE ELEMENTARY SCHOOL                    9395
+  POTTER ELEMENTARY SCH                         9396
+  WORTH ELEMENTARY SCH                          9398
+
+BERLIN BOROUGH SCHOOL DISTRICT                123164
+  BERLIN COMMUNITY SCHOOL                       8419
+
+BERLIN TOWNSHIP SCH DISTRICT                  123306
+  EISENHOWER MEM SCHOOL                         8787
+  KENNEDY MEMORIAL SCHOOL                       8788
+
+BERNARDS TOWNSHIP SCHOOL DIST                 123115
+  ANNIN MIDDLE SCHOOL                           8271
+  CEDAR HILL SCHOOL                             8269
+  LIBERTY CORNER ELEM SCHOOL                    8313
+  OAK STREET ELEMENTARY SCHOOL                  8270
+  RIDGE HIGH SCHOOL                             8265
+
+BETHLEHEM TWP SCHOOL DISTRICT                 123498
+  CONLEY ELEM SCHOOL                            9482
+  HOPPOCK MIDDLE SCHOOL                         9481
+
+BEVERLY CITY SCHOOL DISTRICT                  123166
+  BEVERLY ELEMENTARY SCHOOL                     8421
+
+BLACK HORSE PIKE REG SCH DIST                 123169
+  HIGHLAND HIGH SCHOOL                          8435
+  TRITON HIGH SCHOOL                            8723
+
+BLAIRSTOWN TWP SCHOOL DISTRICT                123050
+  BLAIRSTOWN ELEMENTARY SCHOOL                  8129
+
+BLOOMFIELD SCHOOL DISTRICT                    122640
+  BERKELEY ELEMENTARY SCHOOL                    6479
+  BLOOMFIELD HIGH SCHOOL                        6470
+  BLOOMFIELD MIDDLE SCHOOL                      6475
+  BROOKDALE ELEMENTARY SCHOOL                   6471
+  CARTERET ELEMENTARY SCHOOL                    6482
+  DEMAREST ELEMENTARY SCHOOL                    6476
+  FAIRVIEW ELEMENTARY SCHOOL                    6481
+  FOREST GLEN ELEMENTARY SCHOOL                 6483
+  FRANKLIN ELEMENTARY SCHOOL                    6474
+  OAK VIEW ELEMENTARY SCHOOL                    6478
+  WATSESSING ELEMENTARY SCHOOL                  6472
+
+BLOOMINGDALE SCHOOL DISTRICT                  122803
+  BERGEN MIDDLE SCHOOL                          7399
+  DAY ELEMENTARY SCHOOL                         7400
+  DONALD ELEM SCHOOL                            7401
+
+BLOOMSBURY SCHOOL DISTRICT                    123499
+  BLOOMSBURY ELEM SCHOOL                        9483
+
+BOGOTA PUBLIC SCHOOL DISTRICT                 122888
+  BIXBY ELEM SCHOOL                             7677
+  BOGOTA HIGH SCHOOL                            7678
+  STEEN ELEMENTARY SCHOOL                       7679
+
+BOONTON SCHOOL DISTRICT                       122644
+  BOONTON HIGH SCHOOL                           6490
+  JOHN HILL MIDDLE SCHOOL                       6491
+  SCHOOL STREET ELEMENTARY SCH                  6489
+
+BOONTON TWP SCHOOL DISTRICT                   122645
+  ROCKAWAY VALLEY SCHOOL                        6492
+
+BORDENTOWN REGIONAL SCH DIST                  123425
+  BARTON ELEMENTARY SCHOOL                      9152
+  BORDENTOWN REG HIGH SCHOOL                    9157
+  MACFARLAND JUNIOR SCHOOL                      9153
+  MUSCHAL ELEMENTARY SCH                        9156
+
+BOUND BROOK SCHOOL DISTRICT                   123501
+  BOUND BROOK HIGH SCHOOL                       9488
+  LA MONTE ELEMENTARY SCHOOL                    9485
+  LAFAYETTE ELEMENTARY SCHOOL                   9491
+  SMALLEY ELEMENTARY SCHOOL                     9486
+
+BRADLEY BEACH SCHOOL DISTRICT                 122981
+  BRADLEY BEACH ELEMENTARY SCH                  7922
+
+BRANCHBURG TOWNSHIP SCH DIST                  123577
+  CENTRAL MIDDLE SCHOOL                         9745
+  OLD YORK ELEMENTARY SCHOOL                    9746
+  STONY BROOK ELEMENTARY SCHOOL                 9744
+
+BRICK TOWNSHIP SCHOOL DISTRICT                123473
+  BRICK MEMORIAL HIGH SCHOOL                    9415
+  BRICK TOWNSHIP HIGH SCHOOL                    9403
+  DRUM POINT ROAD ELEM SCHOOL                   9407
+  EMMA HAVENS YOUNG ELEM SCHOOL                 9408
+  HEBERTSVILLE ELEM SCHOOL                      9414
+  LAKE RIVIERA MIDDLE SCHOOL                    9410
+  LANES MILL ROAD ELEM SCHOOL                   9416
+  MIDSTREAMS ELEMENTARY SCHOOL                  9418
+  OSBORNVILLE ELEMENTARY SCHOOL                 9409
+  VETERANS MEMORIAL ELEM SCHOOL                 9412
+  VETERANS MEMORIAL MIDDLE SCH                  9413
+
+BRIDGETON SCHOOL DISTRICT                     123378
+  BRIDGETON HIGH SCHOOL                         9022
+  BRIDGETON MIDDLE SCHOOL                       9027
+  BUCKSHUTEM ROAD ELEM SCHOOL                   9029
+  CHERRY STREET ELEM SCHOOL                     9028
+  INDIAN AVE ELEMENTARY SCHOOL                  9025
+  QUARTER MILE LANE ELEM SCHOOL                 9030
+  WEST AVENUE ELEMENTARY SCHOOL                 9023
+
+BRIDGEWATER-RARITAN SCH DIST                  123503
+  ADAMSVILLE PRIMARY SCHOOL                     9504
+  BRADLEY GARDENS PRIMARY SCHOOL                9503
+  BRIDGEWATER-RARITAN HIGH SCH                  9497
+  CRIM ROAD PRIMARY SCHOOL                      9502
+  EISENHOWER INTERMEDIATE SCHOOL                9500
+  HAMILTON PRIMARY SCHOOL                       9494
+  HILLSIDE INTERMEDIATE SCHOOL                  9499
+  KENNEDY PRIMARY SCHOOL                        9718
+  VAN HOLTEN PRIMARY SCHOOL                     9501
+
+BRIELLE SCHOOL DISTRICT                       123474
+  BRIELLE ELEMENTARY SCHOOL                     9419
+
+BRIGANTINE PUBLIC SCHOOLS                     123341
+  BRIGANTINE NORTH MIDDLE SCHOOL                8927
+
+BROOKLAWN SCHOOL DISTRICT                     123193
+  ALICE COSTELLO ELEM SCHOOL                    8498
+
+BUENA REGIONAL SCHOOL DISTRICT                123388
+  BUENA REGIONAL HIGH SCHOOL                    9042
+  CLEARY MIDDLE SCHOOL                          9082
+  COLLINGS LAKE ELEM SCHOOL                     8800
+  DONINI ELEMENTARY SCHOOL                      9060
+  EDGARTON MEMORIAL ELEM SCHOOL                 9087
+  MILANESI ELEMENTARY SCHOOL                    9043
+
+BURLINGTON CITY SCHOOL DIST                   123173
+  BURLINGTON CITY HIGH SCHOOL                   8456
+  CAPT JAMES LAWRENCE ELEM SCH                  8454
+  ELIAS BOUDINOT ELEM SCHOOL                    8448
+  SAMUEL SMITH ELEM SCHOOL                      8455
+  WILBUR WATTS INTERMEDIATE SCH                 8461
+
+BURLINGTON CO INST OF TECH                    123236
+  BURLINGTON-WEST HAMPTON INST T                8621
+
+BURLINGTON CO SPECIAL SVC DIST                123231
+  BURL COUNTY SPECIAL SVC SCH                   8635
+
+BURLINGTON TOWNSHIP SCH DIST                  123171
+  BURLINGTON TOWNSHIP HIGH SCH                  8457
+  HOPKINS MIDDLE SCHOOL                         8449
+  SPRINGSIDE ELEMENTARY SCHOOL                  8459
+  YOUNG ELEMENTARY SCHOOL                       8452
+
+BUTLER SCHOOL DISTRICT                        122805
+  AARON DECKER ELEM SCHOOL                      7406
+  BUTLER HIGH SCHOOL                            7402
+  RICHARD BUTLER MIDDLE SCHOOL                  7404
+
+BYRAM TOWNSHIP SCHOOL DISTRICT                123100
+  BYRAM TWP CONSOL ELEM SCHOOL                  8222
+  BYRAM TWP INTERMEDIATE SCHOOL                 8223
+
+CALDWELL-WEST CALDWELL DIST                   122650
+  GROVER CLEVELAND MIDDLE SCHOOL                6500
+  JAMES CALDWELL HIGH SCHOOL                    6494
+  JEFFERSON ELEMENTARY SCHOOL                   6505
+  LINCOLN ELEMENTARY SCHOOL                     6499
+  WASHINGTON ELEMENTARY SCHOOL                  6504
+  WILSON ELEMENTARY SCHOOL                      6506
+
+CALIFON SCHOOL DISTRICT                       123057
+  CALIFON BOROUGH ELEM SCHOOL                   8137
+
+CAMDEN CITY PUBLIC SCHOOLS                    123321
+  BONSALL ELEMENTARY SCHOOL                     8854
+  BROADWAY ELEMENTARY SCHOOL                    8833
+  CAMDEN HIGH SCHOOL                            8834
+  CATTO ELEMENTARY SCHOOL                       8866
+  CHALLENGE SQUARE ACADEMY                      8835
+  COOPERS POYNT ELEMENTARY SCH                  8827
+  CRAMER ELEMENTARY SCHOOL                      8859
+  DAVIS ELEMENTARY SCHOOL                       8860
+  DUDLEY ELEMENTARY SCHOOL                      8861
+  EAST CAMDEN MIDDLE SCHOOL                     8868
+  FOREST HILL ELEMENTARY SCHOOL                 8836
+  HATCH MIDDLE SCHOOL                           8837
+  LANNING SQUARE ELEM SCHOOL                    8839
+  MCGRAW ELEMENTARY SCHOOL                      8862
+  MICKLE ELEMENTARY SCHOOL                      8849
+  MOLINA ELEMENTARY SCHOOL                      8829
+  MORGAN VILLAGE MIDDLE SCHOOL                  8855
+  PARKSIDE ELEMENTARY SCHOOL                    8845
+  POWELL ELEMENTARY SCHOOL                      8831
+  PYNE POINT FAMILY SCHOOL                      8832
+  RILETTA CREAM ELEMENTARY SCH                  8850
+  SHARP ELEMENTARY SCHOOL                       8863
+  SOUTH CAMDEN ALT SCHOOL                       8843
+  SUMNER ELEMENTARY SCHOOL                      8853
+  VETERANS MEMORIAL MIDDLE SCH                  8864
+  WASHINGTON ELEMENTARY SCHOOL                  8870
+  WHITTIER ELEMENTARY SCHOOL                    8844
+  WIGGINS ELEMENTARY SCHOOL                     8842
+  WILSON ELEMENTARY SCHOOL                      8851
+  WOODROW WILSON HIGH SCHOOL                    8865
+  YORKSHIP ELEMENTARY SCHOOL                    8856
+
+CAMDEN COUNTY TECHNICAL SD                    123282
+  CAMDEN CNTY TECH SCH-GLOUCHEST                8751
+  CAMDEN CNTY TECHN SCH-PENNSAUK                8895
+
+CAPE MAY CITY SCHOOL DISTRICT                 123343
+  CAPE MAY CITY ELEMENTARY SCH                  8932
+
+CAPE MAY CO SPECIAL SERVICES                  123348
+  ALTERNATIVE HIGH SCHOOL                       8941
+  MULLICA TWP MIDDLE SCHOOL                     8956
+  OCEAN ACADEMY                                 8944
+
+CAPE MAY CO TECH SCHOOL DIST                  123349
+  CAPE MAY CO TECH SCHOOL                       8942
+
+CARLSTADT SCHOOL DISTRICT                     122741
+  LINCOLN ELEMENTARY SCHOOL                     6930
+  LINDBERGH ELEMENTARY SCHOOL                   6931
+  WASHINGTON ELEMENTARY SCHOOL                  6929
+
+CARLSTADT-E RUTHERFORD REG S D                122742
+  H.P BECTON REG HIGH SCHOOL                    6934
+
+CARTERET PUBLIC SCHOOLS                       122652
+  CARTERET HIGH SCHOOL                          6511
+  CARTERET MIDDLE SCHOOL                        6510
+  COLUMBUS ELEMENTARY SCHOOL                    6507
+  PRIVATE N MINUE ELEM SCHOOL                   6508
+
+CEDAR GROVE TOWNSHIP SCH DIST                 122655
+  CEDAR GROVE HIGH SCHOOL                       6513
+  MEMORIAL MIDDLE SCHOOL                        6514
+  NORTH END ELEMENTARY SCHOOL                   6516
+  SOUTH END ELEMENTARY SCHOOL                   6515
+
+CENTRAL REGIONAL SCHOOL DIST                  123471
+  CENTRAL REGIONAL HIGH SCHOOL                  9393
+  CENTRAL REGIONAL MIDDLE SCHOOL                9394
+
+CHATHAM SCHOOL DISTRICT                       123124
+  CHATHAM HIGH SCHOOL                           8288
+  CHATHAM MIDDLE SCHOOL                         8291
+  LAFAYETTE ELEMENTARY SCHOOL                   8289
+  MILTON AVE ELEMENTARY SCHOOL                  8294
+  SOUTHERN BLVD ELEMENTARY SCH                  8287
+  WASHINGTON AVE ELEM SCHOOL                    8290
+
+CHERRY HILL TOWNSHIP SCHOOL DISTRICT          123197
+  BARTON ELEMENTARY SCHOOL                      8386
+  BECK MIDDLE SCHOOL                            8390
+  CARUSI JUNIOR HIGH SCHOOL                     8381
+  CHERRY HILL HIGH SCHOOL EAST                  8395
+  COOPER ELEMENTARY SCHOOL                      8388
+  HARTE ELEMENTARY SCHOOL                       8396
+  JOHNSON ELEMENTARY SCHOOL                     8523
+  KILMER ELEMENTARY SCHOOL                      8383
+  KINGSTON ELEMENTARY SCHOOL                    8520
+  KNIGHT ELEMENTARY SCHOOL                      8524
+  MALBERG ALTERNATIVE SCHOOL                    8521
+  MANN ELEMENTARY SCHOOL                        8398
+  PAINE ELEMENTARY SCHOOL                       8519
+  SHARP ELEMENTARY SCHOOL                       8389
+  STOCKTON ELEMENTARY SCHOOL                    8391
+  WOODCREST ELEMENTARY SCHOOL                   8397
+
+CHESILHURST BOROUGH SCHOOL DISTRICT           123301
+  FOSTER ELEMENTARY SCHOOL                      8782
+
+CHESTER TWP SCHOOL DISTRICT                   123130
+  BLACK RIVER MIDDLE SCHOOL                     8295
+  BRAGG ELEMENTARY SCHOOL                       8296
+  DICKERSON ELEMENTARY SCHOOL                   8297
+
+CHESTERFIELD TWP SCHOOL DIST                  123459
+  CHESTERFIELD ELEMENTARY SCHOOL                9315
+
+CINNAMINSON TOWNSHIP SCH DIST                 123263
+  CINNAMINSON HIGH SCHOOL                       8716
+  CINNAMINSON MIDDLE SCHOOL                     8711
+  NEW ALBANY ELEMENTARY SCHOOL                  8712
+  RUSH ELEMENTARY SCHOOL                        8713
+
+CLARK TOWNSHIP SCHOOL DISTRICT                122731
+  CARL H KUMPF MIDDLE SCHOOL                    6891
+  FRANK K HEHNLY ELEM SCHOOL                    6899
+  VALLEY ROAD ELEM SCHOOL                       6893
+
+CLAYTON SCHOOL DISTRICT                       123391
+  CLAYTON MIDDLE & HIGH SCHOOL                  9046
+  HERMA SIMMONS ELEMENTARY SCH                  9047
+
+CLEARVIEW REG HIGH SCHOOL DIST                123240
+  CLEARVIEW REG MIDDLE SCHOOL                   8652
+  CLEARVIEW REG SR HIGH SCHOOL                  8653
+
+CLEMENTON SCHOOL DISTRICT                     123176
+  CLEMENTON ELEMENTARY SCHOOL                   8465
+
+CLIFFSIDE PARK BOARD OF EDUCATION             122657
+  CLIFFSIDE PARK #3 ELEM SCHOOL                 6519
+  CLIFFSIDE PARK #4 ELEM SCHOOL                 6520
+  CLIFFSIDE PARK #5 ELEM SCHOOL                 6523
+  CLIFFSIDE PARK #6 ELEM SCHOOL                 6521
+  CLIFFSIDE PARK HIGH SCHOOL                    6522
+
+CLIFTON SCHOOL DISTRICT                       122660
+  CLIFTON ELEMENTARY SCHOOL 01                  6533
+  CLIFTON ELEMENTARY SCHOOL 02                  6542
+  CLIFTON ELEMENTARY SCHOOL 04                  6532
+  CLIFTON ELEMENTARY SCHOOL 05                  6541
+  CLIFTON ELEMENTARY SCHOOL 08                  6552
+  CLIFTON ELEMENTARY SCHOOL 09                  6539
+  CLIFTON ELEMENTARY SCHOOL 11                  6527
+  CLIFTON ELEMENTARY SCHOOL 12                  6528
+  CLIFTON ELEMENTARY SCHOOL 13                  6544
+  CLIFTON ELEMENTARY SCHOOL 14                  6538
+  CLIFTON ELEMENTARY SCHOOL 15                  6536
+  CLIFTON ELEMENTARY SCHOOL 16                  6550
+  CLIFTON HIGH SCHOOL                           6543
+  CLIFTON PUBLIC SCHOOL #3                      6535
+  COLUMBUS MIDDLE SCHOOL                        6534
+  WILSON MIDDLE SCHOOL                          6547
+
+CLINTON TOWN SCHOOL DISTRICT                  123507
+  CLINTON TOWN ELEMENTARY SCHOOL                9508
+
+CLINTON TOWNSHIP SCHOOL DIST                  123496
+  PATRICK MCGAHERAN ELEM SCHOOL                 9591
+  ROUND VALLEY MIDDLE SCHOOL                    9592
+  SPRUCE RUN ELEMENTARY SCHOOL                  9506
+
+CLOSTER SCHOOL DISTRICT                       122901
+  HILLSIDE ELEMENTARY SCHOOL                    7710
+  TENAKILL MIDDLE SCHOOL                        7708
+
+COLLINGSWOOD SCHOOL DISTRICT                  123331
+  COLLINGSWOOD MIDDLE SCHOOL                    8888
+  COLLINGSWOOD SR HIGH SCHOOL                   8887
+  GARFIELD ELEMENTARY SCHOOL                    8882
+  NEWBIE ELEMENTARY SCHOOL                      8881
+  SHARP ELEMENTARY SCHOOL                       8876
+  TATEM ELEMENTARY SCHOOL                       8883
+  ZANE NORTH ELEMENTARY SCHOOL                  8889
+
+COLTS NECK TWP SCHOOL DISTRICT                122982
+  CEDAR DRIVE ELEMENTARY SCHOOL                 7927
+  CONOVER ROAD ELEMENTARY SCHOOL                7926
+
+COMMERCIAL TWP SCHOOL DISTRICT                123414
+  HALEYVILLE-MAURICETOWN SCHOOL                 9094
+  PORT NORRIS ELEMENTARY SCHOOL                 9093
+
+CRANBURY TWP SCHOOL DISTRICT                  123428
+  CRANBURY ELEMENTARY SCHOOL                    9160
+
+CRANFORD SCHOOL DISTRICT                      122662
+  BROOKSIDE PLACE ELEM SCHOOL                   6555
+  CRANFORD SENIOR HIGH SCHOOL                   6556
+  HILLSIDE AVENUE SCHOOL                        6554
+  LIVINGSTON AVE ELEM SCHOOL                    6561
+  ORANGE AVENUE SCHOOL                          6558
+  WALNUT AVENUE ELEM SCHOOL                     6562
+
+CRESSKILL SCHOOL DISTRICT                     122902
+  CRESSKILL HIGH SCHOOL                         7712
+  EDWARD H BRYAN ELEM SCHOOL                    7713
+  MERRITT MEMORIAL ELEM SCHOOL                  7714
+
+CUMBERLAND CO TECH EDN CENTER                 123382
+  CUMBERLAND CO TECH ED CENTER                  9031
+
+CUMBERLAND REGIONAL SCH DIST                  123383
+  CUMBERLAND REG HIGH SCHOOL                    9032
+
+DEAL BOROUGH SCHOOL DISTRICT                  122984
+  DEAL ELEMENTARY SCHOOL                        7928
+
+DEERFIELD TOWNSHIP SCHOOL DIST                123415
+  DEERFIELD TOWNSHIP ELEM SCHOOL                9096
+
+DELANCO BOARD OF EDUCATION                    123261
+  M J PEARSON ELEMENTARY SCHOOL                 8699
+  WALNUT ST ELEMENTARY SCHOOL                   8710
+
+DELAWARE TOWNSHIP SCHOOL                      123449
+  DELAWARE TWP ELEM SCHOOL 1                    9240
+
+DELAWARE VALLEY REG H S DIST                  123525
+  DELAWARE VALLEY HIGH SCHOOL                   9571
+
+DELRAN TOWNSHIP SCHOOL DIST                   123258
+  DELRAN HIGH SCHOOL                            8706
+  DELRAN MIDDLE SCHOOL                          8696
+  MILLBRIDGE PRIMARY SCHOOL                     8704
+
+DEMAREST SCHOOL DISTRICT                      122905
+  COUNTY ROAD ELEMENTARY SCHOOL                 7719
+  DEMAREST MIDDLE SCHOOL                        7718
+  LUTHER LEE EMERSON ELEM SCH                   7715
+
+DENNIS TOWNSHIP SCHOOL DIST                   123352
+  DENNIS TWP ELEMENTARY SCHOOL                  8948
+
+DENVILLE TOWNSHIP SCHOOL DIST                123061
+  LAKEVIEW ELEMENTARY SCHOOL                    8145
+  RIVERVIEW ELEMENTARY SCHOOL                   8142
+  VALLEYVIEW MIDDLE SCHOOL                      8144
+
+DEPTFORD SCHOOL DISTRICT                      123312
+  CENTRAL ELEMENTARY SCHOOL                     8806
+  DEPTFORD TOWNSHIP HIGH SCHOOL                 8815
+  GOOD INTENT ELEMENTARY SCHOOL                 8817
+  LAKE TRACT ELEMENTARY SCHOOL                  8808
+  MONONGAHELA MIDDLE SCHOOL                     8732
+  NEW SHARON SPEC ELEM SCHOOL                   8814
+  OAK VALLEY ELEMENTARY SCHOOL                  8785
+  PINE ACRES ELEMENTARY SCHOOL                  8784
+  SHADY LANE ELEMENTARY SCHOOL                  8793
+
+DOVER SCHOOL DISTRICT                         123039
+  ACADEMY STREET ELEMENTARY SCH                 8120
+  DOVER HIGH SCHOOL                             8116
+  EAST DOVER ELEMENTARY SCHOOL                  8118
+  NORTH DOVER ELEMENTARY SCHOOL                 8115
+
+DOWNE TOWNSHIP SCHOOL DISTRICT                123411
+  DOWNE TOWNSHIP ELEM SCHOOL                    9089
+  DOWNE TOWNSHIP PRIMARY SCHOOL                 9090
+
+DUMONT SCHOOL DISTRICT                        122908
+  DUMONT HIGH SCHOOL                            7725
+  GRANT ELEMENTARY SCHOOL                       7722
+  HONISS ELEMENTARY SCHOOL                      7726
+  LINCOLN ELEMENTARY SCHOOL                     7724
+  SELZER ELEMENTARY SCHOOL                      7721
+
+DUNELLEN SCHOOL DISTRICT                      123508
+  DUNELLEN HIGH SCHOOL                          9513
+  JOHN P FABER ELEMENTARY SCHOOL                9511
+
+EAGLESWOOD TWP SCHOOL DISTRICT                123307
+  EAGLESWOOD TWP ELEMENTARY SCH                 8789
+
+EAST AMWELL TOWNSHIP SCHOOL DISTRICT          123446
+  EAST AMWELL TWP ELEM SCHOOL                   9234
+
+EAST BRUNSWICK PUBLIC SCH DIST                123513
+  BOWNE-MUNRO ELEMENTARY SCHOOL                 9529
+  CENTRAL ELEMENTARY SCHOOL                     9524
+  CHITTICK ELEMENTARY SCHOOL                    9527
+  CHURCHILL JUNIOR HIGH SCHOOL                  9517
+  EAST BRUNSWICK HIGH SCHOOL                    9523
+  FROST ELEMENTARY SCHOOL                       9530
+  HAMMARSKJOLD MIDDLE SCHOOL                    9525
+  IRWIN ELEMENTARY SCHOOL                       9526
+  LAWRENCE BROOK ELEM SCHOOL                    9516
+  MEMORIAL ELEMENTARY SCHOOL                    9521
+  WARNSDORFER ELEMENTARY SCHOOL                 9518
+
+EAST GREENWICH TWP SCHOOL DIST                123226
+  CLARK SCHOOL                                  8623
+  SAMUEL MICKLE SCHOOL                          8624
+
+EAST HANOVER TWP SCHOOL DIST                  123136
+  CENTRAL ELEMENTARY SCHOOL                     8308
+  EAST HANOVER MIDDLE SCHOOL                    8311
+  FRANK SMITH ELEMENTARY SCHOOL                 8312
+
+EAST NEWARK SCHOOL DISTRICT                   122683
+  EAST NEWARK PUBLIC SCHOOL                     6629
+
+EAST ORANGE SCHOOL DISTRICT                   122663
+  CICELY TYSON SCHOOL                           6585
+  CLIFFORD J SCOTT HIGH SCHOOL                  6574
+  DIONNE WARWICK INSTITUTE                      6590
+  EAST ORANGE HIGH SCHOOL                       6576
+  ECOLE TOUSSAINT LOUVERTURE SCH                6589
+  GEORGE WASHINGTON CARVER INST                 6578
+  GORDON PARKS ACADEMY                          6580
+  J GARFIELD JACKSON SR ACADEMY                 6569
+  JOHN L COSTLEY MIDDLE SCHOOL                  6571
+  JOHNNIE L COCHRAN JR ACADEMY                  6564
+  LANGSTON HUGHES SCHOOL                        6586
+  MILDRED BARRY GARVIN SCHOOL                   6579
+  PATRICK FRANCIS HEALY MID SCH                 6572
+  SOJOURNER TRUTH MIDDLE SCHOOL                 6573
+  WASHINGTON ACADEMY OF MUSIC                   6582
+  WHITNEY E HOUSTON ACADEMY                     6567
+
+EAST RUTHERFORD SCHOOL DIST                   122743
+  ALFRED S FAUST INTER ELEM SCH                 6932
+  FRANKLIN ELEMENTARY SCHOOL                    6933
+  MCKENZIE ELEMENTARY SCHOOL                    6935
+
+EAST WINDSOR REGIONAL SCH DIST                123431
+  BLACK ELEMENTARY SCHOOL                       9173
+  DREW ELEMENTARY SCHOOL                        9174
+  HIGHTSTOWN HIGH SCHOOL                        9171
+  KREPS MIDDLE SCHOOL                           9247
+  MCKNIGHT ELEMENTARY SCHOOL                    9166
+  ROGERS ELEMENTARY SCHOOL                      9172
+
+EASTAMPTON TWP SCHOOL DISTRICT                123238
+  EASTAMPTON ELEMENTARY SCHOOL                  8648
+  EASTAMPTON MIDDLE SCHOOL                      8647
+
+EASTERN CAMDEN COUNTY REGIONAL SCHOOL         123208
+  EASTERN SENIOR HIGH SCHOOL                    8546
+
+EATONTOWN BOARD OF EDUCATION                  122986
+  MARGARET L VETTER ELEM SCHOOL                 7930
+  MEADOWBROOK ELEMENTARY SCHOOL                 7932
+  MEMORIAL ELEMENTARY SCHOOL                    7931
+  WOODMERE ELEMENTARY SCHOOL                    7929
+
+EDGEWATER PARK SCHOOL DISTRICT                123165
+  MAGOWAN ELEMENTARY SCHOOL                     8422
+  SAMUEL M RIDGWAY MIDDLE SCHOOL                8423
+
+EDGEWATER SCHOOL DISTRICT                     122667
+  ELEANOR VAN GELDER SCHOOL                     6591
+
+EDISON TWP SCHOOL DISTRICT                    123515
+  BENJAMIN FRANKLIN ELEM SCHOOL                 9541
+  EDISON HIGH SCHOOL                            9537
+  HERBERT HOOVER MIDDLE SCHOOL                  9602
+  JAMES MADISON INTER SCHOOL                    9548
+  JAMES MADISON PRIMARY SCHOOL                  9542
+  JAMES MONROE ELEMENTARY SCHOOL                9601
+  JOHN ADAMS MIDDLE SCHOOL                      9545
+  JOHN MARSHALL ELEMENTARY SCH                  9534
+  LINCOLN ELEMENTARY SCHOOL                     9538
+  LINDENAU ELEMENTARY SCHOOL                    9539
+  MARTIN LUTHER KING ELEM SCHOOL                9544
+  MENLO PARK ELEMENTARY SCHOOL                  9553
+  STEVENS HIGH SCHOOL                           9549
+  THOMAS JEFFERSON MIDDLE SCHOOL                9535
+  WASHINGTON ELEMENTARY SCHOOL                  9532
+  WOODBROOK ELEMENTARY SCHOOL                   9551
+  WOODROW WILSON MIDDLE SCHOOL                  9552
+
+EGG HARBOR CITY SCHOOL DIST                   123353
+  RITTENBERG ELEMENTARY SCHOOL                  8950
+  SPRAGG ELEMENTARY SCHOOL                      8952
+
+EGG HARBOR TWP SCHOOL DISTRICT                123364
+  CLAYTON DAVENPORT ELEM SCHOOL                 8986
+  EGG HARBOR TWP HIGH SCHOOL                    8990
+  EGG HARBOR TWP INTER SCHOOL                   8988
+  EGG HARBOR TWP MIDDLE SCHOOL                  8989
+  SLAYBAUGH ELEMENTARY SCHOOL                   8991
+  SWIFT ELEMENTARY SCHOOL                       8992
+
+ELIZABETH SCHOOL DISTRICT                     122796
+  BATTIN MIDDLE SCHOOL 75                       7253
+  BUTLER ELEMENTARY SCHOOL 23                   7300
+  CLEVELAND MIDDLE SCHOOL 70                    7286
+  COLUMBUS ELEMENTARY SCHOOL 15                 7262
+  ELIZABETH HIGH SCHOOL                         7256
+  ELMORA ELEMENTARY SCHOOL 12                   7299
+  FRANKLIN ELEMENTARY SCHOOL 13                 7294
+  HALLORAN ELEMENTARY SCHOOL 22                 7247
+  HAMILTON MIDDLE SCHOOL 72                     7304
+  HOLMES MIDDLE SCHOOL 71                       7287
+  LAFAYETTE ELEMENTARY SCHOOL 06                7234
+  LAFAYETTE MIDDLE SCHOOL 73                    7235
+  LINCOLN ELEMENTARY SCHOOL 14                  7243
+  MADISON-MONROE ELEM SCHOOL 16                 7236
+  MARSHALL ELEMENTARY SCHOOL 20                 7288
+  MORRIS ELEMENTARY SCHOOL 18                   7307
+  MRAVLAG ELEMENTARY SCHOOL 21                  7296
+  PETERSTOWN ELEMENTARY SCH 03                  7261
+  ROOSEVELT ELEM SCHOOL 17                      7244
+  ROOSEVELT MIDDLE SCHOOL                       7245
+  SCOTT ELEMENTARY SCHOOL 02                    7240
+  WASHINGTON ELEMENTARY SCHOOL 1                7293
+  WILSON ELEMENTARY SCHOOL 19                   7248
+
+ELK TOWNSHIP SCHOOL DISTRICT                  123190
+  AURA ELEMENTARY SCHOOL                        8491
+
+ELMER SCHOOL DISTRICT                         123393
+  ELMER ELEMENTARY SCHOOL                       9049
+
+ELMWOOD PARK SCHOOL DISTRICT                  122809
+  GANTNER AVENUE ELEM SCHOOL                    7415
+  GILBERT AVENUE ELEM SCHOOL                    7412
+  MEMORIAL JR-SR HIGH SCHOOL                    7413
+  MEMORIAL MIDDLE SCHOOL                        7414
+  SIXTEENTH AVENUE ELEM SCHOOL                  7411
+
+ELSINBORO TOWNSHIP SCHOOL DIST                123268
+  ELSINBORO TOWNSHIP ELEM SCHOOL                8724
+
+EMERSON BD OF EDUC                            122909
+  EMERSON JR-SR HIGH SCHOOL                     7727
+  MEMORIAL ELEMENTARY SCHOOL                    7728
+  PATRICK VILLANO ELEM SCHOOL                   7730
+
+ENGLEWOOD CLIFFS SCHOOL DIST                  122913
+  ENGLEWOOD CLIFFS UPPER SCHOOL                 7744
+  NORTHCLIFF ELEMENTARY SCHOOL                  7743
+
+ENGLEWOOD SCHOOL DISTRICT                     122911
+  CLEVELAND ELEMENTARY SCHOOL                   7736
+  DISMUS MIDDLE SCHOOL                          7731
+  DONALD A QUARLES ELEM SCHOOL                  7732
+  DWIGHT MORROW HIGH SCHOOL                     7735
+  LINCOLN ELEMENTARY SCHOOL                     7734
+
+ESSEX COUNTY VOCATIONAL SCHOOL                122665
+  BLOOMFIELD VOCATIONAL SCHOOL                  6480
+  NORTH 13TH STREET VOC SCHOOL                  7149
+  WEST CALDWELL VOC SCHOOL                      6503
+
+ESSEX FELLS SCHOOL DISTRICT                   122669
+  ESSEX FELLS ELEMENTARY SCHOOL                 6594
+
+ESTELL MANOR SCHOOL DISTRICT                  123396
+  ESTELL MANOR ELEMENTARY SCHOOL                9053
+
+EVESHAM TWP SCHOOL DISTRICT                   123221
+  BEELER ELEMENTARY SCHOOL                      8594
+  EVANS ELEMENTARY SCHOOL                       8589
+  FRANCES DEMASI ELEMENTARY SCH                 8600
+  FRANCES DEMASI MIDDLE SCHOOL                  8601
+  JAGGARD ELEMENTARY SCHOOL                     8596
+  MARLTON ELEMENTARY SCHOOL                     8597
+  MARLTON MIDDLE SCHOOL                         8598
+  RICHARD L RICE ELEMENTARY SCH                 8599
+  VAN ZANT ELEMENTARY SCHOOL                    8592
+
+EWING TOWNSHIP SCHOOL DISTRICT                123457
+  EWING HIGH SCHOOL                             9290
+  FISHER MIDDLE SCHOOL                          9289
+  FRANCIS LORE ELEMENTARY SCHOOL                9322
+  PARKWAY ELEMENTARY SCHOOL                     9291
+  WILLIAM L ANTHIEL ELEM SCHOOL                 9332
+
+FAIR HAVEN SCHOOL DISTRICT                    122969
+  KNOLLWOOD ELEMENTARY SCHOOL                   7886
+  SICKLES ELEMENTARY SCHOOL                     7885
+
+FAIR LAWN PUBLIC SCHOOL DIST                  122812
+  FAIR LAWN HIGH SCHOOL                         7418
+  FORREST ELEMENTARY SCHOOL                     7419
+  JEFFERSON MIDDLE SCHOOL                       7428
+  LYNCREST ELEMENTARY SCHOOL                    7420
+  MEMORIAL SCHOOL                               7421
+  MILNES ELEMENTARY SCHOOL                      7426
+  RADBURN ELEMENTARY SCHOOL                     7427
+  WARREN POINT ELEMENTARY SCHOOL                7425
+  WESTMORELAND ELEMENTARY SCHOOL                7423
+
+FAIRFIELD BOARD OF ED.                        122642
+  CHURCHILL ELEMENTARY SCHOOL                   6486
+  STEVENSON ELEMENTARY SCHOOL                   6484
+
+FAIRFIELD TWP PUBLIC SCHOOLS                  123387
+  FAIRFIELD TWP MIDDLE SCHOOL                   9040
+  FAIRFIELD TWP PRIMARY SCHOOL                  9039
+
+FAIRVIEW SCHOOL DISTRICT                      122670
+  LINCOLN ELEMENTARY SCHOOL                     6595
+  NUMBER 03 ELEMENTARY SCHOOL                   6596
+
+FARMINGDALE SCHOOL DISTRICT                   122993
+  FARMINGDALE ELEMENTARY SCHOOL                 7950
+
+FLEMINGTON-RARITAN REG DIST                   123518
+  BARLEY SHEAF ELEM SCHOOL                      9559
+  FRANCIS DESMARES ELEM SCHOOL                  9560
+  READING FLEMING MIDDLE SCHOOL                 9557
+  ROBERT HUNTER ELEM SCHOOL                     9558
+
+FLORENCE TOWNSHIP SCHOOL DIST                 123430
+  FLORENCE TOWNSHIP MEM HIGH SCH                9164
+  FLORENCE TOWNSHIP MIDDLE SCH                  9165
+  MARCELLA L DUFFY ELEM SCHOOL                  9163
+  ROEBLING ELEMENTARY SCHOOL                    9237
+
+FLORHAM PARK SCHOOL DISTRICT                  123132
+  BRIARWOOD ELEMENTARY SCHOOL                   8301
+  BROOKLAKE ELEMENTARY SCHOOL                   8302
+  RIDGEDALE MIDDLE SCHOOL                       8303
+
+FOLSOM SCHOOL DISTRICT                        123205
+  FOLSOM ELEMENTARY SCHOOL                      8539
+
+FORT LEE SCHOOL DISTRICT                      122674
+  FORT LEE HIGH SCHOOL                          6605
+  FORT LEE NUMBER 1 ELEM SCHOOL                 6604
+  FORT LEE NUMBER 2 ELEM SCHOOL                 6601
+  FORT LEE NUMBER 3 ELEM SCHOOL                 6602
+  FORT LEE NUMBER 4 ELEM SCHOOL                 6599
+  LEWIS F COLE MIDDLE SCHOOL                    6600
+
+FRANKFORD TWP SCHOOL DISTRICT                 123051
+  FRANKFORD TWP ELEM SCHOOL                     8130
+
+FRANKLIN LAKES SCHOOL DISTRICT                122815
+  FRANKLIN AVE MIDDLE SCHOOL                    7434
+  HIGH MOUNTAIN ROAD ELEM SCHOOL                7437
+  WOODSIDE AVE ELEM SCHOOL                      7435
+
+FRANKLIN SCHOOL DISTRICT                      122813
+  FRANKLIN ELEMENTARY SCHOOL                    7431
+
+FRANKLIN TOWNSHIP BOE                         123567
+  FRANKLIN TOWNSHIP ELEM SCHOOL                 9717
+
+FRANKLIN TWP ELEM SCHOOL DIST                 123106
+  FRANKLIN TOWNSHIP ELEM SCHOOL                 8243
+
+FRANKLIN TWP PUBLIC SCHOOLS                   123399
+  CAROLINE L REUTTER ELEM SCHOOL                9057
+  LAKE  SCHOOL                                  9084
+  MAIN ROAD ELEMENTARY SCHOOL                   9085
+  MARY S JANVIER ELEM SCHOOL                    9056
+
+FRANKLIN TWP SCHOOL DISTRICT                  123572
+  CONERLY ROAD ELEMENTARY SCHOOL                9729
+  ELIZABETH AVE ELEMENTARY SCH                  9724
+  FRANKLIN PARK ELEMENTARY SCH                  9563
+  FRANKLIN TOWNSHIP HIGH SCHOOL                 9733
+  HILLCREST ELEMENTARY SCHOOL                   9734
+  KINGSTON ELEMENTARY SCHOOL                    9189
+  MACAFEE ELEMENTARY SCHOOL                     9732
+  PINE GROVE MANOR ELEM SCHOOL                  9727
+  SAMPSON G SMITH INTER SCHOOL                  9731
+
+FREDON TWP SCHOOL DISTRICT                    123081
+  FREDON TWP ELEMENTARY SCHOOL                  8187
+
+FREEHOLD BOROUGH SCHOOL DIST                  122997
+  FREEHOLD LEARNING CENTER                      7961
+  INTERMEDIATE MIDDLE SCHOOL                    7958
+  PARK AVENUE ELEM SCHOOL                       7959
+
+FREEHOLD REG HIGH SCHOOL DIST                 122990
+  DR JACOB LEWIS CENTER                         7969
+  FREEHOLD HIGH SCHOOL                          7957
+  FREEHOLD TWP HIGH SCHOOL                      7966
+  HOWELL HIGH SCHOOL                            7953
+  MANALAPAN HIGH SCHOOL                         7943
+  MARLBORO HIGH SCHOOL                          8041
+
+FREEHOLD TWP SCHOOL DISTRICT                  122999
+  APPLEGATE ELEMENTARY SCHOOL                   7965
+  BARKALOW ELEMENTARY SCHOOL                    7963
+  BURLINGTON ROAD ELEM SCHOOL                   7967
+  DONOVAN ELEMENTARY SCHOOL                     7964
+  EISENHOWER JR HIGH SCHOOL                     7968
+  ERRICKSON ELEMENTARY SCHOOL                   7954
+  WEST FREEHOLD ELEM SCHOOL                     7962
+
+FRELINGHUYSEN TWP SCHOOL DIST                 123070
+  FRELINGHUYSEN TWP ELEM SCHOOL                 8165
+
+FRENCHTOWN SCHOOL DISTRICT                    123522
+  EDITH ORT THOMAS ELEM SCHOOL                  9569
+
+GALLOWAY TWP SCHOOL DISTRICT                  123339
+  ARTHUR RANN MIDDLE SCHOOL                     8920
+  COLOGNE ELEMENTARY SCHOOL                     8947
+  POMONA ELEMENTARY SCHOOL                      8995
+  REEDS ROAD ELEMENTARY SCHOOL                  8918
+  ROLAND ROGERS ELEMENTARY SCH                  8915
+  SMITHVILLE ELEMENTARY SCHOOL                  8975
+  SOUTH EGG HARBOR ELEM SCHOOL                  8951
+
+GARFIELD SCHOOL DISTRICT                      122676
+  COLUMBUS ELEMENTARY SCHOOL                    6613
+  GARFIELD HIGH SCHOOL                          6611
+  LINCOLN ELEMENTARY SCHOOL                     6615
+  ROOSEVELT ELEMENTARY SCHOOL                   6609
+  THOMAS JEFFERSON MIDDLE SCHOOL                6610
+  WASHINGTON IRVING ELEM SCHOOL                 6617
+  WOODROW WILSON ELEMENTARY SCH                 6612
+
+GARWOOD SCHOOL DISTRICT                       122678
+  WASHINGTON ELEMENTARY SCHOOL                  6619
+
+GATEWAY REGIONAL HIGH SCHOOL DISTRICT         123316
+  GATEWAY REG HIGH SCHOOL                       8818
+
+GIBBSBORO SCHOOL DISTRICT                     123185
+  GIBBSBORO SCHOOL                              8480
+
+GLASSBORO PUBLIC SCHOOL DIST                  123189
+   HARVEY RODGERS ELEMENTARY SCHOOL             8488
+  BOWE ELEMENTARY SCHOOL                        8484
+  DOROTHY BULLOCK ELEMENTARY SCHOOL             8489
+  ELSMERE SCHOOL                                8485
+  GLASSBORO HIGH SCHOOL                         8486
+  GLASSBORO INTERMEDIATE SCHOOL                 8487
+
+GLEN RIDGE SCHOOL DISTRICT                    122680
+  FOREST AVENUE ELEMENTARY SCH                  6622
+  GLEN RIDGE HIGH SCHOOL                        6620
+  GLEN RIDGE MIDDLE SCHOOL                      6621
+  LINDEN AVENUE ELEMENTARY SCH                  6623
+
+GLEN ROCK SCHOOL DISTRICT                     122844
+  CENTRAL ELEMENTARY SCHOOL                     7513
+  CLARA E COLEMAN ELEM SCHOOL                   7518
+  GLEN ROCK MIDDLE SCHOOL                       7515
+  RICHARD E BYRD ELEM SCHOOL                    7514
+
+GLOUCESTER CITY SCHOOL DIST                   123192
+  GLOUCESTER CITY JR-SR HIGH SCH                8493
+  MARY E COSTELLO ELEMENTARY SCH                8494
+
+GLOUCESTER CO. INST. OF TECH                  123274
+  GLOUCESTER CO VOC-TECH H S                    8733
+
+GLOUCESTER TWP SCHOOL DISTRICT                123168
+  BLACKWOOD ELEMENTARY SCHOOL                   8433
+  CHARLES W LEWIS MIDDLE SCHOOL                 8424
+  CHEWS ELEMENTARY SCHOOL                       8439
+  ERIAL ELEMENTARY SCHOOL                       8744
+  GLEN LANDING MIDDLE SCHOOL                    8437
+  GLENDORA ELEMENTARY SCHOOL                    8492
+  GLOUCESTER TWP ELEMENTARY SCH                 8432
+  GRENLOCH SCHOOL                               8425
+  JAMES W LILLEY JR ELEM SCHOOL                 8749
+  LORING-FLEMMING ELEMENTARY SCH                8438
+
+GREAT MEADOWS REG SCHOOL DIST                 123062
+  CENTRAL SCHOOL                                8150
+
+GREATER EGG HARBOR REG HS DIST                 123406
+  ABSEGAMI HIGH SCHOOL                          8922
+  OAKCREST HIGH SCHOOL                          9069
+
+GREEN BROOK TWP SCHOOL DIST                   123510
+  IRENE E FELDKIRCHNER ELEM SCH                 9514
+
+GREEN TOWNSHIP BOARD OF EDUCATION             123063
+  GREEN HILLS ELEMENTARY SCHOOL                 8151
+
+GREENWICH TOWNSHIP SCHOOL DIST                123400
+  MORRIS GOODWIN ELEM SCHOOL                    9058
+  BROADSTREET ELEMENTARY SCHOOL                 8481
+  NEHAUNSEY MIDDLE SCHOOL                       8482
+  STEWARTSVILLE ELEMENTARY SCH                  9775
+
+GUTTENBERG SCHOOL DISTRICT                    122769
+  ANNE KLEIN SCHOOL                             7047
+
+HACKENSACK SCHOOL DISTRICT                    122884
+  FAIRMOUNT ELEMENTARY SCHOOL                   7672
+  HACKENSACK HIGH SCHOOL                        7666
+  HACKENSACK MIDDLE SCHOOL                      7669
+  HILLERS ELEMENTARY SCHOOL                     7668
+  JACKSON AVENUE ELEM SCHOOL                    7691
+  PARKER ELEMENTARY SCHOOL                      7667
+
+HACKETTSTOWN SCHOOL DISTRICT                  123064
+  HACKETTSTOWN HIGH SCHOOL                      8157
+  HACKETTSTOWN MIDDLE SCHOOL                    8156
+  HATCHERY HILL ELEM SCHOOL                     8153
+  WILLOW GROVE ELEMENTARY SCHOOL                8155
+
+HADDON HEIGHTS SCHOOL DISTRICT                123200
+  ATLANTIC AVE ELEMENTARY SCHOOL                8529
+  GLENVIEW AVE ELEMENTARY SCHOOL                8527
+  HADDON HEIGHTS JR & SR HIGH                   8531
+  SEVENTH AVE ELEMENTARY SCHOOL                 8532
+
+HADDON TOWNSHIP SCHOOL DISTRICT               123330
+  EDISON ELEMENTARY SCHOOL                      8886
+  HADDON TWP HIGH SCHOOL                        8879
+  JENNINGS ELEMENTARY SCHOOL                    8877
+  STOY SCHOOL                                   8515
+  STRAWBRIDGE ELEMENTARY SCHOOL                 8884
+  VAN SCIVER ELEMENTARY SCHOOL                  8516
+
+HADDONFIELD BOROUGH SCHOOL DISTRICT           123196
+  CENTRAL ELEMENTARY SCHOOL                     8510
+  ELIZABETH HADDON ELEM SCHOOL                  8514
+  HADDONFIELD MEMORIAL HIGH SCH                 8508
+  HADDONFIELD MIDDLE SCHOOL                     8511
+  J FITHIAN TATEM ELEM SCHOOL                   8507
+
+HAINESPORT TWP SCHOOL DISTRICT                 123201
+  HAINESPORT ELEMENTARY SCHOOL                  8533
+
+HALEDON SCHOOL DISTRICT                       122874
+  HALEDON ELEMENTARY SCHOOL                     7630
+
+HAMBURG SCHOOL DISTRICT                       122819
+  HAMBURG ELEMENTARY SCHOOL                     7440
+
+HAMILTON TOWNSHIP SCHOOL DIST                 123402
+  DAVIES MIDDLE SCHOOL                          9068
+  HESS ELEMENTARY SCHOOL                        9065
+  SHANER MEMORIAL ELEM SCHOOL                   9062
+  ALEXANDER ELEMENTARY SCHOOL                   9365
+  CROCKETT MIDDLE SCHOOL                        9373
+  GREENWOOD ELEMENTARY SCHOOL                   9257
+  GRICE MIDDLE SCHOOL                           9262
+  HAMILTON N-NOTTINGHAM HIGH SCH                9311
+  HAMILTON WEST                                 9269
+  KISTHARDT ELEMENTARY SCHOOL                   9267
+  KLOCKNER ELEMENTARY SCHOOL                    9309
+  KUSER ELEMENTARY SCHOOL                       9326
+  LALOR ELEMENTARY SCHOOL                       9273
+  LANGTREE ELEMENTARY SCHOOL                    9369
+  MCGALLIARD ELEMENTARY SCHOOL                  9266
+  MERCERVILLE ELEMENTARY SCHOOL                 9307
+  MORGAN ELEMENTARY SCHOOL                      9306
+  REYNOLDS MIDDLE SCHOOL                        9366
+  ROBINSON ELEMENTARY SCHOOL                    9263
+  SAYEN ELEMENTARY SCHOOL                       9367
+  SUNNYBRAE ELEMENTARY SCHOOL                   9312
+  UNIVERSITY HEIGHTS ELEM SCHOOL                9305
+  WILSON ELEMENTARY SCHOOL                      9261
+  YARDVILLE ELEMENTARY SCHOOL                   9313
+  YARDVILLE HEIGHTS ELEM SCHOOL                 9314
+
+HAMMONTON SCHOOL DISTRICT                     123202
+  HAMMONTON MIDDLE SCHOOL                       8535
+  HAMMONTON SR HIGH SCHOOL                      8536
+  WARREN E SOY JR ELENENTARY                    8541
+
+HAMPTON SCHOOL DISTRICT                       123526
+  HAMPTON ELEMENTARY SCHOOL                     9573
+
+HAMPTON TWP SCHOOL DISTRICT                   123082
+  MARIAN MCKEOWN ELEM SCHOOL                    8189
+
+HANOVER PARK REG HIGH SCH DIST                123135
+  HANOVER PARK HIGH SCHOOL                      8310
+  WHIPPANY PARK HIGH SCHOOL                     8375
+
+HANOVER TOWNSHIP SCHOOL DIST                  123152
+  BEE MEADOW ELEMENTARY SCHOOL                  8371
+  MEMORIAL JUNIOR SCHOOL                        8372
+  MOUNTVIEW ROAD ELEM SCHOOL                    8331
+  SALEM DRIVE ELEMENTARY SCHOOL                 8370
+
+HARDING TOWNSHIP SCHOOL DIST                  123149
+  HARDING TOWNSHIP ELEM SCHOOL                  8362
+
+HARDYSTON TWP SCHOOL DISTRICT                 122814
+  HARDYSTON TOWNSHIP ELEM SCHOOL                7432
+
+HARMONY TOWNSHIP SCHOOL DIST                  123563
+  HARMONY TOWNSHIP ELEM SCHOOL                  9707
+
+HARRINGTON PARK SCHOOL DIST                   122914
+  HARRINGTON PARK ELEM SCHOOL                   7745
+
+HARRISON SCHOOL DISTRICT                      122681
+  HARRISON HIGH SCHOOL                          6625
+  LINCOLN ELEMENTARY SCHOOL 03                  6628
+  WASHINGTON SCHOOL                             6627
+
+HARRISON TWP SCHOOL DISTRICT                  123241
+  HARRISON TOWNSHIP ELEM SCHOOL                 8650
+
+HASBROUCK HEIGHTS SCHOOL DIST                 122889
+  EUCLID ELEMENTARY SCHOOL                      7684
+  HASBROUCK HGTS JR-SR HIGH SCH                 7683
+  LINCOLN ELEMENTARY SCHOOL                     7682
+
+HAWORTH SCHOOL DISTRICT                       122916
+  HAWORTH PUBLIC ELEM SCHOOL                    7746
+
+HAWTHORNE BOARD OF EDUCATION                  122873
+  HAWTHORNE HIGH SCHOOL                         7623
+  JEFFERSON ELEM SCHOOL                         7624
+  LINCOLN MIDDLE SCHOOL                         7626
+  ROOSEVELT ELEMENTARY SCHOOL                   7625
+  WASHINGTON ELEMENTARY SCHOOL                  7629
+
+HAZLET TWP SCHOOL DISTRICT                    123000
+  BEERS STREET MIDDLE SCHOOL                    7971
+  COVE ROAD ELEMENTARY SCHOOL                   7975
+  LILLIAN DRIVE ELEM SCHOOL                     7981
+  MIDDLE ROAD ELEMENTARY SCHOOL                 7977
+  RARITAN HIGH SCHOOL                           7978
+  RARITAN VALLEY ELEM SCHOOL                    7970
+  SYCAMORE DRIVE ELEM SCHOOL                    7973
+  UNION AVE MIDDLE SCHOOL                       7979
+
+HENRY HUDSON REG SCHOOL DIST                  123003
+  HENRY HUDSON REG HIGH SCHOOL                  7997
+
+HIGH BRIDGE SCHOOL DISTRICT                   123528
+  HIGH BRIDGE ELEM SCHOOL                       9575
+  HIGH BRIDGE MIDDLE SCHOOL                     9576
+
+HIGH POINT REG H S DISTRICT                   122852
+  HIGH POINT REG HIGH SCHOOL                    7536
+
+HIGHLAND PARK PUBLIC SCH DIST                 123591
+  BARTLE SCHOOL                                 9809
+  HIGHLAND PARK HIGH SCHOOL                     9810
+  IRVING PRIMARY SCHOOL                         9811
+
+HIGHLANDS SCHOOL DISTRICT                     123002
+  HIGHLANDS ELEMENTARY SCHOOL                   7994
+
+HILLSBOROUGH SCHOOL DIST                      123549
+  AMSTERDAM ELEMENTARY SCHOOL                   9149
+  HILLSBOROUGH ELEMENTARY SCHOOL                9147
+  HILLSBOROUGH HIGH SCHOOL                      9148
+  HILLSBOROUGH MIDDLE SCHOOL                    9749
+  SUNNYMEAD ELEMENTARY SCHOOL                   9747
+  TRIANGLE ELEMENTARY SCHOOL                    9748
+  WOODFERN ELEMENTARY SCHOOL                    9631
+  WOODS ROAD ELEMENTARY SCHOOL                  9150
+
+HILLSDALE SCHOOL DISTRICT                     122918
+  ANN BLANCHE SMITH ELEM SCHOOL                 7750
+  GEORGE G WHITE MIDDLE SCHOOL                  7753
+  MEADOWBROOK ELEMENTARY SCHOOL                 7751
+
+HILLSIDE SCHOOL DISTRICT                      122795
+  CALVIN COOLIDGE ELEM SCHOOL                   7279
+  GEORGE WASHINGTON ELEM SCHOOL                 7277
+  HILLSIDE HIGH SCHOOL                          7283
+  HURDEN LOOKER ELEM SCHOOL                     7282
+  MORRIS SAYBROOK ELEM SCHOOL                   7284
+  WALTER O KRUMBIEGEL MID SCHOOL                7280
+
+HO HO KUS SCHOOL DISTRICT                     122820
+  HO HO KUS ELEMENTARY SCHOOL                   7447
+
+HOBOKEN SCHOOL DISTRICT                       122684
+  BRANDT ELEMENTARY SCHOOL 2                    6639
+  CALABRO ELEMENTARY SCHOOL                     6637
+  DEMAREST ELEMENTARY SCHOOL                    6636
+  HOBOKEN HIGH SCHOOL                           6630
+  THOMAS CONNORS MEM ELEM SCH 9                 6631
+  WALLACE ELEMENTARY SCHOOL 6                   6633
+
+HOLLAND TOWNSHIP SCHOOL DIST                  123543
+  HOLLAND TOWNSHIP ELEM SCHOOL                  9620
+
+HOLMDEL TOWNSHIP SCHOOL DIST                  123004
+  HOLMDEL HIGH SCHOOL                           8003
+  INDIAN HILL ELEMENTARY SCHOOL                 7999
+  VILLAGE ELEMENTARY SCHOOL                     8005
+  WILLIAM R SATZ SCHOOL                         8004
+
+HOPATCONG SCHOOL DISTRICT                     123068
+  DURBAN AVE ELEMENTARY SCHOOL                  8159
+  HOPATCONG HIGH SCHOOL                         8160
+  HOPATCONG MIDDLE SCHOOL                       8161
+  HUDSON MAXIM ELEMENTARY SCHOOL                8162
+  TULSA TRAIL ELEMENTARY SCHOOL                 8163
+
+HOPE TOWNSHIP SCHOOL DISTRICT                 123069
+  HOPE TOWNSHIP SCHOOL                          8164
+
+HOPEWELL TOWNSHIP SCHOOL DIST                 123384
+  HOPEWELL CREST ELEM SCHOOL                    9033
+
+HOPEWELL VALLEY REG SCH DIST                  123440
+  BEAR TAVERN ELEMENTARY SCHOOL                 9245
+  CENTRAL HIGH SCHOOL                           9200
+  HOPEWELL ELEMENTARY SCHOOL                    9176
+  TIMBERLANE MIDDLE SCHOOL                      9199
+  TOLLGATE GRAMMAR SCHOOL                       9201
+
+HOWELL TOWNSHIP SCHOOL DIST                   123001
+  ALDRICH ELEMENTARY SCHOOL                     7985
+  ARDENA ELEMENTARY SCHOOL                      7951
+  GRIEBLING ELEMENTARY SCHOOL                   7952
+  LAND O' PINES ELEMENTARY SCH                  7992
+  NEWBURY ELEMENTARY SCHOOL                     7984
+  RAMTOWN ELEMENTARY SCHOOL                     7990
+  SOUTHARD ELEMENTARY SCHOOL                    7987
+  TAUNTON ELEMENTARY SCHOOL                     7986
+
+HUNTERDON CO OFC OF EDUCATION                 123516
+  THE JESUS SCHOOL                              9191
+
+HUNTERDON CTL REG HGH SCH DIST                123517
+  HUNTERDON CTL REG HIGH SCHOOL                 9556
+
+IRVINGTON PUBLIC SCHOOLS                      122788
+  AUGUSTA STREET ELEMENTARY SCH                 7209
+  BERKELEY TERRACE ELEM SCHOOL                  7210
+  CHANCELLOR AVENUE ELEM SCHOOL                 7202
+  FLORENCE ELEMENTARY SCHOOL                    7200
+  GROVE STREET ELEMENTARY SCHOOL                7214
+  IRVINGTON HIGH SCHOOL                         7203
+  MADISON AVE ELEMENTARY SCHOOL                 7201
+  MOUNT VERNON AVENUE SCHOOL                    7207
+  MYRTLE AVENUE MIDDLE SCHOOL                   7204
+  THURGOOD MARSHALL ELEM SCHOOL                 7212
+  UNION AVENUE MIDDLE SCHOOL                    7206
+
+ISLAND HEIGHTS SCHOOL DISTRICT                123476
+  ISLAND HEIGHTS ELEM SCHOOL                    9423
+
+JACKSON TWP SCHOOL DISTRICT                   123433
+  CARL GOETZ MIDDLE SCHOOL                      9186
+  CHRISTA MCAULIFFE MIDDLE SCH                  9178
+  HOLMAN ELEMENTARY SCHOOL                      9183
+  JACKSON MEMORIAL HIGH SCHOOL                  9185
+  JOHNSON ELEMENTARY SCHOOL                     9180
+  ROSENAUER ELEMENTARY SCHOOL                   9181
+  SWITLIK ELEMENTARY SCHOOL                     9184
+
+JAMESBURG PUBLIC SCHOOL DIST                  123531
+  BRECKWEDEL MIDDLE SCHOOL                      9585
+  KENNEDY ELEMENTARY SCHOOL                     9584
+
+JEFFERSON TWP SCHOOL DISTRICT                 123072
+  ARTHUR STANLICK ELEM SCHOOL                   8248
+  BRIGGS ELEMENTARY SCHOOL                      8168
+  CONSOLIDATED ELEMENTARY SCHOOL                8169
+  COZY LAKE ELEMENTARY SCHOOL                   7474
+  JEFFERSON TWP HIGH SCHOOL                     7478
+  JEFFERSON TWP MIDDLE SCHOOL                   7475
+  MILTON ELEMENTARY SCHOOL                      7479
+  WHITE ROCK ELEMENTARY SCHOOL                  7476
+
+JERSEY CITY SCHOOL DISTRICT                   122798
+  ACADEMIC HIGH SCHOOL                          7308
+  BRADFORD ELEMENTARY PS 16                     7326
+  CONTI ELEMENTARY SCHOOL                       7312
+  CONWELL ELEMENTARY SCHOOL                     7325
+  DEFUCCIO ELEMENTARY SCHOOL                    7386
+  DICKINSON HIGH SCHOOL                         7367
+  FERRIS HIGH SCHOOL                            7319
+  HENRY SNYDER HIGH SCHOOL                      7351
+  JAMES F MURRAY ELEM SCHOOL                    7349
+  JERSEY CITY MED CTR COMPLEX                   7344
+  JERSEY CITY NUMBER 12 ELEM SCH                7342
+  JERSEY CITY NUMBER 14 ELEM SCH                7336
+  JERSEY CITY NUMBER 20 ELEM SCH                7360
+  JERSEY CITY NUMBER 22 ELEM SCH                7347
+  JERSEY CITY NUMBER 27 ELEM SCH                7393
+  JERSEY CITY NUMBER 28 ELEM SCH                7387
+  JERSEY CITY NUMBER 29 ELEM SCH                7364
+  JERSEY CITY NUMBER 31 ELEM SCH                7375
+  JERSEY CITY NUMBER 33 ELEM SCH                7329
+  JERSEY CITY NUMBER 34 ELEM SCH                7356
+  JERSEY CITY NUMBER 8 ELEM SCH                 7391
+  JOSEPH H BRENSINGER SCHOOL                    7339
+  JOTHAM W WAKEMAN SCHOOL 6                     7370
+  KENNEDY SCHOOL 9                              7321
+  LINCOLN HIGH SCHOOL                           7343
+  MAHATMA K GANDHI SCHOOL                       7380
+  MARTIN ELEMENTARY SCHOOL                      7366
+  MARTIN LUTHER KING JR SCHOOL                  7378
+  NEW JERSEY REGIONAL DAY SCHOOL                7345
+  NICHOLAUS COPERNICUS SCHOOL                   7395
+  NICHOLS ELEMENTARY SCHOOL                     7373
+  NOLAN MIDDLE SCHOOL                           7358
+  RAFAEL DE J CORDERO SCHOOL                    7309
+  SULLIVAN ELEMENTARY SCHOOL                    7357
+  WATTERS ELEMENTARY SCHOOL                     7332
+  WHITNEY M YOUNG JR SCHOOL                     7361
+
+KEANSBURG SCHOOL DISTRICT                     123005
+  JOSEPH BOLGER MIDDLE SCHOOL                   8010
+  JOSEPH C CARUSO ELEMENTARY                    8007
+  KEANSBURG HIGH SCHOOL                         8008
+  PORT MONMOUTH ROAD ELEM SCHOOL                8009
+
+KEARNY SCHOOL DISTRICT                        122689
+  FRANKLIN ELEMENTARY SCHOOL                    6659
+  GARFIELD ELEMENTARY SCHOOL                    6651
+  KEARNY HIGH SCHOOL                            6654
+  LINCOLN ELEMENTARY SCHOOL                     6655
+  ROOSEVELT ELEMENTARY SCHOOL                   6658
+  SCHUYLER ELEMENTARY SCHOOL                    6660
+  WASHINGTON ELEMENTARY SCHOOL                  6650
+
+KENILWORTH SCHOOL DISTRICT                    122690
+  WARREN G HARDING ELEM SCHOOL                  6662
+
+KEYPORT SCHOOL DISTRICT                       123007
+  CENTRAL ELEMENTARY SCHOOL                     8013
+  KEYPORT HIGH SCHOOL                           8014
+
+KINGSWAY REG HIGH SCHOOL DIST                 123291
+  KINGSWAY REGIONAL HIGH SCHOOL                 8765
+
+KINGWOOD TWP SCHOOL DISTRICT                  123524
+  KINGWOOD TOWNSHIP ELEM SCHOOL                 9570
+
+KINNELON BOROUGH SCHOOL DIST                  122808
+  KIEL ELEMENTARY SCHOOL                        7408
+  KINNELON HIGH SCHOOL                          7410
+  MILLER MIDDLE SCHOOL                          7409
+  STONYBROOK ELEMENTARY SCHOOL                  7403
+
+KITTATINNY REG SCHOOL DISTRICT                123083
+  KITTATINNY REG HIGH SCHOOL                    8191
+
+KNOWLTON TOWNSHIP BOARD OF EDUCATION          123058
+  KNOWLTON TOWNSHIP ELEM SCHOOL                 8139
+
+LACEY TOWNSHIP SCHOOL DISTRICT                123478
+  CEDAR CREEK ELEMENTARY SCHOOL                 9434
+  FORKED RIVER ELEMENTARY SCHOOL                9420
+  LACEY TOWNSHIP HIGH SCHOOL                    9433
+  LACEY TOWNSHIP MIDDLE SCHOOL                  9432
+  LANOKA HARBOR ELEM SCHOOL                     9431
+
+LAFAYETTE TOWNSHIP SCHOOL DIST                123071
+  LAFAYETTE TOWNSHIP ELEM SCHOOL                8167
+
+LAKEHURST SCHOOL DISTRICT                     123477
+  LAKEHURST ELEMENTARY SCHOOL                   9425
+
+LAKELAND REG HIGH SCHOOL DIST                 122858
+  LAKELAND REG HIGH SCHOOL                      7551
+
+LAKEWOOD TWP SCHOOL DISTRICT                  123469
+  CLARKE ELEMENTARY SCHOOL                      9386
+  CLIFTON AVE ELEMENTARY SCHOOL                 9385
+  LAKEWOOD HIGH SCHOOL                          9381
+  LAKEWOOD MIDDLE SCHOOL                        9382
+  OAK STREET ELEMENTARY SCHOOL                  9390
+  SPRUCE ST ELEMENTARY SCHOOL                   9391
+
+LAMBERTVILLE SCHOOL DISTRICT                  123434
+  LAMBERTVILLE ELEMENTARY SCHOOL                9190
+
+LAUREL SPRINGS SCHOOL DISTRICT                123178
+  LAUREL SPRINGS ELEMENTARY SCH                 8471
+
+LAVALLETTE SCHOOL DISTRICT                    123479
+  LAVALLETTE ELEMENTARY SCHOOL                  9435
+
+LAWNSIDE BOROUGH SCHOOL DISTRICT              123211
+  LAWNSIDE PUBLIC ELEMENTARY SCH                8552
+
+LAWRENCE TWP SCHOOL DISTRICT                  123390
+  MYRON L POWELL ELEMENTARY SCH                 9044
+  BENJAMIN FRANKLIN ELEM SCHOOL                 9350
+  ELDRIDGE PARK ELEMENTARY SCH                  9353
+  LAWRENCE INTERMEDIATE SCHOOL                  9349
+  LAWRENCE MIDDLE SCHOOL                        9354
+  LAWRENCE SENIOR HIGH SCHOOL                   9352
+  LAWRENCEVILLE ELEMENTARY SCH                  9348
+  SLACKWOOD ELEMENTARY SCHOOL                   9357
+
+LEBANON BOROUGH SCHOOL DIST                   123533
+  LEBANON BOROUGH SCHOOL                        9590
+
+LEBANON TWP SCHOOL DISTRICT                   123056
+  VALLEY VIEW ELEMENTARY SCHOOL                 8136
+  WOODGLEN MIDDLE SCHOOL                        8135
+
+LENAPE REG HIGH SCH DISTRICT                  123299
+  CHEROKEE HIGH SCHOOL                          8588
+  LENAPE HIGH SCHOOL                            8617
+  SHAWNEE HIGH SCHOOL                           8622
+
+LENAPE VALLEY REG H S DIST                    123098
+  LENAPE VALLEY REG HIGH SCHOOL                 8220
+
+LEONIA SCHOOL DISTRICT                        122891
+  ANNA C SCOTT ELEMENTARY SCHOOL                7690
+  LEONIA HIGH SCHOOL                            7687
+  LEONIA MIDDLE SCHOOL                          7688
+
+LINCOLN PARK BOARD OF EDUCATION               122692
+  LINCOLN PARK ELEMENTARY SCHOOL                6668
+  LINCOLN PARK MIDDLE SCHOOL                    6667
+
+LINDEN SCHOOL DISTRICT                        122695
+  DEERFIELD TERRACE ELEM SCHOOL                 6669
+  HIGHLAND AVE ELEMENTARY SCHOOL                6670
+  LINDEN HIGH SCHOOL                            6681
+  LINDEN NUMBER 1 ELEM SCHOOL                   6682
+  LINDEN NUMBER 2 ELEM SCHOOL                   6678
+  LINDEN NUMBER 4 ELEM SCHOOL                   6671
+  LINDEN NUMBER 5 ELEM SCHOOL                   6673
+  LINDEN NUMBER 6 ELEM SCHOOL                   6676
+  LINDEN NUMBER 8 ELEM SCHOOL                   6683
+  MYLES J MCMANUS MIDDLE SCHOOL                 6684
+  SOEHL MIDDLE SCHOOL                           6674
+
+LINDENWOLD BOROUGH SCHOOL DISTRICT            123177
+  LINDENWOLD ELEM SCHOOL FIVE                   8466
+  LINDENWOLD ELEM SCHOOL FOUR                   8467
+  LINDENWOLD ELEM SCHOOL ONE                    8468
+
+LINWOOD CITY SCHOOL DISTRICT                  123356
+  BELHAVEN AVE MIDDLE SCHOOL                    8962
+  SEAVIEW ELEM SCHOOL                           8959
+
+LITTLE EGG HARBOR TWP SCH DIST                123295
+  GEORGE J MITCHELL ELEM SCHOOL                 8772
+  LITTLE EGG HARBOR INTER SCHOOL                8773
+
+LITTLE FALLS TWP SCHOOL DIST                  122823
+  LITTLE FALLS #1 ELEM SCHOOL                   7449
+  LITTLE FALLS #2 ELEM SCHOOL                   7450
+
+LITTLE FERRY SCHOOL DISTRICT                  122921
+  MEMORIAL MIDDLE SCHOOL                        7756
+  WASHINGTON ELEMENTARY SCHOOL                  7755
+
+LITTLE SILVER BOROUGH SCH DIST                123012
+  MARKHAM PL ELEMENTARY SCHOOL                  8025
+  POINT ROAD ELEMENTARY SCHOOL                  8026
+
+LIVINGSTON SCHOOL DISTRICT                    122697
+  BURNETT HILL ELEMENTARY SCHOOL                6692
+  COLLINS ELEMENTARY SCHOOL                     6696
+  HARRISON ELEMENTARY SCHOOL                    6686
+  HERITAGE MIDDLE SCHOOL                        6688
+  HILLSIDE ELEMENTARY SCHOOL                    6689
+  LIVINGSTON SENIOR HIGH SCHOOL                 6695
+  MOUNT PLEASANT ELEM SCHOOL                    6690
+  MOUNT PLEASANT MIDDLE SCHOOL                  6691
+  RIKER HILL ELEMENTARY SCHOOL                  6685
+
+LODI SCHOOL DISTRICT                          122922
+  COLUMBUS ELEMENTARY SCHOOL                    7758
+  LODI HIGH SCHOOL                              7759
+  LODI MIDDLE SCHOOL                            7760
+  ROOSEVELT SPECIAL ED SCHOOL                   7761
+  WASHINGTON ELEMENTARY SCHOOL                  7762
+  WILSON ELEMENTARY SCHOOL                      7764
+
+LONG BEACH ISLAND SCHOOL DIST                 123162
+  ETHEL JACOBSEN ELEMENTARY SCH                 8415
+  LONG BEACH ISLAND GRADE SCHOOL                8416
+
+LONG BRANCH SCHOOL DISTRICT                   123015
+  ANASTASIA ELEMENTARY SCHOOL                   8036
+  CONROW ELEMENTARY SCHOOL                      8039
+  ELBERON ELEMENTARY SCHOOL                     8029
+  GARFIELD ELEMENTARY SCHOOL                    8037
+  GREGORY ELEMENTARY SCHOOL                     8038
+  LONG BRANCH HIGH SCHOOL                       8033
+  LONG BRANCH MIDDLE SCHOOL                     8035
+  WEST END ELEMENTARY SCHOOL                    8032
+
+LONG HILL TOWNSHIP SCHOOL DIST                123133
+  CENTRAL MIDDLE SCHOOL                         8368
+  GILLETTE ELEMENTARY SCHOOL                    8305
+  MILLINGTON ELEMENTARY SCHOOL                  8329
+
+LOPATCONG TOWNSHIP SCHOOL DIST                123565
+  LOPATCONG ELEMENTARY SCHOOL                   9714
+
+LOWER ALLOWAYS CREEK SCH DIST                 123272
+  LOWER ALLOWAYS CREEK ELEM SCH                 8730
+
+LOWER CAMDEN CO REG HS DIST                   123157
+  EDGEWOOD REG JR HIGH SCHOOL                   8405
+  EDGEWOOD REGIONAL SR HIGH SCH                 8406
+  N.J. REGIONAL DAY SCHOOL AT WINSLOW          202240
+  OVERBROOK REG JR HIGH SCHOOL                  8469
+  OVERBROOK REG SR HIGH SCHOOL                  8476
+
+LOWER CAPE MAY REG SCHOOL DIST                123345
+  LOWER CAPE MAY REG HIGH SCHOOL                8936
+  TEITELMAN MIDDLE SCHOOL                       8937
+
+LOWER TOWNSHIP ELEM SCH DIST                  123346
+  CARL T MITNICK SCHOOL                         8934
+  DOUGLASS VETERANS MEMORIAL SCH                9008
+  MAUD ABRAMS ELEMENTARY SCHOOL                 8935
+  SANDMAN CONSOLIDATED ELEM SCH                 8938
+
+LUMBERTON TOWNSHIP BOARD OF EDUCATION         123214
+  FLORENCE L WALTHER ELEM SCHOOL                8567
+  LUMBERTON MIDDLE SCHOOL                       8568
+
+LYNDHURST BOARD OF EDUCATION                  122739
+  COLUMBUS ELEMENTARY SCHOOL                    6920
+  FRANKLIN ELEMENTARY SCHOOL                    6925
+  JEFFERSON ELEMENTARY SCHOOL                   6922
+  LINCOLN ELEMENTARY SCHOOL                     6923
+  LYNDHURST HIGH SCHOOL                         6921
+  ROOSEVELT ELEMENTARY SCHOOL                   6927
+  WASHINGTON ELEMENTARY SCHOOL                  6928
+
+MADISON SCHOOL DISTRICT                       123137
+  CENTRAL AVENUE ELEM SCHOOL                    8318
+  KINGS ROAD ELEMENTARY SCHOOL                  8320
+  MADISON HIGH SCHOOL                           8317
+  MADISON JUNIOR HIGH SCHOOL                    8319
+  TOREY J SABITINI ELEM SCHOOL                  8321
+
+MAGNOLIA BOROUGH SCHOOL DISTRICT              123215
+  MAGNOLIA ELEMENTARY SCHOOL                    8570
+
+MAHWAH TWP SCHOOL DISTRICT                    122828
+  BETSY ROSS ELEMENTARY SCHOOL                  7457
+  COMMODORE PERRY ELEMENTARY SCH                7456
+  GEORGE WASHINGTON ELEM SCHOOL                 7460
+  JOYCE KILMER ELEMENTARY SCHOOL                7458
+  MAHWAH HIGH SCHOOL                            7459
+  RAMAPO RIDGE MIDDLE SCHOOL                    7462
+
+MAINLAND REG HIGH SCHOOL DIST                 123357
+  MAINLAND REG HIGH SCHOOL                      8963
+
+MANALAPAN-ENGLISHTOWN SCH DIST                122991
+  CLARK MILLS ELEMENTARY SCHOOL                 7946
+  LAFAYETTE MILLS ELEM SCHOOL                   7942
+  MANALAPAN-ENGLISHTOWN MID SCH                 7948
+  MILFORD BROOK ELEM SCHOOL                     7947
+  PINE BROOK ELEMENTARY SCHOOL                  7944
+  TAYLOR MILLS ELEMENTARY SCHOOL                7945
+
+MANASQUAN SCHOOL DISTRICT                     123480
+  MANASQUAN ELEMENTARY SCHOOL                   9436
+  MANASQUAN HIGH SCHOOL                         9437
+
+MANCHESTER TWP SCHOOL DISTRICT                123495
+  MANCHESTER TWP ELEMENTARY SCH                 9428
+  MANCHESTER TWP HIGH SCHOOL                    9426
+  MANCHESTER TWP MIDDLE SCHOOL                  9429
+  REGIONAL DAY SCHOOL-JACKSON                   9188
+  RIDGEWAY ELEMENTARY SCHOOL                    9430
+  WHITING ELEMENTARY SCHOOL                     9478
+
+MANNINGTON TWP SCHOOL DISTRICT                123273
+  MANNINGTON ELEMENTARY SCHOOL                  8731
+
+MANSFIELD TWP SCHOOL DISTRICT                 123183
+  JOHN HYDOCK ELEMENTARY SCHOOL                 8479
+  MANSFIELD TOWNSHIP ELEM SCHOOL                8193
+
+MANTUA TWP SCHOOL DISTRICT                    123279
+  CENTRE CITY ELEMENTARY SCHOOL                 8582
+  J MASON TOMLIN ELEM SCHOOL                    8581
+  SEWELL ELEMENTARY SCHOOL                      8734
+
+MANVILLE PUBLIC SCHOOL DIST                   123534
+  ALEXANDER BATCHO INTER SCHOOL                 9594
+  MANVILLE HIGH SCHOOL                          9597
+  WESTON ELEMENTARY SCHOOL                      9598
+
+MAPLE SHADE TOWNSHIP SCH DIST                 123220
+  HOWARD YOCUM ELEMENTARY SCHOOL                8583
+  MAPLE SHADE HIGH SCHOOL                       8584
+  MAUDE WILKINS ELEM SCHOOL                     8585
+  STEINHAUER ELEM SCHOOL                        8586
+
+MARGATE CITY PUBLIC SCH DIST                  123421
+  EUGENE A TIGHE MIDDLE SCHOOL                  9139
+  UNION AVENUE ELEMENTARY SCHOOL                9137
+
+MARLBORO TWP SCHOOL DISTRICT                  123017
+  ASHER HOLMES ELEMENTARY SCHOOL                8068
+  CENTRAL ELEMENTARY SCHOOL                     8042
+  FRANK DUGAN ELEMENTARY SCHOOL                 8046
+  MARLBORO ELEMENTARY SCHOOL                    8044
+  MARLBORO MIDDLE SCHOOL                        8043
+  ROBERTSVILLE ELEMENTARY SCHOOL                8069
+
+MATAWAN-ABERDEEN REG SCH DIST                 123019
+  CLIFFWOOD ELEMENTARY SCHOOL                   7924
+  LLOYD ROAD ELEMENTARY SCHOOL                  8049
+  MATAWAN AVENUE MIDDLE SCHOOL                  7923
+  MATAWAN REGIONAL HIGH SCHOOL                  8050
+  RAVINE DRIVE ELEMENTARY SCHOOL                8051
+  STRATHMORE ELEMENTARY SCHOOL                  8048
+
+MAURICE RIVER TWP SCHOOL DIST                 123412
+  MAURICE RIVER TWP ELEM SCHOOL                 9092
+
+MAYWOOD SCHOOL DISTRICT                       122895
+  MAYWOOD AVE ELEMENTARY SCHOOL                 7694
+  MEMORIAL ELEMENTARY SCHOOL                    7693
+
+MEDFORD LAKES SCHOOL DISTRICT                 123225
+  NEETA ELEMENTARY SCHOOL                       8612
+  NOKOMIS ELEMENTARY SCHOOL                     8613
+
+MEDFORD TOWNSHIP BOARD OF EDUCATION           123224
+  CRANBERRY PINE ELEM SCHOOL                    8618
+  MAURICE & EVERETT HAINES SCH                  8616
+  MEDFORD TWP MEMORIAL MID SCH                  8620
+  MILTON H ALLEN ELEM SCHOOL                    8614
+  TAUNTON FORGE ELEM SCHOOL                     8619
+
+MENDHAM BOROUGH SCHOOL DIST                   123139
+  HILLTOP ELEMENTARY SCHOOL                     8326
+  MOUNTAIN VIEW ELEM SCHOOL                     8328
+  REGIONAL DAY SCHOOL AT MORRIS                 8339
+
+MENDHAM TOWNSHIP SCHOOL DIST                  123123
+  MENDHAM TOWNSHIP ELEM SCHOOL                  8285
+  MENDHAM TWP MIDDLE SCHOOL                     8286
+
+MERCER CO SPEC SVC SCH DIST                   123467
+  ALFRED REED SCHOOL                            9334
+  JOSEPH F CAPPELLO SCHOOL                      9361
+  MERCER JR-SR HIGH SCHOOL                      9362
+  REGIONAL DAY SCHOOL-HAMILTON                  9363
+
+MERCER CO VOCATIONAL SCH DIST                 123466
+  M C V S EVENING SCHOOL                        9360
+  M C V S SYPEK CENTER VOC SCH                  9331
+  M C V SCH OF PERFORMING ARTS                  9358
+
+MERCHANTVILLE SCHOOL DISTRICT                 123333
+  MERCHANTVILLE ELEM SCHOOL                     8899
+
+METUCHEN SCHOOL DISTRICT                      123538
+  CAMPBELL ELEMENTARY SCHOOL                    9610
+  EDGAR ELEMENTARY SCHOOL                       9605
+  METUCHEN HIGH SCHOOL                          9609
+  MOSS ELEMENTARY SCHOOL                        9606
+
+MIDDLE TOWNSHIP  SCHOOL DIST                  123351
+  MIDDLE TOWNSHIP ELEM SCHOOL 1                 8945
+  MIDDLE TOWNSHIP ELEM SCHOOL 2                 8929
+  MIDDLE TOWNSHIP HIGH SCHOOL                   8940
+  MIDDLE TOWNSHIP MIDDLE SCH 4                  8946
+
+MIDDLESEX BOROUGH PUB SCHOOLS                 123539
+  HAZELWOOD ELEMENTARY SCHOOL                   9616
+  MIDDLESEX HIGH SCHOOL                         9613
+  PARKER ELEMENTARY SCHOOL                      9617
+  VON E MAUGER MIDDLE SCHOOL                    9614
+  WATCHUNG ELEMENTARY SCHOOL                    9615
+
+MIDDLESEX CO ED SERVICES COMM                 123552
+  FELLOWSHIP FARM SCHOOL                        9676
+  RARITAN VALLEY ACADEMY SCHOOL                 9653
+  REGIONAL DAY SCHOOL-PISCATAWAY                9654
+
+MIDDLESEX CO VOC-TECH SCH DIST                123511
+  MIDDLESEX CO VOC-E BRUNSWICK                  9528
+  MIDDLESEX CO VOC-NEW BRUNSWICK                9783
+  MIDDLESEX CO VOC-PISCATAWAY                   9652
+  MIDDLESEX CO VOC-WOODBRIDGE                   7065
+  MIDDLESEX COUNTY VOC - PERTH AMBOY            9685
+
+MIDDLETOWN TWP SCHOOL DISTRICT                123022
+  BAYSHORE MIDDLE SCHOOL                        8017
+  BAYVIEW ELEMENTARY SCHOOL                     7908
+  FAIRVIEW ELEMENTARY SCHOOL                    7882
+  HARMONY ELEMENTARY SCHOOL                     8057
+  LEONARDO ELEMENTARY SCHOOL                    8018
+  LINCROFT ELEMENTARY SCHOOL                    8023
+  MIDDLETON HIGH SCHOOL NORTH                   8063
+  MIDDLETON HIGH SCHOOL SOUTH                   8065
+  MIDDLETOWN VILLAGE ELEM SCHOOL                8058
+  NAVESINK ELEMENTARY SCHOOL                    7906
+  NEW MONMOUTH ELEMENTARY SCHOOL                8060
+  NUT SWAMP ELEMENTARY SCHOOL                   8055
+  OCEAN AVENUE ELEMENTARY SCHOOL                8056
+  PORT MONMOUTH SCHOOL                          8096
+  RIVER PLAZA ELEMENTARY SCHOOL                 7881
+  THOMPSON MIDDLE SCHOOL                        8066
+  THORNE MIDDLE SCHOOL                          8095
+
+MIDLAND PARK PUBLIC SCHOOLS                   122830
+  HIGHLAND AVE ELEMENTARY SCHOOL                7467
+  MIDLAND PARK HIGH SCHOOL                      7463
+
+MILFORD SCHOOL DISTRICT                       123542
+  MILFORD PUBLIC ELEM SCHOOL                    9619
+
+MILLBURN TWP SCHOOL DISTRICT                  122700
+  DEERFIELD ELEMENTARY SCHOOL                   6959
+  GLENWOOD ELEMENTARY SCHOOL                    6962
+  HARTSHORN ELEMENTARY SCHOOL                   6961
+  MILLBURN HIGH SCHOOL                          6709
+  MILLBURN MIDDLE SCHOOL                        6710
+  WYOMING ELEMENTARY SCHOOL                     6711
+
+MILLSTONE TWP SCHOOL DISTRICT                 123426
+  MILLSTONE TOWNSHIP ELEM SCHOOL                9158
+
+MILLTOWN SCHOOL DISTRICT                      123546
+  JOYCE KILMER ELEMENTARY SCHOOL                9623
+  PARKVIEW ELEMENTARY SCHOOL                    9624
+
+MILLVILLE PUBLIC SCHOOLS                      123408
+  BACON ELEMENTARY SCHOOL                       9077
+  CHILD FAMILY CENTER ELEM SCH                  9075
+  HOLLY HEIGHTS ELEM SCHOOL                     9079
+  MEMORIAL SCHOOL                               9073
+  MILLVILLE SENIOR HIGH SCHOOL                  9072
+  MOUNT PLEASANT ELEM SCHOOL                    9081
+  RIECK AVE ELEMENTARY SCHOOL                   9078
+  SILVER RUN ELEMENTARY SCHOOL                  9080
+  WOOD ELEMENTARY SCHOOL                        9076
+
+MINE HILL TOWNSHIP SCHOOL DIST                123041
+  CANFIELD AVE ELEMENTARY SCHOOL                8121
+
+MONMOUTH BEACH SCHOOL DISTRICT                123023
+  MONMOUTH BEACH ELEM SCHOOL                    8067
+
+MONMOUTH CO VOC SCHOOL DIST                   122983
+  HIGH TECHNOLOGY HIGH SCHOOL                   8019
+  KIVA HIGH SCHOOL                              7939
+  MARINE ACADEMY SCI & TECH CTR                 7995
+  MONMOUTH CO VOC SCH-FREEHOLD                  7956
+
+MONMOUTH REG HIGH SCHOOL DIST                 122987
+  MONMOUTH REG HIGH SCHOOL                      7937
+
+MONROE TOWNSHIP SCHOOL DIST                   123532
+  APPLEGARTH MIDDLE SCHOOL                      9161
+  BARCLAY BROOK ELEM SCHOOL                     9587
+  BROOKSIDE ELEMENTARY SCHOOL                   9588
+  MILL LAKE ELEMENTARY SCHOOL                   9774
+  MONROE TOWNSHIP HIGH SCHOOL                   9586
+  WOODLAND ELEMENTARY SCHOOL                    9770
+
+MONROE TWP PUBLIC SCHOOLS                     123310
+  HOLLY GLENN ELEMENTARY SCHOOL                 8797
+  RADIX ELEMENTARY SCHOOL                       8802
+  WHITEHALL ELEMENTARY SCHOOL                   8803
+  WILLIAMSTOWN HIGH SCHOOL                      8801
+  WILLIAMSTOWN MIDDLE SCHOOL                    8805
+
+MONTAGUE SCHOOL DISTRICT                      123052
+  MONTAGUE ELEMENTARY SCHOOL                    8131
+
+MONTCLAIR SCHOOL DISTRICT                     122703
+  BRADFORD ACADEMY                              6724
+  EDGEMONT ELEMENTARY SCHOOL                    6714
+  GLENFIELD MIDDLE SCHOOL                       6723
+  HILLSIDE ELEMENTARY SCHOOL                    6713
+  MONTCLAIR HIGH SCHOOL                         6716
+  MOUNT HEBRON MIDDLE SCHOOL                    6726
+  NISHUANE ELEMENTARY SCHOOL                    6717
+  NORTHEAST ELEMENTARY SCHOOL                   6731
+  RAND FAMILY MAGNET SCHOOL                     6720
+  WATCHUNG ELEMENTARY SCHOOL                    6722
+
+MONTGOMERY TOWNSHIP SCH DIST                  123450
+  MONTGOMERY HIGH SCHOOL                        9241
+  MONTGOMERY MIDDLE SCHOOL                      9242
+  ORCHARD HILL ELEMENTARY SCHOOL                9243
+
+MONTVALE PUBLIC SCHOOL DIST                   122925
+  FIELDSTONE MIDDLE SCHOOL                      7768
+  MEMORIAL ELEMENTARY SCHOOL                    7771
+
+MONTVILLE TWP SCHOOL DISTRICT                 122706
+  CEDAR HILL ELEMENTARY SCHOOL                  6989
+  HILLDALE ELEMENTARY SCHOOL                    6837
+  MONTVILLE TWP HIGH SCHOOL                     6744
+  ROBERT LAZAR MIDDLE SCHOOL                    6742
+  VALLEY VIEW ELEMENTARY SCHOOL                 6741
+  WILLIAM MASON ELEM SCHOOL                     6745
+  WOODMONT ELEMENTARY SCHOOL                    6838
+
+MOONACHIE SCHOOL DISTRICT                     122745
+  ROBERT L CRAIG ELEMENTARY SCH                 6938
+
+MOORESTOWN TWP PUBLIC SCHOOLS                 123227
+  ALLEN MIDDLE SCHOOL                           8627
+  GEORGE C BAKER ELEM SCHOOL                    8626
+  MARY ROBERTS ELEMENTARY SCHOOL                8628
+  MOORESTOWN HIGH SCHOOL                        8625
+  SOUTH VALLEY ELEM SCHOOL                      8630
+
+MORRIS CO ED SERVICES COMM                    123145
+  MORRIS CO SPEC ED SCHOOL                      8233
+
+MORRIS CO VOC-TECH SCHOOL DIST                123060
+  MORRIS CO SCHOOL OF TECHNOLOGY                8143
+
+MORRIS HILLS REGIONAL SCH DIST                123092
+  MORRIS HILLS HIGH SCHOOL                      8199
+  MORRIS KNOLLS HIGH SCHOOL                     8201
+
+MORRIS PLAINS SCHOOL DISTRICT                 123141
+  BOROUGH SCHOOL                                8333
+  MOUNTAIN WAY SCHOOL                           8332
+
+MORRIS SCHOOL DISTRICT                        123143
+  ALFRED VAIL ELEMENTARY SCHOOL                 8334
+  FRELINGHUYSEN MIDDLE SCHOOL                   8340
+  HAMILTON ELEMENTARY SCHOOL                    8345
+  HILLCREST ELEMENTARY SCHOOL                   8348
+  LAFAYETTE LEARNING CENTER                     8343
+  MORRISTOWN HIGH SCHOOL                        8346
+  SUSSEX AVE ELEMENTARY SCHOOL                  8341
+  THOMAS JEFFERSON ELEM SCHOOL                  8351
+  WOODLAND ELEMENTARY SCHOOL                    8353
+
+MOUNT ARLINGTON SCHOOL DIST                   123077
+  EDITH M DECKER ELEM SCHOOL                    8176
+  MOUNT ARLINGTON ELEM SCHOOL                   8177
+
+MOUNT EPHRAIM BOROUGH SCH DIST                123230
+  MARY BRAY ELEMENTARY SCHOOL                   8632
+  RAYMOND W KERSHAW ELEM SCHOOL                 8634
+
+MOUNT HOLLY TWP PUBLIC SCHOOLS                123233
+  F W HOLBEIN MIDDLE SCHOOL                     8641
+  GERTRUDE C FOWELL ELEM SCHOOL                 8639
+  JOHN BRAINERD ELEMENTARY SCH                  8643
+
+MOUNT LAUREL TWP SCHOOL DIST                  123222
+  COUNTRYSIDE ELEMENTARY SCHOOL                 8605
+  FLEETWOOD ELEMENTARY SCHOOL                   8606
+  HILLSIDE ELEMENTARY SCHOOL                    8602
+  LARCHMONT ELEMENTARY SCHOOL                   8608
+  PARKWAY ELEMENTARY SCHOOL                     8607
+  THOMAS E HARRINGTON MIDDLE SCH                8609
+
+MOUNT OLIVE TWP SCHOOL DIST                   123053
+  MOUNT OLIVE HIGH SCHOOL                       8148
+  MOUNT OLIVE MIDDLE SCHOOL                     8133
+  MOUNTAIN VIEW ELEM SCHOOL                     8146
+  SANDSHORE SCHOOL                              8132
+  TINC ROAD ELEMENTARY SCHOOL                   8147
+
+MOUNTAIN LAKES SCHOOL DISTRICT                122709
+  BRIARCLIFF MIDDLE SCHOOL                      6748
+  LAKE DRIVE SCHOOL                             6750
+  MOUNTAIN LAKES HIGH SCHOOL                    6747
+  WILDWOOD ELEM SCHOOL                          6746
+
+MOUNTAINSIDE SCHOOL DISTRICT                  122767
+  DEERFIELD ELEMENTARY SCHOOL                   7043
+
+MULLICA TOWNSHIP SCHOOL DIST                  123355
+  MULLICA TWP PRIMARY SCHOOL                    8957
+
+NATIONAL PARK SCHOOL DISTRICT                 123243
+  NATIONAL PARK ELEM SCHOOL                     8655
+
+NEPTUNE CITY SCHOOL DISTRICT                  123026
+  WILSON ELEMENTARY SCHOOL                      8083
+
+NEPTUNE TWP SCHOOL DISTRICT                   123025
+  GABLES ELEMENTARY SCHOOL                      8078
+  GREEN GROVE ELEMENTARY SCHOOL                 8075
+  NEPTUNE HIGH SCHOOL                           8081
+  NEPTUNE MIDDLE SCHOOL                         8079
+  RIDGE AVENUE ELEMENTARY SCHOOL                8073
+  SHARK RIVER HILLS ELEM SCHOOL                 8082
+  SUMMERFIELD ELEMENTARY SCHOOL                 8077
+
+NETCONG SCHOOL DISTRICT                       123078
+  NETCONG ELEMENTARY SCHOOL                     8179
+
+NEW BRUNSWICK SCHOOL DISTRICT                 123590
+  ALTERNATIVE HIGH SCHOOL                       9782
+  LINCOLN ELEMENTARY SCHOOL                     9779
+  LIVINGSTON ELEMENTARY SCHOOL                  9796
+  LORD STIRLING ELEM SCHOOL                     9780
+  MCKINLEY ELEMENTARY SCHOOL                    9797
+  NEW BRUNSWICK HIGH SCHOOL                     9798
+  PAUL ROBESON COMMUNITY SCHOOL                 9791
+  REDSHAW ELEMENTARY SCHOOL                     9795
+  ROOSEVELT ELEMENTARY SCHOOL                   9788
+  WOODROW WILSON ELEMENTARY SCH                 9781
+
+NEW HANOVER TOWNSHIP SCH DIST                 123453
+  NEW HANOVER TOWNSHIP SCHOOL                   9250
+
+NEW MILFORD BOARD OF EDUCATION                122928
+  BERKLEY STREET ELEM SCHOOL                    7776
+  GIBBS ELEMENTARY SCHOOL                       7773
+  NEW MILFORD HIGH SCHOOL                       7774
+  OWENS MIDDLE SCHOOL                           7772
+
+NEW PROVIDENCE SCHOOL DISTRICT                123148
+  ALLEN W ROBERTS ELEM SCHOOL                   8356
+  NEW PROVIDENCE HIGH SCHOOL                    8357
+  NEW PROVIDENCE MIDDLE SCHOOL                  8358
+  SALT BROOK ELEMENTARY SCHOOL                  8361
+
+NEWARK SCHOOL DISTRICT                        122776
+  ABINGTON AVE ELEMENTARY SCHOOL                7157
+  ALEXANDER STREET ELEM SCHOOL                  7141
+  ANN STREET ELEMENTARY SCHOOL                  7135
+  ARTS HIGH SCHOOL                              7071
+  AVON AVENUE ELEMENTARY SCHOOL                 7168
+  BARRINGER HIGH SCHOOL                         7108
+  BELMONT-RUNYON ELEM SCHOOL                    7174
+  BERLINER ELEMENTARY SCHOOL                    7105
+  BOYLAN STREET SCHOOL                          7140
+  BRAGAW AVENUE SCH                             7218
+  BRANCH BROOK SCHOOL                           7109
+  BROADWAY ELEMENTARY SCHOOL                    7126
+  BURNET STREET ELEMENTARY SCH                  7075
+  CAMDEN MIDDLE SCHOOL                          7093
+  CAMDEN STREET ELEMENTARY SCH                  7092
+  CARVER ELEMENTARY SCHOOL                      7221
+  CENTRAL HIGH SCHOOL                           7101
+  CHANCELLOR AVENUE ELEM ANNEX                  7219
+  CHANCELLOR AVENUE ELEM SCHOOL                 7216
+  CLEMENTE ELEMENTARY SCHOOL                    7116
+  CLEVELAND ELEMENTARY SCHOOL                   7091
+  CLINTON AVENUE ELEMENTARY SCH                 7169
+  DAYTON STREET ELEMENTARY SCH                  7228
+  EAST SIDE HIGH SCHOOL                         7132
+  EIGHTEENTH AVENUE ELEM SCHOOL                 7173
+  ELLIOTT STREET ELEMENTARY SCH                 7122
+  FIFTEENTH AVENUE ELEM SCHOOL                  7081
+  FIRST AVENUE ELEMENTARY SCHOOL                7153
+  FLAGG ELEMENTARY SCHOOL                       7156
+  FOURTEENTH AVENUE ELEM SCHOOL                 7090
+  FRANKLIN ELEMENTARY SCHOOL                    7107
+  G W  CARVER/BRUCE ST SCHOOL                   7222
+  HAWKINS STREET ELEMENTARY SCH                 7138
+  HAWTHORNE AVENUE ELEM SCHOOL                  7223
+  HORTON ELEMENTARY SCHOOL                      7152
+  KENNEDY SCHOOL                                7088
+  KING ELEMENTARY SCHOOL                        7150
+  LAFAYETTE STREET ELEM SCHOOL                  7130
+  LAFAYETTE STREET SCHOOL ANNEX                 7129
+  LINCOLN ELEMENTARY SCHOOL                     7144
+  LOUISE A SPENCER  SCHOOL                      7176
+  LUIS MUNOZ MARIN MIDDLE SCHOOL                7121
+  MADISON ELEMENTARY SCHOOL                     7165
+  MALCOLM X SHABAZZ HIGH SCHOOL                 7175
+  MAPLE AVENUE ELEMENTARY ANNEX                 7225
+  MAPLE AVENUE ELEMENTARY SCHOOL                7224
+  MCKINLEY ELEMENTARY SCHOOL                    7112
+  MILLER STREET ELEMENTARY SCH                  7229
+  MONTGOMERY ALTERNATIVE HIGH                   7106
+  MORTON STREET ELEMENTARY SCH                  7103
+  MOUNT VERNON SCHOOL                           7147
+  NEW JERSEY REGIONAL DAY SCHOOL                7220
+  NEWTON STREET ELEMENTARY SCH                  7098
+  OLIVER STREET ELEMENTARY SCH                  7127
+  PESHINE AVE ELEMENTARY SCHOOL                 7227
+  QUITMAN STREET ELEM SCHOOL                    7104
+  REDIRECTION HIGH SCHOOL                       7099
+  RICH STREET EARLY CHILDHOOD SC                7117
+  RIDGE STREET ELEMENTARY ANNEX                 7120
+  RIDGE STREET ELEMENTARY SCHOOL                7114
+  ROSEVILLE AVENUE ELEM SCHOOL                  7155
+  SCIENCE HIGH SCHOOL                           7079
+  SOUTH 17TH STREET ELEM SCHOOL                 7080
+  SOUTH STREET ELEMENTARY SCHOOL                7232
+  SPEEDWAY AVENUE ELEMENTARY SCH                7143
+  SUSSEX AVENUE ELEMENTARY ANNEX                7161
+  SUSSEX AVENUE ELEMENTARY SCH                  7162
+  THIRTEENTH AVENUE ELEM SCHOOL                 7089
+  TUBMAN ELEMENTARY SCHOOL                      7082
+  UNIVERSITY HIGH SCHOOL                        7166
+  VAILSBURG MIDDLE SCHOOL                       7145
+  WARREN STREET ELEMENTARY SCH                  7102
+  WEEQUAHIC HIGH SCHOOL                         7217
+  WEST KINNEY ALT HIGH SCHOOL                   7095
+  WEST SIDE HIGH SCHOOL                         7085
+  WILLIAM H BROWN ACADEMY                       7171
+  WILSON AVE ELEMENTARY SCHOOL                  7136
+  WILSON MIDDLE SCHOOL                          7172
+
+NEWTON SCHOOL DISTRICT                        123080
+  HALSTED MIDDLE SCHOOL                         8184
+  MERRIAM AVE ELEMENTARY SCHOOL                 8185
+  NEWTON HIGH SCHOOL                            8181
+
+NORTH ARLINGTON SCHOOL DIST                   122687
+  JEFFERSON ELEMENTARY SCHOOL                   6648
+  NORTH ARLINGTON HIGH SCHOOL                   6647
+  NORTH ARLINGTON MIDDLE SCHOOL                 6656
+  ROOSEVELT ELEMENTARY SCHOOL                   6649
+  WASHINGTON ELEMENTARY SCHOOL                  6644
+
+NORTH BERGEN SCHOOL DISTRICT                  122710
+  LINCOLN ELEMENTARY SCHOOL #5                  6754
+  NORTH BERGEN #10                              6752
+  NORTH BERGEN #2                               6759
+  NORTH BERGEN #3                               6753
+  NORTH BERGEN #7                               6751
+  NORTH BERGEN #9                               6756
+  NORTH BERGEN HIGH SCHOOL                      6755
+
+NORTH BRUNSWICK TWP SCH DIST                  123589
+  ADAMS ELEMENTARY SCHOOL                       9799
+  JUDD ELEMENTARY SCHOOL                        9803
+  LINWOOD MIDDLE SCHOOL                         9801
+  LIVINGSTON PARK ELEM SCHOOL                   9800
+  NORTH BRUNSWICK HIGH SCHOOL                   9802
+  PARSONS ELEMENTARY SCHOOL                     9804
+
+NORTH CALDWELL SCHOOL DISTRICT                122646
+  GOULD AVENUE ELEMENTARY SCHOOL                6493
+  GRANDVIEW ELEMENTARY SCHOOL                   6497
+
+NORTH HALEDON SCHOOL DISTRICT                 122880
+  HIGH MOUNTAIN MIDDLE SCHOOL                   7636
+  MEMORIAL ELEMENTARY SCHOOL                    7637
+
+NORTH HANOVER TWP SCH DISTRICT                123462
+  ATLANTIS SCHOOL                               9343
+  CHALLENGER SCHOOL                             9344
+  CLARENCE LAMB ELEMENTARY SCH                  9248
+  COLUMBIA ELEMENTARY SCHOOL                    9345
+  DISCOVERY PRIMARY SCHOOL                      9346
+
+NORTH HUDSON CO AREA VOC-TECH CENTER          122711
+  JERSEY CITY CENTER                            7318
+  NORTH HUDSON VOC-TECH CENTER                  6757
+  THE STAR SCHOOL                              206200
+
+NORTH HUNTERDON-VOORHEES DIST                 123497
+  NORTH HUNTERDON HIGH SCHOOL                   9480
+  VOORHEES HIGH SCHOOL                          9572
+
+NORTH PLAINFIELD SCHOOL DIST                  122727
+  EAST END ELEMENTARY SCHOOL                    6865
+  NORTH PLAINFIELD HIGH SCHOOL                  6861
+  SOMERSET MIDDLE SCHOOL                        6867
+  STONY BROOK ELEMENTARY SCHOOL                 6860
+  WATCHUNG ELEMENTARY SCHOOL                    6862
+  WEST END ELEMENTARY SCHOOL                    6882
+
+NORTH WARREN REG SCHOOL DIST                  123048
+  NORTH WARREN REG HIGH SCHOOL                  8127
+
+NORTH WILDWOOD SCHOOL DISTRICT                123375
+  MARGARET MACE ELEM SCHOOL                     9017
+
+NORTHERN BURLINGTON CO DIST                   123182
+  NORTH BURLINGTON COUNTY SR H S                8477
+  NORTH BURLINGTON REG MID SCH                  8478
+
+NORTHERN HIGHLANDS REG HS DIST                122800
+  NORTHERN HIGHLANDS REGL H S                   7397
+
+NORTHERN VLY REG HIGH SCH DIST                122904
+  NORTHERN VLY REG DEMAREST H S                 7716
+  NORTHERN VLY REG OLD TAPPN H S                7862
+
+NORTHFIELD CITY SCHOOL DIST                   123360
+  DONALD J ADAMS PRIMARY SCHOOL                 8969
+  JAMES LOCUSON ELEMENTARY SCH                  8967
+  MILL ROAD MIDDLE SCHOOL                       8968
+
+NORTHVALE SCHOOL DISTRICT                     122929
+  NATHAN HALE MIDDLE SCHOOL                     7779
+  THOMAS JEFFERSON ELEM SCHOOL                  7780
+
+NORWOOD PUBLIC SCHOOL DISTRICT                122932
+  NORWOOD ELEMENTARY SCHOOL                     7783
+
+NUTLEY SCHOOL DISTRICT                        122785
+  FRANKLIN MIDDLE SCHOOL                        7194
+  LINCOLN ELEMENTARY SCHOOL                     7192
+  NUTLEY HIGH SCHOOL                            7193
+  RADCLIFFE ELEMENTARY SCHOOL                   7191
+  SPRING GARDEN ELEM SCHOOL                     7190
+  WASHINGTON ELEMENTARY SCHOOL                  7197
+  YANTACAW ELEMENTARY SCHOOL                    7189
+
+OAKLAND PUBLIC SCHOOL DISTRICT                122832
+  DOGWOOD HILL ELEM SCHOOL                      7470
+  HEIGHTS ELEMENTARY SCHOOL                     7472
+  MANITO ELEMENTARY SCHOOL                      7473
+  VALLEY MIDDLE SCHOOL                          7469
+
+OAKLYN BOROUGH SCHOOL DISTRICT                123326
+  OAKLYN PUBLIC SCHOOL                          8875
+
+OCEAN CITY SCHOOL DISTRICT                    123363
+  INTERMEDIATE ELEM SCHOOL                      8970
+  OCEAN CITY PRIMARY SCHOOL                     8972
+
+OCEAN COUNTY VOC-TECH DISTRICT                123490
+  OCEAN CO VOC TECH SCH BRICKTWN                9404
+  OCEAN CO VOC TECH SCH JACKSON                 9187
+  OCEAN VOC-TECH WAREHOUSE CTR                  9474
+  TOMS RIVER NORTH HIGH SCHOOL                  9460
+
+OCEAN GATE SCHOOL DISTRICT                    123482
+  OCEAN GATE ELEMENTARY SCHOOL                  9439
+
+OCEAN TOWNSHIP SCHOOL DISTRICT                123028
+  OCEAN TOWNSHIP ELEM SCHOOL                    8089
+  OCEAN TOWNSHIP HIGH SCHOOL                    8088
+  OCEAN TOWNSHIP INTERMEDIATE SCHOOL            7902
+  WANAMASSA ELEMENTARY SCHOOL                   7893
+  WAYSIDE ELEMENTARY SCHOOL                     7892
+  FREDERIC A PRIFF ELEM SCHOOL                  9476
+  WARETOWN ELEMENTARY SCHOOL                    9477
+
+OCEANPORT BOARD OF EDUCATION                  123029
+  MAPLE PLACE MIDDLE SCHOOL                     8094
+  WOLF HILL ELEMENTARY SCHOOL                   8093
+
+OGDENSBURG SCHOOL DISTRICT                    122834
+  OGDENSBURG ELEMENTARY SCHOOL                  7480
+
+OLD BRIDGE TWP SCHOOL DISTRICT                123554
+  CARPENTER ELEMENTARY SCHOOL                   9668
+  CHEESEQUAKE ELEMENTARY SCH                    8052
+  COOPER ELEMENTARY SCHOOL                      8016
+  GRISSOM ELEMENTARY SCHOOL                     9667
+  MADISON PARK ELEMENTARY SCHOOL                9673
+  MCDIVITT ELEMENTARY SCHOOL                    9656
+  MEMORIAL ELEMENTARY SCHOOL                    9758
+  OLD BRIDGE HIGH SCHOOL                        9657
+  OLD BRIDGE HIGH SCHOOL EAST                   9658
+  SALK MIDDLE SCHOOL                            9670
+  SANDBURG MIDDLE SCHOOL                        9659
+  SCHIRRA ELEMENTARY SCHOOL                     9666
+  SHEPARD ELEMENTARY SCHOOL                     9665
+  SOUTHWOOD ELEMENTARY SCHOOL                   9662
+  VOORHEES ELEMENTARY SCHOOL                    9669
+
+OLD TAPPAN SCHOOL DISTRICT                    122958
+  CHARLES DEWOLF MIDDLE SCHOOL                  7875
+  T BALDWIN DEMAREST ELEM SCHOOL                7863
+
+OLDMANS TOWNSHIP SCHOOL DIST                  123248
+  OLDMANS MIDDLE SCHOOL                         8665
+  PEDRICKTOWN ELEMENTARY SCHOOL                 8666
+
+ORADELL PUBLIC SCHOOL DISTRICT                122934
+  ORADELL ELEMENTARY SCHOOL                     7786
+
+ORANGE BOARD OF EDUCATION                     122713
+  CENTRAL ELEMENTARY SCHOOL                     6768
+  CLEVELAND STREET ELEM SCHOOL                  6763
+  FOREST STREET ELEMENTARY SCH                  6761
+  HEYWOOD AVENUE ELEMENTARY SCH                 6764
+  LINCOLN AVENUE ELEMENTARY SCH                 6767
+  OAKWOOD AVENUE ELEMENTARY SCH                 6770
+  ORANGE HIGH SCHOOL                            6765
+  ORANGE MIDDLE SCHOOL                          6766
+  PARK AVENUE ELEMENTARY SCHOOL                 6771
+
+ORANGE MAPLEWOOD BOARD OD EDUCATION           122698
+  CLINTON ELEMENTARY SCHOOL                     6700
+  COLUMBIA SENIOR HIGH SCHOOL                   6699
+  JEFFERSON ELEMENTARY SCHOOL                   6702
+  MAPLEWOOD MIDDLE SCHOOL                       6703
+  MARSHALL ELEMENTARY SCHOOL                    6970
+  SETH BOYDEN ELEMENTARY SCHOOL                 6705
+  SOUTH MOUNTAIN ELEM SCHOOL                    6966
+  SOUTH ORANGE MIDDLE SCHOOL                    6967
+  TUSCAN ELEMENTARY SCHOOL                      6706
+
+OXFORD TWP SCHOOL DISTRICT                    123087
+  OXFORD CENTRAL ELEM SCHOOL                    8192
+
+PALISADES PARK SCHOOL DISTRICT                122936
+  LINDBERGH ELEMENTARY SCHOOL                   7789
+  PALISADES PARK JR-SR HIGH SCH                 7790
+
+PALMYRA BOROUGH SCHOOL DIST                   123244
+  CHARLES ST ELEMENTARY SCHOOL                  8658
+  DELAWARE AVENUE ELEM SCHOOL                   8659
+  PALMYRA HIGH SCHOOL                           8657
+
+PARAMUS SCHOOL DISTRICT                       122941
+  EAST BROOK MIDDLE SCHOOL                      7810
+  MEMORIAL ELEMENTARY SCHOOL                    7805
+  PARAMUS HIGH SCHOOL                           7804
+  PARKWAY ELEMENTARY SCHOOL                     7801
+  RIDGE RANCH ELEMENTARY SCHOOL                 7799
+  STONY LANE ELEMENTARY SCHOOL                  7800
+  WEST BROOK MIDDLE SCHOOL                      7794
+
+PARK RIDGE BOARD OF EDUCATION                 122942
+  EAST BROOK ELEM SCHOOL                        7812
+  PARK RIDGE HIGH SCHOOL                        7814
+  WEST RIDGE ELEMENTARY SCHOOL                  7813
+
+PARSIPPANY-TROY HILLS TWP DIST                122717
+  BROOKLAWN MIDDLE SCHOOL                       6799
+  CENTRAL MIDDLE SCHOOL                         6790
+  EAST LAKE ELEMENTARY SCHOOL                   6800
+  INTERVALE ELEMENTARY SCHOOL                   6791
+  KNOLLWOOD ELEMENTARY SCHOOL                   6665
+  LAKE PARSIPPANY ELEM SCHOOL                   6801
+  LITTLETON ELEMENTARY SCHOOL                   8337
+  NORTHVAIL ELEMENTARY SCHOOL                   6793
+  PARSIPPANY HIGH SCHOOL                        6797
+  PARSIPPANY HILLS HIGH SCHOOL                  6792
+  ROCKAWAY MEADOW ELEM SCHOOL                   6798
+  TROY HILLS ELEMENTARY SCHOOL                  6802
+
+PASCACK VALLY REG H S DIST                    122926
+  PASCACK HILLS HIGH SCHOOL                     7770
+  PASCACK VALLEY HIGH SCHOOL                    7752
+
+PASSAIC CITY SCHOOL DISTRICT                  122720
+  ELEMENTARY SCHOOL 02                          6830
+  ETTA GERO SCHOOL NO 9                         6824
+  GRANT SCHOOL NO 7                             6807
+  JEFFERSON ELEM SCHOOL 01                      6808
+  LINCOLN MIDDLE SCHOOL 04                      6814
+  MARIO J DRAGO SCHOOL NO 3                     6815
+  MARTIN L KING SCHOOL NO 6                     6820
+  MEMORIAL ELEMENTARY SCHOOL 11                 6809
+  PASSAIC HIGH SCHOOL                           6818
+  PASSAIC LEARNING CENTER                       6832
+  PULASKI ELEMENTARY SCHOOL 08                  6829
+  ROOSEVELT ELEMENTARY SCHOOL 10                6810
+
+PASSAIC CO REG HIGH SCH DIST 1                122824
+  PASSAIC VALLEY HIGH SCHOOL                    7453
+
+PASSAIC CO VOCATIONAL SCHOOL                 122859
+  PASSAIC CO VOC-TECH HIGH SCH                  7555
+
+PASSAIC COUNTY MANCHESTER DIST                122876
+  MANCHESTER REG HIGH SCHOOL                    7631
+
+PATERSON SCHOOL DISTRICT                      122871
+  CLEMENTE ELEMENTARY SCHOOL                    7594
+  DALE AVENUE ELEMENTARY SCHOOL                 7621
+  EASTSIDE HIGH SCHOOL                          7595
+  KENNEDY HIGH SCHOOL                           7653
+  KILPATRICK ELEMENTARY SCHOOL                  7588
+  KING ELEMENTARY SCHOOL                        7643
+  NUMBER 02 ELEMENTARY SCHOOL                   7592
+  NUMBER 03 ELEMENTARY SCHOOL                   7598
+  NUMBER 04 ELEMENTARY SCHOOL                   7659
+  NUMBER 05 ELEMENTARY SCHOOL                   7608
+  NUMBER 06 ELEMENTARY SCHOOL                   7589
+  NUMBER 07 ELEMENTARY SCHOOL                   7597
+  NUMBER 08 ELEMENTARY SCHOOL                   7613
+  NUMBER 09 ELEMENTARY SCHOOL                   7612
+  NUMBER 10 ELEMENTARY SCHOOL                   7665
+  NUMBER 11 ELEMENTARY SCHOOL                   7593
+  NUMBER 12 ELEMENTARY SCHOOL                   7660
+  NUMBER 13 ELEMENTARY SCHOOL                   7617
+  NUMBER 14 ELEMENTARY SCHOOL                   7657
+  NUMBER 15 ELEMENTARY SCHOOL                   7599
+  NUMBER 16 ELEMENTARY SCHOOL                   7646
+  NUMBER 17 ELEMENTARY SCHOOL                   7656
+  NUMBER 18 ELEMENTARY SCHOOL                   7661
+  NUMBER 19 ELEMENTARY SCHOOL                   7605
+  NUMBER 20 ELEMENTARY SCHOOL                   7616
+  NUMBER 21 ELEMENTARY SCHOOL                   7651
+  NUMBER 24 ELEMENTARY SCHOOL                   7645
+  NUMBER 25 ELEMENTARY SCHOOL                   7609
+  NUMBER 26 ELEMENTARY SCHOOL                   7648
+  NUMBER 27 ELEMENTARY SCHOOL                   7603
+  NUMBER 28 ELEMENTARY SCHOOL                   7654
+  NUMBER 29 ELEMENTARY SCHOOL                   7601
+  PARKS FINE ARTS HIGH SCHOOL                   7650
+  WEIR ELEMENTARY SCHOOL                        7618
+
+PAULSBORO PUBLIC SCHOOLS                      123246
+  BILLINGSPORT ELEM SCHOOL                      8660
+  LOUDENSLAGER ELEMENTARY SCHOOL                8663
+  PAULSBORO HIGH SCHOOL                         8661
+
+PEMBERTON BOROUGH SCHOOL DIST                 123250
+  PEMBERTON BOROUGH ELEM SCHOOL                 8671
+
+PEMBERTON TWP SCHOOL DISTRICT                 123170
+  BUSANSKY ELEMENTARY SCHOOL                    8667
+  CRICHTON ELEMENTARY SCHOOL                    8441
+  DENBO ELEMENTARY SCHOOL                       8442
+  EMMONS ELEMENTARY SCHOOL                      8668
+  FORT DIX ELEMENTARY SCHOOL                    9342
+  HARKER WYLIE ELEMENTARY SCHOOL                8445
+  HELEN FORT MIDDLE SCHOOL                      8673
+  ISAIAH HAINES SCHOOL                          8446
+  MARCUS NEWCOMB SCHOOL                         8669
+  PEMBERTON TOWNSHIP HIGH SCHOOL                8672
+  STACKHOUSE ELEMENTARY SCHOOL                  8443
+
+PENNS GROVE-CARNEYS PT REG DIS                123251
+  FIELD STREET ELEMENTARY SCHOOL                8674
+  LAFAYETTE-PERSHING ELEM SCHOOL                8679
+  PAUL W CARLETON ELEM SCHOOL                   8675
+  PENNS GROVE HIGH SCHOOL                       8676
+  PENNS GROVE MIDDLE SCHOOL                     8678
+
+PENNSAUKEN TWP SCHOOL DISTRICT                123335
+  BALDWIN ELEMENTARY SCHOOL                     8911
+  BURLING MAGENT ELEMENTARY SCH                 8869
+  CARSON ELEMENTARY SCHOOL                      8898
+  CENTRAL ELEMENTARY SCHOOL                     8908
+  DELAIR ELEMENTARY SCHOOL                      8910
+  FINE ELEMENTARY SCHOOL                        8901
+  FRANKLIN ELEMENTARY SCHOOL                    8900
+  LONGFELLOW ELEMENTARY SCHOOL                  8905
+  PENNSAUKEN HIGH SCHOOL                        8906
+  PHIFER MIDDLE SCHOOL                          8902
+  ROOSEVELT ELEMENTARY SCHOOL                   8894
+
+PENNSVILLE SCHOOL DISTRICT                    123253
+  CENTRAL PARK ELEMENTARY SCHOOL                8682
+  PENN BEACH ELEMENTARY SCHOOL                  8687
+  PENNSVILLE MEMORIAL HIGH SCH                  8685
+  PENNSVILLE MIDDLE SCHOOL                      8684
+  VALLEY PARK ELEMENTARY SCHOOL                 8686
+
+PEQUANNOCK TOWNSHIP SCH DIST                  122837
+  GERACE ELEMENTARY SCHOOL                      7482
+  HILLVIEW ELEMENTARY SCHOOL                    7492
+  NORTH BOULEVARD ELEM SCHOOL                   7489
+  PEQUANNOCK TOWNSHIP HIGH SCH                  7491
+  PEQUANNOCK VALLEY MIDDLE SCH                  7493
+
+PERTH AMBOY SCHOOL DISTRICT                   123558
+  CERES ELEMENTARY SCHOOL                       9686
+  EDWARD J PATTEN ELEMENTARY SCH                9684
+  FLYNN ELEMENTARY SCHOOL                       9679
+  MCGINNIS MIDDLE SCHOOL                        9692
+  PERTH AMBOY ELEM SCHOOL 07                    9694
+  PERTH AMBOY ELEM SCHOOL 10                    9689
+  PERTH AMBOY HIGH SCHOOL                       9681
+  PETERSON ELEMENTARY SCHOOL                    9693
+  SHULL MIDDLE SCHOOL                           9683
+
+PHILLIPSBURG SCHOOL DISTRICT                  123561
+  ANDOVER-MORRIS ELEM SCHOOL                    9710
+  BARBER ELEMENTARY SCHOOL                      9704
+  FREEMAN ELEMENTARY SCHOOL                     9708
+  GREEN STREET ELEM SCHOOL                      9711
+  PHILLIPSBURG HIGH SCHOOL                      9705
+  PHILLIPSBURG MIDDLE SCHOOL                    9709
+
+PINE HILL BOROUGH SCHOOL DISTRICT             123180
+  BEAN ELEMENTARY SCHOOL                        8473
+  GLENN ELEMENTARY SCHOOL                       8475
+
+PINELANDS REG SCHOOL DISTRICT                 123294
+  PINELANDS REGIONAL HIGH SCHOOL                8770
+  PINELANDS REGIONAL MIDDLE SCH                 8771
+
+PISCATAWAY TWP SCHOOL DISTRICT                123553
+  ARBOR ELEMENTARY SCHOOL                       9633
+  CONACKAMACK MIDDLE SCHOOL                     9648
+  EISENHOWER ELEMENTARY SCHOOL                  9641
+  GRANDVIEW ELEMENTARY SCHOOL                   9637
+  KING ELEMENTARY SCHOOL                        9647
+  KNOLLWOOD ELEMENTARY SCHOOL                   9645
+  PISCATAWAY TWP HIGH SCHOOL                    9643
+  QUIBBLETOWN MIDDLE SCHOOL                     9636
+  RANDOLPHVILLE ELEM SCHOOL                     9644
+  SCHOR MIDDLE SCHOOL                           9638
+
+PITMAN PUBLIC SCHOOL DISTRICT                 123255
+  KINDLE ELEMENTARY SCHOOL                      8693
+  PITMAN HIGH SCHOOL                            8691
+  PITMAN MEMORIAL ELEM SCHOOL                   8689
+  PITMAN MIDDLE SCHOOL                          8692
+  WALLS ELEMENTARY SCHOOL                       8690
+
+PITTSGROVE TOWNSHIP SCH DIST                  123395
+  NORMA ELEMENTARY SCHOOL                       9091
+  OLIVET ELEMENTARY SCHOOL                      9050
+  PITTSGROVE TWP MIDDLE SCHOOL                  9052
+  SCHALICK HIGH SCHOOL                          9051
+
+PLAINFIELD PUBLIC SCHOOLS                     122726
+  BARLOW ELEMENTARY SCHOOL                      6872
+  CEDARBROOK ELEMENTARY SCHOOL                  6857
+  CLINTON ELEMENTARY SCHOOL                     6879
+  COOK ELEMENTARY SCHOOL                        6877
+  EMERSON ELEMENTARY SCHOOL                     6873
+  EVERGREEN ELEMENTARY SCHOOL                   6854
+  HUBBARD MIDDLE SCHOOL                         6853
+  JEFFERSON ELEMENTARY SCHOOL                   6878
+  MAXSON MIDDLE SCHOOL                          6876
+  PLAINFIELD HIGH SCHOOL                        6858
+  STILLMAN ELEMENTARY SCHOOL                    6864
+  WASHINGTON ELEMENTARY SCHOOL                  6852
+  WOODLAND ELEMENTARY SCHOOL                    6875
+
+PLEASANTVILLE SCHOOL DISTRICT                 123365
+  LEEDS AVE ELEMENTARY SCHOOL                   8977
+  NORTH MAIN STREET ELEM SCHOOL                 8978
+  PLEASANTVILLE HIGH SCHOOL                     8983
+  SOUTH MAIN ST ELEM SCHOOL                     8984
+  WASHINGTON AVENUE SCHOOL                      8981
+
+PLUMSTED TWP SCHOOL DISTRICT                  123438
+  NEW EGYPT ELEMENTARY SCHOOL                   9196
+
+POHATCONG TWP SCHOOL DISTRICT                 123500
+  SHIMER ELEMENTARY SCHOOL                      9712
+  WARREN GLEN ELEMENTARY SCHOOL                 9484
+
+POINT PLEASANT BEACH SCH DIST                 123483
+  G HAROLD ANTRIM ELEM SCHOOL                   9441
+  POINT PLEASANT BCH HIGH SCHOOL                9446
+
+POINT PLEASANT BORO SCH DIST                  123484
+  BENNETT ELEMENTARY SCHOOL                     9449
+  MEMORIAL MIDDLE SCHOOL                        9442
+  OCEAN ROAD ELEMENTARY SCHOOL                  9443
+  POINT PLEASANT BORO HIGH SCH                  9444
+
+POMPTON LAKES SCHOOL DISTRICT                 122835
+  LAKESIDE MIDDLE SCHOOL                        7484
+  LENOX ELEMENTARY SCHOOL                       7486
+  LINCOLN ELEMENTARY SCHOOL                     7485
+  POMPTON LAKES HIGH SCHOOL                     7483
+
+PORT REPUBLIC SCHOOL DISTRICT                 123367
+  PORT REPUBLIC ELEMENTARY SCH                  8996
+
+PRINCETON REGIONAL SCH DIST                   123442
+  COMMUNITY PARK ELEM SCHOOL                    9224
+  JOHN WITHERSPOON MIDDLE SCHOOL                9213
+  JOHNSON PARK ELEMENTARY SCHOOL                9219
+  LITTLEBROOK ELEMENTARY SCHOOL                 9214
+  PRINCETON HIGH SCHOOL                         9212
+  RIVERSIDE ELEMENTARY SCHOOL                   9216
+
+PROSPECT PARK SCHOOL DIST 1                   122877
+  PROSPECT PARK ELEM SCHOOL                     7633
+
+QUINTON TOWNSHIP SCHOOL DIST                  123257
+  QUINTON TWP ELEMENTARY SCHOOL                 8694
+
+RAHWAY SCHOOL DISTRICT                        122729
+  CLEVELAND ELEMENTARY SCHOOL                   6890
+  FRANKLIN ELEMENTARY SCHOOL                    6887
+  MADISON ELEMENTARY SCHOOL                     6884
+  RAHWAY HIGH SCHOOL                            6885
+  RAHWAY INTERMEDIATE SCHOOL                    6886
+  ROOSEVELT ELEMENTARY SCHOOL                   6888
+
+RAMAPO INDIAN HLS REG H S DIST                122817
+  INDIAN HILLS HIGH SCHOOL                      7471
+  RAMAPO HIGH SCHOOL                            7438
+
+RAMSEY PUBLIC SCHOOL DISTRICT                 122839
+  ERIC S SMITH MIDDLE SCHOOL                    7494
+  JOHN Y DATER ELEMENTARY SCHOOL                7495
+  MARY A HUBBARD ELEM SCHOOL                    7500
+  RAMSEY HIGH SCHOOL                            7499
+  WESLEY D TISDALE ELEM SCHOOL                  7496
+
+RANCOCAS VLY REG HIGH SCH DIST                123232
+  RANCOCAS VALLEY REG HIGH SCH                  8640
+
+RANDOLPH TWP SCHOOL DISTRICT                  123093
+  CENTER GROVE ELEMENTARY SCHOOL                8207
+  FERNBROOK ELEMENTARY SCHOOL                   8204
+  IRONIA ELEMENTARY SCHOOL                      8203
+  RANDOLPH HIGH SCHOOL                          8208
+  RANDOLPH MIDDLE SCHOOL                        8209
+  SHONGHUM ELEMENTARY SCHOOL                    8210
+
+READINGTON TOWNSHIP SCH DIST                  123570
+  READINGTON MIDDLE SCHOOL                      9720
+  THREE BRIDGES ELEM SCHOOL                     9776
+  WHITEHOUSE ELEMENTARY SCHOOL                  9777
+
+RED BANK REG HIGH SCHOOL DIST                 123013
+  RED BANK REGIONAL HIGH SCHOOL                 8028
+
+RED BANK SCHOOL DISTRICT                      122967
+  RED BANK MIDDLE SCHOOL                        7880
+  RED BANK PRIMARY SCHOOL                       7877
+
+RIDGEFIELD PARK SCHOOL DIST                   122946
+  GRANT ELEMENTARY SCHOOL                       7827
+  RIDGEFIELD JR-SR HIGH SCHOOL                  7823
+  ROOSEVELT ELEMENTARY SCHOOL                   7824
+
+RIDGEFIELD SCHOOL DISTRICT                    122944
+  BERGEN BOULEVARD SCHOOL                       7821
+  RIDGEFIELD MEMORIAL HIGH SCH                  7817
+  SHALER BOULEVARD SCHOOL                       7818
+  SLOCUM-SKEWES ELEM SCHOOL                     7819
+
+RIDGEWOOD VILLAGE SCHOOL DIST                 122842
+  BENJAMIN FRANKLIN MIDDLE SCH                  7504
+  GEORGE WASHINGTON MIDDLE SCH                  7508
+  HAWES ELEMENTARY SCHOOL                       7512
+  ORCHARD ELEMENTARY SCHOOL                     7509
+  RIDGE ELEMENTARY SCHOOL                       7507
+  RIDGEWOOD HIGH SCHOOL                         7506
+  SOMERVILLE ELEMENTARY SCHOOL                  7510
+  TRAVELL ELEMENTARY SCHOOL                     7503
+  WILLARD ELEMENTARY SCHOOL                     7502
+
+RINGWOOD SCHOOL DISTRICT                      122845
+  COOPER ELEMENTARY SCHOOL                      7524
+  ERSKINE ELEMENTARY SCHOOL                     7522
+  HEWITT ELEMENTARY SCHOOL                      7521
+  RYERSON MIDDLE SCHOOL                         7525
+
+RIVER DELL REGL HIGH SCH DIST                 122933
+  RIVER DELL MIDDLE SCHOOL                      7829
+  RIVER DELL SR HIGH SCHOOL                     7784
+
+RIVER EDGE SCHOOL DISTRICT                    122949
+  CHERRY HILL ELEMENTARY SCHOOL                 7831
+  ROOSEVELT ELEMENTARY SCHOOL                   7833
+
+RIVER VALE SCHOOL DISTRICT                    122964
+  HOLDRUM MIDDLE SCHOOL                         7872
+  ROBERGE ELEMENTARY SCHOOL                     7874
+  WOODSIDE ELEMENTARY SCHOOL                    7873
+
+RIVERDALE SCHOOL DISTRICT                     122847
+  RIVERDALE ELEMENTARY SCHOOL                   7526
+
+RIVERSIDE TOWNSHIP SCHOOL DIST                123260
+  RIVERSIDE ELEMENTARY SCHOOL                   8701
+  RIVERSIDE HIGH SCHOOL                         8702
+  RIVERSIDE MIDDLE SCHOOL                       8707
+
+RIVERTON BOROUGH SCHOOL DIST                  123265
+  RIVERTON ELEMENTARY SCHOOL                    8715
+
+ROCHELLE PARK SCHOOL DISTRICT                 122951
+  MIDLAND ELEMENTARY SCHOOL 1                   7834
+
+ROCKAWAY BOROUGH SCHOOL DIST                  123090
+  JEFFERSON MIDDLE SCHOOL                       8197
+  LINCOLN ELEMENTARY SCHOOL                     8200
+
+ROCKAWAY TOWNSHIP SCHOOL DIST                 123067
+  BIRCHWOOD ELEMENTARY SCHOOL                   8114
+  COPELAND MIDDLE SCHOOL                        8194
+  DWYER ELEMENTARY SCHOOL                       8253
+  MALONE ELEMENTARY SCHOOL                      8202
+  O'BRIEN ELEMENTARY SCHOOL                     8113
+  STONY BROOK ELEMENTARY SCHOOL                 8195
+
+ROSELAND BOARD OF EDUCATION                   122734
+  NOECKER ELEMENTARY SCHOOL                     6910
+
+ROSELLE BOROUGH SCHOOL DIST                   122790
+  ABRAHAM CLARK HIGH SCHOOL                     7267
+  GRACE WILDAY ELEMENTARY SCHOOL                7263
+  HARRISON ELEMENTARY SCHOOL                    7265
+  MOORE MIDDLE SCHOOL                           7266
+  POLK ELEMENTARY SCHOOL                        7270
+  WASHINGTON ELEMENTARY SCHOOL                  7268
+
+ROSELLE PARK SCHOOL DISTRICT                  122792
+  ALDENE ELEMENTARY SCHOOL                      7271
+  ROBERT GORDON ELEMENTARY SCH                  7272
+  ROSELLE PARK HIGH SCHOOL                      7273
+  ROSELLE PARK MIDDLE SCHOOL                    7274
+  SHERMAN ELEMENTARY SCHOOL                     7275
+
+ROSSEVELT BOROUGH SCHOOL DIST                 123448
+  ROOSEVELT ELEMENTARY SCHOOL                   9239
+
+ROXBURY TWP SCHOOL DISTRICT                   123103
+  EISENHOWER MIDDLE SCHOOL                      8230
+  FRANKLIN ELEMENTARY SCHOOL                    8228
+  JEFFERSON ELEMENTARY SCHOOL                   8225
+  KENNEDY ELEMENTARY SCHOOL                     8232
+  LINCOLN ROOSEVELT ELEM SCHOOL                 8229
+  NIXON ELEMENTARY SCHOOL                       8170
+  ROXBURY HIGH SCHOOL                           8231
+
+RUMSON BOROUGH SCHOOL DISTRICT                123030
+  DEANE-PORTER ELEMENTARY SCHOOL                8097
+  FORRESTDALE ELEMENTARY SCHOOL                 8098
+
+RUMSON-FAIR HAVEN REG H S DIST                123032
+  RUMSON-FAIR HAVEN REG HIGH SCH                8100
+
+RUNNEMEDE BOROUGH SCHOOL DIST                 123267
+  BINGHAM ELEMENTARY SCHOOL                     8721
+  DOWNING ELEMENTARY SCHOOL                     8719
+  MARY E VOLZ MIDDLE SCHOOL                     8720
+
+RUTHERFORD SCHOOL DISTRICT                    122737
+  LINCOLN ELEMENTARY SCHOOL                     6918
+  PIERREPONT ELEMENTARY SCHOOL                  6919
+  RUTHERFORD HIGH SCHOOL                        6916
+  SYLVAN ELEMENTARY SCHOOL                      6917
+  UNION ELEMENTARY SCHOOL                       6911
+  WASHINGTON ELEMENTARY SCHOOL                  6913
+
+SADDLE BROOK BOE                              122952
+  FRANKLIN ELEMENTARY SCHOOL                    7841
+  LONG MEMORIAL ELEM SCHOOL                     7835
+  SADDLE BROOK HIGH SCHOOL                      7837
+  SMITH ELEMENTARY SCHOOL                       7836
+
+SADDLE RIVER SCHOOL DISTRICT                  122850
+  WANDELL ELEMENTARY SCHOOL                     7531
+
+SALEM CITY SCHOOL DISTRICT                    123270
+  JOHN FENWICK ELEMENTARY SCHOOL                8727
+  SALEM HIGH SCHOOL                             8729
+  SALEM MIDDLE SCHOOL                           8728
+
+SALEM CO BOARD FOR VOC ED                     123318
+  EMPLOYMENT PREP CENTER                        8725
+  NEW JERSEY REG DAY SCH-MANNGTN                8826
+
+SANDYSTON-WALPACK SCHOOL DIST                 123073
+  SANDYSTON-WALPACK CONS SCHOOL                 8171
+
+SAYREVILLE BOARD OF EDUCATION                 123571
+  ARLETH ELEMENTARY SCHOOL                      9674
+  EISENHOWER ELEMENTARY SCHOOL                  9677
+  SAYREVILLE MEMEORIAL HIGH SCH                 9671
+  SAYREVILLE MIDDLE SCHOOL                      9672
+  TRUMAN ELEMENTARY SCHOOL                      9675
+  WILSON ELEMENTARY SCHOOL                      9722
+
+SCOTCH PLAINS-FANWOOD PUBLIC SCHOOLS          122749
+  BRUNNER ELEMENTARY SCHOOL                     6951
+  EVERGREEN ELEMENTARY SCHOOL                   6948
+  J ACKERMAN COLES ELEM SCHOOL                  6952
+  PARK MIDDLE SCHOOL                            6946
+  SCOTCH PLAINES ELEM SCH ONE                   6945
+  SCOTCH PLAINS-FANWOOD HIGH SCH                6950
+  TERRILL MIDDLE SCHOOL                         6953
+  WM MCGINN ELEMENTARY SCHOOL                   6944
+
+SEA GIRT SCHOOL DISTRICT                      123487
+  SEA GIRT ELEMENTARY SCHOOL                    9452
+
+SEA ISLE CITY SCHOOL DISTRICT                 123368
+  SEA ISLE PUBLIC SCHOOL                        8999
+
+SEASIDE HEIGHTS SCHOOL DIST                   123488
+  BOYD JUNIOR ELEMENTARY SCHOOL                 9453
+
+SEASIDE PARK SCHOOL DISTRICT                  123489
+  SEASIDE PARK ELEMENTARY SCHOOL                9454
+
+SECAUCUS SCHOOL DISTRICT                      122772
+  CLARENDON NO 4 ELEM SCHOOL                    7059
+  HUBER ST ELEMENTARY SCHOOL 3                  7055
+  SECAUCUS HIGH SCHOOL                          7056
+  SECAUCUS MIDDLE SCHOOL                        7057
+
+SHAMONG TWP SCHOOL DISTRICT                   123300
+  INDIAN MILLS ELEMENTARY SCHOOL                8774
+
+SHILOH SCHOOL DISTRICT                        123416
+  SHILOH ELEMENTARY SCHOOL                      9097
+
+SHORE REG HIGH SCHOOL DISTRICT                123036
+  SHORE REGIONAL HIGH SCHOOL                    8107
+
+SHREWSBURY BOROUGH SCHOOL DIST                122968
+  SHREWSBURY BOROUGH SCHOOL                     7883
+
+SOMERDLE BOROUGH SCHOOL DISTRICT              123283
+  SOMERDALE PARK SCHOOL                         8752
+
+SOMERS POINT SCHOOL DISTRICT                  123369
+  DAWES AVENUE ELEMENTARY SCHOOL                9001
+  JORDAN ROAD ELEMENTARY SCHOOL                 9002
+  NEW YORK AVENUE SCHOOL                        9003
+
+SOMERSET CO VOC TECH SCH DIST                 123504
+  SOMERSET CO VOC-TECH HIGH SCH                 9495
+
+SOMERSET HILLS SCHOOL DIST                    123120
+  BERNARDS HIGH SCHOOL                          8284
+  BERNARDSVILLE ELEMENTARY SCH                  8281
+  BERNARDSVILLE MIDDLE SCHOOL                   8279
+
+SOMERVILLE PUBLIC SCHOOLS                     123576
+  CENTRAL ELEMENTARY SCHOOL                     9741
+  SOMERVILLE HIGH SCHOOL                        9738
+  SOMERVILLE MIDDLE SCHOOL                      9742
+  VAN DERVEER ELEMENTARY SCHOOL                 9743
+
+SOUTH AMBOY SCHOOL DISTRICT                   123579
+  SOUTH AMBOY ELEMENTARY SCHOOL                 9755
+  SOUTH AMBOY MIDDLE SCHOOL                     9757
+
+SOUTH BOUND BROOK SCHOOL DIST                 123580
+  BRAMPTON MIDDLE SCHOOL                        9761
+  MORRIS-VOORHEES ELEM SCHOOL                   9760
+
+SOUTH BRUNSWICK TWP SCH DIST                  123547
+  BRUNSWICK ACRES ELEM SCHOOL                   9568
+  CAMBRIDGE ELEMENTARY SCHOOL                   9565
+  CONSTABLE ELEMENTARY SCHOOL                   9564
+  CROSSROADS MIDDLE SCHOOL                      9627
+  DAYTON ELEMENTARY SCHOOL                      9509
+  DEANS ELEMENTARY SCHOOL                       9629
+  GREENBROOK ELEMENTARY SCHOOL                  9566
+  INDIAN FIELDS ELEMENTARY SCH                  9510
+  SOUTH BRUNSWICK HIGH SCHOOL                   9625
+  SOUTH BRUNSWICK UPPER ELEM SCH                9626
+
+SOUTH HACKENSACK SCHOOL DIST                  122893
+  MEMORIAL ELEMENTARY SCHOOL                    7692
+
+SOUTH HARRISON TWP SCHOOL DIST                123206
+  SOUTH HARRISON ELEMENTARY SCH                 8542
+
+SOUTH HUNTERDON REGIONAL DIST                 123436
+  SOUTH HUNTERDON REG HIGH SCH                  9192
+
+SOUTH PLAINFIELD SCHOOL DIST                  122753
+  FRANKLIN ELEMENTARY SCHOOL                    6974
+  GRANT ELEMENTARY SCHOOL                      202282
+  KENNEDY ELEMENTARY SCHOOL                     6980
+  RILEY ELEMENTARY SCHOOL                       6979
+  ROOSEVELT ELEMENTARY SCHOOL                   6976
+  SOUTH PLAINFIELD HIGH SCHOOL                  6977
+  SOUTH PLAINFIELD MIDDLE SCHOOL                6975
+
+SOUTH RIVER SCHOOL DISTRICT                   123581
+  CAMPBELL ELEMENTARY SCHOOL                    9765
+  SOUTH RIVER HIGH SCHOOL                       9767
+  SOUTH RIVER MIDDLE SCHOOL                     9762
+  WILLETT ELEMENTARY SCHOOL                     9763
+
+SOUTHAMPTON TWP SCHOOL DIST                   123296
+  SOUTHAMPTON TWP SCHOOL 1                      8775
+
+SOUTHERN GLOUCESTER CO REG S D                123398
+  DELSEA MIDDLE SCHOOL                          9054
+  DELSEA REGIONAL HIGH SCHOOL                   9055
+
+SOUTHERN REGL HIGH SCHOOL DIST                123218
+  SOUTHERN REGIONAL HIGH SCHOOL                 8579
+  SOUTHERN REGIONAL MIDDLE SCH                  8573
+
+SPARTA TWP SCHOOL DISTRICT                    123095
+  HELEN MORGAN ELEMENTARY SCHOOL                8215
+  SPARTA ALPINE ELEMENTARY SCH                  8212
+  SPARTA HIGH SCHOOL                            8218
+  SPARTA JUNIOR HIGH SCHOOL                     8214
+
+SPOTSWOOD BOARD OF EDUCATION                  123583
+  AUSTIN SCHOENLY ELEMENTARY SCH                9771
+  MEMORIAL JUNIOR HIGH SCHOOL                   9768
+  RAYMOND APPLEBY ELEMENTARY SCH                9769
+  SPOTSWOOD HIGH SCHOOL                         9772
+
+SPRING LAKE HTS SCHOOL DIST                   123035
+  SPRING LAKE HTS ELEM SCHOOL                   8104
+
+SPRING LAKE SCHOOL DISTRICT                   123034
+  H W MOUNTZ ELEMENTARY SCHOOL                  8103
+
+SPRINGFIELD PUBLIC SCHOOLS                    122754
+  EDWARD V WALTON SCHOOL                        6987
+  FLORENCE GAUDINEER MID SCHOOL                 6982
+  JAMES CALDWELL ELEM SCHOOL                    6985
+  THELMA SANDMEIER ELEM SCHOOL                  6988
+
+SPRINGFIELD TWP SCHOOL DIST                   123207
+  SPRINGFIELD TOWNSHIP ELEM SCH                 8543
+
+STAFFORD TOWNSHIP SCHOOL DIST                 123217
+  OXYCOCUS ELEMENTARY SCHOOL                    8577
+  STAFFORD INTERMEDIATE SCHOOL                  8575
+
+STANHOPE PUBLIC SCHOOL DIST                   123099
+  STANHOPE PUBLIC SCHOOL                        8221
+
+STERLING HIGH SCHOOL DISTRICT                 123285
+  STERLING HIGH SCHOOL                          8754
+
+STILLWATER TWP SCHOOL DISTRICT                123101
+  STILLWATER TWP ELEM SCHOOL                    8224
+
+STOCKTON BOROUGH SCHOOL DIST                  123451
+  STOCKTON BURROUGH ELEM SCHOOL                 9244
+
+STONE HARBOR SCHOOL DISTRICT                  123371
+  STONE HARBOR ELEMENTARY SCHOOL                9006
+
+STOW CREEK TWP SCHOOL DISTRICT                123386
+  STOW CREEK TWP ELEM SCHOOL                    9037
+
+STRATFORD SCHOOL DISTRICT                     123286
+  PARKVIEW ELEMENTARY SCHOOL                    8755
+  YELLIN ELEMENTARY SCHOOL                      8756
+
+SUMMIT SCHOOL DISTRICT                        123113
+  BRAYTON ELEMENTARY SCHOOL                     8261
+  FRANKLIN ELEMENTARY SCHOOL                    8258
+  JEFFERSON ELEMENTARY SCHOOL                   8262
+  LINCOLN ELEMENTARY SCHOOL                     8257
+  SUMMIT HIGH SCHOOL                            8263
+  SUMMIT MIDDLE SCHOOL                          8260
+  WASHINGTON ELEMENTARY SCHOOL                  8254
+
+SUSSEX CO TECH SCHOOL DISTRICT                123097
+  SUSSEX CO TECHNICAL CENTER                    8216
+
+SUSSEX-WANTAGE REG SCHOOL DIST                122851
+  CLIFTON LAWRENCE ELEM SCHOOL                  7532
+  SUSSEX MIDDLE SCHOOL                          7534
+  WANTAGE ELEMENTARY SCHOOL                     7537
+
+SWEDESBORO-WOOLWICH SCH DIST                  123288
+  CLIFFORD ELEMENTARY SCHOOL                    8758
+  WALTER HILL ELEMENTARY SCHOOL                 8760
+
+TABERNACLE SCHOOL DISTRICT                    123297
+  OLSON MIDDLE SCHOOL                           8778
+  TABERNACLE INTERMEDIATE SCHOOL                8779
+  TABERNACLE PRIMARY SCHOOL                     8780
+
+TEANECK SCHOOL DISTRICT                       122955
+  BRYANT ELEMENTARY SCHOOL                      7842
+  FRANKLIN MIDDLE SCHOOL                        7847
+  HAWTHORNE ELEMENTARY SCHOOL                   7852
+  JEFFERSON MIDDLE SCHOOL                       7850
+  LONGFELLOW ELEMENTARY SCHOOL                  7849
+  LOWELL ELEMENTARY SCHOOL                      7846
+  TEANECK HIGH SCHOOL                           7851
+  WHITTIER ELEMENTARY SCHOOL                    7848
+
+TENAFLY SCHOOL DISTRICT                       122956
+  MACKAY ELEMENTARY SCHOOL                      7853
+  MAUGHAM ELEMENTARY SCHOOL                     7856
+  SMITH ELEMENTARY SCHOOL                       7859
+  STILLMAN ELEMENTARY SCHOOL                    7858
+  TENAFLY HIGH SCHOOL                           7855
+  TENAFLY MIDDLE SCHOOL                         7854
+
+TEWKSBURY TOWNSHIP SCHOOL DIST                123055
+  OLD TURNPIKE SCHOOL                           8134
+  SAWMILL ELEMENTARY SCHOOL                     9593
+
+TINTON FALLS SCHOOL DISTRICT                  122989
+  MAHALA F ATCHINSON ELEM SCHOOL                7935
+  SWIMMING RIVER ELEMENTARY SCH                 7933
+  TINTON FALLS MIDDLE SCHOOL                    7938
+
+TOMS RIVER REG SCHOOL DISTRICT                123492
+  BEACHWOOD ELEMENTARY SCHOOL                   9400
+  CEDAR GROVE ELEMENTARY SCHOOL                 9461
+  EAST DOVER ELEMENTARY SCHOOL                  9462
+  HOOPER AVE ELEMENTARY SCHOOL                  9458
+  NORTH DOVER ELEMENTARY SCHOOL                 9470
+  PINE BEACH ELEMENTARY SCHOOL                  9440
+  SILVER BAY ELEMENTARY SCHOOL                  9457
+  SOUTH TOMS RIVER ELEM SCHOOL                  9472
+  TOMS RIVER EAST HIGH SCHOOL                   9463
+  TOMS RIVER INTER EAST SCHOOL                  9456
+  TOMS RIVER INTER WEST SCHOOL                  9455
+  TOMS RIVER SOUTH HIGH SCHOOL                  9467
+  WALNUT ST ELEMENTARY SCHOOL                   9464
+  WASHINGTON ST ELEMENTARY SCH                  9466
+  WEST DOVER ELEMENTARY SCHOOL                  9471
+
+TOTOWA BOARD OF EDUCATION                     122882
+  MEMORIAL MIDDLE SCHOOL                        7642
+  WASHINGTON PARK ELEM SCHOOL                   7639
+
+TOWNSHIP OF UNION PUBLIC SCHOOLS              122757
+  BATTLE HILL ELEM SCHOOL                       6995
+  BURNET MIDDLE SCHOOL                          6994
+  CENTRAL FIVE-JEFFERSON SCHOOL                 7026
+  CONNECTICUT FARMS ELEM SCHOOL                 6996
+  FRANKLIN ELEMENTARY SCHOOL                    6991
+  HAMILTON ELEMENTARY SCHOOL                    6992
+  KAWAMEEH MIDDLE SCHOOL                        6997
+  LIVINGSTON ELEMENTARY SCHOOL                  6999
+  UNION HIGH SCHOOL                             6993
+  WASHINGTON ELEMENTARY SCHOOL                  7000
+
+TRENTON CITY SCHOOL DISTRICT                  123456
+  CADWALADER ELEMENTARY SCHOOL                  9304
+  COLUMBUS ELEMENTARY SCHOOL                    9335
+  DUNN MIDDLE SCHOOL                            9272
+  FRANKLIN ELEMENTARY SCHOOL                    9271
+  GRANT ELEMENTARY SCHOOL                       9253
+  GREGORY ELEMENTARY SCHOOL                     9299
+  HARRISON ELEMENTARY SCHOOL                    9279
+  HEDGEPETH-WILLIAMS MIDDLE SCH                 9328
+  HILL ELEMENTARY SCHOOL                        9254
+  HOLLAND MIDDLE SCHOOL                         9301
+  JEFFERSON ELEMENTARY SCHOOL                   9340
+  KILMER ELEMENTARY SCHOOL                      9285
+  KING MIDDLE SCHOOL                            9339
+  MONUMENT ELEMENTARY SCHOOL                    9295
+  MOTT ELEMENTARY SCHOOL                        9284
+  PARKER ELEMENTARY SCHOOL                      9283
+  RIVERA ELEMENTARY SCHOOL                      9296
+  ROBBINS ELEMENTARY SCHOOL                     9258
+  ROBESON ELEMENTARY SCHOOL                     9327
+  STOKES ELEMENTARY SCHOOL                      9293
+  TRENTON CENTRAL HIGH SCHOOL                   9259
+  WASHINGTON ELEMENTARY SCHOOL                  9277
+  WILSON ELEMENTARY SCHOOL                      9337
+
+TUCKERTON SCHOOL DISTRICT                     123293
+  TUCKERTON ELEMENTARY SCHOOL                   8769
+
+UNION BEACH BOROUGH SCH DIST                  123009
+  MEMORIAL ELEMENTARY SCHOOL                    8011
+
+UNION CITY SCHOOL DISTRICT                    122758
+  COLUMBUS MIDDLE SCHOOL                        7012
+  EDISON ELEMENTARY SCHOOL                      7004
+  EMERSON HIGH SCHOOL                           7013
+  GILMORE ELEMENTARY SCHOOL                     7002
+  HUDSON ELEMENTARY SCHOOL                      7019
+  JEFFERSON ELEMENTARY SCHOOL                   7015
+  ROBERT WATERS ELEMENTARY SCH                  7003
+  ROOSEVELT ELEMENTARY SCHOOL                   7021
+  UNION HILL HIGH SCHOOL                        7020
+  WASHINGTON ELEMENTARY SCHOOL                  7017
+
+UNION CO EDUC SERV COMMISSION                 122765
+  BEADLESTON HIGH SCHOOL                        6896
+  CENTENNIAL HIGH SCHOOL                        7033
+  HILLCREST ACADEMY HIGH SCHOOL                 6949
+  WESTLAKE SCHOOL                               7041
+
+UNION COUNTY VOCATIONAL-TECHNICAL SCH         122750
+  UNION COUNTY VOC TECH INSTITUTE               6955
+
+UNION TOWNSHIP SCHOOL DIST                    123527
+  UNION TWP ELEM SCHOOL                         9574
+
+UPPER DEERFIELD TWP SCH DIST                  123385
+  CHARLES F SEABROOK ELEM SCHOOL                9034
+  ELIZABETH F MOORE SCHOOL                      9035
+  WOODRUFF SCHOOL                               9036
+
+UPPER FREEHOLD REGL SCH DIST                  123424
+  UPPER FREEHOLD REG ELEM SCHOOL                9146
+
+UPPER PITTSGROVE SCHOOL DIST                  123409
+  UPPER PITTSGROVE ELEM SCHOOL                  9083
+
+UPPER SADDLE RIVER SCHOOL DIST                122849
+  EDITH BOGERT ELEMENTARY SCHOOL                7527
+  EMIL A CAVALLINI MIDDLE SCHOOL                7528
+  ROBERT D REYNOLDS ELEM SCHOOL                 7529
+
+UPPER TOWNSHIP SCHOOL DISTRICT                123377
+  UPPER TOWNSHIP ELEMENTARY SCH                 8964
+  UPPER TOWNSHIP MIDDLE SCHOOL                  9021
+  UPPER TOWNSHIP PRIMARY SCHOOL                 8965
+
+VENTNOR CITY PUBLIC SCHOOLS                   123423
+  VENTNOR EDUC COMMUNITY COMPLEX                9141
+
+VERNON TOWNSHIP SCHOOL DIST                   122853
+  CEDAR MOUNTAIN PRIMARY SCHOOL                 7541
+  GLEN MEADOW MIDDLE SCHOOL                     7542
+  LOUNSBERRY HOLLOW MIDDLE SCH                  7540
+  ROLLING HILLS PRIMARY SCHOOL                  7543
+  VERNON TOWNSHIP HIGH SCHOOL                   7544
+  WALNUT RIDGE PRIMARY SCHOOL                   7539
+
+VERONA BOARD OF EDUCATION                     122704
+  BROOKDALE AVE ELEMENTARY SCH                  6738
+  BROWN ELEMENTARY SCHOOL                       6734
+  FOREST AVE ELEMENTARY SCHOOL                  6732
+  LANING AVE ELEMENTARY SCHOOL                  6739
+  VERONA HIGH SCHOOL                            6733
+  WHITEHORNE MIDDLE SCHOOL                      6735
+
+VINELAND SCHOOL DISTRICT                      123417
+  BUTLER AVE KINDERGARTEN CENTER                9123
+  CUNNINGHAM ELEMENTARY SCHOOL                  9110
+  DANE BARSE ELEMENTARY SCHOOL                  9108
+  EAST VINELAND KINDERGARTEN CTR                9122
+  JOHNSTONE ELEMENTARY SCHOOL                   9125
+  LANDIS INTERMEDIATE SCHOOL                    9117
+  MARIE DURAND ELEMENTARY SCHOOL                9101
+  MAURICE FELS KINDERGARTEN CTR                 9109
+  MAX LEUCHTER ELEMENTARY SCHOOL                9105
+  MEMORIAL INTERMEDIATE SCHOOL                  9116
+  MENNIES ELEMENTARY SCHOOL                     9114
+  OAK AND MAIN KINDERGARTEN CTR                 9103
+  ROSSI INTERMEDIATE SCHOOL                     9124
+  SOLVE E D'IPPOLITO INTER SCH                  9102
+  SOUTH VINELAND ELEMENTARY SCH                 9115
+  VINELAND HIGH SCHOOL 11-12 SOUTH              9099
+  VINELAND HIGH SCHOOL 9-10 NORTH               9098
+  WINSLOW ELEMENTARY SCHOOL                     9121
+
+VOORHEES TWP PUBLIC SCH DIST                  123210
+  HAMILTON ELEMENTARY SCHOOL                    8551
+  KRESSON ELEMENTARY SCHOOL                     8544
+  OSAGE ELEMENTARY SCHOOL                       8548
+  SIGNAL HILL ELEMENTARY SCHOOL                 8550
+  VOORHEES MIDDLE SCHOOL                        8545
+
+WALDWICK SCHOOL DISTRICT                      122855
+  CRESCENT ELEMENTARY SCHOOL                    7545
+  J A TRAPHAGEN ELEM SCHOOL                     7546
+  WALDWICK JR-SR HIGH SCHOOL                    7547
+
+WALL TOWNSHIP SCHOOL DISTRICT                 122977
+  ALLENWOOD ELEMENTARY SCHOOL                   7910
+  CENTRAL ELEMENTARY SCHOOL                     7911
+  OLD MILL ELEMENTARY SCHOOL                    7912
+  WALL HIGH SCHOOL                              7913
+  WALL INTERMEDIATE SCHOOL                      7914
+  WEST BELMAR ELEMENTARY SCHOOL                 7915
+
+WALLINGTON PUBLIC SCHOOL DIST                 122721
+  FRANK W GAVLAK ELEMENTARY SCH                 6833
+  JEFFERSON ELEMENTARY SCHOOL                   6836
+  WALLINGTON HIGH SCHOOL                        6835
+
+WALLKILL VLY REG HIGH SCH DIST                122818
+  WALLKILL VLY REG HIGH SCHOOL                  7439
+
+WANAQUE SCHOOL DISTRICT                       122856
+  HASKELL ELEMENTARY SCHOOL                     7442
+  WANAQUE ELEMENTARY SCHOOL                     7550
+
+WARREN HILLS REGIONAL SCH DIST                123108
+  WARREN CO VOC-TECH INSTITUTE                  8245
+  WARREN HILLS MIDDLE SCHOOL                    8239
+  WARREN HILLS SENIOR HIGH SCH                  8238
+
+WARREN TOWNSHIP                               122723
+  CENTRAL ELEMENTARY SCHOOL                     6840
+  MOUNT HOREB ELEMENTARY SCHOOL                 6841
+  TOMASO ELEMENTARY SCHOOL                      6846
+  WARREN MIDDLE SCHOOL                          6845
+
+WASHINGTON BOROUGH SCHOOL DIST                123105
+  MEMORIAL ELEMENTARY SCHOOL                    8240
+  TAYLOR STREET ELEM SCHOOL                     8241
+
+WASHINGTON TOWNSHIP (BURLINGTON CO)	      123354
+	GREEN BANK ELEMENTARY SCHOOL	        8954
+
+WASHINGTON TOWNSHIP (GLOUCESTER CO)	      123276
+	BELLS ELEMENTARY SCHOOL	                8428
+	BIRCHES ELEMENTARY SCHOOL	        8427
+	BUNKER HILL MIDDLE SCHOOL	        8740
+	CHESTNUT RIDGE MIDDLE SCHOOL	        8735
+	GRENLOCH TERRACE CHILDHOOD CENTER	8741
+	HURFFVILLE ELEMENTARY SCHOOL	        8737
+	ORCHARD VALLEY MIDDLE SCHOOL	        8736
+	THOMAS JEFFERSON ELEMENTARY SCHOOL	8429
+	WASHINGTON TOWNSHIP HIGH SCHOOL	        8738
+	WEDGWOOD ELEMENTARY SCHOOL	        8743
+	WHITMAN ELEMENTARY SCHOOL	        8426
+
+WASHINGTON TOWNSHIP (MERCER CO)	              123452
+	POND ROAD MIDDLE SCHOOL	                9375
+	SHARON ELEMENTARY SCHOOL	        9374
+
+WASHINGTON TOWNSHIP (MORRIS CO)	              123074
+	FLOCKTOWN ROAD ELEMENTARY SCHOOL	8174
+	KOSSMANN ELEMENTARY SCHOOL	        8175
+	LONG VALLEY MIDDLE SCHOOL NORTH	        8173
+	LONG VALLEY MIDDLE SCHOOL SOUTH	      230967
+	OLD FARMERS ROAD ELEMENTARY SCHOOL	8172
+
+WASHINGTON TOWNSHIP (WARREN CO)	              123109
+	BRASS CASTLE ELEMENTARY SCHOOL	        8247
+	PORT COLDEN ELEMENTARY SCHOOL	        8242
+
+WATCHUNG BOROUGH SCHOOL DIST                  122728
+  BAYBERRY ELEMENTARY SCHOOL                    6847
+  VALLEY VIEW MIDDLE SCHOOL                     6869
+
+WATCHUNG HILLS REG H S DIST                   122724
+  WATCHUNG HILLS REG HIGH SCHOOL                6844
+
+WATERFORD TOWNSHIP SCHOOL DISTRICT            123302
+  ATCO ELEMENTARY SCHOOL                        8400
+  THOMAS RICHARDS ELEMENTARY SCH                8402
+  WATERFORD ELEMENTARY SCHOOL                   8783
+
+WAYNE TWP SCHOOL DISTRICT                     122861
+  CARTER ELEMENTARY SCHOOL                      7566
+  KENNEDY ELEMENTARY SCHOOL                     7556
+  LAFAYETTE ELEMENTARY SCHOOL                   7557
+  PACKANACK ELEMENTARY SCHOOL                   7569
+  PINES LAKE ELEMENTARY SCHOOL                  7552
+  RYERSON ELEMENTARY SCHOOL                     7573
+  SCHUYLER COLFAX MIDDLE SCHOOL                 7564
+  TERHUNE ELEMENTARY SCHOOL                     7563
+  THEUNIS DEY ELEMENTARY SCHOOL                 7567
+  WASHINGTON MIDDLE  SCHOOL                     7568
+  WAYNE HILLS HIGH SCHOOL                       7559
+  WAYNE VALLEY HIGH SCHOOL                      7561
+
+WEEHAWKEN TOWNSHIP SCHOOL DIST                122761
+  THEODORE ROOSEVELT ELEM SCH                   7023
+  WEBSTER SCHOOL                                7014
+  WEEHAWKEN HIGH SCHOOL                         7024
+
+WENONAH SCHOOL DISTRICT                       123304
+  WENONAH ELEMENTARY SCHOOL                     8786
+
+WEST AMWELL TWP SCHOOL DIST                   123437
+  WEST AMWELL TWP ELEM SCHOOL                   9193
+
+WEST CAPE MAY SCHOOL DISTRICT                 123342
+  WEST CAPE MAY ELEM SCHOOL                     8930
+
+WEST DEPTFORD TWP SCH DISTRICT                123247
+  GREEN FIELDS ELEMENTARY SCHOOL                8819
+  OAKVIEW ELEMENTARY SCHOOL                     8811
+  RED BANK ELEMENTARY SCHOOL                    8766
+  WEST DEPTFORD HIGH SCHOOL                     8791
+  WEST DEPTFORD MIDDLE SCHOOL                   8664
+
+WEST ESSEX REGIONAL SCH DIST                  122647
+  WEST ESSEX JUNIOR HIGH SCHOOL                 6495
+  WEST ESSEX SENIOR HIGH SCHOOL                 6496
+
+WEST LONG BRANCH SCHOOL DIST                  123038
+  FRANK ANTONIDES ELEM SCHOOL                   8108
+  WEST LONG BRANCH PRIMARY SCH                  8106
+
+WEST MILFORD TOWNSHIP SCH DIST                122863
+  APSHAWA ELEMENTARY SCHOOL                     7580
+  MACOPIN MIDDLE SCHOOL                         7574
+  MAPLE ROAD ELEMENTARY SCHOOL                  7577
+  MARSHALL HILL ELEM SCHOOL                     7579
+  PARADISE KNOLL ELEM SCHOOL                    7477
+  UPPER GREENWOOD LAKE ELEM SCH                 7443
+  WEST MILFORD HIGH SCHOOL                      7575
+  WESTBROOK ELEMENTARY SCHOOL                   7578
+
+WEST MORRIS REGL HIGH SCH DIST                123127
+  WEST MORRIS CENTRAL HIGH SCH                  8298
+  WEST MORRIS MENDHAM HIGH SCH                  8327
+
+WEST NEW YORK SCHOOL DISTRICT                 122770
+  BAIN ELEMENTARY SCHOOL                        7052
+  MEMORIAL HIGH SCHOOL                          7053
+  WEST NEW YORK #1 ELEM SCHOOL                  7045
+  WEST NEW YORK #2 ELEM SCHOOL                  7050
+  WEST NEW YORK #3 ELEM SCHOOL                  7054
+  WEST NEW YORK #4 ELEM SCHOOL                  7048
+  WEST NEW YORK #5 ELEM SCHOOL                  7049
+
+WEST ORANGE SCHOOL DISTRICT                   122716
+  EDISON MIDDLE SCHOOL                          6788
+  GREGORY ELEMENTARY SCHOOL                     6782
+  HAZEL AVENUE ELEMENTARY SCHOOL                6783
+  PLEASANTDALE ELEMENTARY SCHOOL                6777
+  REDWOOD ELEMENTARY SCHOOL                     6780
+  ROOSEVELT MIDDLE SCHOOL                       6781
+  ST CLOUD ELEMENTARY SCHOOL                    6775
+  WASHINGTON ELEMENTARY SCHOOL                  6787
+  WEST ORANGE HIGH SCHOOL                       6776
+
+WEST PATERSON SCHOOL DISTRICT                 122826
+  BEATRICE GILMORE ELEM SCHOOL                  7455
+  CHARLES OLBON ELEM SCHOOL                     7448
+  MEMORIAL MIDDLE SCHOOL                        7454
+
+WEST WINDSOR-PLNSBORO REG S D                 123445
+  DUTCH NECK ELEMENTARY SCHOOL                  9227
+  HAWK ELEMENTARY SCHOOL                        9228
+  WEST WINDSOR-PLAINSBORO H S SOUTH CAMP        9231
+  WEST WINDSOR-PLAINSBORO M S                   9203
+  WICOFF ELEMENTARY SCHOOL                      9202
+
+WESTFIELD SCHOOL DISTRICT                     122764
+  EDISON INTERMEDIATE SCHOOL                    7035
+  FRANKLIN ELEMENTARY SCHOOL                    7037
+  JEFFERSON ELEMENTARY SCHOOL                   7031
+  MCKINLEY ELEMENTARY SCHOOL                    7040
+  ROOSEVELT INTERMEDIATE SCHOOL                 7038
+  TAMAQUES ELEMENTARY SCHOOL                    7036
+  WASHINGTON ELEMENTARY SCHOOL                  7029
+  WESTFIELD HIGH SCHOOL                         7032
+  WILSON ELEMENTARY SCHOOL                      7028
+
+WESTHAMPTON TWP SCHOOL DIST                   123239
+  HOLLY HILLS ELEMENTARY SCHOOL                 8645
+  WESTAMPTON MIDDLE SCHOOL                      8649
+
+WESTVILLE SCHOOL DISTRICT                     123308
+  PARKVIEW ELEMENTARY SCHOOL                    8790
+
+WESTWOOD REG SCHOOL DISTRICT                  122960
+  BERKELEY AVENUE ELEM SCHOOL                   7867
+  BROOKSIDE ELEMENTARY SCHOOL                   7869
+  GEORGE ELEMENTARY SCHOOL                      7861
+  KETLER ELEMENTARY SCHOOL                      7868
+  WASHINGTON ELEMENTARY SCHOOL                  7864
+  WESTWOOD JR-SR HIGH SCHOOL                    7871
+
+WEYMOUTH TOWNSHIP SCHOOL DIST                 123392
+  WEYMOUTH ELEMENTARY SCHOOL                    9048
+
+WHARTON BOROUGH SCHOOL DIST                   123111
+  DUFFY ELEMENTARY SCHOOL                       8251
+  MACKINNON MIDDLE SCHOOL                       8252
+
+WHITE TWP CONSOL SCHOOL DIST                  123044
+  WHITE TOWNSHIP CONSOLIDATED SCHOOL            8124
+
+WILDWOOD SCHOOL DISTRICT                      123374
+  CREST MEMORIAL SCHOOL                         9014
+  GLENWOOD AVENUE ELEM SCHOOL                   9011
+  WILDWOOD HIGH SCHOOL                          9015
+
+WILLINGBORO TWP SCHOOL DIST                   123213
+  BOOKBINDER ELEMENTARY SCHOOL                  8557
+  GARFIELD EAST ELEM SCHOOL                     8560
+  HAWTHORNE PARK ELEM SCHOOL                    8558
+  MARTIN LUTHER KING ELEM SCHOOL                8554
+  MCGINLEY ELEMENTARY SCHOOL                    8563
+  MEMORIAL JR HIGH SCHOOL                       8555
+  PENNYPACKER PARK ELEM SCHOOL                  8561
+  TWIN HILLS PARK ELEM SCHOOL                   8566
+  WILLINGBORO HIGH SCHOOL                       8565
+
+WINFIELD TOWNSHIP SCHOOL DIST                 122733
+  WINFIELD TOWNSHIP SCHOOL                      6898
+
+WINSLOW TOWNSHIP SCHOOL DISTRICT              123203
+  WINSLOW TWP ELEM SCHOOL NO 1                  8537
+  WINSLOW TWP ELEM SCHOOL NO 2                  8462
+  WINSLOW TWP ELEM SCHOOL NO 3                  8747
+  WINSLOW TWP ELEM SCHOOL NO 4                  8746
+  WINSLOW TWP ELEM SCHOOL NO 5                  8463
+  WINSLOW TWP ELEM SCHOOL NO 6                  8748
+
+WOOD-RIDGE SCHOOL DISTRICT                    122747
+  CATHERINE E DOYLE ELEM SCHOOL                 6939
+  GRETTA OSTROVSKY MIDDLE SCHOOL                6941
+  WOOD-RIDGE HIGH SCHOOL                        6940
+
+WOODBINE SCHOOL DISTRICT                      123376
+  WOODBINE ELEMENTARY SCHOOL                    9018
+
+WOODBRIDGE TWP SCHOOL DISTRICT                122774
+  AVENEL MIDDLE SCHOOL                          6440
+  AVENEL STREET ELEM SCHOOL                     6442
+  CLAREMONT AVENUE ELEM SCHOOL                  6909
+  COLONIA HIGH SCHOOL                           6908
+  COLONIA MIDDLE SCHOOL                         6906
+  FORD AVENUE ELEMENTARY SCHOOL                 9701
+  FORDS MIDDLE SCHOOL                           9699
+  INDIANA AVENUE ELEM SCHOOL                    9580
+  ISELIN MIDDLE SCHOOL                          9582
+  KENNEDY MEMORIAL HIGH SCHOOL                  9583
+  KENNEDY PARK ELEMENTARY SCH                   9578
+  LAFAYETTE ESTATES ELEM SCH                    9698
+  LYNN CREST ELEMENTARY SCHOOL                  6901
+  MATTHEW JAGO ELEM SCHOOL                      6956
+  MAWBEY STREET ELEM SCHOOL                     7064
+  MENLO PARK TERRACE ELEM SCHOOL                9612
+  OAK RIDGE HEIGHTS ELEM SCHOOL                 6905
+  PENNSYLVANIA ELEMENTARY SCHOOL                6907
+  PORT READING ELEMENTARY SCHOOL                6883
+  ROBERT MASCENIK ELEM SCHOOL                   9579
+  ROSS STREET ELEMENTARY SCHOOL                 7067
+  WOODBINE AVENUE ELEM SCHOOL                   6441
+  WOODBRIDGE HIGH SCHOOL                        7069
+  WOODBRIDGE MIDDLE SCHOOL                      7068
+
+WOODBURY HEIGHTS SCHOOL DIST                  123317
+  WOODBURY HEIGHTS ELEM SCHOOL                  8821
+
+WOODBURY PUBLIC SCHOOL DIST                   123313
+  EVERGREEN AVENUE ELEM SCHOOL                  8812
+  WALNUT ST ELEMENTARY SCHOOL                   8809
+  WEST END ELEMENTARY SCHOOL                    8810
+  WOODBURY JR-SR HIGH SCHOOL                    8816
+
+WOODCLIFF LAKE SCHOOL DISTRICT                122959
+  DORCHESTER ELEMENTARY SCHOOL                  7860
+  WOODCLIFF MIDDLE SCHOOL                       7876
+
+WOODLAND TOWNSHIP SCHOOL DIST                 123174
+  CHATSWORTH ELEMENTARY SCHOOL                  8464
+
+WOODLYNNE BOROUGH SCHOOL DISTRICT             123328
+  WOODLYNNE PUBLIC SCHOOL                       8878
+
+WOODSTOWN-PILESGROVE REG S D                  123320
+  MARY S SCHOEMAKER ELEM SCHOOL                 8822
+  WOODSTOWN HIGH SCHOOL                         8824
+  WOODSTOWN MIDDLE SCHOOL                       8823
+
+WYCKOFF SCHOOL DISTRICT                       122864
+  ABRAHAM LINCOLN ELEMENTARY SCH                7587
+  CALVIN COOLIDGE ELEM SCHOOL                   7586
+  EISENHOWER MIDDLE SCHOOL                      7585
+  GEORGE WASHINGTON ELEM SCHOOL                 7583
+  SICOMAC ELEMENTARY SCHOOL                     7584
+</pre>

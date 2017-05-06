@@ -4,8 +4,8 @@
     File Version      : 1.0
     Author            : Srini Ananthakrishnan
     Date created      : 04/19/2017
-    Date last modified: 05/04/2017
-    Python Version    : 3.5
+    Date last modified: 05/05/2017
+    Python Version    : 3.x
     Tensorflow Version: 1.0.1
 """
 
@@ -18,9 +18,8 @@ import time
 import pickle
 import tensorflow as tf
 import logging as logger
-import numpy as np
-from nn_model import NeuralNetwork
-from prepare_data import PrepareData
+from nn_regressor import RegressorNN
+from nn_custom import CustomNN
 
 
 # Disable info/warnings
@@ -35,11 +34,6 @@ flags.DEFINE_integer("replicas_to_aggregate", None,
                      "Number of replicas to aggregate before parameter update"
                      "is applied (For sync_replicas mode only; default: "
                      "num_workers)")
-# flags.DEFINE_boolean(
-#     "existing_servers", False, "Whether servers already exists. If True, "
-#     "will use the worker hosts via their GRPC URLs (one client process "
-#     "per worker host). Otherwise, will create an in-process TensorFlow "
-#     "server.")
 flags.DEFINE_string("ps_hosts","localhost:2222",
                     "Comma-separated list of hostname:port pairs")
 flags.DEFINE_string("worker_hosts", "localhost:2223,localhost:2224",
@@ -52,22 +46,20 @@ FLAGS = flags.FLAGS
 GNODE = "%s/%d" % (FLAGS.job_name,FLAGS.task_index)
 
 
-def build_dnn_regressor(X_train, Y_train, epoch_config, epoch_result, logging):
-    """Build and execute tensorflow DNN Regressot Graph
+def build_distributed_graph(NN, epoch_config, epoch_result, logging):
+    """Build and Execute Distributed TensorFlow Graph
     
     Args:
-        hyperparam: hyperparameters to build and execute the graph
-        X_train: input training features of shape (N,M)
-        Y_train: target training output of shape (N,)
+        feed_dict: Dictionary feed of model
+            model: Neural Network Model Class Object
+        epoch_config:
+            opt_epoch_iter: Optimizer (outer-loop) iteration number
+            train_epoch: Number of training epochs (inner-loop)
+            batch_size: batch size for training
+            train_tolerance: training loss convergence tolerance
         epoch_result: dict to store epoch training loss result
         logging: handler for logging macro
-            
-    epoch_config:
-        opt_epoch_iter: Optimizer (outer-loop) iteration number
-        train_epoch: Number of training epochs (inner-loop)
-        batch_size: batch size for training
-        train_tolerance: training loss convergence tolerance
-        
+    
     Returns: 
         costs: recored history of costs or loss per hyperparam optimizer iteration
     """
@@ -144,8 +136,7 @@ def build_dnn_regressor(X_train, Y_train, epoch_config, epoch_result, logging):
                     ps_device="/job:ps/cpu:0",
                     cluster=cluster)):
 
-            NN = NeuralNetwork()
-            opt = NN.build_model(FLAGS, epoch_config, logging)
+            opt = NN.build_model(epoch_config)
 
             if epoch_config['sync_replicas'] == True:
                 # You can create the hook which handles initialization and queues.
@@ -173,14 +164,10 @@ def build_dnn_regressor(X_train, Y_train, epoch_config, epoch_result, logging):
                                                is_chief=is_chief,
                                                #checkpoint_dir=epoch_config['train_log_dir'],
                                                hooks=hooks,
-                                               config=sess_config) as sess:
-            while not sess.should_stop():
-                # randomly pick input (row) and targeted output vectors from N
-                indices = np.random.randint(len(X_train), size=epoch_config['batch_size'])
-                _f = X_train[indices, :]
-                _y = Y_train[indices]
+                                               config=sess_config) as mon_sess:
+            while not mon_sess.should_stop():
 
-                costs = NN.train(sess, _f, _y, epoch_config)
+                costs = NN.train_model(mon_sess, epoch_config)
                 if costs == -1:
                     return -1, -1
 
@@ -230,14 +217,6 @@ def main(unused_argv):
     epoch_config = pickle.load(open("epoch_config.p", "rb"))
     epoch_result = pickle.load(open("epoch_result.p", "rb"))
 
-    # Initialize variables to prepare synthetic data
-    N = epoch_config['data_instances']
-    M = epoch_config['data_features']
-
-    # Synthetic Data generation parameters
-    PD = PrepareData()
-    X_train, X_test, Y_train, Y_test = PD.generateData(FLAGS, N, M)
-
     # Configure custom logger
     log_file = "%s/%s_%d.log"%(epoch_config['train_log_dir'],FLAGS.job_name,FLAGS.task_index)
     logging = logger.getLogger('train_opt')
@@ -251,8 +230,19 @@ def main(unused_argv):
     logging.info('Epoch config for opt_iter:[ %d ]',epoch_config['opt_epoch_iter'])
     logging.info(epoch_config)
 
+    logging.info("nn_model for training: %s",epoch_config['nn_model'])
+
+    if epoch_config['nn_model'] == 'Regressor':
+        NN = RegressorNN(logging)
+
+    elif epoch_config['nn_model'] == 'Custom':
+        NN = CustomNN(logging)
+
+    else:
+        raise ValueError("Unsupported model...!!")
+
     # Build and Execute TensorFlow Graph
-    build_dnn_regressor(X_train, Y_train, epoch_config, epoch_result, logging)
+    build_distributed_graph(NN, epoch_config, epoch_result, logging)
 
 
 if __name__ == "__main__":
