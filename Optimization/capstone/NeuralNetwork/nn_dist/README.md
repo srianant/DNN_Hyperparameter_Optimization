@@ -26,7 +26,8 @@ $ mongod --dbpath mongo # start mongodb server and tell it to write to local fol
   
 $ pip install git+https://github.com/IDSIA/sacred.git # install latest version of sacred  
 $ pip install sacredboard # install sacredboard  
-$ sacredboard # start sacredboard server  
+# start sacredboard server (optional..needed to view sacredboard dasboard. CPU intensive when used.) 
+$ sacredboard 
   
 Parameter Configuration:  
 ------------------------  
