@@ -16,14 +16,18 @@ import yaml
 import os
 import signal
 import shutil
+import psutil
 import time
 import select
 import pickle
+import sys
 import numpy as np
 from numpy.random import rand
 from sacred import Experiment
 from sacred.observers import MongoObserver
 from pprint import pprint
+
+python_version = sys.version_info.major
 
 ex = Experiment()
 mongo_observer = MongoObserver.create()
@@ -255,8 +259,10 @@ class Optimizer(object):
             print("START OF Optimizer EPOCH ====================>> [", opt_epoch_iter, "]")
 
             # Fork PS/Worker Jobs for inner training loop
-            processClusterJobs(filename, 'fork', self.epoch_config)
-
+            try:
+                processClusterJobs(filename, 'fork', self.epoch_config)
+            except OSError:
+                pass
             # Load results of ALL worker
             epoch_result = pickle.load(open("epoch_result.p", "rb"))
 
@@ -318,15 +324,24 @@ def runcmd(cmd):
     return subprocess.Popen(cmd, bufsize=4096, shell=True, stdout=subprocess.PIPE)
 
 
-def killClusterJobs(pids):
+def killClusterJobs(file2distribute, pids):
     """Kill Worker and PS Cluster Process
     Args:
         pids: Worker/PS process id 
     Retunrs:
         None
     """
-    for pid in pids:
-        os.kill(pid, signal.SIGUSR1)
+    if python_version == 3:
+        for pid in pids:
+            if psutil.pid_exists(pid) == True:
+                try:
+                    os.kill(pid, signal.SIGUSR1)
+                except OSError:
+                    # pass if the subprocess has exited already
+                    pass
+    else:
+        runcmd("ps aux | grep python |  grep %s | awk '{print $2}' | xargs kill -9"%file2distribute)
+
     print("Cleanup Worker/PS Cluster Jobs..")
 
 
@@ -373,23 +388,37 @@ def forkClusterJobs(file2distribute, _config):
     if _config['num_gpus'] > 0:
         # Ref: https://stackoverflow.com/questions/39567835/tensorflow-out-of-memory-error-running-inception-v3-distributed-on-4-machines?rq=1
         for task_index in range(num_ps):
-            subproc = runcmd('CUDA_VISIBLE_DEVICES='' python3 %s --ps_hosts=%s --worker_hosts=%s --job_name=%s --task_index=%d' % (
-            file2distribute, PS_HOSTS, WORKER_HOSTS, "ps", task_index))
+            if python_version == 3:
+                subproc = runcmd('CUDA_VISIBLE_DEVICES='' python3 %s --ps_hosts=%s --worker_hosts=%s --job_name=%s --task_index=%d' % (
+                    file2distribute, PS_HOSTS, WORKER_HOSTS, "ps", task_index))
+            else:
+                subproc = runcmd('CUDA_VISIBLE_DEVICES='' python %s --ps_hosts=%s --worker_hosts=%s --job_name=%s --task_index=%d' % (
+                    file2distribute, PS_HOSTS, WORKER_HOSTS, "ps", task_index))
             pids.append(subproc.pid)
 
         for task_index in range(num_workers):
-            subproc = runcmd('CUDA_VISIBLE_DEVICES=%d python3 %s --ps_hosts=%s --worker_hosts=%s --job_name=%s --task_index=%d' % (
-                task_index, file2distribute, PS_HOSTS, WORKER_HOSTS, "worker", task_index))
+            if python_version == 3:
+                subproc = runcmd('CUDA_VISIBLE_DEVICES=%d python3 %s --ps_hosts=%s --worker_hosts=%s --job_name=%s --task_index=%d' % (
+                    task_index, file2distribute, PS_HOSTS, WORKER_HOSTS, "worker", task_index))
+            else:
+                subproc = runcmd('CUDA_VISIBLE_DEVICES=%d python %s --ps_hosts=%s --worker_hosts=%s --job_name=%s --task_index=%d' % (
+                    task_index, file2distribute, PS_HOSTS, WORKER_HOSTS, "worker", task_index))
             pids.append(subproc.pid)
             subprocs[subproc.stdout.fileno()] = subproc
             poller.register(subproc.stdout, select.POLLHUP)
     else:
         for task_index in range(num_ps):
-            subproc = runcmd('python3 %s --ps_hosts=%s --worker_hosts=%s --job_name=%s --task_index=%d'%(file2distribute, PS_HOSTS, WORKER_HOSTS, "ps", task_index))
+            if python_version == 3:
+                subproc = runcmd('python3 %s --ps_hosts=%s --worker_hosts=%s --job_name=%s --task_index=%d'%(file2distribute, PS_HOSTS, WORKER_HOSTS, "ps", task_index))
+            else:
+                subproc = runcmd('python %s --ps_hosts=%s --worker_hosts=%s --job_name=%s --task_index=%d'%(file2distribute, PS_HOSTS, WORKER_HOSTS, "ps", task_index))
             pids.append(subproc.pid)
 
         for task_index in range(num_workers):
-            subproc = runcmd('python3 %s --ps_hosts=%s --worker_hosts=%s --job_name=%s --task_index=%d'%(file2distribute, PS_HOSTS, WORKER_HOSTS, "worker", task_index))
+            if python_version == 3:
+                subproc = runcmd('python3 %s --ps_hosts=%s --worker_hosts=%s --job_name=%s --task_index=%d'%(file2distribute, PS_HOSTS, WORKER_HOSTS, "worker", task_index))
+            else:
+                subproc = runcmd('python %s --ps_hosts=%s --worker_hosts=%s --job_name=%s --task_index=%d'%(file2distribute, PS_HOSTS, WORKER_HOSTS, "worker", task_index))
             pids.append(subproc.pid)
             subprocs[subproc.stdout.fileno()] = subproc
             poller.register(subproc.stdout, select.POLLHUP)
@@ -435,7 +464,7 @@ def processClusterJobs(file2distribute, mode='kill', _config=None, pids=None):
     if mode == 'fork':
         forkClusterJobs(file2distribute, _config)
     else:
-        killClusterJobs(pids)
+        killClusterJobs(file2distribute, pids)
 
 
 def build_stage_config(_config, epoch_config):
@@ -603,8 +632,10 @@ def main(_config, _run):
 
     if num_stages > 0:
         for stage in range(num_stages):
-
-            print("START OF STAGED EPOCH #######################>> [",stage+1,"]")
+            if python_version == 3:
+                print("START OF STAGED EPOCH #######################>> [",stage+1,"]")
+            else:
+                print "START OF STAGED EPOCH #######################>> [ %d ]"%(stage+1)
 
             _config['running_stage'] = stage+1 # indicates to user running stage
             _config['train_epoch']   = opt_stages[stage][0] # Training Epoch (Inner_Loop)
@@ -619,7 +650,11 @@ def main(_config, _run):
             # Load results of best worker
             best_epoch_config = pickle.load(open("epoch_best_config.p", "rb"))
 
-            print("END OF STAGED EPOCH #######################>>[",stage+1,"]")
+            if python_version == 3:
+                print("END OF STAGED EPOCH #######################>>[",stage+1,"]")
+            else:
+                print "END OF STAGED EPOCH #######################>>[ %d ]"%(stage+1)
+
     else:
         OPT = eval(_config['trainer'])(_config)
         result = OPT.optimize_params(processClusterJobs)
