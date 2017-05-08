@@ -14,6 +14,7 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
+import os
 import time
 import pickle
 import tensorflow as tf
@@ -23,6 +24,7 @@ from nn_custom import CustomNN
 
 
 # Disable info/warnings
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '1'
 tf.logging.set_verbosity(tf.logging.ERROR)
 
 flags = tf.app.flags
@@ -91,6 +93,7 @@ def build_distributed_graph(NN, epoch_config, epoch_result, logging):
                              task_index=FLAGS.task_index)
 
     if epoch_config['num_gpus'] > 0:
+        logging.info("GPU enabled with num_gpus: %d", epoch_config['num_gpus'])
         # If true, the allocator does not pre-allocate the entire specified
         # GPU memory region, instead starting small and growing as needed.
         gpu_options = tf.GPUOptions(allow_growth=True,

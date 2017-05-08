@@ -27,6 +27,7 @@ from sacred import Experiment
 from sacred.observers import MongoObserver
 from pprint import pprint
 
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '1'
 python_version = sys.version_info.major
 
 ex = Experiment()
@@ -369,7 +370,8 @@ def forkClusterJobs(file2distribute, _config):
     subprocs = {}  # map stdout pipe's file descriptor to the Popen object
 
     train_log_dir = _config['train_log_dir']
-    if(os.path.exists(train_log_dir) and _config['sync_replicas']):
+    #if(os.path.exists(train_log_dir) and _config['sync_replicas']):
+    if(os.path.exists(train_log_dir)):
         print("Deleteing old train dir, sync_replica is enabled...",train_log_dir)
         shutil.rmtree(train_log_dir)
     if(not os.path.exists(train_log_dir)):
@@ -481,10 +483,20 @@ def build_stage_config(_config, epoch_config):
 
     _lb = epoch_config['batch_size'] - epoch_config['batch_size']/2
     _ub = epoch_config['batch_size'] + epoch_config['batch_size']/2
+    # make sure values don't jump beyound initial bounds
+    if _lb < _config['batch_size'][0]:
+        _lb = _config['batch_size'][0]
+    if _ub > _config['batch_size'][1]:
+        _ub = _config['batch_size'][1]
     _config['batch_size'] = [_lb, _ub]
 
     _lb = epoch_config['learning_rate'] - epoch_config['learning_rate']/2.0
     _ub = epoch_config['learning_rate'] + epoch_config['learning_rate']/2.0
+    # make sure values don't jump beyound initial bounds
+    if _lb < _config['learning_rate'][0]:
+        _lb = _config['learning_rate'][0]
+    if _ub > _config['learning_rate'][1]:
+        _ub = _config['learning_rate'][1]
     _config['learning_rate'] = [_lb, _ub]
 
     _lb = min(epoch_config['nodes_per_layer'])
@@ -527,13 +539,13 @@ def my_config():
     nn_dimensions   = [4, 1]    # number of neural network nodes for [input, output]
                                 # input: should match lenght of input matrix (X)
                                 # output: should be 1: for regressor (Y predict for a row in X)
-    batch_size      = [100, 1000]       # batch size as [lower_bound, upper_bound]
+    batch_size      = [100, 2000]       # batch size as [lower_bound, upper_bound]
     learning_rate   = [0.001, 0.0001]   # learning rate as [lower_bound, upper_bound]
     hidden_layers   = [4, 10]   # hidden_layer [min, max]
     train_optimizer = ['Adam', 'sgd', 'Adagrad']    # optimizer to be used for train. Default is 'Adam'. Supports 'sgd', 'Adagrad'
     activation      = ['relu','tanh']   # activation for non-linearity. Default is 'relu'. Supports 'tanh'
     opt_epoch       = 3         # optimizer epoch is the outer loop for optimizing hyperparameters
-    train_epoch     = 100       # training epoch is the inner loop for training input data
+    train_epoch     = 1000      # training epoch is the inner loop for training input data
     train_tolerance = 1e-8      # inner train loop loss convergence threshold
     opt_tolerance   = 1e-5      # outer optimizer loop loss convergence threshold
     rnn_max_seq_length  = 100   # int Maximum length of the traning sequences to generate
