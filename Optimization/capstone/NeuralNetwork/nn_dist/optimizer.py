@@ -12,7 +12,6 @@
 # import packages
 import subprocess
 import logging as logger
-import yaml
 import os
 import signal
 import shutil
@@ -300,19 +299,6 @@ class Optimizer(object):
             print("\n")
 
         return best_loss
-
-
-def loadClusterSpec(clusterConfigFile):
-    # Load Cluster Spec
-    cluster_spec = yaml.load(open(os.path.expanduser(clusterConfigFile)))
-
-    # Populate Cluster Spec
-    PS_HOSTS = cluster_spec['cluster']['ps_hosts']
-    WORKER_HOSTS = cluster_spec['cluster']['worker_hosts']
-    NUM_PS = cluster_spec['cluster']['num_ps']
-    NUM_WORKER = cluster_spec['cluster']['num_worker']
-
-    return PS_HOSTS, WORKER_HOSTS, NUM_PS, NUM_WORKER
 
 
 def runcmd(cmd):
@@ -647,7 +633,7 @@ def main(_config, _run):
             if python_version == 3:
                 print("START OF STAGED EPOCH #######################>> [",stage+1,"]")
             else:
-                print "START OF STAGED EPOCH #######################>> [ %d ]"%(stage+1)
+                print ("START OF STAGED EPOCH #######################>> [ %d ]"%(stage+1))
 
             _config['running_stage'] = stage+1 # indicates to user running stage
             _config['train_epoch']   = opt_stages[stage][0] # Training Epoch (Inner_Loop)
@@ -665,7 +651,7 @@ def main(_config, _run):
             if python_version == 3:
                 print("END OF STAGED EPOCH #######################>>[",stage+1,"]")
             else:
-                print "END OF STAGED EPOCH #######################>>[ %d ]"%(stage+1)
+                print ("END OF STAGED EPOCH #######################>>[ %d ]"%(stage+1))
 
     else:
         OPT = eval(_config['trainer'])(_config)
