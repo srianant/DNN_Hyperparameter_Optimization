@@ -29,7 +29,7 @@ file2distribute: nn_distributed.py
 # ------------------------------------------
 nn_model:
 - Regressor
-- Custom
+#- Custom
 
 # ------------------------------------------
 # Algorithm for Hyperparameter Optimization
@@ -61,14 +61,14 @@ opt_stages:               # Optimizer and Training Epochs Stages
   - 3
 - - 500
   - 2
-# For Training on Large GPU/CPU Servers
+## For Training on Large GPU/CPU Servers
 #opt_stages:
 #- - 1000
-#  - 10000
-#- - 5000
-#  - 2000
-#- - 10000
 #  - 1000
+#- - 5000
+#  - 750
+#- - 10000
+#  - 500
 
 # ---------------------------------
 # Hyperparameters For Optimization
@@ -81,7 +81,7 @@ hidden_layers:            # hidden_layer [min, max]
 - 10
 batch_size:               # batch size as [lower_bound, upper_bound]
 - 100
-- 1000
+- 2000
 activation:               # activation for non-linearity. Default is 'relu'. Supports 'tanh'
 - relu
 - tanh
@@ -120,7 +120,6 @@ data_instances: 10000     # number of input data instances (N). Used ONLY load_d
 data_features: 4          # number of input data features (M). Used ONLY load_data is false
 
 
-
 # ---------------------------------
 # Logging Directory
 # ---------------------------------
@@ -136,7 +135,7 @@ sync_replicas: false    # Use the sync_replicas (synchronized replicas) mode
 # -------------------------------------
 # TensorFlow GPU config
 # -------------------------------------
-num_gpus: 0             # Number of GPUs. If > 0 GPUs will be used by Worker. Otherwise CPUs.
+num_gpus: 1             # Number of GPUs. If > 0 GPUs will be used by Worker. Otherwise CPUs.
 
 # -------------------------------------
 # Tensorflow Distributed Cluster Config

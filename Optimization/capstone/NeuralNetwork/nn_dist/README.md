@@ -4,7 +4,6 @@ HYPERPARAMETER OPTIMIZATION FRAMEWORK FOR DEEP NEURAL NETWORK
 
 Author: Srini Ananthakrishnan  
 Version: 1.0  
-Updated: 04/28/2017  
   
 Hyperparameter Optimization framework for Deep Neural Network (DNN) using Distributed Tensorflow Architecture. 
 
@@ -12,8 +11,7 @@ Hyperparameter Optimization framework for Deep Neural Network (DNN) using Distri
   
 OPTIMIZER forks multiple PS(Parameter Server) and WORKER(Training Server) python process. These processes will further run   Distributed TensorFlow Architecture. Framework supports following Deep Neural Network (DNN) TensorFlow Models:  
 1) Feed Forward DNN Regressor  
-2) Feed Forward DNN Classifier (Work-In-Progress)  
-3) RNN-LSTM Classifier (Work-In-Progress)  
+2) RNN-LSTM Classifier    
   
 Pre Requisites:  
 --------------
