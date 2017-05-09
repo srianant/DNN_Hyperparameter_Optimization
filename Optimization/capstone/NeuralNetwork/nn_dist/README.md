@@ -8,7 +8,7 @@ Updated: 04/28/2017
   
 Hyperparameter Optimization framework for Deep Neural Network (DNN) using Distributed Tensorflow Architecture. 
 
-  <img src="images/opt_arch.png" height="200"/> 
+  <img src="images/opt_arch.png" height="400"/> 
   
 OPTIMIZER forks multiple PS(Parameter Server) and WORKER(Training Server) python process. These processes will further run   Distributed TensorFlow Architecture. Framework supports following Deep Neural Network (DNN) TensorFlow Models:  
 1) Feed Forward DNN Regressor  
