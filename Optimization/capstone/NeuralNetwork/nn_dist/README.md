@@ -1,11 +1,13 @@
 
-HYPERPARAMETER OPTIMIZATION FRAMEWORK FOR DEEP NEURAL NETWORK   
-================================================================  
+Neural Network Hyper Parameter Optimization Using Distributed TensorFlow
+========================================================================  
 
 Author: Srini Ananthakrishnan  
 Version: 1.0  
+Python: 2.7 & 3.x  
+TensorFlow: 1.0.1
   
-Hyperparameter Optimization framework for Deep Neural Network (DNN) using Distributed Tensorflow Architecture. 
+Neural Network Hyperparameter Optimization Framework in Python using Distributed Tensorflow Architecture. 
 
   <img src="images/opt_arch.png" height="400"/> 
   
