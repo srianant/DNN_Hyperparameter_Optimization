@@ -1,0 +1,37 @@
+Configuration ([94mmodified[0m, [92madded[0m, [91mtypechanged[0m, [90mdoc[0m):
+[90m  """Default Configs for Hyper Parameter Optimization
+  
+  Returns:
+       None
+  """[0m
+  activation = ['relu', 'tanh']      [90m# activation for non-linearity. Default is 'relu'. Supports 'tanh'[0m
+  add_cosine = False                 [90m# transforms Y to element wise cosine (used if power_method is True)[0m
+  add_noise = False                  [90m# adds random noise to output Y (used if power_method is True)[0m
+  batch_size = [100, 2000]           [90m# batch size as [lower_bound, upper_bound][0m
+  data_features = 4                  [90m# number of input data features (M). Used ONLY load_data is false[0m
+  data_instances = 10000             [90m# number of input data instances (N). Used ONLY load_data is false[0m
+  file2distribute = 'nn_distributed.py'    [90m# File to be forked for distributed jobs[0m
+  hidden_layers = [4, 10]            [90m# hidden_layer [min, max][0m
+  hyperparam_opt = 'RS'              [90m# hyper parameter optimizer. Default RS: Random Search.[0m
+  learning_rate = [0.001, 0.0001]    [90m# learning rate as [lower_bound, upper_bound][0m
+  load_data = False                  [90m# When 'True' Load real data(X) of shape (N, M) and labels(Y) of shape (N,). Otherwise generate synthetic data.[0m
+  load_data_dir = 'data/source_code'    [90m# Real data directory (like Boston, Iris, etc.)[0m
+  nn_dimensions = [4, 1]             [90m# number of neural network nodes for [input, output][0m
+[94m  nn_model = ['Regressor']           [90m# Neural Network Model[0m[0m
+[94m  num_gpus = 1                       [90m# Number of GPUs. If > 0 GPUs will be used by Worker. Otherwise CPUs.[0m[0m
+  opt_epoch = 3                      [90m# optimizer epoch is the outer loop for optimizing hyperparameters[0m
+[94m  opt_stages = [[1000, 1000], [5000, 750], [10000, 500]]    [90m# [Stage_1, Stage_2, Stage_3] with each stage has [Outer_loop, Inner_loop] epoch[0m[0m
+  opt_tolerance = 1e-05              [90m# outer optimizer loop loss convergence threshold[0m
+  power_method = False               [90m# generate matrix polynomial of incremental "power" of (M). Used ONLY load_data is false[0m
+  ps_hosts = 'localhost:2223,localhost:2224'    [90m# parameter server config[0m
+  rnn_max_seq_length = 100           [90m# int Maximum length of the traning sequences to generate[0m
+  rnn_state_dim = [50, 50, 50]       [90m# int or int[] State dimension. Can use a list to stack RNNs.[0m
+  running_stage = 0                  [90m# placeholder to indicate running stage. Not a configuration.[0m
+  seed = 34140115                    [90m# the random seed for this experiment[0m
+  sync_replicas = False              [90m# Use the sync_replicas (synchronized replicas) mode[0m
+  train_epoch = 1000                 [90m# training epoch is the inner loop for training input data[0m
+  train_log_dir = '/tmp/nn_dist/train_logs'    [90m# training logs directory[0m
+  train_optimizer = ['Adam', 'sgd', 'Adagrad']    [90m# optimizer to be used for train. Default is 'Adam'. Supports 'sgd', 'Adagrad'[0m
+  train_tolerance = 1e-08            [90m# inner train loop loss convergence threshold[0m
+  trainer = 'Optimizer'              [90m# Optimizer Class Name.[0m
+  worker_hosts = 'localhost:2225,localhost:2226,localhost:2227,localhost:2228'    [90m# worker server config[0m
