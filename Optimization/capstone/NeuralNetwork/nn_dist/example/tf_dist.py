@@ -17,6 +17,18 @@ FLAGS = flags.FLAGS
 # Graph Node
 GNODE = "%s/%d" % (FLAGS.job_name,FLAGS.task_index)
 
+def build_model():
+    # simple variable addition
+    a=tf.Variable(1.0)
+    # put you optimizer of choice and add code for between the graph replication
+    loss=a+3
+    return loss 
+
+def train_model(mon_sess, global_step, loss):
+    # Run session 
+    result = mon_sess.run([loss, global_step])
+    # PS:just don't call mon_sess.run in loop here 
+    print ("%s Result: %d" % (GNODE,result[0]))
 
 def main(unused_argv):
  
@@ -61,9 +73,8 @@ def main(unused_argv):
             hooks = [tf.train.StopAtStepHook(last_step=10)]
             global_step = tf.Variable(0, name="global_step", trainable=False)
 
-            # simple variable addition 
-            a=tf.Variable(1.0)
-            b=a+3
+            # Build TF model 
+            loss = build_model()
 
         time_begin = time.time()
 
@@ -72,8 +83,8 @@ def main(unused_argv):
                                                hooks=hooks,
                                                config=sess_config) as mon_sess:
             while not mon_sess.should_stop():
-                result = mon_sess.run([b, global_step]) 
-                print ("%s Result: %d" % (GNODE,result[0]))
+                # Train TF model 
+                train_model(mon_sess, global_step, loss)
                 break #typically we will have optimzer to stop after global_step
 
         time_end = time.time()
@@ -86,7 +97,7 @@ def main(unused_argv):
         if (FLAGS.job_name == 'worker' and FLAGS.task_index == 1): 
             os.system("ps aux | grep python |  grep tf_dist.py | awk '{print $2}' | xargs kill -9")
         else:
-            print ("It takes 30sec for other worker to execute. That's as per MonitoredSession TF design.!!\n")
+            print ("It may take up to 30sec for other worker to execute. That's as per MonitoredSession TF design.!!\n")
 
 
 if __name__ == "__main__":
