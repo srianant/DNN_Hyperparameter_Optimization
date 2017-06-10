@@ -1,0 +1,47 @@
+# Create environment:
+# $ conda env create --force
+name: dl27 
+channels:
+  - conda-forge
+  - damianavila82
+dependencies:
+  - python = 2.7
+  - tensorflow >= 1.0
+  - keras >= 2.0
+  - pillow >= 4.0
+  - ipython
+  - jupyter
+  - anaconda
+  - matplotlib
+  - seaborn
+  - plotly
+  - numpy
+  - pandas
+  - scikit-learn
+  - scikit-image
+  - h5py
+  - requests
+  - setuptools
+  - pip
+  - pip:
+    - rise
+    - pygame
+    - hyperas
+    - pydot
+    - pydot-ng
+    - nbbrowserpdf
+    - ipy-table
+    
+# Start environment
+# $ source activate dl
+
+# Add cli to support Keras visualizations
+# $ brew install graphviz
+
+# Update environment (might break stuff. move fast!?)
+# $ conda update --all --yes
+# $ pip install --upgrade -r <( pip freeze )
+
+# Setup RISE (https://github.com/damianavila/RISE) slideshows:
+# $ jupyter nbextension install rise --py --sys-prefix
+# $ jupyter nbextension enable rise --py --sys-prefix
