@@ -17,11 +17,11 @@ Ex is generalization error
 Gx is grand truth distribution  
 X (train) is a finite set of samples x from Gx  
 L is expected loss L (x; f) over finite samples   
-Aλ actual learning algorithm with λ
+Aλ actual learning algorithm with λ  
 
-NHOP Software framework helps achieve above objective. The framework uses python as its frontend and distributed TensorFlow as its backend for training neural network.
+NHOP Software framework helps achieve above objective. The framework uses python as its frontend and distributed TensorFlow as its backend for training neural network.  
 
-The Inner-loop optimization is performed using TensorFlow API which are implemented as dataflow-like models. The computations are expressed as stateful dataflow graphs. The Outer-loop called “Optimizer” is a python process that computes hyper-parameters from hyperspace using Random Search [[1]](http://www.jmlr.org/papers/volume13/bergstra12a/bergstra12a.pdf) algorithm and feeds them to inner-loop which trains the finite set of samples X (train) iteratively that minimizes some of the expected loss. Given all that what we need in practice is a way to choose λ so as minimize generalization error. NHOP framework allows users to specify distribution bounds (or) search space for hyper- parameter.
+The Inner-loop optimization is performed using TensorFlow API which are implemented as dataflow-like models. The computations are expressed as stateful dataflow graphs. The Outer-loop called “Optimizer” is a python process that computes hyper-parameters from hyperspace using Random Search [[1]](http://www.jmlr.org/papers/volume13/bergstra12a/bergstra12a.pdf) algorithm and feeds them to inner-loop which trains the finite set of samples X (train) iteratively that minimizes some of the expected loss. Given all that what we need in practice is a way to choose λ so as minimize generalization error. NHOP framework allows users to specify distribution bounds (or) search space for hyper- parameter.  
 
 ## Architecture:  
 
