@@ -1,8 +1,7 @@
 
 Neural Network Hyper Parameter Optimization (NHOP) Using Distributed TensorFlow
 ========================================================================  
-
-Author: Srini Ananthakrishnan  
+ 
 Version: 1.0  
 Python: 2.7 & 3.x  
 TensorFlow: 1.0.1
